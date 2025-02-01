@@ -25,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MyFoodApp.Shared\MyFoodApp.Shared.csproj" />
     <ProjectReference Include="..\MyFoodApp.Domain\MyFoodApp.Domain.csproj" />
+    <ProjectReference Include="..\MyFoodApp.Shared\MyFoodApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>

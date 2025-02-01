@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MyFoodApp.Shared\MyFoodApp.Shared.csproj" />
     <ProjectReference Include="..\MyFoodApp.Application\MyFoodApp.Application.csproj" />
     <ProjectReference Include="..\MyFoodApp.Infrastructure\MyFoodApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\MyFoodApp.Shared\MyFoodApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>
