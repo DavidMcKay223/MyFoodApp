@@ -5,7 +5,7 @@
 MyFoodApp/
 ├── Application/
 │   ├── Common/
-│   │   ├── AbstractSearchDto.cs
+│   │   ├── SearchDto.cs
 │   │   ├── ErrorDto.cs
 │   │   ├── ResultDto.cs (Has ErrorList with List<Dto> or Item<Dto>)
 │   ├── Configurations/
