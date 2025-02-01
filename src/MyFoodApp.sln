@@ -9,6 +9,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFoodApp.Web", "MyFoodApp\MyFoodApp.Web\MyFoodApp.Web.csproj", "{A018081A-A077-417E-AC90-E7FF70F5BE55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFoodApp.Application", "MyFoodApp\MyFoodApp.Application\MyFoodApp.Application.csproj", "{43238D9E-D502-4CFD-9604-965480D23855}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFoodApp.Domain", "MyFoodApp\MyFoodApp.Domain\MyFoodApp.Domain.csproj", "{DDA3A93B-BB8F-4650-B1E1-14F7D367EBD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFoodApp.Infrastructure", "MyFoodApp\MyFoodApp.Infrastructure\MyFoodApp.Infrastructure.csproj", "{ACA3011D-7027-49B0-8C3A-A30EDB602487}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFoodApp.Shared", "MyFoodApp.Shared\MyFoodApp.Shared.csproj", "{B92205EF-26BF-45BF-8DBB-448CF1C6867B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,11 +27,31 @@ Global
 		{A018081A-A077-417E-AC90-E7FF70F5BE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A018081A-A077-417E-AC90-E7FF70F5BE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A018081A-A077-417E-AC90-E7FF70F5BE55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43238D9E-D502-4CFD-9604-965480D23855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43238D9E-D502-4CFD-9604-965480D23855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43238D9E-D502-4CFD-9604-965480D23855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43238D9E-D502-4CFD-9604-965480D23855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA3A93B-BB8F-4650-B1E1-14F7D367EBD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA3A93B-BB8F-4650-B1E1-14F7D367EBD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA3A93B-BB8F-4650-B1E1-14F7D367EBD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA3A93B-BB8F-4650-B1E1-14F7D367EBD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACA3011D-7027-49B0-8C3A-A30EDB602487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACA3011D-7027-49B0-8C3A-A30EDB602487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACA3011D-7027-49B0-8C3A-A30EDB602487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACA3011D-7027-49B0-8C3A-A30EDB602487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B92205EF-26BF-45BF-8DBB-448CF1C6867B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B92205EF-26BF-45BF-8DBB-448CF1C6867B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B92205EF-26BF-45BF-8DBB-448CF1C6867B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B92205EF-26BF-45BF-8DBB-448CF1C6867B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A018081A-A077-417E-AC90-E7FF70F5BE55} = {FACAE272-B370-4DC2-BD80-439B417A7FCA}
+		{43238D9E-D502-4CFD-9604-965480D23855} = {FACAE272-B370-4DC2-BD80-439B417A7FCA}
+		{DDA3A93B-BB8F-4650-B1E1-14F7D367EBD1} = {FACAE272-B370-4DC2-BD80-439B417A7FCA}
+		{ACA3011D-7027-49B0-8C3A-A30EDB602487} = {FACAE272-B370-4DC2-BD80-439B417A7FCA}
+		{B92205EF-26BF-45BF-8DBB-448CF1C6867B} = {FACAE272-B370-4DC2-BD80-439B417A7FCA}
 	EndGlobalSection
 EndGlobal
