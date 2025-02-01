@@ -1,6 +1,7 @@
 # Food Application
 
 ## Project Structure
+```text
 MyFoodApp/
 ├── Application/
 │   ├── Common/
@@ -137,3 +138,4 @@ Authentication/
 │       └── JwtTokenGenerator.cs
 ├── Configuration/
 │   └── AuthConfiguration.cs
+```
