@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFoodApp.Web", "MyFoodApp.Web\MyFoodApp.Web.csproj", "{6C64F71D-4C79-49F6-A460-7766D1DF113E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyFoodApp", "MyFoodApp", "{FACAE272-B370-4DC2-BD80-439B417A7FCA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentication", "{E2435362-5814-466A-9C58-6C5D38BE9BF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFoodApp.Web", "MyFoodApp\MyFoodApp.Web\MyFoodApp.Web.csproj", "{A018081A-A077-417E-AC90-E7FF70F5BE55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,15 +15,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6C64F71D-4C79-49F6-A460-7766D1DF113E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C64F71D-4C79-49F6-A460-7766D1DF113E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C64F71D-4C79-49F6-A460-7766D1DF113E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C64F71D-4C79-49F6-A460-7766D1DF113E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A018081A-A077-417E-AC90-E7FF70F5BE55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A018081A-A077-417E-AC90-E7FF70F5BE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A018081A-A077-417E-AC90-E7FF70F5BE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A018081A-A077-417E-AC90-E7FF70F5BE55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{6C64F71D-4C79-49F6-A460-7766D1DF113E} = {FACAE272-B370-4DC2-BD80-439B417A7FCA}
+		{A018081A-A077-417E-AC90-E7FF70F5BE55} = {FACAE272-B370-4DC2-BD80-439B417A7FCA}
 	EndGlobalSection
 EndGlobal
