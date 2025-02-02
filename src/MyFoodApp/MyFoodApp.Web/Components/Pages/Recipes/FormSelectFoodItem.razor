@@ -1,0 +1,38 @@
+﻿@using MyFoodApp.Application.Common
+@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Application.Interfaces.Foods
+
+@code {
+    [Parameter]
+    public required IngredientDto Ingredient { get; set; }
+
+    [Parameter]
+    public required List<FoodItemDto> FoodItemList { get; set; } = [];
+
+    private Response<FoodItemDto>? response { get; set; }
+}
+
+@if (response != null && response.ErrorList.Any())
+{
+    <ul>
+        @foreach (var error in response.ErrorList)
+        {
+            <li class="text-danger">@error.Code: @error.Message</li>
+        }
+    </ul>
+}
+
+<div class="form-floating">
+    <InputSelect @bind-Value="Ingredient.FoodItemId" class="form-select">
+        @foreach (var foodItem in FoodItemList)
+        {
+            <option value="@foodItem.FoodItemId">
+                @foodItem.Name:
+                Protein per unit(@foodItem.ProteinPerUnit)
+                Calories per unit(@foodItem.CaloriesPerUnit)
+            </option>
+        }
+    </InputSelect>
+    <label>Food Item</label>
+    <ValidationMessage For="@(() => Ingredient.FoodItemId)" />
+</div>

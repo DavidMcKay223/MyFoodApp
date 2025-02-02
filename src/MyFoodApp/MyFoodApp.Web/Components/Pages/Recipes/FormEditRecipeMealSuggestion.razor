@@ -1,0 +1,44 @@
+﻿@using MyFoodApp.Application.DTOs
+
+@code {
+    [Parameter]
+    public required List<RecipeMealSuggestionDto> MealSuggestions { get; set; }
+
+    private void AddMealSuggestion()
+    {
+        MealSuggestions.Add(new RecipeMealSuggestionDto());
+    }
+
+    private void RemoveMealSuggestion(int index)
+    {
+        MealSuggestions.RemoveAt(index);
+    }
+}
+
+@if (MealSuggestions != null)
+{
+    <div class="card mb-3">
+        <div class="card-header">Meal Suggestions</div>
+        <div class="card-body">
+            @for (int i = 0; i < MealSuggestions.Count; i++)
+            {
+                var index = i;
+                <div class="row g-3 mb-3 align-items-end">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <InputNumber @bind-Value="MealSuggestions[index].MealSuggestionId" class="form-control" />
+                            <label>Meal Suggestion ID</label>
+                            <ValidationMessage For="@(() => MealSuggestions[index].MealSuggestionId)" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-danger" @onclick="() => RemoveMealSuggestion(index)">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            }
+            <button type="button" class="btn btn-primary" @onclick="AddMealSuggestion">Add Meal Suggestion</button>
+        </div>
+    </div>
+}

@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Application.Configurations;
 using MyFoodApp.Application.DTOs;
+using MyFoodApp.Application.Interfaces.Foods;
 using MyFoodApp.Application.Interfaces.Recipes;
+using MyFoodApp.Application.UseCases.Foods;
 using MyFoodApp.Application.UseCases.Recipes;
 using MyFoodApp.Application.Validators;
 using MyFoodApp.Domain.Interfaces.Repositories;
@@ -36,6 +38,9 @@ builder.Services.AddScoped<IValidator<StoreSectionDto>, StoreSectionDtoValidator
 // Services:
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
 builder.Services.AddScoped<IRecipeUseCases, RecipeUseCases>();
+
+builder.Services.AddScoped<IFoodItemRepository, FoodItemRepository>();
+builder.Services.AddScoped<IFoodItemUseCases, FoodItemUseCases>();
 
 // Database:
 builder.Services.AddDbContext<AppDbContext>(options =>

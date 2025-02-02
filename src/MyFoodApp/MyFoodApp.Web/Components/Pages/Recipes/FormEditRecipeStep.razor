@@ -1,0 +1,51 @@
+﻿@using MyFoodApp.Application.DTOs
+
+@code {
+    [Parameter]
+    public required List<RecipeStepDto> Steps { get; set; }
+
+    private void AddStep()
+    {
+        Steps.Add(new RecipeStepDto() { Instruction = "" });
+    }
+
+    private void RemoveStep(int index)
+    {
+        Steps.RemoveAt(index);
+    }
+}
+
+@if (Steps != null)
+{
+    <div class="card mb-3">
+        <div class="card-header">Steps</div>
+        <div class="card-body">
+            @for (int i = 0; i < Steps.Count; i++)
+            {
+                var index = i;
+                <div class="row g-3 mb-3 align-items-end">
+                    <div class="col-md-2">
+                        <div class="form-floating">
+                            <InputNumber @bind-Value="Steps[index].StepNumber" class="form-control" />
+                            <label>Step Number</label>
+                            <ValidationMessage For="@(() => Steps[index].StepNumber)" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-floating">
+                            <InputTextArea @bind-Value="Steps[index].Instruction" class="form-control" />
+                            <label>Instruction</label>
+                            <ValidationMessage For="@(() => Steps[index].Instruction)" />
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-danger" @onclick="() => RemoveStep(index)">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            }
+            <button type="button" class="btn btn-primary" @onclick="AddStep">Add Step</button>
+        </div>
+    </div>
+}

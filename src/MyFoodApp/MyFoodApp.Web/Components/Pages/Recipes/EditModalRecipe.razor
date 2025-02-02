@@ -16,7 +16,14 @@
 
     public void Show(RecipeDto? recipeToEdit)
     {
-        Recipe = recipeToEdit ?? new RecipeDto(){ Title="", Description=""};
+        Recipe = recipeToEdit ?? new RecipeDto()
+        {
+            Title = "",
+            Description = "",
+            Steps = new List<RecipeStepDto>(),
+            Ingredients = new List<IngredientDto>(),
+            MealSuggestions = new List<RecipeMealSuggestionDto>()
+        };
         StateHasChanged();
     }
 
@@ -48,8 +55,8 @@
 {
     <div class="modal-backdrop">
         <div class="modal show d-block" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content" style="height: 80%;">
                     <div class="modal-header">
                         <h5 class="modal-title">@(Recipe.RecipeId == 0 ? "Add Recipe" : "Edit Recipe")</h5>
                         <button type="button" class="btn-close" @onclick="Cancel"></button>
@@ -71,7 +78,7 @@
                                 <ValidationMessage For="@(() => Recipe.Description)" />
                             </div>
                             
-                            <div class="row g-3">
+                            <div class="row g-3 mb-3">
                                 <div class="col-md-4">
                                     <div class="form-floating">
                                         <InputNumber @bind-Value="Recipe.PrepTimeMinutes" class="form-control" />
@@ -94,6 +101,15 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Recipe Steps -->
+                            <FormEditRecipeStep Steps="@Recipe.Steps" />
+
+                            <!-- Ingredients -->
+                            <FormEditIngredient Ingredients="@Recipe.Ingredients" />
+
+                            <!-- Meal Suggestions -->
+                            <FormEditRecipeMealSuggestion MealSuggestions="@Recipe.MealSuggestions" />
                         </EditForm>
                     </div>
                     <div class="modal-footer">

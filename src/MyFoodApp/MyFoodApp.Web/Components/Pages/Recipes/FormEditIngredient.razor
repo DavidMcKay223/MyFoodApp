@@ -1,0 +1,70 @@
+﻿@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Domain.Enums
+@using MyFoodApp.Application.Interfaces.Foods
+@inject IFoodItemUseCases FoodItemUseCases
+
+@code {
+    [Parameter]
+    public required List<IngredientDto> Ingredients { get; set; }
+
+    private List<FoodItemDto> FoodItemList { get; set; } = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await FoodItemUseCases.GetFoodItemListAsync();
+        FoodItemList = response.List;
+    }
+
+    private void AddIngredient()
+    {
+        Ingredients.Add(new IngredientDto());
+    }
+
+    private void RemoveIngredient(int index)
+    {
+        Ingredients.RemoveAt(index);
+    }
+}
+
+@if (Ingredients != null)
+{
+    <div class="card mb-3">
+        <div class="card-header">Ingredients</div>
+        <div class="card-body">
+            @for (int i = 0; i < Ingredients.Count; i++)
+            {
+                var index = i;
+                <div class="row g-3 mb-3 align-items-end">
+                    <div class="col-md-4">
+                        <FormSelectFoodItem Ingredient="Ingredients[index]" FoodItemList="FoodItemList" />
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating">
+                            <InputNumber @bind-Value="Ingredients[index].Quantity" class="form-control" />
+                            <label>Quantity</label>
+                            <ValidationMessage For="@(() => Ingredients[index].Quantity)" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating">
+                            <InputSelect @bind-Value="Ingredients[index].Unit" class="form-select">
+                                @foreach (var unit in Enum.GetValues(typeof(UnitType)))
+                                {
+                                    <option value="@unit">@unit</option>
+                                }
+                            </InputSelect>
+                            <label>Unit</label>
+                            <ValidationMessage For="@(() => Ingredients[index].Unit)" />
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-danger" @onclick="() => RemoveIngredient(index)">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            }
+            <button type="button" class="btn btn-primary" @onclick="AddIngredient">Add Ingredient</button>
+        </div>
+    </div>
+}
