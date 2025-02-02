@@ -23,10 +23,11 @@ namespace MyFoodApp.Infrastructure.Repositories
             return recipes;
         }
 
-        public async Task<MealSuggestion?> GetMealSuggestionByIdAsync(int MealSuggestionId)
+        public async Task<MealSuggestion?> GetMealSuggestionByIdAsync(int MealSuggestionId, bool tracking = false)
         {
-            return await _context.MealSuggestions
-                .FirstOrDefaultAsync(r => r.MealSuggestionId == MealSuggestionId);
+            return tracking
+                ? await _context.MealSuggestions.FirstOrDefaultAsync(r => r.MealSuggestionId == MealSuggestionId)
+                : await _context.MealSuggestions.AsNoTracking().FirstOrDefaultAsync(r => r.MealSuggestionId == MealSuggestionId);
         }
     }
 }

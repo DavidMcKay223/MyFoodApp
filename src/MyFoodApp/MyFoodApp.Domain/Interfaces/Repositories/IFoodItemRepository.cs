@@ -5,6 +5,6 @@ namespace MyFoodApp.Domain.Interfaces.Repositories
     public interface IFoodItemRepository
     {
         IQueryable<FoodItem> GetAllFoodItemsAsync();
-        Task<FoodItem?> GetFoodItemByIdAsync(int foodItemId);
+        Task<FoodItem?> GetFoodItemByIdAsync(int foodItemId, bool tracking = false);
     }
 }
