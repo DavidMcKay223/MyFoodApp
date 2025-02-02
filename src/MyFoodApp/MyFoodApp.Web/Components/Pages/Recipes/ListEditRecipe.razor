@@ -14,11 +14,11 @@
 }
 else
 {
-    <FormSearchRecipe SearchDto="searchDto" />
+    <SearchFormRecipe SearchDto="searchDto" />
 
     <SearchButton OnSearch="Search" OnReset="ResetSearch" OnAdd="ShowAddModal" />
 
-    <FormTableRecipe Recipes="Recipes" OnEdit="ShowEditModal" OnDelete="DeleteRecipe" />
+    <TableFormRecipe Recipes="Recipes" OnEdit="ShowEditModal" OnDelete="DeleteRecipe" />
 
     <SearchPagination TItem="RecipeDto" TotalItems="@totalItems" PageSize="@pageSize" CurrentPage="@currentPage" OnPageChanged="OnPageChanged" OnPageSizeChangedCallback="OnPageSizeChanged" />
 }
