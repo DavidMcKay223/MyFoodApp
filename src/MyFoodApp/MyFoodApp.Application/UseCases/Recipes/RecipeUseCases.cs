@@ -29,6 +29,26 @@ namespace MyFoodApp.Application.UseCases.Recipes
             try
             {
                 var recipe = _mapper.Map<Recipe>(recipeDto);
+
+                // Handle related entities
+                foreach (var ingredientDto in recipeDto.Ingredients)
+                {
+                    var ingredient = _mapper.Map<Ingredient>(ingredientDto);
+                    recipe.Ingredients.Add(ingredient);
+                }
+
+                foreach (var stepDto in recipeDto.Steps)
+                {
+                    var step = _mapper.Map<RecipeStep>(stepDto);
+                    recipe.Steps.Add(step);
+                }
+
+                foreach (var mealSuggestionDto in recipeDto.MealSuggestions)
+                {
+                    var mealSuggestion = _mapper.Map<RecipeMealSuggestion>(mealSuggestionDto);
+                    recipe.MealSuggestions.Add(mealSuggestion);
+                }
+
                 await _recipeRepository.AddRecipeAsync(recipe);
                 response.Item = _mapper.Map<RecipeDto>(recipe);
             }
@@ -176,7 +196,75 @@ namespace MyFoodApp.Application.UseCases.Recipes
                     return response;
                 }
 
+                // Remove Ingredients that are not in the DTO
+                var ingredientsToRemove = recipe.Ingredients.Where(i => !recipeDto.Ingredients.Any(dto => dto.IngredientId == i.IngredientId)).ToList();
+                foreach (var ingredient in ingredientsToRemove)
+                {
+                    recipe.Ingredients.Remove(ingredient);
+                }
+
+                // Add or update Ingredients
+                foreach (var ingredientDto in recipeDto.Ingredients)
+                {
+                    var existingIngredient = recipe.Ingredients.FirstOrDefault(i => i.IngredientId == ingredientDto.IngredientId);
+                    if (existingIngredient != null)
+                    {
+                        _mapper.Map(ingredientDto, existingIngredient);
+                    }
+                    else
+                    {
+                        var ingredient = _mapper.Map<Ingredient>(ingredientDto);
+                        recipe.Ingredients.Add(ingredient);
+                    }
+                }
+
+                // Remove RecipeSteps that are not in the DTO
+                var stepsToRemove = recipe.Steps.Where(s => !recipeDto.Steps.Any(dto => dto.StepId == s.StepId)).ToList();
+                foreach (var step in stepsToRemove)
+                {
+                    recipe.Steps.Remove(step);
+                }
+
+                // Add or update RecipeSteps
+                foreach (var stepDto in recipeDto.Steps)
+                {
+                    var existingStep = recipe.Steps.FirstOrDefault(s => s.StepId == stepDto.StepId);
+                    if (existingStep != null)
+                    {
+                        _mapper.Map(stepDto, existingStep);
+                    }
+                    else
+                    {
+                        var step = _mapper.Map<RecipeStep>(stepDto);
+                        recipe.Steps.Add(step);
+                    }
+                }
+
+                // Remove MealSuggestions that are not in the DTO
+                var mealSuggestionsToRemove = recipe.MealSuggestions.Where(ms => !recipeDto.MealSuggestions.Any(dto => dto.MealSuggestionId == ms.MealSuggestionId)).ToList();
+                foreach (var mealSuggestion in mealSuggestionsToRemove)
+                {
+                    recipe.MealSuggestions.Remove(mealSuggestion);
+                }
+
+                // Add or update MealSuggestions
+                foreach (var mealSuggestionDto in recipeDto.MealSuggestions)
+                {
+                    var existingMealSuggestion = recipe.MealSuggestions.FirstOrDefault(ms => ms.MealSuggestionId == mealSuggestionDto.MealSuggestionId);
+                    if (existingMealSuggestion != null)
+                    {
+                        _mapper.Map(mealSuggestionDto, existingMealSuggestion);
+                    }
+                    else
+                    {
+                        var mealSuggestion = _mapper.Map<RecipeMealSuggestion>(mealSuggestionDto);
+                        recipe.MealSuggestions.Add(mealSuggestion);
+                    }
+                }
+
+                // Map updated values to recipe
                 _mapper.Map(recipeDto, recipe);
+
                 await _recipeRepository.UpdateRecipeAsync(recipe);
                 response.Item = _mapper.Map<RecipeDto>(recipe);
             }

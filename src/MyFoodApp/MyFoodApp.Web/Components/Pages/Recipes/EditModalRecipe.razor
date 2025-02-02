@@ -3,6 +3,7 @@
 @using MyFoodApp.Application.Interfaces.Foods
 @using MyFoodApp.Application.Interfaces.Meals
 @using MyFoodApp.Application.Validators
+@using MyFoodApp.Application.Common
 @using FluentValidation
 @using Blazored.FluentValidation
 @inject IRecipeUseCases RecipeUseCases
@@ -20,9 +21,11 @@
     private EditForm? EditForm;
     private RecipeDto? Recipe;
     private FluentValidationValidator? _fluentValidationValidator;
+    private List<Error> Errors { get; set; } = new();
 
     public async void Show(RecipeDto? recipeToEdit)
     {
+        Errors.Clear();
         Recipe = recipeToEdit ?? new RecipeDto()
         {
             Title = "",
@@ -43,19 +46,38 @@
 
     private async Task SaveRecipe()
     {
+        Errors.Clear();
         if (await _fluentValidationValidator!.ValidateAsync())
         {
-            if (Recipe!.RecipeId == 0)
+            Response<RecipeDto>? response = null;
+            try
             {
-                await RecipeUseCases.CreateRecipeAsync(Recipe);
+                if (Recipe!.RecipeId == 0)
+                {
+                    response = await RecipeUseCases.CreateRecipeAsync(Recipe);
+                }
+                else
+                {
+                    response = await RecipeUseCases.UpdateRecipeAsync(Recipe.RecipeId, Recipe);
+                }
+
+                if (response.ErrorList.Any())
+                {
+                    Errors = response.ErrorList;
+                    StateHasChanged();
+                }
+                else
+                {
+                    Recipe = null;
+                    await OnRecipeSaved.InvokeAsync();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                await RecipeUseCases.UpdateRecipeAsync(Recipe.RecipeId, Recipe);
+                // Handle unexpected errors
+                Errors = new List<Error> { new() { Code = "ERROR", Message = ex.Message } };
+                StateHasChanged();
             }
-            
-            Recipe = null;
-            await OnRecipeSaved.InvokeAsync();
         }
     }
 
@@ -76,6 +98,18 @@
                         <button type="button" class="btn-close" @onclick="Cancel"></button>
                     </div>
                     <div class="modal-body">
+                        @if (Errors.Any())
+                        {
+                            <div class="alert alert-danger mb-3">
+                                <h5 class="alert-heading">Error(s) occurred:</h5>
+                                <ul>
+                                    @foreach (var error in Errors)
+                                    {
+                                        <li>@error.Message</li>
+                                    }
+                                </ul>
+                            </div>
+                        }
                         <EditForm @ref="EditForm" Model="@Recipe">
                             <FluentValidationValidator @ref="_fluentValidationValidator" />
                             <DataAnnotationsValidator />

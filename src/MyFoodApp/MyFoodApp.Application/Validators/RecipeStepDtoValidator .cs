@@ -7,9 +7,6 @@ namespace MyFoodApp.Application.Validators
     {
         public RecipeStepDtoValidator()
         {
-            RuleFor(x => x.RecipeId)
-                .NotEmpty().WithMessage("RecipeId is required.");
-
             RuleFor(x => x.StepNumber)
                 .GreaterThan(0).WithMessage("StepNumber must be greater than zero.");
 
