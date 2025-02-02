@@ -1,0 +1,19 @@
+﻿@using MyFoodApp.Application.Common
+
+@if (Errors.Any())
+{
+    <div class="alert alert-danger mb-3">
+        <h5 class="alert-heading">Error(s) occurred:</h5>
+        <ul>
+            @foreach (var error in Errors)
+            {
+                <li>@error.Message</li>
+            }
+        </ul>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public List<Error> Errors { get; set; } = new();
+}

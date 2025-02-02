@@ -4,6 +4,7 @@
 @using MyFoodApp.Application.Interfaces.Meals
 @using MyFoodApp.Application.Validators
 @using MyFoodApp.Application.Common
+@using MyFoodApp.Web.Components.Shared
 @using FluentValidation
 @using Blazored.FluentValidation
 @inject IRecipeUseCases RecipeUseCases
@@ -98,18 +99,6 @@
                         <button type="button" class="btn-close" @onclick="Cancel"></button>
                     </div>
                     <div class="modal-body">
-                        @if (Errors.Any())
-                        {
-                            <div class="alert alert-danger mb-3">
-                                <h5 class="alert-heading">Error(s) occurred:</h5>
-                                <ul>
-                                    @foreach (var error in Errors)
-                                    {
-                                        <li>@error.Message</li>
-                                    }
-                                </ul>
-                            </div>
-                        }
                         <EditForm @ref="EditForm" Model="@Recipe">
                             <FluentValidationValidator @ref="_fluentValidationValidator" />
                             <DataAnnotationsValidator />
@@ -159,6 +148,8 @@
                             <!-- Meal Suggestions -->
                             <FormEditRecipeMealSuggestion MealSuggestions="@Recipe.MealSuggestions" MealSuggestionList="MealSuggestionList" />
                         </EditForm>
+
+                        <DisplayError Errors="Errors" />
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" @onclick="SaveRecipe">Save</button>
@@ -169,20 +160,3 @@
         </div>
     </div>
 }
-
-<style>
-    .modal-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1050;
-    }
-    
-    .modal-content {
-        max-height: 90vh;
-        overflow-y: auto;
-    }
-</style>

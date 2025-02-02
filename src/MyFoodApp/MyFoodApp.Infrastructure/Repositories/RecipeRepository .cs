@@ -25,13 +25,16 @@ namespace MyFoodApp.Infrastructure.Repositories
             return recipes;
         }
 
-        public async Task<Recipe?> GetRecipeByIdAsync(int recipeId)
+        public async Task<Recipe?> GetRecipeByIdAsync(int id, bool tracking = false)
         {
-            return await _context.Recipes
+            var query = _context.Recipes
                 .Include(r => r.Ingredients)
                 .Include(r => r.Steps)
-                .Include(r => r.MealSuggestions)
-                .FirstOrDefaultAsync(r => r.RecipeId == recipeId);
+                .Include(r => r.MealSuggestions);
+
+            return tracking
+                ? await query.FirstOrDefaultAsync(r => r.RecipeId == id)
+                : await query.AsNoTracking().FirstOrDefaultAsync(r => r.RecipeId == id);
         }
 
         public async Task<Recipe> AddRecipeAsync(Recipe recipe)

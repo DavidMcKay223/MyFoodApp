@@ -21,12 +21,15 @@ else
     <TableFormRecipe Recipes="Recipes" OnEdit="ShowEditModal" OnDelete="DeleteRecipe" />
 
     <SearchPagination TItem="RecipeDto" TotalItems="@totalItems" PageSize="@pageSize" CurrentPage="@currentPage" OnPageChanged="OnPageChanged" OnPageSizeChangedCallback="OnPageSizeChanged" />
+
+    <DisplayError Errors="Errors" />
 }
 
 <EditModalRecipe @ref="editModal" OnRecipeSaved="LoadRecipes" />
 
 @code {
     private List<RecipeDto>? Recipes;
+    private List<Error> Errors { get; set; } = new();
     private bool isLoading = true;
     private EditModalRecipe? editModal;
     private RecipeSearchDto searchDto = new();
@@ -36,40 +39,114 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        await LoadRecipes();
+        try
+        {
+            await LoadRecipes();
+        }
+        catch (Exception ex)
+        {
+            Errors.Add(new Error { Code = "InitError", Message = ex.Message });
+            isLoading = false;
+            StateHasChanged();
+        }
     }
 
     private async Task LoadRecipes()
     {
-        isLoading = true;
-        searchDto.PageNumber = currentPage;
-        searchDto.PageSize = pageSize;
+        try
+        {
+            isLoading = true;
+            Errors.Clear();
+            searchDto.PageNumber = currentPage;
+            searchDto.PageSize = pageSize;
 
-        var response = await RecipeUseCases.LookupRecipesAsync(searchDto);
-        Recipes = response.List;
-        totalItems = response.TotalItems;
-        isLoading = false;
-        StateHasChanged();
+            var response = await RecipeUseCases.LookupRecipesAsync(searchDto);
+
+            if (response.ErrorList.Any())
+            {
+                Errors.AddRange(response.ErrorList);
+            }
+            else
+            {
+                Recipes = response.List;
+                totalItems = response.TotalItems;
+            }
+        }
+        catch (Exception ex)
+        {
+            Errors.Add(new Error { Code = "LoadError", Message = ex.Message });
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
     }
 
     private void ShowAddModal()
     {
-        editModal!.Show(null);
+        try
+        {
+            Errors.Clear();
+            editModal!.Show(null);
+        }
+        catch (Exception ex)
+        {
+            Errors.Add(new Error { Code = "AddModalError", Message = ex.Message });
+            StateHasChanged();
+        }
     }
 
-    private async void ShowEditModal(int id)
+    private async Task ShowEditModal(int id)
     {
-        var response = await RecipeUseCases.GetRecipeByIdAsync(id);
-        if (response.Item != null)
+        try
         {
-            editModal!.Show(response.Item);
+            Errors.Clear();
+            var response = await RecipeUseCases.GetRecipeByIdAsync(id);
+
+            if (response.ErrorList.Any())
+            {
+                Errors.AddRange(response.ErrorList);
+            }
+            else if (response.Item != null)
+            {
+                editModal!.Show(response.Item);
+            }
+            else
+            {
+                Errors.Add(new Error { Code = "NotFound", Message = "Recipe not found" });
+            }
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            Errors.Add(new Error { Code = "EditModalError", Message = ex.Message });
+            StateHasChanged();
         }
     }
 
     private async Task DeleteRecipe(RecipeDto dto)
     {
-        await RecipeUseCases.DeleteRecipeAsync(dto.RecipeId);
-        await LoadRecipes();
+        try
+        {
+            Errors.Clear();
+            var response = await RecipeUseCases.DeleteRecipeAsync(dto.RecipeId);
+
+            if (response.ErrorList.Any())
+            {
+                Errors.AddRange(response.ErrorList);
+            }
+            else
+            {
+                await LoadRecipes();
+            }
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            Errors.Add(new Error { Code = "DeleteError", Message = ex.Message });
+            StateHasChanged();
+        }
     }
 
     private async Task OnPageChanged(int page)

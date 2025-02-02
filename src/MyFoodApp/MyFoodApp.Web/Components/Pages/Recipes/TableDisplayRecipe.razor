@@ -1,28 +1,98 @@
 ﻿@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Domain.Enums
 
 @if (Recipes?.Any() == false)
 {
-    <p class="text-muted">No recipes found.</p>
+    <div class="text-center py-5">
+        <i class="bi bi-journal-x fs-1 text-muted"></i>
+        <p class="text-muted mt-2">No recipes found</p>
+    </div>
 }
 else
 {
-    <div class="row">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         @foreach (var recipe in Recipes!)
         {
-            <div class="col-md-12 mb-3">
-                <div class="card h-100">
-                    <div class="card-header">
-                        <h5 class="card-title">@recipe.Title</h5>
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-shadow transition-all">
+                    <div class="card-body d-flex flex-column">
+                        <div class="mb-3">
+                            <h5 class="card-title fw-bold text-primary mb-3">@recipe.Title</h5>
+                            <p class="card-text text-muted line-clamp-3">@recipe.Description</p>
+                        </div>
+
+                        <!-- Metadata Grid -->
+                        <div class="row g-2 small mb-3">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center text-muted">
+                                    <i class="bi bi-list-ol me-2"></i>
+                                    <span>@recipe.Steps.Count steps</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center text-muted">
+                                    <i class="bi bi-basket me-2"></i>
+                                    <span>@recipe.Ingredients.Count ingredients</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center text-muted">
+                                    <i class="bi bi-fire me-2"></i>
+                                    <span>@(CalculateCalories(recipe)) cal/serving</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center text-muted">
+                                    <i class="bi bi-clock me-2"></i>
+                                    <span>@(recipe.PrepTimeMinutes + recipe.CookTimeMinutes)m total</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ingredients Preview -->
+                        <div class="mb-3">
+                            <h6 class="text-secondary small">Main Ingredients:</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                @foreach (var ingredient in recipe.Ingredients.Take(3))
+                                {
+                                    <span class="badge bg-light text-dark border">
+                                        @ingredient.FoodItem?.Name
+                                    </span>
+                                }
+                                @if (recipe.Ingredients.Count > 3)
+                                {
+                                    <span class="badge bg-light text-dark border">
+                                        +@(recipe.Ingredients.Count - 3) more
+                                    </span>
+                                }
+                            </div>
+                        </div>
+
+                        <!-- Meal Suggestions -->
+                        @if (recipe.MealSuggestions.Any())
+                        {
+                            <div class="mt-auto">
+                                <div class="d-flex flex-wrap gap-2">
+                                    @foreach (var suggestion in recipe.MealSuggestions)
+                                    {
+                                        <span class="badge bg-primary bg-opacity-10 text-primary">
+                                            @suggestion.MealSuggestion?.MealType
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+                        }
                     </div>
-                    <div class="card-body">
-                        <p class="card-text">@recipe.Description</p>
-                        <p class="card-text"><small class="text-muted">Prep Time: @recipe.PrepTimeMinutes mins</small></p>
-                        <p class="card-text"><small class="text-muted">Cook Time: @recipe.CookTimeMinutes mins</small></p>
-                        <p class="card-text"><small class="text-muted">Servings: @recipe.Servings</small></p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-primary btn-sm"
+
+                    <!-- Footer with Actions -->
+                    <div class="card-footer bg-transparent border-top-0">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-muted small">
+                                @recipe.Servings <i class="bi bi-people ms-1"></i>
+                            </span>
+                            <button class="btn btn-outline-primary btn-sm"
                                     @onclick="() => OnEdit.InvokeAsync(recipe.RecipeId)">
-                                Edit
+                                <i class="bi bi-pencil me-2"></i>Edit
                             </button>
                         </div>
                     </div>
@@ -38,4 +108,20 @@ else
 
     [Parameter]
     public EventCallback<int> OnEdit { get; set; }
+
+    private string CalculateCalories(RecipeDto recipe)
+    {
+        try
+        {
+            var totalCalories = recipe.Ingredients
+                .Sum(i => i.Quantity * (i.FoodItem?.CaloriesPerUnit ?? 0));
+
+            var perServing = totalCalories / recipe.Servings;
+            return perServing > 0 ? perServing.ToString("N0") : "N/A";
+        }
+        catch
+        {
+            return "N/A";
+        }
+    }
 }
