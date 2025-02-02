@@ -19,7 +19,11 @@ namespace MyFoodApp.Application.Mappings
                 .ForMember(dest => dest.MealSuggestions, opt => opt.MapFrom(src => src.MealSuggestions))
                 .ReverseMap();
 
-            CreateMap<RecipeMealSuggestion, RecipeMealSuggestionDto>().ReverseMap();
+            CreateMap<RecipeMealSuggestion, RecipeMealSuggestionDto>()
+                .ForMember(dest => dest.Recipe, opt => opt.MapFrom(src => src.Recipe))
+                .ForMember(dest => dest.MealSuggestion, opt => opt.MapFrom(src => src.MealSuggestion))
+                .ReverseMap();
+
             CreateMap<RecipeStep, RecipeStepDto>().ReverseMap();
         }
     }

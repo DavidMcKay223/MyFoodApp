@@ -6,7 +6,7 @@
 
     private void AddStep()
     {
-        Steps.Add(new RecipeStepDto() { Instruction = "" });
+        Steps.Add(new RecipeStepDto() { Instruction = "", StepNumber = Steps.Count + 1 });
     }
 
     private void RemoveStep(int index)

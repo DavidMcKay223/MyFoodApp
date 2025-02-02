@@ -19,7 +19,7 @@ namespace MyFoodApp.Infrastructure.Repositories
             _context = context;
         }
 
-        public IQueryable<FoodItem> GetAllAsync()
+        public IQueryable<FoodItem> GetAllFoodItemsAsync()
         {
             var recipes = _context.FoodItems
                 .AsNoTracking()
@@ -28,7 +28,7 @@ namespace MyFoodApp.Infrastructure.Repositories
             return recipes;
         }
 
-        public async Task<FoodItem?> GetByIdAsync(int foodItemId)
+        public async Task<FoodItem?> GetFoodItemByIdAsync(int foodItemId)
         {
             return await _context.FoodItems
                 .FirstOrDefaultAsync(r => r.FoodItemId == foodItemId);

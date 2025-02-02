@@ -9,7 +9,7 @@ namespace MyFoodApp.Domain.Interfaces.Repositories
 {
     public interface IFoodItemRepository
     {
-        IQueryable<FoodItem> GetAllAsync();
-        Task<FoodItem?> GetByIdAsync(int foodItemId);
+        IQueryable<FoodItem> GetAllFoodItemsAsync();
+        Task<FoodItem?> GetFoodItemByIdAsync(int foodItemId);
     }
 }

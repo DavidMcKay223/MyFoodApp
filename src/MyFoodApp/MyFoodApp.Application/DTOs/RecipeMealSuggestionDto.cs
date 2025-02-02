@@ -10,5 +10,8 @@ namespace MyFoodApp.Application.DTOs
     {
         public int RecipeId { get; set; }
         public int MealSuggestionId { get; set; }
+
+        public RecipeDto? Recipe { get; set; }
+        public MealSuggestionDto? MealSuggestion { get; set; }
     }
 }

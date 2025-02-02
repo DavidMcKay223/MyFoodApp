@@ -7,11 +7,11 @@ namespace MyFoodApp.Domain.Interfaces.Repositories
 {
     public interface IRecipeRepository
     {
-        IQueryable<Recipe> GetAllAsync();
-        Task<Recipe?> GetByIdAsync(int recipeId);
-        Task<Recipe> AddAsync(Recipe recipe);
-        Task<Recipe> UpdateAsync(Recipe recipe);
-        Task DeleteAsync(Recipe recipe);
+        IQueryable<Recipe> GetAllRecipesAsync();
+        Task<Recipe?> GetRecipeByIdAsync(int recipeId);
+        Task<Recipe> AddRecipeAsync(Recipe recipe);
+        Task<Recipe> UpdateRecipeAsync(Recipe recipe);
+        Task DeleteRecipeAsync(Recipe recipe);
         IQueryable<Recipe> GetRecipesByIngredientsAsync(IEnumerable<int> ingredientIds);
     }
 }

@@ -34,7 +34,7 @@ namespace MyFoodApp.Application.UseCases.Foods
 
             try
             {
-                var foodItem = await _repository.GetByIdAsync(foodItemId);
+                var foodItem = await _repository.GetFoodItemByIdAsync(foodItemId);
                 if (foodItem == null)
                 {
                     response.ErrorList.Add(new Error { Code = "NotFound", Message = "Food Item not found." });
@@ -58,7 +58,7 @@ namespace MyFoodApp.Application.UseCases.Foods
 
             try
             {
-                var query = await _repository.GetAllAsync().ToListAsync();
+                var query = await _repository.GetAllFoodItemsAsync().ToListAsync();
 
                 response.List = _mapper.Map<List<FoodItemDto>>(query);
                 response.TotalItems = response.List.Count;

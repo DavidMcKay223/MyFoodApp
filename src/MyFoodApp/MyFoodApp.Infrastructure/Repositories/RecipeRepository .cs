@@ -17,7 +17,7 @@ namespace MyFoodApp.Infrastructure.Repositories
             _context = context;
         }
 
-        public IQueryable<Recipe> GetAllAsync()
+        public IQueryable<Recipe> GetAllRecipesAsync()
         {
             var recipes = _context.Recipes
                 .Include(r => r.Ingredients)
@@ -28,7 +28,7 @@ namespace MyFoodApp.Infrastructure.Repositories
             return recipes;
         }
 
-        public async Task<Recipe?> GetByIdAsync(int recipeId)
+        public async Task<Recipe?> GetRecipeByIdAsync(int recipeId)
         {
             return await _context.Recipes
                 .Include(r => r.Ingredients)
@@ -37,21 +37,21 @@ namespace MyFoodApp.Infrastructure.Repositories
                 .FirstOrDefaultAsync(r => r.RecipeId == recipeId);
         }
 
-        public async Task<Recipe> AddAsync(Recipe recipe)
+        public async Task<Recipe> AddRecipeAsync(Recipe recipe)
         {
             _context.Recipes.Add(recipe);
             await _context.SaveChangesAsync();
             return recipe;
         }
 
-        public async Task<Recipe> UpdateAsync(Recipe recipe)
+        public async Task<Recipe> UpdateRecipeAsync(Recipe recipe)
         {
             _context.Recipes.Update(recipe);
             await _context.SaveChangesAsync();
             return recipe;
         }
 
-        public async Task DeleteAsync(Recipe recipe)
+        public async Task DeleteRecipeAsync(Recipe recipe)
         {
             _context.Recipes.Remove(recipe);
             await _context.SaveChangesAsync();

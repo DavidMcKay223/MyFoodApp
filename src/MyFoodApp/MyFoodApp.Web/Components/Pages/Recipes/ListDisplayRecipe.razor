@@ -1,5 +1,99 @@
-﻿<h3>DisplayFormRecipe</h3>
+﻿@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Application.Interfaces.Recipes
+@using MyFoodApp.Application.Common
+@using MyFoodApp.Web.Components.Shared
+@inject IRecipeUseCases RecipeUseCases
+
+<div class="container">
+    <h1 class="my-4 text-center">Recipes</h1>
+</div>
+
+@if (isLoading)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <SearchFormRecipe SearchDto="searchDto" />
+
+    <SearchButton OnSearch="Search" OnReset="ResetSearch" OnAdd="ShowAddModal" />
+
+    <TableDisplayRecipe Recipes="Recipes" OnEdit="ShowEditModal" />
+
+    <SearchPagination TItem="RecipeDto" TotalItems="@totalItems" PageSize="@pageSize" CurrentPage="@currentPage" OnPageChanged="OnPageChanged" OnPageSizeChangedCallback="OnPageSizeChanged" />
+}
+
+<EditModalRecipe @ref="editModal" OnRecipeSaved="LoadRecipes" />
 
 @code {
+    private List<RecipeDto>? Recipes;
+    private bool isLoading = true;
+    private EditModalRecipe? editModal;
+    private RecipeSearchDto searchDto = new();
+    private int totalItems;
+    private int pageSize = 10;
+    private int currentPage = 0;
 
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRecipes();
+    }
+
+    private async Task LoadRecipes()
+    {
+        isLoading = true;
+        searchDto.PageNumber = currentPage;
+        searchDto.PageSize = pageSize;
+
+        var response = await RecipeUseCases.LookupRecipesAsync(searchDto);
+        Recipes = response.List;
+        totalItems = response.TotalItems;
+        isLoading = false;
+        StateHasChanged();
+    }
+
+    private void ShowAddModal()
+    {
+        editModal!.Show(null);
+    }
+
+    private async void ShowEditModal(int id)
+    {
+        var response = await RecipeUseCases.GetRecipeByIdAsync(id);
+        if (response.Item != null)
+        {
+            editModal!.Show(response.Item);
+        }
+    }
+
+    private async Task DeleteRecipe(RecipeDto dto)
+    {
+        await RecipeUseCases.DeleteRecipeAsync(dto.RecipeId);
+        await LoadRecipes();
+    }
+
+    private async Task OnPageChanged(int page)
+    {
+        currentPage = page;
+        await LoadRecipes();
+    }
+
+    private async Task OnPageSizeChanged(int size)
+    {
+        pageSize = size;
+        currentPage = 0;
+        await LoadRecipes();
+    }
+
+    private async Task Search()
+    {
+        currentPage = 0;
+        await LoadRecipes();
+    }
+
+    private async Task ResetSearch()
+    {
+        searchDto = new RecipeSearchDto();
+        await LoadRecipes();
+    }
 }

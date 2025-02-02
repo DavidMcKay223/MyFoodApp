@@ -32,7 +32,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
             try
             {
                 var recipe = _mapper.Map<Recipe>(recipeDto);
-                await _recipeRepository.AddAsync(recipe);
+                await _recipeRepository.AddRecipeAsync(recipe);
                 response.Item = _mapper.Map<RecipeDto>(recipe);
             }
             catch (Exception ex)
@@ -50,14 +50,14 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                var recipe = await _recipeRepository.GetByIdAsync(recipeId);
+                var recipe = await _recipeRepository.GetRecipeByIdAsync(recipeId);
                 if (recipe == null)
                 {
                     response.ErrorList.Add(new Error { Code = "NotFound", Message = "Recipe not found." });
                     return response;
                 }
 
-                await _recipeRepository.DeleteAsync(recipe);
+                await _recipeRepository.DeleteRecipeAsync(recipe);
             }
             catch (Exception ex)
             {
@@ -74,7 +74,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                var recipe = await _recipeRepository.GetByIdAsync(recipeId);
+                var recipe = await _recipeRepository.GetRecipeByIdAsync(recipeId);
                 if (recipe == null)
                 {
                     response.ErrorList.Add(new Error { Code = "NotFound", Message = "Recipe not found." });
@@ -98,7 +98,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                var query = _recipeRepository.GetAllAsync();
+                var query = _recipeRepository.GetAllRecipesAsync();
 
                 // Apply filters based on searchDto properties
                 if (!string.IsNullOrEmpty(searchDto.Title))
@@ -172,7 +172,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                var recipe = await _recipeRepository.GetByIdAsync(recipeId);
+                var recipe = await _recipeRepository.GetRecipeByIdAsync(recipeId);
                 if (recipe == null)
                 {
                     response.ErrorList.Add(new Error { Code = "NotFound", Message = "Recipe not found." });
@@ -180,7 +180,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
                 }
 
                 _mapper.Map(recipeDto, recipe);
-                await _recipeRepository.UpdateAsync(recipe);
+                await _recipeRepository.UpdateRecipeAsync(recipe);
                 response.Item = _mapper.Map<RecipeDto>(recipe);
             }
             catch (Exception ex)

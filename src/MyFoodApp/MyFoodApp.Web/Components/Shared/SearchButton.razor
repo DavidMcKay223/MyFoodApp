@@ -1,8 +1,17 @@
 ﻿
 <div class="mb-3">
-    <button class="btn btn-primary" @onclick="OnAdd">New Item</button>
-    <button class="btn btn-secondary" @onclick="OnSearch">Search</button>
-    <button class="btn btn-danger" @onclick="OnReset">Reset</button>
+    @if(OnAdd.HasDelegate)
+    {
+        <button class="btn btn-primary me-2" @onclick="OnAdd">New Item</button>
+    }
+    @if (OnSearch.HasDelegate)
+    {
+        <button class="btn btn-secondary me-2" @onclick="OnSearch">Search</button>
+    }
+    @if (OnReset.HasDelegate)
+    {
+        <button class="btn btn-danger me-2" @onclick="OnReset">Reset</button>
+    }
 </div>
 
 @code {
