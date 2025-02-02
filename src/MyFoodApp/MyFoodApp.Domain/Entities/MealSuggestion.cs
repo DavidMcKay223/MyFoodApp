@@ -26,7 +26,7 @@ namespace MyFoodApp.Domain.Entities
         public DateTime? ExpirationDate { get; set; }
 
         // Navigation
-        public ICollection<RecipeMealSuggestion> RecipeSuggestions { get; set; }
-        public ICollection<MealSuggestionTag> Tags { get; set; }
+        public ICollection<RecipeMealSuggestion> RecipeSuggestions { get; set; } = [];
+        public ICollection<MealSuggestionTag> Tags { get; set; } = [];
     }
 }

@@ -28,9 +28,9 @@ namespace MyFoodApp.Domain.Entities
         public decimal? ProteinPerUnit { get; set; }
 
         // Navigation
-        public FoodCategory FoodCategory { get; set; }
-        public ICollection<PriceHistory> PriceHistories { get; set; }
-        public ICollection<FoodItemStoreSection> StoreSections { get; set; }
-        public ICollection<Ingredient> Ingredients { get; set; }
+        public FoodCategory? FoodCategory { get; set; }
+        public ICollection<PriceHistory> PriceHistories { get; set; } = [];
+        public ICollection<FoodItemStoreSection> StoreSections { get; set; } = [];
+        public ICollection<Ingredient> Ingredients { get; set; } = [];
     }
 }

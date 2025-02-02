@@ -22,6 +22,6 @@ namespace MyFoodApp.Domain.Entities
         public required string Instruction { get; set; }
 
         // Navigation
-        public Recipe Recipe { get; set; }
+        public Recipe? Recipe { get; set; }
     }
 }

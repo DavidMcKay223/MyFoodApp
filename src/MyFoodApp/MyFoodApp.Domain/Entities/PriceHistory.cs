@@ -26,6 +26,6 @@ namespace MyFoodApp.Domain.Entities
         public DateTime? EndDate { get; set; }
 
         // Navigation
-        public FoodItem FoodItem { get; set; }
+        public FoodItem? FoodItem { get; set; }
     }
 }

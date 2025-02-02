@@ -24,8 +24,8 @@ namespace MyFoodApp.Domain.Entities
         public int Servings { get; set; }
 
         // Navigation
-        public ICollection<Ingredient> Ingredients { get; set; }
-        public ICollection<RecipeStep> Steps { get; set; }
-        public ICollection<RecipeMealSuggestion> MealSuggestions { get; set; }
+        public ICollection<Ingredient> Ingredients { get; set; } = [];
+        public ICollection<RecipeStep> Steps { get; set; } = [];
+        public ICollection<RecipeMealSuggestion> MealSuggestions { get; set; } = [];
     }
 }

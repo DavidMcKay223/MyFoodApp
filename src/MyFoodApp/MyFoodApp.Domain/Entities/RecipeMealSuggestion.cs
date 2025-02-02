@@ -16,7 +16,7 @@ namespace MyFoodApp.Domain.Entities
         public int MealSuggestionId { get; set; }
 
         // Navigation
-        public Recipe Recipe { get; set; }
-        public MealSuggestion MealSuggestion { get; set; }
+        public Recipe? Recipe { get; set; }
+        public MealSuggestion? MealSuggestion { get; set; }
     }
 }

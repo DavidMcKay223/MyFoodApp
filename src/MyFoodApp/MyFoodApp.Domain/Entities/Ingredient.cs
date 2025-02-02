@@ -25,7 +25,7 @@ namespace MyFoodApp.Domain.Entities
         public UnitType Unit { get; set; }
 
         // Navigation
-        public Recipe Recipe { get; set; }
-        public FoodItem FoodItem { get; set; }
+        public Recipe? Recipe { get; set; }
+        public FoodItem? FoodItem { get; set; }
     }
 }

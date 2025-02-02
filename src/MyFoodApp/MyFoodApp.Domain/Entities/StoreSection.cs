@@ -20,6 +20,6 @@ namespace MyFoodApp.Domain.Entities
         public required string Description { get; set; }
 
         // Navigation
-        public ICollection<FoodItemStoreSection> FoodItems { get; set; }
+        public ICollection<FoodItemStoreSection> FoodItems { get; set; } = [];
     }
 }

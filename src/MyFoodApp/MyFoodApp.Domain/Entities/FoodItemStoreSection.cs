@@ -19,7 +19,7 @@ namespace MyFoodApp.Domain.Entities
         public int? ShelfNumber { get; set; }
 
         // Navigation
-        public FoodItem FoodItem { get; set; }
-        public StoreSection StoreSection { get; set; }
+        public FoodItem? FoodItem { get; set; }
+        public StoreSection? StoreSection { get; set; }
     }
 }
