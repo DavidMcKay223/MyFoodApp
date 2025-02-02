@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyFoodApp.Application.Common
+﻿namespace MyFoodApp.Application.Common
 {
     public abstract class SearchDto<TSortBy, TSortOrder>
         where TSortBy : Enum

@@ -1,7 +1,4 @@
 ﻿using MyFoodApp.Domain.Entities;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 
 namespace MyFoodApp.Domain.Interfaces.Repositories
 {

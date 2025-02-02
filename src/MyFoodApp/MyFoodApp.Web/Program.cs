@@ -1,7 +1,5 @@
 using Blazored.FluentValidation;
 using FluentValidation;
-using FluentValidation.Validators;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Application.Configurations;
 using MyFoodApp.Application.DTOs;
