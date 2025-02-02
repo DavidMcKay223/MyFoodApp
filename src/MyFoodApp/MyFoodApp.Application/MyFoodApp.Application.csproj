@@ -7,9 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="UseCases\" />
+    <Folder Include="Interfaces\Foods\" />
+    <Folder Include="Interfaces\Ingredients\" />
+    <Folder Include="Interfaces\Meals\" />
+    <Folder Include="Interfaces\Stores\" />
+    <Folder Include="Interfaces\Recipes\" />
+    <Folder Include="Interfaces\Prices\" />
     <Folder Include="Services\" />
+    <Folder Include="UseCases\Foods\" />
+    <Folder Include="UseCases\Ingredients\" />
+    <Folder Include="UseCases\Meals\" />
+    <Folder Include="UseCases\Prices\" />
+    <Folder Include="UseCases\Recipes\" />
+    <Folder Include="UseCases\Stores\" />
     <Folder Include="Validators\" />
   </ItemGroup>
 
