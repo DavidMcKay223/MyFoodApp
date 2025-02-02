@@ -19,5 +19,4 @@ namespace MyFoodApp.Application.DTOs
         public int? ServingsMin { get; set; }
         public int? ServingsMax { get; set; }
     }
-
 }

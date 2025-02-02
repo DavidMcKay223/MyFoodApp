@@ -15,6 +15,7 @@ namespace MyFoodApp.Application.DTOs
         public int CookTimeMinutes { get; set; }
         public int Servings { get; set; }
 
+        // Navigation Properties
         public List<RecipeStepDto> Steps { get; set; } = [];
         public List<IngredientDto> Ingredients { get; set; } = [];
         public List<RecipeMealSuggestionDto> MealSuggestions { get; set; } = [];

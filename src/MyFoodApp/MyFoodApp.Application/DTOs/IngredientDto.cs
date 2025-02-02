@@ -14,5 +14,9 @@ namespace MyFoodApp.Application.DTOs
         public int FoodItemId { get; set; }
         public decimal Quantity { get; set; }
         public UnitType Unit { get; set; }
+
+        // Navigation Properties
+        public RecipeDto? Recipe { get; set; }
+        public FoodItemDto? FoodItem { get; set; }
     }
 }

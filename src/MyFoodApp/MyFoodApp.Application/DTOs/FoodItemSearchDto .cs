@@ -18,5 +18,4 @@ namespace MyFoodApp.Application.DTOs
         public decimal? MinProteinPerUnit { get; set; }
         public decimal? MaxProteinPerUnit { get; set; }
     }
-
 }

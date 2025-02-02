@@ -15,5 +15,9 @@ namespace MyFoodApp.Application.DTOs
         public required string Description { get; set; }
         public DateTime EffectiveDate { get; set; }
         public DateTime? ExpirationDate { get; set; }
+
+        // Navigation Properties
+        public List<RecipeMealSuggestionDto>? RecipeSuggestions { get; set; }
+        public List<MealSuggestionTagDto>? Tags { get; set; }
     }
 }

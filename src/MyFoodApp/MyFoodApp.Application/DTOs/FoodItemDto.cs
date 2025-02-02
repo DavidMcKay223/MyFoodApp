@@ -14,5 +14,11 @@ namespace MyFoodApp.Application.DTOs
         public int FoodCategoryId { get; set; }
         public decimal? CaloriesPerUnit { get; set; }
         public decimal? ProteinPerUnit { get; set; }
+
+        // Navigation Properties
+        public FoodCategoryDto? FoodCategory { get; set; }
+        public List<PriceHistoryDto> PriceHistories { get; set; } = [];
+        public List<FoodItemStoreSectionDto> StoreSections { get; set; } = [];
+        public List<IngredientDto> Ingredients { get; set; } = [];
     }
 }
