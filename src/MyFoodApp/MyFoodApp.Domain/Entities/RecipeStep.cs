@@ -19,7 +19,7 @@ namespace MyFoodApp.Domain.Entities
         public int StepNumber { get; set; }
 
         [MaxLength(1000)]
-        public string Instruction { get; set; }
+        public required string Instruction { get; set; }
 
         // Navigation
         public Recipe Recipe { get; set; }

@@ -14,10 +14,10 @@ namespace MyFoodApp.Domain.Entities
 
         [Required]
         [MaxLength(200)]
-        public string Title { get; set; }
+        public required string Title { get; set; }
 
         [MaxLength(2000)]
-        public string Description { get; set; }
+        public required string Description { get; set; }
 
         public int PrepTimeMinutes { get; set; }
         public int CookTimeMinutes { get; set; }

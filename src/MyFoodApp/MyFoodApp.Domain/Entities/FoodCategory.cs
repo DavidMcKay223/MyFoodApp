@@ -14,10 +14,10 @@ namespace MyFoodApp.Domain.Entities
 
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
         [MaxLength(500)]
-        public string Description { get; set; }
+        public required string Description { get; set; }
 
         // Navigation
         public ICollection<FoodItem> FoodItems { get; set; }

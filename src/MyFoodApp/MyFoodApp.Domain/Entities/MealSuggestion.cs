@@ -15,12 +15,12 @@ namespace MyFoodApp.Domain.Entities
 
         [Required]
         [MaxLength(200)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
         public MealType MealType { get; set; }
 
         [MaxLength(1000)]
-        public string Description { get; set; }
+        public required string Description { get; set; }
 
         public DateTime EffectiveDate { get; set; }
         public DateTime? ExpirationDate { get; set; }

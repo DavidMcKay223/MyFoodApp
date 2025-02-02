@@ -14,7 +14,7 @@ namespace MyFoodApp.Domain.Entities
 
         [Required]
         [MaxLength(50)]
-        public string TagName { get; set; }
+        public required string TagName { get; set; }
 
         // Navigation
         public ICollection<MealSuggestion> MealSuggestions { get; set; }
