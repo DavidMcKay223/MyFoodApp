@@ -1,20 +1,27 @@
 ﻿@using MyFoodApp.Application.DTOs
 @using MyFoodApp.Application.Interfaces.Recipes
+@using MyFoodApp.Application.Interfaces.Foods
+@using MyFoodApp.Application.Interfaces.Meals
 @using MyFoodApp.Application.Validators
 @using FluentValidation
 @using Blazored.FluentValidation
 @inject IRecipeUseCases RecipeUseCases
+@inject IFoodItemUseCases FoodItemUseCases
+@inject IMealSuggestionUseCases MealSuggestionUseCases
 @inject IValidator<RecipeDto> RecipeValidator
 
 @code {
     [Parameter]
     public EventCallback OnRecipeSaved { get; set; }
-    
+
+    private List<FoodItemDto> FoodItemList { get; set; } = [];
+    private List<MealSuggestionDto> MealSuggestionList { get; set; } = [];
+
     private EditForm? EditForm;
     private RecipeDto? Recipe;
     private FluentValidationValidator? _fluentValidationValidator;
 
-    public void Show(RecipeDto? recipeToEdit)
+    public async void Show(RecipeDto? recipeToEdit)
     {
         Recipe = recipeToEdit ?? new RecipeDto()
         {
@@ -24,6 +31,13 @@
             Ingredients = new List<IngredientDto>(),
             MealSuggestions = new List<RecipeMealSuggestionDto>()
         };
+
+        var response1 = await FoodItemUseCases.GetFoodItemListAsync();
+        FoodItemList = response1.List;
+
+        var response2 = await MealSuggestionUseCases.GetMealSuggestionListAsync();
+        MealSuggestionList = response2.List;
+
         StateHasChanged();
     }
 
@@ -106,10 +120,10 @@
                             <FormEditRecipeStep Steps="@Recipe.Steps" />
 
                             <!-- Ingredients -->
-                            <FormEditIngredient Ingredients="@Recipe.Ingredients" />
+                            <FormEditIngredient Ingredients="@Recipe.Ingredients" FoodItemList="FoodItemList" />
 
                             <!-- Meal Suggestions -->
-                            <FormEditRecipeMealSuggestion MealSuggestions="@Recipe.MealSuggestions" />
+                            <FormEditRecipeMealSuggestion MealSuggestions="@Recipe.MealSuggestions" MealSuggestionList="MealSuggestionList" />
                         </EditForm>
                     </div>
                     <div class="modal-footer">

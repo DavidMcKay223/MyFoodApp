@@ -4,6 +4,9 @@
     [Parameter]
     public required List<RecipeMealSuggestionDto> MealSuggestions { get; set; }
 
+    [Parameter]
+    public required List<MealSuggestionDto> MealSuggestionList { get; set; }
+
     private void AddMealSuggestion()
     {
         MealSuggestions.Add(new RecipeMealSuggestionDto());
@@ -26,9 +29,7 @@
                 <div class="row g-3 mb-3 align-items-end">
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <InputNumber @bind-Value="MealSuggestions[index].MealSuggestionId" class="form-control" />
-                            <label>Meal Suggestion ID</label>
-                            <ValidationMessage For="@(() => MealSuggestions[index].MealSuggestionId)" />
+                            <FormEditSelectMealSuggestion RecipeMealSuggestion="MealSuggestions[i]" MealSuggestionList="MealSuggestionList" />
                         </div>
                     </div>
                     <div class="col-md-4">

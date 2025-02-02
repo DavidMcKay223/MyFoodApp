@@ -1,19 +1,12 @@
 ﻿@using MyFoodApp.Application.DTOs
 @using MyFoodApp.Domain.Enums
-@using MyFoodApp.Application.Interfaces.Foods
-@inject IFoodItemUseCases FoodItemUseCases
 
 @code {
     [Parameter]
     public required List<IngredientDto> Ingredients { get; set; }
 
-    private List<FoodItemDto> FoodItemList { get; set; } = [];
-
-    protected override async Task OnInitializedAsync()
-    {
-        var response = await FoodItemUseCases.GetFoodItemListAsync();
-        FoodItemList = response.List;
-    }
+    [Parameter]
+    public required List<FoodItemDto> FoodItemList { get; set; }
 
     private void AddIngredient()
     {

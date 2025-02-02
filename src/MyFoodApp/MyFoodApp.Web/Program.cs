@@ -6,8 +6,10 @@ using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Application.Configurations;
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Application.Interfaces.Foods;
+using MyFoodApp.Application.Interfaces.Meals;
 using MyFoodApp.Application.Interfaces.Recipes;
 using MyFoodApp.Application.UseCases.Foods;
+using MyFoodApp.Application.UseCases.Meals;
 using MyFoodApp.Application.UseCases.Recipes;
 using MyFoodApp.Application.Validators;
 using MyFoodApp.Domain.Interfaces.Repositories;
@@ -41,6 +43,9 @@ builder.Services.AddScoped<IRecipeUseCases, RecipeUseCases>();
 
 builder.Services.AddScoped<IFoodItemRepository, FoodItemRepository>();
 builder.Services.AddScoped<IFoodItemUseCases, FoodItemUseCases>();
+
+builder.Services.AddScoped<IMealSuggestionRepository, MealSuggestionRepository>();
+builder.Services.AddScoped<IMealSuggestionUseCases, MealSuggestionUseCases>();
 
 // Database:
 builder.Services.AddDbContext<AppDbContext>(options =>

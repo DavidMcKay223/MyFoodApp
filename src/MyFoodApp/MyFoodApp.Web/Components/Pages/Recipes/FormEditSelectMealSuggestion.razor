@@ -1,0 +1,25 @@
+﻿@using MyFoodApp.Application.Common
+@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Application.Interfaces.Foods
+
+@code {
+    [Parameter]
+    public required RecipeMealSuggestionDto RecipeMealSuggestion { get; set; }
+
+    [Parameter]
+    public required List<MealSuggestionDto> MealSuggestionList { get; set; }
+}
+
+<div class="form-floating">
+    <InputSelect @bind-Value="RecipeMealSuggestion.MealSuggestionId" class="form-select">
+        @foreach (var mealSuggestion in MealSuggestionList)
+        {
+            <option value="@mealSuggestion.MealSuggestionId">
+                @mealSuggestion.MealType:
+                @mealSuggestion.Name
+            </option>
+        }
+    </InputSelect>
+    <label>Food Item</label>
+    <ValidationMessage For="@(() => RecipeMealSuggestion.MealSuggestionId)" />
+</div>

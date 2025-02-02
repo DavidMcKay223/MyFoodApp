@@ -7,19 +7,7 @@
     public required IngredientDto Ingredient { get; set; }
 
     [Parameter]
-    public required List<FoodItemDto> FoodItemList { get; set; } = [];
-
-    private Response<FoodItemDto>? response { get; set; }
-}
-
-@if (response != null && response.ErrorList.Any())
-{
-    <ul>
-        @foreach (var error in response.ErrorList)
-        {
-            <li class="text-danger">@error.Code: @error.Message</li>
-        }
-    </ul>
+    public required List<FoodItemDto> FoodItemList { get; set; }
 }
 
 <div class="form-floating">
