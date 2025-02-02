@@ -6,9 +6,11 @@ namespace MyFoodApp.Application.Mappings
 {
     public class PriceProfile : Profile
     {
-        public PriceProfile() 
+        public PriceProfile()
         {
-            CreateMap<PriceHistory, PriceHistoryDto>().ReverseMap();
+            CreateMap<PriceHistory, PriceHistoryDto>()
+                .ForMember(dest => dest.FoodItem, opt => opt.MapFrom(src => src.FoodItem))
+                .ReverseMap();
         }
     }
 }
