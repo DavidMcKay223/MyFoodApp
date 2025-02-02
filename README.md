@@ -1,4 +1,17 @@
-# Food Application
+# MyFoodApp 🍔
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/DavidMcKay223/MyFoodApp/dotnet.yml)](https://github.com/DavidMcKay223/MyFoodApp/actions)
+
+## Features ✨
+- 🍔 **Food Management**: Track ingredients and recipes.
+- 🛒 **Grocery Integration**: Sync with store sections.
+- 🤖 **AI Recommendations**: Get meal suggestions.
+
+## Tech Stack 🛠️
+- **Frontend**: Blazor 🌀
+- **Backend**: .NET 9 🟣
+- **Database**: Entity Framework Core 🗃️
 
 ## Project Directory Structure
 
