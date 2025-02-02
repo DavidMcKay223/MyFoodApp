@@ -13,7 +13,12 @@ namespace MyFoodApp.Application.Mappings
     {
         public RecipeProfile()
         {
-            CreateMap<Recipe, RecipeDto>().ReverseMap();
+            CreateMap<Recipe, RecipeDto>()
+                .ForMember(dest => dest.Steps, opt => opt.MapFrom(src => src.Steps))
+                .ForMember(dest => dest.Ingredients, opt => opt.MapFrom(src => src.Ingredients))
+                .ForMember(dest => dest.MealSuggestions, opt => opt.MapFrom(src => src.MealSuggestions))
+                .ReverseMap();
+
             CreateMap<RecipeMealSuggestion, RecipeMealSuggestionDto>().ReverseMap();
             CreateMap<RecipeStep, RecipeStepDto>().ReverseMap();
         }

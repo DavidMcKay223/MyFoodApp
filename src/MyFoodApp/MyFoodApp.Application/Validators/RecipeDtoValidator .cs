@@ -28,6 +28,10 @@ namespace MyFoodApp.Application.Validators
 
             RuleFor(x => x.Servings)
                 .GreaterThan(0).WithMessage("Servings must be greater than zero.");
+
+            RuleForEach(x => x.Steps).SetValidator(new RecipeStepDtoValidator());
+            RuleForEach(x => x.Ingredients).SetValidator(new IngredientDtoValidator());
+            RuleForEach(x => x.MealSuggestions).SetValidator(new RecipeMealSuggestionDtoValidator());
         }
     }
 }
