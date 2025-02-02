@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyFoodApp.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,35 +10,17 @@ namespace MyFoodApp.Infrastructure.Persistence
 {
     public class AppDbContext : DbContext
     {
-    }
-}
-
-//TODO:
-/*
- using MyApp.Domain.Entities.Medical;
-using MyApp.Domain.Entities.Music;
-using MyApp.Domain.Entities.Management;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Reflection.Emit;
-
-namespace MyApp.Infrastructure.Persistence
-{
-    public class AppDbContext : DbContext
-    {
-        // Music Entities
-        public DbSet<Album> Albums { get; set; }
-        public DbSet<CD> CDs { get; set; }
-        public DbSet<Track> Tracks { get; set; }
-
-        // Management Entities
-        public DbSet<TaskItem> TaskItems { get; set; }
-
-        // Medical Entities
-        public DbSet<Claim> Claims { get; set; }
-        public DbSet<Address> Addresses { get; set; }
-        public DbSet<DiagnosisCode> DiagnosisCodes { get; set; }
-        public DbSet<ServiceLine> ServiceLines { get; set; }
+        public DbSet<FoodCategory> FoodCategories { get; set; }
+        public DbSet<FoodItem> FoodItems { get; set; }
+        public DbSet<FoodItemStoreSection> FoodItemStoreSections { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<MealSuggestion> MealSuggestions { get; set; }
+        public DbSet<MealSuggestionTag> MealSuggestionTags { get; set; }
+        public DbSet<PriceHistory> PriceHistories { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<RecipeMealSuggestion> RecipeMealSuggestions { get; set; }
+        public DbSet<RecipeStep> RecipeSteps { get; set; }
+        public DbSet<StoreSection> StoreSections { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -55,148 +38,64 @@ namespace MyApp.Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            ConfigureMusicEntities(modelBuilder);
-            ConfigureMedicalEntities(modelBuilder);
-        }
+            // Configure composite keys for join tables
+            modelBuilder.Entity<FoodItemStoreSection>()
+                .HasKey(fss => new { fss.FoodItemId, fss.StoreSectionId });
 
-        private void ConfigureMusicEntities(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Album>()
-                .HasMany(a => a.CDs)
-                .WithOne(c => c.Album)
-                .HasForeignKey(c => c.AlbumId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<RecipeMealSuggestion>()
+                .HasKey(rms => new { rms.RecipeId, rms.MealSuggestionId });
 
-            modelBuilder.Entity<CD>()
-                .HasMany(c => c.Tracks)
-                .WithOne(t => t.CD)
-                .HasForeignKey(t => t.CDId)
-                .OnDelete(DeleteBehavior.Restrict);
-        }
+            // Configure many-to-many relationships
+            modelBuilder.Entity<MealSuggestion>()
+                .HasMany(ms => ms.Tags)
+                .WithMany(mt => mt.MealSuggestions)
+                .UsingEntity<Dictionary<string, object>>(
+                    "MealSuggestionTagMapping",
+                    j => j.HasOne<MealSuggestionTag>().WithMany().HasForeignKey("TagId"),
+                    j => j.HasOne<MealSuggestion>().WithMany().HasForeignKey("MealSuggestionId")
+                );
 
-        private void ConfigureMedicalEntities(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Claim>(entity =>
-            {
-                ConfigureClaimEntity(entity);
-            });
-        }
+            // Configure one-to-many relationships
+            modelBuilder.Entity<FoodItem>()
+                .HasOne(fi => fi.FoodCategory)
+                .WithMany(fc => fc.FoodItems)
+                .HasForeignKey(fi => fi.FoodCategoryId);
 
-        private void ConfigureClaimEntity(EntityTypeBuilder<Claim> entity)
-        {
-            // Configure complex properties
-            ConfigureOwnedProperties(entity);
+            modelBuilder.Entity<PriceHistory>()
+                .HasOne(ph => ph.FoodItem)
+                .WithMany(fi => fi.PriceHistories)
+                .HasForeignKey(ph => ph.FoodItemId);
 
-            // Configure relationships
-            ConfigureClaimRelationships(entity);
-        }
+            modelBuilder.Entity<RecipeStep>()
+                .HasOne(rs => rs.Recipe)
+                .WithMany(r => r.Steps)
+                .HasForeignKey(rs => rs.RecipeId);
 
-        private void ConfigureOwnedProperties(EntityTypeBuilder<Claim> entity)
-        {
-            // OtherInsurance (owned entity)
-            entity.OwnsOne(c => c.OtherInsurance, oi =>
-            {
-                oi.Property(oi => oi.PolicyHolderName).HasMaxLength(50);
-                oi.Property(oi => oi.PolicyNumber).HasMaxLength(20);
-                oi.Property(oi => oi.PlanName).HasMaxLength(50);
-            });
+            modelBuilder.Entity<Ingredient>()
+                .HasOne(i => i.Recipe)
+                .WithMany(r => r.Ingredients)
+                .HasForeignKey(i => i.RecipeId);
 
-            // ConditionRelated (owned entity)
-            entity.OwnsOne(c => c.ConditionRelated, cr =>
-            {
-                cr.Property(cr => cr.Employment);
-                cr.Property(cr => cr.AutoAccident);
-                cr.Property(cr => cr.OtherAccident);
-                cr.Property(cr => cr.AccidentState).HasMaxLength(2);
-            });
+            // Configure navigation properties for join entities
+            modelBuilder.Entity<FoodItemStoreSection>()
+                .HasOne(fss => fss.FoodItem)
+                .WithMany(fi => fi.StoreSections)
+                .HasForeignKey(fss => fss.FoodItemId);
 
-            // Patient (owned entity)
-            entity.OwnsOne(c => c.Patient, p =>
-            {
-                p.Property(p => p.LastName).HasMaxLength(50).IsRequired();
-                p.Property(p => p.FirstName).HasMaxLength(50).IsRequired();
-                p.Property(p => p.BirthDate).IsRequired();
-                p.Property(p => p.Sex).IsRequired();
-                p.OwnsOne(p => p.Address, a =>
-                {
-                    a.ToTable("Medical_Claim_PatientAddress"); // Separate table for Patient Address
-                    a.Property(a => a.Street).HasMaxLength(100);
-                    a.Property(a => a.City).HasMaxLength(50);
-                    a.Property(a => a.State).HasMaxLength(2);
-                    a.Property(a => a.ZipCode).HasMaxLength(10);
-                    a.Property(a => a.Phone).HasMaxLength(20);
-                });
-            });
+            modelBuilder.Entity<FoodItemStoreSection>()
+                .HasOne(fss => fss.StoreSection)
+                .WithMany(ss => ss.FoodItems)
+                .HasForeignKey(fss => fss.StoreSectionId);
 
-            // Insured (owned entity)
-            entity.OwnsOne(c => c.Insured, i =>
-            {
-                i.Property(i => i.LastName).HasMaxLength(50).IsRequired();
-                i.Property(i => i.FirstName).HasMaxLength(50).IsRequired();
-                i.OwnsOne(i => i.Address, a =>
-                {
-                    a.ToTable("Medical_Claim_InsuredAddress"); // Separate table for Insured Address
-                    a.Property(a => a.Street).HasMaxLength(100);
-                    a.Property(a => a.City).HasMaxLength(50);
-                    a.Property(a => a.State).HasMaxLength(2);
-                    a.Property(a => a.ZipCode).HasMaxLength(10);
-                    a.Property(a => a.Phone).HasMaxLength(20);
-                });
-                i.Property(i => i.GroupNumber).HasMaxLength(20);
-            });
+            modelBuilder.Entity<RecipeMealSuggestion>()
+                .HasOne(rms => rms.Recipe)
+                .WithMany(r => r.MealSuggestions)
+                .HasForeignKey(rms => rms.RecipeId);
 
-            // BillingProvider (owned entity)
-            entity.OwnsOne(c => c.BillingProvider, bp =>
-            {
-                bp.Property(bp => bp.Name).HasMaxLength(100).IsRequired();
-                bp.Property(bp => bp.FederalTaxId).HasMaxLength(20).IsRequired();
-                bp.OwnsOne(bp => bp.Address, a =>
-                {
-                    a.ToTable("Medical_Claim_BillingProviderAddress"); // Separate table for BillingProvider Address
-                    a.Property(a => a.Street).HasMaxLength(100);
-                    a.Property(a => a.City).HasMaxLength(50);
-                    a.Property(a => a.State).HasMaxLength(2);
-                    a.Property(a => a.ZipCode).HasMaxLength(10);
-                    a.Property(a => a.Phone).HasMaxLength(20);
-                });
-                bp.Property(bp => bp.NpiNumber).HasMaxLength(20);
-                bp.Property(bp => bp.Phone).HasMaxLength(20);
-            });
-
-            // ServiceFacility (owned entity)
-            entity.OwnsOne(c => c.ServiceFacility, sf =>
-            {
-                sf.Property(sf => sf.Name).HasMaxLength(100).IsRequired();
-                sf.Property(sf => sf.FederalTaxId).HasMaxLength(20).IsRequired();
-                sf.OwnsOne(sf => sf.Address, a =>
-                {
-                    a.ToTable("Medical_Claim_ServiceFacilityAddress"); // Separate table for ServiceFacility Address
-                    a.Property(a => a.Street).HasMaxLength(100);
-                    a.Property(a => a.City).HasMaxLength(50);
-                    a.Property(a => a.State).HasMaxLength(2);
-                    a.Property(a => a.ZipCode).HasMaxLength(10);
-                    a.Property(a => a.Phone).HasMaxLength(20);
-                });
-                sf.Property(sf => sf.NpiNumber).HasMaxLength(20);
-                sf.Property(sf => sf.Phone).HasMaxLength(20);
-            });
-        }
-
-        private void ConfigureClaimRelationships(EntityTypeBuilder<Claim> entity)
-        {
-            // Diagnosis Codes relationship
-            entity.HasMany(c => c.DiagnosisCodes)
-                  .WithOne(dc => dc.Claim)
-                  .HasForeignKey(dc => dc.ClaimId)
-                  .OnDelete(DeleteBehavior.Cascade); // Allow cascading delete of DiagnosisCodes
-
-            // Service Lines relationship
-            entity.HasMany(c => c.ServiceLines)
-                  .WithOne(sl => sl.Claim)
-                  .HasForeignKey(sl => sl.ClaimId)
-                  .OnDelete(DeleteBehavior.Cascade); // Allow cascading delete of ServiceLines
+            modelBuilder.Entity<RecipeMealSuggestion>()
+                .HasOne(rms => rms.MealSuggestion)
+                .WithMany(ms => ms.RecipeSuggestions)
+                .HasForeignKey(rms => rms.MealSuggestionId);
         }
     }
 }
-
- */
