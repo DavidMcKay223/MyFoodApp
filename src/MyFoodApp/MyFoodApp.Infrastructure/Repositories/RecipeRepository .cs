@@ -19,13 +19,13 @@ namespace MyFoodApp.Infrastructure.Repositories
 
         public async Task<IQueryable<Recipe>> GetAllAsync()
         {
-            var recipes = await _context.Recipes
+            var recipes = _context.Recipes
                 .Include(r => r.Ingredients)
                 .Include(r => r.Steps)
                 .Include(r => r.MealSuggestions)
-                .ToListAsync();
+                .AsQueryable();
 
-            return recipes.AsQueryable();
+            return recipes;
         }
 
         public async Task<Recipe?> GetByIdAsync(int recipeId)
@@ -59,12 +59,12 @@ namespace MyFoodApp.Infrastructure.Repositories
 
         public async Task<IQueryable<Recipe>> GetRecipesByIngredientsAsync(IEnumerable<int> ingredientIds)
         {
-            var recipes = await _context.Recipes
+            var recipes = _context.Recipes
                 .Include(r => r.Ingredients)
                 .Where(r => r.Ingredients.Any(i => ingredientIds.Contains(i.FoodItemId)))
-                .ToListAsync();
+                .AsQueryable();
 
-            return recipes.AsQueryable();
+            return recipes;
         }
     }
 }

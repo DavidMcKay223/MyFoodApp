@@ -54,6 +54,15 @@
             }
         </ul>
     }
+    else if(response.ErrorList.Any())
+    {
+        <ul>
+            @foreach (var error in response.ErrorList)
+            {
+                <li>@error.Message</li>
+            }
+        </ul>
+    }
     else
     {
         <p>No recipes found.</p>
