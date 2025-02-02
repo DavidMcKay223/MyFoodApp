@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyFoodApp.Application.Interfaces.Recommendations
 {
-    public interface IGenerateRecommendationsHandler
+    public interface IGenerateRecommendationsUseCases
     {
     }
 }

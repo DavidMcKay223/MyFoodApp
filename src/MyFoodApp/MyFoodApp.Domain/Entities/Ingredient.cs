@@ -20,6 +20,7 @@ namespace MyFoodApp.Domain.Entities
         [ForeignKey("FoodItem")]
         public int FoodItemId { get; set; }
 
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Quantity { get; set; }
 
         public UnitType Unit { get; set; }

@@ -24,7 +24,9 @@ namespace MyFoodApp.Domain.Entities
         public int FoodCategoryId { get; set; }
 
         // Nutritional information (simplified)
+        [Column(TypeName = "decimal(18,2)")]
         public decimal? CaloriesPerUnit { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal? ProteinPerUnit { get; set; }
 
         // Navigation

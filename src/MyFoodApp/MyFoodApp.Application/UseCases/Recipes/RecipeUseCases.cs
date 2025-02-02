@@ -8,16 +8,17 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyFoodApp.Application.UseCases.Recipes
 {
-    public class RecipeHandler : IRecipeHandler
+    public class RecipeUseCases : IRecipeUseCases
     {
         private readonly IRecipeRepository _recipeRepository;
         private readonly IMapper _mapper;
-        private readonly ILogger<RecipeHandler> _logger;
+        private readonly ILogger<RecipeUseCases> _logger;
 
-        public RecipeHandler(IRecipeRepository recipeRepository, IMapper mapper, ILogger<RecipeHandler> logger)
+        public RecipeUseCases(IRecipeRepository recipeRepository, IMapper mapper, ILogger<RecipeUseCases> logger)
         {
             _recipeRepository = recipeRepository;
             _mapper = mapper;
@@ -97,7 +98,43 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                var recipes = await _recipeRepository.SearchAsync(searchDto);
+                var query = await _recipeRepository.GetAllAsync();
+
+                // Apply filters based on searchDto properties
+                if (!string.IsNullOrEmpty(searchDto.Title))
+                {
+                    query = query.Where(r => r.Title.Contains(searchDto.Title));
+                }
+                if (!string.IsNullOrEmpty(searchDto.Description))
+                {
+                    query = query.Where(r => r.Description.Contains(searchDto.Description));
+                }
+                if (searchDto.PrepTimeMin.HasValue)
+                {
+                    query = query.Where(r => r.PrepTimeMinutes >= searchDto.PrepTimeMin.Value);
+                }
+                if (searchDto.PrepTimeMax.HasValue)
+                {
+                    query = query.Where(r => r.PrepTimeMinutes <= searchDto.PrepTimeMax.Value);
+                }
+                if (searchDto.CookTimeMin.HasValue)
+                {
+                    query = query.Where(r => r.CookTimeMinutes >= searchDto.CookTimeMin.Value);
+                }
+                if (searchDto.CookTimeMax.HasValue)
+                {
+                    query = query.Where(r => r.CookTimeMinutes <= searchDto.CookTimeMax.Value);
+                }
+                if (searchDto.ServingsMin.HasValue)
+                {
+                    query = query.Where(r => r.Servings >= searchDto.ServingsMin.Value);
+                }
+                if (searchDto.ServingsMax.HasValue)
+                {
+                    query = query.Where(r => r.Servings <= searchDto.ServingsMax.Value);
+                }
+
+                var recipes = await query.ToListAsync();
                 response.List = _mapper.Map<List<RecipeDto>>(recipes);
                 response.TotalItems = response.List.Count;
             }

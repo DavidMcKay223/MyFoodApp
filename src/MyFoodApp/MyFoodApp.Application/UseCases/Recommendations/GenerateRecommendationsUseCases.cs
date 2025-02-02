@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyFoodApp.Application.UseCases.Recommendations
 {
-    public class GenerateRecommendationsHandler : IGenerateRecommendationsHandler
+    public class GenerateRecommendationsUseCases : IGenerateRecommendationsUseCases
     {
 
     }

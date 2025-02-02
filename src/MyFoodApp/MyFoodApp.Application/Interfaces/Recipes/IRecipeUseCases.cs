@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyFoodApp.Application.Interfaces.Recipes
 {
-    public interface IRecipeHandler
+    public interface IRecipeUseCases
     {
         Task<Response<RecipeDto>> LookupRecipesAsync(RecipeSearchDto searchDto);
         Task<Response<RecipeDto>> SuggestRecipesBasedOnIngredientsAsync(IEnumerable<int> ingredientIds);

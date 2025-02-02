@@ -19,9 +19,9 @@ namespace MyFoodApp.Application.Mappings
 
             CreateMap<FoodItem, FoodItemDto>()
                 .ForMember(dest => dest.FoodCategoryId,
-                    opt => opt.MapFrom(src => src.FoodCategory != null ? src.FoodCategory.FoodCategoryId : (int?)null))
+                    opt => opt.MapFrom(src => src.FoodCategory.FoodCategoryId))
                 .ReverseMap()
-                .ForPath(src => src.FoodCategory != null ? src.FoodCategory.FoodCategoryId : (int?)null,
+                .ForPath(src => src.FoodCategory.FoodCategoryId,
                     opt => opt.MapFrom(dest => dest.FoodCategoryId));
         }
     }

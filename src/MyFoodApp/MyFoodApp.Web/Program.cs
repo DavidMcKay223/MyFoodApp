@@ -3,7 +3,11 @@ using FluentValidation;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Application.Configurations;
+using MyFoodApp.Application.Interfaces.Recipes;
+using MyFoodApp.Application.UseCases.Recipes;
+using MyFoodApp.Domain.Interfaces.Repositories;
 using MyFoodApp.Infrastructure.Persistence;
+using MyFoodApp.Infrastructure.Repositories;
 using MyFoodApp.Web.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,8 +21,8 @@ builder.Services.AddScoped<FluentValidationValidator>();
 //builder.Services.AddTransient<IValidator<ClaimDto>, ClaimDtoValidator>();
 
 // Services:
-//builder.Services.AddScoped<IAlbumRepository, AlbumRepository>();
-//builder.Services.AddScoped<IAlbumUseCases, AlbumUseCases>();
+builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
+builder.Services.AddScoped<IRecipeUseCases, RecipeUseCases>();
 
 // Database:
 builder.Services.AddDbContext<AppDbContext>(options =>

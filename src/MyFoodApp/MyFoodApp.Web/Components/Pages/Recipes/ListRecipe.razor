@@ -1,0 +1,71 @@
+﻿@using MyFoodApp.Application.Interfaces.Recipes
+@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Application.Common
+@inject IRecipeUseCases RecipeUseCases
+
+<PageTitle>Recipe Search</PageTitle>
+
+<h3>Recipe Search</h3>
+
+<div>
+    <label>Title:</label>
+    <input type="text" @bind="searchDto.Title" />
+</div>
+<div>
+    <label>Description:</label>
+    <input type="text" @bind="searchDto.Description" />
+</div>
+<div>
+    <label>Prep Time Min (minutes):</label>
+    <input type="number" @bind="searchDto.PrepTimeMin" />
+</div>
+<div>
+    <label>Prep Time Max (minutes):</label>
+    <input type="number" @bind="searchDto.PrepTimeMax" />
+</div>
+<div>
+    <label>Cook Time Min (minutes):</label>
+    <input type="number" @bind="searchDto.CookTimeMin" />
+</div>
+<div>
+    <label>Cook Time Max (minutes):</label>
+    <input type="number" @bind="searchDto.CookTimeMax" />
+</div>
+<div>
+    <label>Servings Min:</label>
+    <input type="number" @bind="searchDto.ServingsMin" />
+</div>
+<div>
+    <label>Servings Max:</label>
+    <input type="number" @bind="searchDto.ServingsMax" />
+</div>
+<div>
+    <button @onclick="SearchRecipes">Search</button>
+</div>
+
+@if (response != null)
+{
+    if (response.List.Any())
+    {
+        <ul>
+            @foreach (var recipe in response.List)
+            {
+                <li>@recipe.Title - @recipe.Description</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No recipes found.</p>
+    }
+}
+
+@code {
+    private RecipeSearchDto searchDto = new RecipeSearchDto();
+    private Response<RecipeDto>? response;
+
+    private async Task SearchRecipes()
+    {
+        response = await RecipeUseCases.LookupRecipesAsync(searchDto);
+    }
+}
