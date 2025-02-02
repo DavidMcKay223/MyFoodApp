@@ -1,0 +1,54 @@
+﻿@using MyFoodApp.Application.DTOs
+
+@if (Recipes?.Any() == false)
+{
+    <p class="text-muted">No recipes found.</p>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Prep Time</th>
+                <th>Cook Time</th>
+                <th>Servings</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var recipe in Recipes!)
+            {
+                <tr>
+                    <td>@recipe.Title</td>
+                    <td>@recipe.Description</td>
+                    <td>@recipe.PrepTimeMinutes mins</td>
+                    <td>@recipe.CookTimeMinutes mins</td>
+                    <td>@recipe.Servings</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm"
+                                @onclick="() => OnEdit.InvokeAsync(recipe.RecipeId)">
+                            Edit
+                        </button>
+                        <button class="btn btn-danger btn-sm"
+                                @onclick="() => OnDelete.InvokeAsync(recipe)">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public List<RecipeDto>? Recipes { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnEdit { get; set; }
+
+    [Parameter]
+    public EventCallback<RecipeDto> OnDelete { get; set; }
+}

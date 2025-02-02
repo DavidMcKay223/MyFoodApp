@@ -1,0 +1,124 @@
+﻿@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Application.Interfaces.Recipes
+@using MyFoodApp.Application.Validators
+@using FluentValidation
+@using Blazored.FluentValidation
+@inject IRecipeUseCases RecipeUseCases
+@inject IValidator<RecipeDto> RecipeValidator
+
+@code {
+    [Parameter]
+    public EventCallback OnRecipeSaved { get; set; }
+    
+    private EditForm? EditForm;
+    private RecipeDto? Recipe;
+    private FluentValidationValidator? _fluentValidationValidator;
+
+    public void Show(RecipeDto? recipeToEdit)
+    {
+        Recipe = recipeToEdit ?? new RecipeDto(){ Title="", Description=""};
+        StateHasChanged();
+    }
+
+    private async Task SaveRecipe()
+    {
+        if (await _fluentValidationValidator!.ValidateAsync())
+        {
+            if (Recipe!.RecipeId == 0)
+            {
+                await RecipeUseCases.CreateRecipeAsync(Recipe);
+            }
+            else
+            {
+                await RecipeUseCases.UpdateRecipeAsync(Recipe.RecipeId, Recipe);
+            }
+            
+            Recipe = null;
+            await OnRecipeSaved.InvokeAsync();
+        }
+    }
+
+    private void Cancel()
+    {
+        Recipe = null;
+    }
+}
+
+@if (Recipe != null)
+{
+    <div class="modal-backdrop">
+        <div class="modal show d-block" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">@(Recipe.RecipeId == 0 ? "Add Recipe" : "Edit Recipe")</h5>
+                        <button type="button" class="btn-close" @onclick="Cancel"></button>
+                    </div>
+                    <div class="modal-body">
+                        <EditForm @ref="EditForm" Model="@Recipe">
+                            <FluentValidationValidator @ref="_fluentValidationValidator" />
+                            <DataAnnotationsValidator />
+                            
+                            <div class="form-floating mb-3">
+                                <InputText @bind-Value="Recipe.Title" class="form-control" />
+                                <label>Title</label>
+                                <ValidationMessage For="@(() => Recipe.Title)" />
+                            </div>
+                            
+                            <div class="form-floating mb-3">
+                                <InputTextArea @bind-Value="Recipe.Description" class="form-control" />
+                                <label>Description</label>
+                                <ValidationMessage For="@(() => Recipe.Description)" />
+                            </div>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <InputNumber @bind-Value="Recipe.PrepTimeMinutes" class="form-control" />
+                                        <label>Prep Time (minutes)</label>
+                                        <ValidationMessage For="@(() => Recipe.PrepTimeMinutes)" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <InputNumber @bind-Value="Recipe.CookTimeMinutes" class="form-control" />
+                                        <label>Cook Time (minutes)</label>
+                                        <ValidationMessage For="@(() => Recipe.CookTimeMinutes)" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <InputNumber @bind-Value="Recipe.Servings" class="form-control" />
+                                        <label>Servings</label>
+                                        <ValidationMessage For="@(() => Recipe.Servings)" />
+                                    </div>
+                                </div>
+                            </div>
+                        </EditForm>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" @onclick="SaveRecipe">Save</button>
+                        <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+    }
+    
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+</style>

@@ -1,0 +1,88 @@
+﻿@using System.Globalization
+@using System.Text.RegularExpressions
+@using System.Diagnostics.CodeAnalysis
+@typeparam TValue
+@inherits InputBase<TValue>
+
+<input @bind-value="CurrentValueAsString" @onkeydown="OnKeyDown" @onkeyup="OnKeyUp" class="@CssClass" />
+
+@code {
+    private static readonly Regex TimeFormatRegex = new Regex(@"^(\d{1,2}):?(\d{0,2})$", RegexOptions.Compiled);
+
+    private string _lastValue = String.Empty;
+
+    protected override bool TryParseValueFromString(string? value, [MaybeNullWhen(false)] out TValue result, [NotNullWhen(false)] out string? validationErrorMessage)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            result = default!;
+            validationErrorMessage = null;
+            return true;
+        }
+
+        var match = TimeFormatRegex.Match(value);
+
+        if (match.Success)
+        {
+            var minutes = match.Groups[1].Value;
+            var seconds = match.Groups[2].Value;
+
+            if (seconds.Length == 1)
+            {
+                seconds = "0" + seconds;
+            }
+
+            var formattedValue = $"{minutes}:{seconds}";
+
+            if (typeof(TValue) == typeof(TimeOnly))
+            {
+                if (TimeOnly.TryParseExact(formattedValue, "m\\:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out var timeOnly))
+                {
+                    result = (TValue)(object)timeOnly;
+                    validationErrorMessage = null;
+                    return true;
+                }
+            }
+            else if (typeof(TValue) == typeof(TimeSpan))
+            {
+                if (TimeSpan.TryParseExact(formattedValue, "m\\:ss", CultureInfo.InvariantCulture, out var timeSpan))
+                {
+                    result = (TValue)(object)timeSpan;
+                    validationErrorMessage = null;
+                    return true;
+                }
+            }
+        }
+
+        result = default!;
+        validationErrorMessage = "Invalid time format";
+        return false;
+    }
+
+    protected override string? FormatValueAsString(TValue? value)
+    {
+        if (value is TimeOnly timeOnly)
+        {
+            return timeOnly.ToString("m\\:ss", CultureInfo.InvariantCulture);
+        }
+        else if (value is TimeSpan timeSpan)
+        {
+            return timeSpan.ToString("m\\:ss", CultureInfo.InvariantCulture);
+        }
+
+        return String.Empty;
+    }
+
+    private void OnKeyDown(KeyboardEventArgs e)
+    {
+        _lastValue = CurrentValueAsString ?? String.Empty;
+    }
+
+    private void OnKeyUp(KeyboardEventArgs e)
+    {
+        if (string.IsNullOrWhiteSpace(CurrentValueAsString))
+        {
+            CurrentValueAsString = _lastValue;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+﻿@using MyFoodApp.Application.DTOs
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <div class="mb-3 form-floating">
+            <InputText @bind-Value="SearchDto.Title" class="form-control" />
+            <label>Title</label>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="mb-3 form-floating">
+            <InputText @bind-Value="SearchDto.Description" class="form-control" />
+            <label>Description</label>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="mb-3 form-floating">
+            <InputNumber @bind-Value="SearchDto.ServingsMin" class="form-control" />
+            <label>Min Servings</label>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="mb-3 form-floating">
+            <InputNumber @bind-Value="SearchDto.ServingsMax" class="form-control" />
+            <label>Max Servings</label>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RecipeSearchDto SearchDto { get; set; } = new();
+}

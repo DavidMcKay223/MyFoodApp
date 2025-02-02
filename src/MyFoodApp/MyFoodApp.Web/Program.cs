@@ -1,10 +1,13 @@
 using Blazored.FluentValidation;
 using FluentValidation;
+using FluentValidation.Validators;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Application.Configurations;
+using MyFoodApp.Application.DTOs;
 using MyFoodApp.Application.Interfaces.Recipes;
 using MyFoodApp.Application.UseCases.Recipes;
+using MyFoodApp.Application.Validators;
 using MyFoodApp.Domain.Interfaces.Repositories;
 using MyFoodApp.Infrastructure.Persistence;
 using MyFoodApp.Infrastructure.Repositories;
@@ -18,7 +21,17 @@ builder.Services.AddRazorComponents()
 
 // Add FluentValidation services
 builder.Services.AddScoped<FluentValidationValidator>();
-//builder.Services.AddTransient<IValidator<ClaimDto>, ClaimDtoValidator>();
+builder.Services.AddScoped<IValidator<FoodCategoryDto>, FoodCategoryDtoValidator>();
+builder.Services.AddScoped<IValidator<FoodItemDto>, FoodItemDtoValidator>();
+builder.Services.AddScoped<IValidator<FoodItemStoreSectionDto>, FoodItemStoreSectionDtoValidator>();
+builder.Services.AddScoped<IValidator<IngredientDto>, IngredientDtoValidator>();
+builder.Services.AddScoped<IValidator<MealSuggestionDto>, MealSuggestionDtoValidator>();
+builder.Services.AddScoped<IValidator<MealSuggestionTagDto>, MealSuggestionTagDtoValidator>();
+builder.Services.AddScoped<IValidator<PriceHistoryDto>, PriceHistoryDtoValidator>();
+builder.Services.AddScoped<IValidator<RecipeDto>, RecipeDtoValidator>();
+builder.Services.AddScoped<IValidator<RecipeMealSuggestionDto>, RecipeMealSuggestionDtoValidator>();
+builder.Services.AddScoped<IValidator<RecipeStepDto>, RecipeStepDtoValidator>();
+builder.Services.AddScoped<IValidator<StoreSectionDto>, StoreSectionDtoValidator>();
 
 // Services:
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();

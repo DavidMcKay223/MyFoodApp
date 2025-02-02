@@ -1,0 +1,17 @@
+﻿
+<div class="mb-3">
+    <button class="btn btn-primary" @onclick="OnAdd">New Item</button>
+    <button class="btn btn-secondary" @onclick="OnSearch">Search</button>
+    <button class="btn btn-danger" @onclick="OnReset">Reset</button>
+</div>
+
+@code {
+    [Parameter]
+    public EventCallback OnAdd { get; set; }
+
+    [Parameter]
+    public EventCallback OnSearch { get; set; }
+
+    [Parameter]
+    public EventCallback OnReset { get; set; }
+}

@@ -1,0 +1,59 @@
+﻿@typeparam TItem
+
+@if (TotalItems > 0)
+{
+    <div class="d-flex justify-content-between align-items-center my-3">
+        <div>
+            <select class="form-select" @onchange="OnPageSizeChanged">
+                @foreach (var size in PageSizes)
+                {
+                    <option value="@size" selected="@(size == PageSize)">@size</option>
+                }
+            </select>
+        </div>
+        <div>
+            <button class="btn btn-primary" @onclick="PreviousPage" disabled="@IsFirstPage">Previous</button>
+            <span class="mx-2">Page @(CurrentPage + 1) of @(TotalPages == 0 ? 1 : TotalPages)</span>
+            <button class="btn btn-primary" @onclick="NextPage" disabled="@IsLastPage">Next</button>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public int TotalItems { get; set; }
+    [Parameter] public int PageSize { get; set; } = 10;
+    [Parameter] public int CurrentPage { get; set; } = 0;
+    [Parameter] public EventCallback<int> OnPageChanged { get; set; }
+    [Parameter] public EventCallback<int> OnPageSizeChangedCallback { get; set; }
+
+    private int TotalPages => (int)Math.Ceiling((double)TotalItems / PageSize);
+    private bool IsFirstPage => CurrentPage == 0;
+    private bool IsLastPage => (CurrentPage + 1) >= TotalPages;
+
+    private List<int> PageSizes { get; set; } = new List<int> { 10, 20, 50, 100 };
+
+    private async Task PreviousPage()
+    {
+        if ((CurrentPage + 1) > 1)
+        {
+            CurrentPage--;
+            await OnPageChanged.InvokeAsync(CurrentPage);
+        }
+    }
+
+    private async Task NextPage()
+    {
+        if ((CurrentPage + 1) < TotalPages)
+        {
+            CurrentPage++;
+            await OnPageChanged.InvokeAsync(CurrentPage);
+        }
+    }
+
+    private async Task OnPageSizeChanged(ChangeEventArgs e)
+    {
+        PageSize = int.Parse(e.Value!.ToString()!);
+        CurrentPage = 0;
+        await OnPageSizeChangedCallback.InvokeAsync(PageSize);
+    }
+}

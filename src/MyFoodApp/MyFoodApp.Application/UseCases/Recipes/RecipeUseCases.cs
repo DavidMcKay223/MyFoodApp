@@ -98,7 +98,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                var query = await _recipeRepository.GetAllAsync();
+                var query = _recipeRepository.GetAllAsync();
 
                 // Apply filters based on searchDto properties
                 if (!string.IsNullOrEmpty(searchDto.Title))
@@ -153,7 +153,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                var recipes = await _recipeRepository.GetRecipesByIngredientsAsync(ingredientIds);
+                var recipes = _recipeRepository.GetRecipesByIngredientsAsync(ingredientIds);
                 response.List = _mapper.Map<List<RecipeDto>>(recipes);
                 response.TotalItems = response.List.Count;
             }

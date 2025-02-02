@@ -17,7 +17,7 @@ namespace MyFoodApp.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<IQueryable<Recipe>> GetAllAsync()
+        public IQueryable<Recipe> GetAllAsync()
         {
             var recipes = _context.Recipes
                 .Include(r => r.Ingredients)
@@ -57,7 +57,7 @@ namespace MyFoodApp.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IQueryable<Recipe>> GetRecipesByIngredientsAsync(IEnumerable<int> ingredientIds)
+        public IQueryable<Recipe> GetRecipesByIngredientsAsync(IEnumerable<int> ingredientIds)
         {
             var recipes = _context.Recipes
                 .Include(r => r.Ingredients)
