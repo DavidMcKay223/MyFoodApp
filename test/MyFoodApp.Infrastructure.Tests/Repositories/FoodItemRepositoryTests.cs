@@ -27,6 +27,7 @@ namespace MyFoodApp.Infrastructure.Tests.Repositories
             var testItem = DomainTestDataFactory.CreateFoodItem(1);
             DbContextHelper.SeedDatabase(_context, ctx =>
             {
+                ctx.FoodCategories.Add(DomainTestDataFactory.CreateFoodCategory(1));
                 ctx.FoodItems.Add(testItem);
             });
 
@@ -48,6 +49,7 @@ namespace MyFoodApp.Infrastructure.Tests.Repositories
             var testItems = DomainTestDataFactory.CreateFoodItems(3, 1); 
             DbContextHelper.SeedDatabase(_context, ctx =>
             {
+                ctx.FoodCategories.Add(DomainTestDataFactory.CreateFoodCategory(1));
                 ctx.FoodItems.AddRange(testItems);
             });
 

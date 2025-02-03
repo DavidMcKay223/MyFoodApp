@@ -15,10 +15,6 @@ namespace MyFoodApp.Infrastructure.Tests.Helpers
             protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
                 base.OnModelCreating(modelBuilder);
-
-                // Define initial data for FoodCategory and other tables
-                var testCategory = DomainTestDataFactory.CreateFoodCategory();
-                modelBuilder.Entity<FoodCategory>().HasData(testCategory);
             }
         }
 

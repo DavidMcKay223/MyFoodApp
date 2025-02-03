@@ -185,7 +185,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                var recipes = _recipeRepository.GetRecipesByIngredientsAsync(ingredientIds);
+                var recipes = await _recipeRepository.GetRecipesByIngredientsAsync(ingredientIds).ToListAsync();
                 response.List = _mapper.Map<List<RecipeDto>>(recipes);
                 response.TotalItems = response.List.Count;
             }
