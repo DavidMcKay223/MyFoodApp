@@ -1,97 +1,81 @@
 ﻿using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Domain.Entities;
+using MyFoodApp.Infrastructure.Persistence;
+using MyFoodApp.Infrastructure.Repositories;
 using MyFoodApp.Infrastructure.Tests.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Xunit;
 
 namespace MyFoodApp.Infrastructure.Tests.Repositories
 {
-    public class FoodItemRepositoryTests : SqliteTestBase
+    public class FoodItemRepositoryTests : IDisposable
     {
-        [Fact]
-        public void TestWithSeededDataUsingFactory()
+        private readonly AppDbContext _context;
+        private readonly FoodItemRepository _repository;
+        private readonly FoodCategory _testCategory;
+
+        public FoodItemRepositoryTests()
         {
-            // Arrange
-            var testCategory = TestDataFactory.CreateFoodCategory();
-            var testItems = new[]
-            {
-                TestDataFactory.CreateFoodItem(testCategory.FoodCategoryId),
-                TestDataFactory.CreateFoodItem(testCategory.FoodCategoryId),
-                TestDataFactory.CreateFoodItem(testCategory.FoodCategoryId)
-            };
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+                .UseSqlite("DataSource=:memory:")
+                .Options;
 
-            Seed(context =>
-            {
-                context.FoodCategories.Add(testCategory);
-                context.FoodItems.AddRange(testItems);
-            });
+            _context = new AppDbContext(options);
+            _context.Database.OpenConnection();
+            _context.Database.EnsureCreated();
 
-            // Act
-            var itemsFromDb = _context.FoodItems
-                .Include(f => f.FoodCategory)
-                .ToList();
+            // Create required FoodCategory first
+            _testCategory = TestDataFactory.CreateFoodCategory();
+            _context.FoodCategories.Add(_testCategory);
+            _context.SaveChanges();
 
-            // Assert
-            itemsFromDb.Should().NotBeNull()
-                .And.HaveCount(3)
-                .And.AllSatisfy(item =>
-                {
-                    item.FoodCategory.Should().NotBeNull();
-                    item.FoodCategory!.Name.Should().Be(testCategory.Name);
-                    item.FoodCategoryId.Should().Be(testCategory.FoodCategoryId);
-                });
+            _repository = new FoodItemRepository(_context);
         }
 
         [Fact]
-        public void TestComplexRelationships()
+        public async Task GetFoodItemByIdAsync_ReturnsItem_WhenExists()
         {
             // Arrange
-            var category = TestDataFactory.CreateFoodCategory();
-            var storeSection = TestDataFactory.CreateStoreSection();
-            var foodItems = TestDataFactory.CreateFoodItems(3, category.FoodCategoryId);
-            var priceHistory = TestDataFactory.CreatePriceHistory(foodItems[0].FoodItemId);
-
-            Seed(context =>
-            {
-                context.FoodCategories.Add(category);
-                context.StoreSections.Add(storeSection);
-                context.FoodItems.AddRange(foodItems);
-                context.PriceHistories.Add(priceHistory);
-                context.FoodItemStoreSections.Add(
-                    TestDataFactory.CreateFoodItemStoreSection(
-                        foodItems[0].FoodItemId,
-                        storeSection.StoreSectionId
-                    )
-                );
-            });
+            var testItem = TestDataFactory.CreateFoodItem(_testCategory.FoodCategoryId);
+            _context.FoodItems.Add(testItem);
+            await _context.SaveChangesAsync();
 
             // Act
-            var itemWithRelations = _context.FoodItems
-                .Include(f => f.FoodCategory)
-                .Include(f => f.PriceHistories)
-                .Include(f => f.StoreSections)
-                .ThenInclude(fss => fss.StoreSection)
-                .First(f => f.FoodItemId == foodItems[0].FoodItemId);
+            var result = await _repository.GetFoodItemByIdAsync(testItem.FoodItemId);
 
             // Assert
-            itemWithRelations.Should().NotBeNull();
-            itemWithRelations.FoodCategory.Should().NotBeNull()
-                .And.BeEquivalentTo(category, options =>
-                    options.ExcludingMissingMembers());
+            result.Should().NotBeNull();
+            result!.FoodItemId.Should().Be(testItem.FoodItemId);
+            result.Name.Should().NotBeNullOrEmpty();
+            result.Description.Should().NotBeNullOrEmpty();
+            result.FoodCategoryId.Should().Be(_testCategory.FoodCategoryId);
+        }
 
-            itemWithRelations.PriceHistories.Should()
-                .ContainSingle()
-                .Which.Should().BeEquivalentTo(priceHistory, options =>
-                    options.ExcludingMissingMembers());
+        [Fact]
+        public async Task GetAllFoodItemsAsync_ReturnsAllItems()
+        {
+            // Arrange
+            var testItems = TestDataFactory.CreateFoodItems(3, _testCategory.FoodCategoryId);
+            _context.FoodItems.AddRange(testItems);
+            await _context.SaveChangesAsync();
 
-            itemWithRelations.StoreSections.Should()
-                .ContainSingle()
-                .Which.StoreSection.Should().BeEquivalentTo(storeSection, options =>
-                    options.ExcludingMissingMembers());
+            // Act
+            var result = _repository.GetAllFoodItemsAsync().ToList();
+
+            // Assert
+            result.Should().HaveCount(3);
+            result.Should().AllSatisfy(item =>
+            {
+                item.Name.Should().NotBeNullOrEmpty();
+                item.Description.Should().NotBeNullOrEmpty();
+                item.FoodCategoryId.Should().Be(_testCategory.FoodCategoryId);
+            });
+        }
+
+        public void Dispose()
+        {
+            _context.Database.EnsureDeleted();
+            _context.Dispose();
         }
     }
 }
