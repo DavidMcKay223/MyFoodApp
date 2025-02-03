@@ -12,8 +12,9 @@
 - **Frontend**: Blazor 🌀
 - **Backend**: .NET 9 🟣
 - **Database**: Entity Framework Core 🗃️
-- **Testing**: XUnit, Bogus, FluentAssertions
-- **Mapping**: AutoMapper
+- **Testing**: XUnit 🧪, Bogus 🎭, FluentAssertions ✅
+- **Mapping**: AutoMapper 🧩
+- **Validation**: FluentValidation 🛡️
 
 ## SQL Analytics
 
