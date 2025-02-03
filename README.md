@@ -140,6 +140,7 @@ GROUP BY fi.Name
 ```
 
 ## Project Directory Structure
+
 ```
 └── 📁 MyFoodApp-main/
     ├── 📁 other/
@@ -157,21 +158,21 @@ GROUP BY fi.Name
     │       │   ├── 📁 DTOs/
     │       │   │   ├── 🟣 FoodCategoryDto.cs
     │       │   │   ├── 🟣 FoodItemDto.cs
-    │       │   │   ├── 🟣 FoodItemSearchDto .cs
+    │       │   │   ├── 🟣 FoodItemSearchDto.cs
     │       │   │   ├── 🟣 FoodItemStoreSectionDto.cs
     │       │   │   ├── 🟣 IngredientDto.cs
-    │       │   │   ├── 🟣 IngredientSearchDto .cs
+    │       │   │   ├── 🟣 IngredientSearchDto.cs
     │       │   │   ├── 🟣 MealSuggestionDto.cs
-    │       │   │   ├── 🟣 MealSuggestionSearchDto .cs
+    │       │   │   ├── 🟣 MealSuggestionSearchDto.cs
     │       │   │   ├── 🟣 MealSuggestionTagDto.cs
     │       │   │   ├── 🟣 PriceHistoryDto.cs
-    │       │   │   ├── 🟣 PriceHistorySearchDto .cs
+    │       │   │   ├── 🟣 PriceHistorySearchDto.cs
     │       │   │   ├── 🟣 RecipeDto.cs
     │       │   │   ├── 🟣 RecipeMealSuggestionDto.cs
-    │       │   │   ├── 🟣 RecipeSearchDto .cs
+    │       │   │   ├── 🟣 RecipeSearchDto.cs
     │       │   │   ├── 🟣 RecipeStepDto.cs
     │       │   │   ├── 🟣 StoreSectionDto.cs
-    │       │   │   └── 🟣 StoreSectionSearchDto .cs
+    │       │   │   └── 🟣 StoreSectionSearchDto.cs
     │       │   ├── 📁 Interfaces/
     │       │   │   ├── 📁 Foods/
     │       │   │   │   └── 🟣 IFoodItemUseCases.cs
@@ -200,17 +201,17 @@ GROUP BY fi.Name
     │       │   │   └── 📁 Recommendations/
     │       │   │       └── 🟣 GenerateRecommendationsUseCases.cs
     │       │   └── 📁 Validators/
-    │       │       ├── 🟣 FoodCategoryDtoValidator .cs
-    │       │       ├── 🟣 FoodItemDtoValidator .cs
-    │       │       ├── 🟣 FoodItemStoreSectionDtoValidator .cs
-    │       │       ├── 🟣 IngredientDtoValidator .cs
-    │       │       ├── 🟣 MealSuggestionDtoValidator .cs
-    │       │       ├── 🟣 MealSuggestionTagDtoValidator .cs
-    │       │       ├── 🟣 PriceHistoryDtoValidator .cs
-    │       │       ├── 🟣 RecipeDtoValidator .cs
-    │       │       ├── 🟣 RecipeMealSuggestionDtoValidator .cs
-    │       │       ├── 🟣 RecipeStepDtoValidator .cs
-    │       │       └── 🟣 StoreSectionDtoValidator .cs
+    │       │       ├── 🟣 FoodCategoryDtoValidator.cs
+    │       │       ├── 🟣 FoodItemDtoValidator.cs
+    │       │       ├── 🟣 FoodItemStoreSectionDtoValidator.cs
+    │       │       ├── 🟣 IngredientDtoValidator.cs
+    │       │       ├── 🟣 MealSuggestionDtoValidator.cs
+    │       │       ├── 🟣 MealSuggestionTagDtoValidator.cs
+    │       │       ├── 🟣 PriceHistoryDtoValidator.cs
+    │       │       ├── 🟣 RecipeDtoValidator.cs
+    │       │       ├── 🟣 RecipeMealSuggestionDtoValidator.cs
+    │       │       ├── 🟣 RecipeStepDtoValidator.cs
+    │       │       └── 🟣 StoreSectionDtoValidator.cs
     │       ├── 📁 MyFoodApp.Domain/
     │       │   ├── 📁 Entities/
     │       │   │   ├── 🟣 FoodCategory.cs
@@ -249,7 +250,7 @@ GROUP BY fi.Name
     │       │   └── 📁 Repositories/
     │       │       ├── 🟣 FoodItemRepository.cs
     │       │       ├── 🟣 MealSuggestionRepository.cs
-    │       │       └── 🟣 RecipeRepository .cs
+    │       │       └── 🟣 RecipeRepository.cs
     │       ├── 📁 MyFoodApp.Shared/
     │       │   └── 📁 Settings/
     │       │       └── 🟣 JwtSettings.cs
@@ -296,6 +297,8 @@ GROUP BY fi.Name
     │           └── 🟣 Program.cs
     └── 📁 test/
         ├── 📁 MyFoodApp.Application.Tests/
+        │   ├── 📁 Data/
+        │   │   └── 🟣 ApplicationTestDataFactory.cs
         │   ├── 📁 UseCases/
         │   │   ├── 📁 Foods/
         │   │   │   └── 🟣 FoodItemUseCasesTests.cs
@@ -306,12 +309,21 @@ GROUP BY fi.Name
         │   │   └── 📁 Recommendations/
         │   │       └── 🟣 GenerateRecommendationsUseCasesTests.cs
         │   ├── 📁 Validators/
+        │   │   ├── 🟣 FoodCategoryDtoValidatorTests.cs
         │   │   ├── 🟣 FoodItemDtoValidatorTests.cs
-        │   │   └── 🟣 RecipeDtoValidatorTests.cs
+        │   │   ├── 🟣 FoodItemStoreSectionDtoValidatorTests.cs
+        │   │   ├── 🟣 IngredientDtoValidatorTests.cs
+        │   │   ├── 🟣 MealSuggestionDtoValidatorTests.cs
+        │   │   ├── 🟣 MealSuggestionTagDtoValidatorTests.cs
+        │   │   ├── 🟣 PriceHistoryDtoValidatorTests.cs
+        │   │   ├── 🟣 RecipeDtoValidatorTests.cs
+        │   │   ├── 🟣 RecipeMealSuggestionDtoValidatorTests.cs
+        │   │   ├── 🟣 RecipeStepDtoValidatorTests.cs
+        │   │   └── 🟣 StoreSectionDtoValidatorTests.cs
         │   └── 🟣 ApplicationTestFixture.cs
         └── 📁 MyFoodApp.Infrastructure.Tests/
             ├── 📁 Data/
-            │   └── 🟣 TestDataFactory.cs
+            │   └── 🟣 DomainTestDataFactory.cs
             ├── 📁 Helpers/
             │   └── 🟣 DbContextHelper.cs
             ├── 📁 Repositories/
