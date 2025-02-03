@@ -25,7 +25,7 @@ jobs:
       run: dotnet restore ./src/MyFoodApp.sln
 
     - name: Build
-      run: dotnet build ./src/MyFoodApp/MyFoodApp.sln --no-restore --configuration Release
+      run: dotnet build ./src/MyFoodApp.sln --no-restore --configuration Release
 
     - name: Run tests with coverage
       run: dotnet test ./test/**/*.csproj --no-build --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults
