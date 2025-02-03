@@ -320,3 +320,50 @@ GROUP BY fi.Name
             │   └── 🟣 RecipeRepositoryTests.cs
             └── 🟣 SqliteTestBase.cs
 ```
+
+## Project Folder Structure Diagram
+```mermaid
+graph TD;
+    MyFoodApp-main-->src;
+    src-->MyFoodApp;
+    MyFoodApp-->MyFoodApp.Application;
+    MyFoodApp-->MyFoodApp.Domain;
+    MyFoodApp-->MyFoodApp.Infrastructure;
+    MyFoodApp-->MyFoodApp.Shared;
+    MyFoodApp-->MyFoodApp.Web;
+
+    MyFoodApp.Application-->Common;
+    MyFoodApp.Application-->Configurations;
+    MyFoodApp.Application-->DTOs;
+    MyFoodApp.Application-->Interfaces;
+    MyFoodApp.Application-->Mappings;
+    MyFoodApp.Application-->UseCases;
+    MyFoodApp.Application-->Validators;
+
+    MyFoodApp.Domain-->Entities;
+    MyFoodApp.Domain-->Enums;
+    MyFoodApp.Domain-->Interfaces;
+
+    MyFoodApp.Infrastructure-->Migrations;
+    MyFoodApp.Infrastructure-->Persistence;
+    MyFoodApp.Infrastructure-->Repositories;
+
+    MyFoodApp.Shared-->Settings;
+
+    MyFoodApp.Web-->Components;
+    MyFoodApp.Web-->Pages;
+    MyFoodApp.Web-->Shared;
+    MyFoodApp.Web-->Properties;
+    MyFoodApp.Web-->wwwroot;
+
+    Components-->Authentication;
+    Components-->Layout;
+
+    Pages-->Recipes;
+
+    wwwroot-->lib;
+    lib-->bootstrap;
+    bootstrap-->dist;
+    dist-->css;
+    dist-->js;
+```
