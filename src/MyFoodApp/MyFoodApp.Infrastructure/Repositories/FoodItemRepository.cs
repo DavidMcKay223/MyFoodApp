@@ -2,7 +2,6 @@
 using MyFoodApp.Domain.Entities;
 using MyFoodApp.Domain.Interfaces.Repositories;
 using MyFoodApp.Infrastructure.Persistence;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MyFoodApp.Infrastructure.Repositories
 {

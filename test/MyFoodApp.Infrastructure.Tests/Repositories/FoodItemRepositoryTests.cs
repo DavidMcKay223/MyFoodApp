@@ -4,7 +4,6 @@ using MyFoodApp.Domain.Entities;
 using MyFoodApp.Infrastructure.Persistence;
 using MyFoodApp.Infrastructure.Repositories;
 using MyFoodApp.Infrastructure.Tests.Data;
-using Xunit;
 
 namespace MyFoodApp.Infrastructure.Tests.Repositories
 {

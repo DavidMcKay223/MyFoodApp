@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyFoodApp.Application.Tests.Validators
+﻿namespace MyFoodApp.Application.Tests.Validators
 {
     internal class FoodItemDtoValidatorTests
     {
