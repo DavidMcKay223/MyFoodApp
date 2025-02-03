@@ -75,7 +75,7 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
                 result.Should().NotBeNull();
                 result.Item.Should().BeEquivalentTo(updatedRecipeDto, opt => opt.ExcludingMissingMembers());
                 result.List.Should().BeEmpty();
-                result.TotalItems.Should().Be(0);
+                result.TotalItems.Should().Be(1);
                 result.ErrorList.Should().BeEmpty();
             }
         }

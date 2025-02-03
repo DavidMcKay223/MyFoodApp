@@ -84,5 +84,28 @@ namespace MyFoodApp.Infrastructure.Repositories
             await _context.RecipeMealSuggestions.AddRangeAsync(items);
             await _context.SaveChangesAsync();
         }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteIngredientAsync(Ingredient ingredient)
+        {
+            _context.Ingredients.Remove(ingredient);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteStepAsync(RecipeStep step)
+        {
+            _context.RecipeSteps.Remove(step);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteMealSuggestionAsync(RecipeMealSuggestion suggestion)
+        {
+            _context.RecipeMealSuggestions.Remove(suggestion);
+            await _context.SaveChangesAsync();
+        }
     }
 }

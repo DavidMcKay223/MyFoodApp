@@ -28,70 +28,42 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                // Map the RecipeDto to Recipe entity
-                var recipeEntity = new Recipe()
+                // Map DTO to Recipe entity including child collections
+                var recipeEntity = new Recipe
                 {
                     Title = recipeDto.Title,
                     Description = recipeDto.Description,
                     CookTimeMinutes = recipeDto.CookTimeMinutes,
                     PrepTimeMinutes = recipeDto.PrepTimeMinutes,
-                    Servings = recipeDto.Servings
+                    Servings = recipeDto.Servings,
+                    Ingredients = recipeDto.Ingredients?.Select(dto => new Ingredient
+                    {
+                        FoodItemId = dto.FoodItemId,
+                        Quantity = dto.Quantity,
+                        Unit = dto.Unit,
+                    }).ToList() ?? new List<Ingredient>(),
+                    Steps = recipeDto.Steps?.Select(dto => new RecipeStep
+                    {
+                        Instruction = dto.Instruction,
+                        StepNumber = dto.StepNumber,
+                    }).ToList() ?? new List<RecipeStep>(),
+                    MealSuggestions = recipeDto.MealSuggestions?.Select(dto => new RecipeMealSuggestion
+                    {
+                        MealSuggestionId = dto.MealSuggestionId,
+                    }).ToList() ?? new List<RecipeMealSuggestion>()
                 };
 
-                // Add the recipe to the repository
+                // Add the recipe along with its children in one call
                 var createdRecipe = await _recipeRepository.AddRecipeAsync(recipeEntity);
+                await _recipeRepository.SaveChangesAsync(); // Ensure changes are saved
 
-                if (recipeDto.Ingredients != null && recipeDto.Ingredients.Any())
-                {
-                    await _recipeRepository.AddIngredientRangeAsync(recipeDto.Ingredients
-                        .Select(dto => new Ingredient
-                        {
-                            RecipeId = createdRecipe.RecipeId,
-                            FoodItemId = dto.FoodItemId,
-                            IngredientId = dto.IngredientId,
-                            Quantity = dto.Quantity,
-                            Unit = dto.Unit,
-                        }).ToList());
-                }
-
-                if (recipeDto.MealSuggestions != null && recipeDto.MealSuggestions.Any())
-                {
-                    await _recipeRepository.AddRecipeMealSuggestionRangeAsync(recipeDto.MealSuggestions
-                        .Select(dto => new RecipeMealSuggestion
-                        {
-                            RecipeId = createdRecipe.RecipeId,
-                            MealSuggestionId = dto.MealSuggestionId,
-                        }).ToList());
-                }
-
-                if (recipeDto.Steps != null && recipeDto.Steps.Any())
-                {
-                    await _recipeRepository.AddRecipeStepRangeAsync(recipeDto.Steps
-                        .Select(dto => new RecipeStep
-                        {
-                            RecipeId = createdRecipe.RecipeId,
-                            Instruction = dto.Instruction,
-                            StepNumber = dto.StepNumber,
-                        }).ToList());
-                }
-
-                // Map the created recipe entity back to RecipeDto
-                var createdRecipeDto = _mapper.Map<RecipeDto>(createdRecipe);
-
-                // Set the response data
-                response.Item = createdRecipeDto;
+                response.Item = _mapper.Map<RecipeDto>(createdRecipe);
                 response.TotalItems = 1;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while creating the recipe.");
-
-                // Set the error response
-                response.ErrorList.Add(new Error
-                {
-                    Code = "CreateRecipeError",
-                    Message = "An error occurred while creating the recipe."
-                });
+                _logger.LogError(ex, "Error creating recipe.");
+                response.ErrorList.Add(new Error { Code = "CreateError", Message = ex.Message });
             }
 
             return response;
@@ -232,129 +204,154 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                // Get existing recipe with tracking
-                var recipe = await _recipeRepository.GetRecipeByIdAsync(recipeId, true);
-                if (recipe == null)
+                // 1. Get existing recipe with all related entities
+                var existingRecipe = await _recipeRepository.GetRecipeByIdAsync(recipeId, true);
+                if (existingRecipe == null)
                 {
-                    response.ErrorList.Add(new Error { Code = "NotFound", Message = "Recipe not found." });
+                    response.ErrorList.Add(new Error { Code = "NotFound", Message = "Recipe not found" });
                     return response;
                 }
 
-                // Update main recipe properties
-                _mapper.Map(recipeDto, recipe);
+                // 2. Update root recipe properties
+                _mapper.Map(recipeDto, existingRecipe);
 
-                #region Ingredients Update
-                // Process ingredients
-                var existingIngredientIds = recipe.Ingredients.Select(i => i.IngredientId).ToList();
+                // 3. Handle Ingredients
+                await UpdateIngredientsAsync(existingRecipe, recipeDto.Ingredients);
 
-                // Update existing ingredients and add new ones
-                foreach (var ingredientDto in recipeDto.Ingredients)
-                {
-                    if (ingredientDto.IngredientId > 0 && existingIngredientIds.Contains(ingredientDto.IngredientId))
-                    {
-                        // Update existing ingredient
-                        var existingIngredient = recipe.Ingredients.First(i => i.IngredientId == ingredientDto.IngredientId);
-                        _mapper.Map(ingredientDto, existingIngredient);
+                // 4. Handle Steps
+                await UpdateStepsAsync(existingRecipe, recipeDto.Steps);
 
-                        // Set FoodItem by ID only
-                        existingIngredient.FoodItemId = ingredientDto.FoodItemId;
-                    }
-                    else
-                    {
-                        // Add new ingredient
-                        var newIngredient = _mapper.Map<Ingredient>(ingredientDto);
-                        newIngredient.FoodItemId = ingredientDto.FoodItemId; // Set direct relationship
-                        recipe.Ingredients.Add(newIngredient);
-                    }
-                }
+                // 5. Handle Meal Suggestions
+                await UpdateMealSuggestionsAsync(existingRecipe, recipeDto.MealSuggestions);
 
-                // Remove deleted ingredients
-                var currentIngredientIds = recipeDto.Ingredients.Select(i => i.IngredientId).ToList();
-                var ingredientsToRemove = recipe.Ingredients
-                    .Where(i => !currentIngredientIds.Contains(i.IngredientId))
-                    .ToList();
+                // 6. Save changes
+                await _recipeRepository.UpdateRecipeAsync(existingRecipe);
+                await _recipeRepository.SaveChangesAsync();
 
-                foreach (var ingredient in ingredientsToRemove)
-                {
-                    recipe.Ingredients.Remove(ingredient);
-                }
-                #endregion
-
-                #region Steps Update
-                // Process steps
-                var existingStepIds = recipe.Steps.Select(s => s.StepId).ToList();
-
-                foreach (var stepDto in recipeDto.Steps)
-                {
-                    if (stepDto.StepId > 0 && existingStepIds.Contains(stepDto.StepId))
-                    {
-                        var existingStep = recipe.Steps.First(s => s.StepId == stepDto.StepId);
-                        _mapper.Map(stepDto, existingStep);
-                    }
-                    else
-                    {
-                        recipe.Steps.Add(_mapper.Map<RecipeStep>(stepDto));
-                    }
-                }
-
-                // Remove deleted steps
-                var currentStepIds = recipeDto.Steps.Select(s => s.StepId).ToList();
-                var stepsToRemove = recipe.Steps
-                    .Where(s => !currentStepIds.Contains(s.StepId))
-                    .ToList();
-
-                foreach (var step in stepsToRemove)
-                {
-                    recipe.Steps.Remove(step);
-                }
-                #endregion
-
-                #region Meal Suggestions Update
-                // Process meal suggestions
-                var existingMealSuggestionIds = recipe.MealSuggestions
-                    .Select(ms => ms.MealSuggestionId)
-                    .ToList();
-
-                foreach (var mealSuggestionDto in recipeDto.MealSuggestions)
-                {
-                    if (existingMealSuggestionIds.Contains(mealSuggestionDto.MealSuggestionId))
-                    {
-                        // Existing relationship - no need to update
-                        continue;
-                    }
-
-                    // Add new relationship
-                    recipe.MealSuggestions.Add(new RecipeMealSuggestion
-                    {
-                        MealSuggestionId = mealSuggestionDto.MealSuggestionId
-                    });
-                }
-
-                // Remove deleted meal suggestions
-                var currentMealSuggestionIds = recipeDto.MealSuggestions
-                    .Select(ms => ms.MealSuggestionId)
-                    .ToList();
-
-                var mealSuggestionsToRemove = recipe.MealSuggestions
-                    .Where(ms => !currentMealSuggestionIds.Contains(ms.MealSuggestionId))
-                    .ToList();
-
-                foreach (var mealSuggestion in mealSuggestionsToRemove)
-                {
-                    recipe.MealSuggestions.Remove(mealSuggestion);
-                }
-                #endregion
-
-                await _recipeRepository.UpdateRecipeAsync(recipe);
-                response.Item = _mapper.Map<RecipeDto>(recipe);
+                // 7. Return updated recipe
+                var updatedRecipeDto = _mapper.Map<RecipeDto>(existingRecipe);
+                response.Item = updatedRecipeDto;
+                response.TotalItems = 1;
+            }
+            catch (DbUpdateException dbEx)
+            {
+                _logger.LogError(dbEx, "Database error updating recipe");
+                response.ErrorList.Add(new Error { Code = "DatabaseError", Message = "Error saving recipe changes" });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occurred while updating recipe.");
+                _logger.LogError(ex, "Unexpected error updating recipe");
                 response.ErrorList.Add(new Error { Code = "UpdateError", Message = ex.Message });
             }
 
             return response;
+        }
+
+        private async Task UpdateIngredientsAsync(Recipe existingRecipe, List<IngredientDto> updatedIngredients)
+        {
+            // Handle null cases
+            updatedIngredients ??= new List<IngredientDto>();
+
+            // Create dictionary for existing ingredients
+            var existingIngredients = existingRecipe.Ingredients.ToDictionary(i => i.IngredientId);
+
+            // Process updates and additions
+            foreach (var updatedIngredient in updatedIngredients)
+            {
+                if (existingIngredients.TryGetValue(updatedIngredient.IngredientId, out var existingIngredient))
+                {
+                    // Update existing ingredient
+                    _mapper.Map(updatedIngredient, existingIngredient);
+                    existingIngredient.FoodItemId = updatedIngredient.FoodItemId;
+                }
+                else
+                {
+                    // Add new ingredient
+                    var newIngredient = _mapper.Map<Ingredient>(updatedIngredient);
+                    newIngredient.RecipeId = existingRecipe.RecipeId;
+                    existingRecipe.Ingredients.Add(newIngredient);
+                }
+            }
+
+            // Process deletions
+            var updatedIds = updatedIngredients.Select(i => i.IngredientId).ToHashSet();
+            var ingredientsToRemove = existingRecipe.Ingredients
+                .Where(i => !updatedIds.Contains(i.IngredientId))
+                .ToList();
+
+            foreach (var ingredient in ingredientsToRemove)
+            {
+                existingRecipe.Ingredients.Remove(ingredient);
+                await _recipeRepository.DeleteIngredientAsync(ingredient);
+            }
+        }
+
+        private async Task UpdateStepsAsync(Recipe existingRecipe, List<RecipeStepDto> updatedSteps)
+        {
+            updatedSteps ??= new List<RecipeStepDto>();
+
+            var existingSteps = existingRecipe.Steps.ToDictionary(s => s.StepId);
+
+            foreach (var updatedStep in updatedSteps)
+            {
+                if (existingSteps.TryGetValue(updatedStep.StepId, out var existingStep))
+                {
+                    _mapper.Map(updatedStep, existingStep);
+                }
+                else
+                {
+                    var newStep = _mapper.Map<RecipeStep>(updatedStep);
+                    newStep.RecipeId = existingRecipe.RecipeId;
+                    existingRecipe.Steps.Add(newStep);
+                }
+            }
+
+            var updatedStepIds = updatedSteps.Select(s => s.StepId).ToHashSet();
+            var stepsToRemove = existingRecipe.Steps
+                .Where(s => !updatedStepIds.Contains(s.StepId))
+                .ToList();
+
+            foreach (var step in stepsToRemove)
+            {
+                existingRecipe.Steps.Remove(step);
+                await _recipeRepository.DeleteStepAsync(step);
+            }
+        }
+
+        private async Task UpdateMealSuggestionsAsync(Recipe existingRecipe, List<RecipeMealSuggestionDto> updatedSuggestions)
+        {
+            updatedSuggestions ??= new List<RecipeMealSuggestionDto>();
+
+            var existingSuggestions = existingRecipe.MealSuggestions
+                .ToDictionary(ms => ms.MealSuggestionId);
+
+            var updatedSuggestionIds = updatedSuggestions
+                .Select(ms => ms.MealSuggestionId)
+                .ToHashSet();
+
+            // Add new suggestions
+            foreach (var suggestionId in updatedSuggestionIds)
+            {
+                if (!existingSuggestions.ContainsKey(suggestionId))
+                {
+                    existingRecipe.MealSuggestions.Add(new RecipeMealSuggestion
+                    {
+                        RecipeId = existingRecipe.RecipeId,
+                        MealSuggestionId = suggestionId
+                    });
+                }
+            }
+
+            // Remove deleted suggestions
+            var suggestionsToRemove = existingRecipe.MealSuggestions
+                .Where(ms => !updatedSuggestionIds.Contains(ms.MealSuggestionId))
+                .ToList();
+
+            foreach (var suggestion in suggestionsToRemove)
+            {
+                existingRecipe.MealSuggestions.Remove(suggestion);
+                await _recipeRepository.DeleteMealSuggestionAsync(suggestion);
+            }
         }
     }
 }

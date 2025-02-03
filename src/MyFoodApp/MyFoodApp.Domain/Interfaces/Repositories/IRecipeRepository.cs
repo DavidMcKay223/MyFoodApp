@@ -13,5 +13,9 @@ namespace MyFoodApp.Domain.Interfaces.Repositories
         Task<Recipe> UpdateRecipeAsync(Recipe recipe);
         Task DeleteRecipeAsync(Recipe recipe);
         IQueryable<Recipe> GetRecipesByIngredientsAsync(IEnumerable<int> ingredientIds);
+        Task SaveChangesAsync();
+        Task DeleteIngredientAsync(Ingredient ingredient);
+        Task DeleteStepAsync(RecipeStep step);
+        Task DeleteMealSuggestionAsync(RecipeMealSuggestion suggestion);
     }
 }
