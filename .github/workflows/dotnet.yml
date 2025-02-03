@@ -1,28 +1,55 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: '9.0.x'
+
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./src/MyFoodApp/MyFoodApp.sln
+
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet build ./src/MyFoodApp/MyFoodApp.sln --no-restore --configuration Release
+
+    - name: Run tests with coverage
+      run: dotnet test ./test/**/*.csproj --no-build --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults
+
+    - name: Report code coverage
+      run: |
+        dotnet tool install --global dotnet-reportgenerator-globaltool
+        reportgenerator -reports:./TestResults/**/coverage.cobertura.xml -targetdir:./TestResults/CoverageReport -reporttypes:Html
+
+    - name: Verify code coverage report
+      run: |
+        if [ ! -f ./TestResults/CoverageReport/index.html ]; then
+          echo "Code coverage report not found!"
+          exit 1
+        fi
+
+    - name: Upload test results and coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: code-coverage-report
+        path: ./TestResults/CoverageReport
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: ./TestResults
