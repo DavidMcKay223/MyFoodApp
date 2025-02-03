@@ -179,13 +179,13 @@ namespace MyFoodApp.Application.UseCases.Recipes
             return response;
         }
 
-        public async Task<Response<RecipeDto>> SuggestRecipesBasedOnIngredientsAsync(IEnumerable<int> ingredientIds)
+        public async Task<Response<RecipeDto>> SuggestRecipesBasedOnIngredientsAsync(IEnumerable<int> foodItemIds)
         {
             var response = new Response<RecipeDto>();
 
             try
             {
-                var recipes = await _recipeRepository.GetRecipesByIngredientsAsync(ingredientIds).ToListAsync();
+                var recipes = await _recipeRepository.GetRecipesByIngredientsAsync(foodItemIds).ToListAsync();
                 response.List = _mapper.Map<List<RecipeDto>>(recipes);
                 response.TotalItems = response.List.Count;
             }

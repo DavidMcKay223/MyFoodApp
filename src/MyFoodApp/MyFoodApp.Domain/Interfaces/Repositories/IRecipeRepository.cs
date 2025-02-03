@@ -13,7 +13,7 @@ namespace MyFoodApp.Domain.Interfaces.Repositories
         Task AddRecipeMealSuggestionRangeAsync(List<RecipeMealSuggestion> items);
         Task<Recipe> UpdateRecipeAsync(Recipe recipe);
         Task DeleteRecipeAsync(Recipe recipe);
-        IQueryable<Recipe> GetRecipesByIngredientsAsync(IEnumerable<int> ingredientIds);
+        IQueryable<Recipe> GetRecipesByIngredientsAsync(IEnumerable<int> foodItemIds);
         Task SaveChangesAsync();
         Task DeleteIngredientAsync(Ingredient ingredient);
         Task DeleteStepAsync(RecipeStep step);

@@ -59,7 +59,28 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
         public async Task SuggestRecipesBasedOnIngredientsAsync_ShouldReturnRecipes_WhenValidIngredientIds()
         {
             // Arrange
-            var ingredientIds = new List<int> { 1, 2, 3 };
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.FoodCategories.Add(DomainTestDataFactory.CreateFoodCategory());
+            });
+            var foodCategoryId = _context.FoodCategories.First().FoodCategoryId;
+
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.Recipes.Add(DomainTestDataFactory.CreateRecipe());
+                ctx.FoodItems.Add(DomainTestDataFactory.CreateFoodItem(foodCategoryId));
+            });
+            var recipeId = _context.Recipes.First().RecipeId;
+            var foodItemId = _context.FoodItems.First().FoodItemId;
+
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.Ingredients.Add(DomainTestDataFactory.CreateIngredient(recipeId, foodItemId));
+                ctx.Ingredients.Add(DomainTestDataFactory.CreateIngredient(recipeId, foodItemId));
+                ctx.Ingredients.Add(DomainTestDataFactory.CreateIngredient(recipeId, foodItemId));
+            });
+
+            var ingredientIds = new List<int>() { foodItemId };
 
             // Act
             var result = await _recipeUseCases.SuggestRecipesBasedOnIngredientsAsync(ingredientIds);
@@ -77,11 +98,11 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
         public async Task GetRecipeByIdAsync_ShouldReturnRecipe_WhenValidRecipeId()
         {
             // Arrange
-            var recipeId = 1;
             DbContextHelper.SeedDatabase(_context, ctx =>
             {
                 ctx.Recipes.Add(DomainTestDataFactory.CreateRecipe());
             });
+            var recipeId = _context.Recipes.First().RecipeId;
 
             // Act
             var result = await _recipeUseCases.GetRecipeByIdAsync(recipeId);
@@ -100,7 +121,27 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
         public async Task CreateRecipeAsync_ShouldReturnRecipe_WhenValidRecipeDto()
         {
             // Arrange
-            var recipeDto = ApplicationTestDataFactory.CreateRecipeDto(0);
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.FoodCategories.Add(DomainTestDataFactory.CreateFoodCategory());
+            });
+            var foodCategoryId = _context.FoodCategories.First().FoodCategoryId;
+
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.Recipes.Add(DomainTestDataFactory.CreateRecipe());
+                ctx.FoodItems.Add(DomainTestDataFactory.CreateFoodItem(foodCategoryId));
+                ctx.MealSuggestions.Add(DomainTestDataFactory.CreateMealSuggestion());
+            });
+            var recipeId = _context.Recipes.First().RecipeId;
+            var foodItemId = _context.FoodItems.First().FoodItemId;
+            var mealSuggestionId = _context.MealSuggestions.First().MealSuggestionId;
+
+            var recipeDto = ApplicationTestDataFactory.CreateRecipeDto();
+
+            recipeDto.Steps.Add(ApplicationTestDataFactory.CreateRecipeStepDto(recipeId));
+            recipeDto.MealSuggestions.Add(ApplicationTestDataFactory.CreateRecipeMealSuggestionDto(recipeId, mealSuggestionId));
+            recipeDto.Ingredients.Add(ApplicationTestDataFactory.CreateIngredientDto(recipeId, foodItemId));
 
             // Act
             var result = await _recipeUseCases.CreateRecipeAsync(recipeDto);
@@ -149,11 +190,11 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
         public async Task DeleteRecipeAsync_ShouldReturnRecipe_WhenValidRecipeId()
         {
             // Arrange
-            var recipeId = 1;
             DbContextHelper.SeedDatabase(_context, ctx =>
             {
                 ctx.Recipes.Add(DomainTestDataFactory.CreateRecipe());
             });
+            var recipeId = _context.Recipes.First().RecipeId;
 
             // Act
             var result = await _recipeUseCases.DeleteRecipeAsync(recipeId);
