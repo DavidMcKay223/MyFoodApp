@@ -7,9 +7,6 @@ namespace MyFoodApp.Application.Validators
     {
         public RecipeMealSuggestionDtoValidator()
         {
-            RuleFor(x => x.RecipeId)
-                .NotEmpty().WithMessage("RecipeId is required.");
-
             RuleFor(x => x.MealSuggestionId)
                 .NotEmpty().WithMessage("MealSuggestionId is required.");
         }

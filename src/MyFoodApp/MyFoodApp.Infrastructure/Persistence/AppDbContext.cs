@@ -92,5 +92,11 @@ namespace MyFoodApp.Infrastructure.Persistence
                 .WithMany(ms => ms.RecipeSuggestions)
                 .HasForeignKey(rms => rms.MealSuggestionId);
         }
+
+        [Obsolete("Do not use", true)]
+        public void DetachAllEntities()
+        {
+            this.ChangeTracker.Entries().ToList().ForEach(e => e.State = EntityState.Detached);
+        }
     }
 }

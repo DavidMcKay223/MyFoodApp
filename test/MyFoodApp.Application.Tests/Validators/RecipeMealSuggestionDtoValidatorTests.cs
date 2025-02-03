@@ -15,11 +15,11 @@ namespace MyFoodApp.Application.Tests.Validators
         }
 
         [Fact]
-        public void Should_Have_Error_When_RecipeId_Is_Empty()
+        public void Should_NotHave_Error_When_RecipeId_Is_Empty()
         {
             var dto = new RecipeMealSuggestionDto { MealSuggestionId = 1 };
             var result = _validator.TestValidate(dto);
-            result.ShouldHaveValidationErrorFor(x => x.RecipeId).WithErrorMessage("RecipeId is required.");
+            result.ShouldNotHaveValidationErrorFor(x => x.RecipeId);
         }
 
         [Fact]
