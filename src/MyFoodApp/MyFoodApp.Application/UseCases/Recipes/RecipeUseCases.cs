@@ -28,44 +28,70 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                var recipe = _mapper.Map<Recipe>(recipeDto);
-
-                // Handle ingredients with existing food items
-                foreach (var ingredientDto in recipeDto.Ingredients)
+                // Map the RecipeDto to Recipe entity
+                var recipeEntity = new Recipe()
                 {
-                    var ingredient = new Ingredient
-                    {
-                        Quantity = ingredientDto.Quantity,
-                        Unit = ingredientDto.Unit,
-                        FoodItemId = ingredientDto.FoodItemId // Set FK directly
-                    };
+                    Title = recipeDto.Title,
+                    Description = recipeDto.Description,
+                    CookTimeMinutes = recipeDto.CookTimeMinutes,
+                    PrepTimeMinutes = recipeDto.PrepTimeMinutes,
+                    Servings = recipeDto.Servings
+                };
 
-                    recipe.Ingredients.Add(ingredient);
+                // Add the recipe to the repository
+                var createdRecipe = await _recipeRepository.AddRecipeAsync(recipeEntity);
+
+                if (recipeDto.Ingredients != null && recipeDto.Ingredients.Any())
+                {
+                    await _recipeRepository.AddIngredientRangeAsync(recipeDto.Ingredients
+                        .Select(dto => new Ingredient
+                        {
+                            RecipeId = createdRecipe.RecipeId,
+                            FoodItemId = dto.FoodItemId,
+                            IngredientId = dto.IngredientId,
+                            Quantity = dto.Quantity,
+                            Unit = dto.Unit,
+                        }).ToList());
                 }
 
-                // Keep existing mapping for steps and meal suggestions
-                foreach (var stepDto in recipeDto.Steps)
+                if (recipeDto.MealSuggestions != null && recipeDto.MealSuggestions.Any())
                 {
-                    var step = _mapper.Map<RecipeStep>(stepDto);
-                    recipe.Steps.Add(step);
+                    await _recipeRepository.AddRecipeMealSuggestionRangeAsync(recipeDto.MealSuggestions
+                        .Select(dto => new RecipeMealSuggestion
+                        {
+                            RecipeId = createdRecipe.RecipeId,
+                            MealSuggestionId = dto.MealSuggestionId,
+                        }).ToList());
                 }
 
-                foreach (var mealSuggestionDto in recipeDto.MealSuggestions)
+                if (recipeDto.Steps != null && recipeDto.Steps.Any())
                 {
-                    var mealSuggestion = new RecipeMealSuggestion
-                    {
-                        MealSuggestionId = mealSuggestionDto.MealSuggestionId
-                    };
-                    recipe.MealSuggestions.Add(mealSuggestion);
+                    await _recipeRepository.AddRecipeStepRangeAsync(recipeDto.Steps
+                        .Select(dto => new RecipeStep
+                        {
+                            RecipeId = createdRecipe.RecipeId,
+                            Instruction = dto.Instruction,
+                            StepNumber = dto.StepNumber,
+                        }).ToList());
                 }
 
-                await _recipeRepository.AddRecipeAsync(recipe);
-                response.Item = _mapper.Map<RecipeDto>(recipe);
+                // Map the created recipe entity back to RecipeDto
+                var createdRecipeDto = _mapper.Map<RecipeDto>(createdRecipe);
+
+                // Set the response data
+                response.Item = createdRecipeDto;
+                response.TotalItems = 1;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occurred while creating recipe.");
-                response.ErrorList.Add(new Error { Code = "CreateError", Message = ex.Message });
+                _logger.LogError(ex, "An error occurred while creating the recipe.");
+
+                // Set the error response
+                response.ErrorList.Add(new Error
+                {
+                    Code = "CreateRecipeError",
+                    Message = "An error occurred while creating the recipe."
+                });
             }
 
             return response;

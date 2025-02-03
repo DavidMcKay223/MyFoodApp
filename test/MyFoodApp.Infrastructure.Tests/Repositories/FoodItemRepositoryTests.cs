@@ -24,7 +24,7 @@ namespace MyFoodApp.Infrastructure.Tests.Repositories
             _context.Database.EnsureCreated();
 
             // Create required FoodCategory first
-            _testCategory = TestDataFactory.CreateFoodCategory();
+            _testCategory = DomainTestDataFactory.CreateFoodCategory();
             _context.FoodCategories.Add(_testCategory);
             _context.SaveChanges();
 
@@ -35,7 +35,7 @@ namespace MyFoodApp.Infrastructure.Tests.Repositories
         public async Task GetFoodItemByIdAsync_ReturnsItem_WhenExists()
         {
             // Arrange
-            var testItem = TestDataFactory.CreateFoodItem(_testCategory.FoodCategoryId);
+            var testItem = DomainTestDataFactory.CreateFoodItem(_testCategory.FoodCategoryId);
             _context.FoodItems.Add(testItem);
             await _context.SaveChangesAsync();
 
@@ -54,7 +54,7 @@ namespace MyFoodApp.Infrastructure.Tests.Repositories
         public async Task GetAllFoodItemsAsync_ReturnsAllItems()
         {
             // Arrange
-            var testItems = TestDataFactory.CreateFoodItems(3, _testCategory.FoodCategoryId);
+            var testItems = DomainTestDataFactory.CreateFoodItems(3, _testCategory.FoodCategoryId);
             _context.FoodItems.AddRange(testItems);
             await _context.SaveChangesAsync();
 

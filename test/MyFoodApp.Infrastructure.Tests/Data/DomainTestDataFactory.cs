@@ -3,7 +3,7 @@ using MyFoodApp.Domain.Entities;
 
 namespace MyFoodApp.Infrastructure.Tests.Data
 {
-    public static class TestDataFactory
+    public static class DomainTestDataFactory
     {
         public static FoodCategory CreateFoodCategory(int? id = null)
         {

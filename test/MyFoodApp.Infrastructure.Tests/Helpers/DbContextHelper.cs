@@ -15,19 +15,6 @@ namespace MyFoodApp.Infrastructure.Tests.Helpers
             protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
                 base.OnModelCreating(modelBuilder);
-
-                // Configure test-specific model overrides
-                modelBuilder.Entity<FoodItem>(entity =>
-                {
-                    entity.Property(e => e.FoodItemId)
-                        .ValueGeneratedNever();
-                });
-
-                modelBuilder.Entity<StoreSection>(entity =>
-                {
-                    entity.Property(e => e.StoreSectionId)
-                        .ValueGeneratedNever();
-                });
             }
         }
 

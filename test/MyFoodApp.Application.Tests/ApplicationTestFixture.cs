@@ -38,13 +38,16 @@ namespace MyFoodApp.Application.Tests
                 .UseSqlite(_connection)
                 .Options;
 
-            DbContext = DbContextHelper.CreateTestContext();
+            DbContext = new AppDbContext(options);
+            DbContext.Database.EnsureCreated();
+
             RecipeRepository = new RecipeRepository(DbContext);
         }
 
         public void Dispose()
         {
             DbContextHelper.CleanDatabase(DbContext);
+            _connection.Dispose();
         }
     }
 
