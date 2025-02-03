@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Domain.Entities;
 using MyFoodApp.Infrastructure.Persistence;
+using MyFoodApp.Infrastructure.Tests.Data;
 
 namespace MyFoodApp.Infrastructure.Tests.Helpers
 {
     public static class DbContextHelper
     {
-        // Create a derived context for testing configurations
         private class TestDbContext : AppDbContext
         {
             public TestDbContext(DbContextOptions<AppDbContext> options)
@@ -15,6 +15,10 @@ namespace MyFoodApp.Infrastructure.Tests.Helpers
             protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
                 base.OnModelCreating(modelBuilder);
+
+                // Define initial data for FoodCategory and other tables
+                var testCategory = DomainTestDataFactory.CreateFoodCategory();
+                modelBuilder.Entity<FoodCategory>().HasData(testCategory);
             }
         }
 
@@ -29,6 +33,12 @@ namespace MyFoodApp.Infrastructure.Tests.Helpers
             context.Database.EnsureCreated();
 
             return context;
+        }
+
+        public static void SeedDatabase(AppDbContext context, Action<AppDbContext> seedAction)
+        {
+            seedAction(context);
+            context.SaveChanges();
         }
 
         public static void CleanDatabase(AppDbContext context)

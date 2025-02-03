@@ -41,6 +41,7 @@ namespace MyFoodApp.Application.Tests
             DbContext = new AppDbContext(options);
             DbContext.Database.EnsureCreated();
 
+            // Register Use Cases for Other Unit Test:
             RecipeRepository = new RecipeRepository(DbContext);
         }
 
