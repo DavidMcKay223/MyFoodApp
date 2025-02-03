@@ -85,11 +85,6 @@ namespace MyFoodApp.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task SaveChangesAsync()
-        {
-            await _context.SaveChangesAsync();
-        }
-
         public async Task DeleteIngredientAsync(Ingredient ingredient)
         {
             _context.Ingredients.Remove(ingredient);

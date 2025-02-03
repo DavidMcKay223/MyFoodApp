@@ -49,10 +49,10 @@ namespace MyFoodApp.Application.Tests.Data
                 .Generate();
         }
 
-        public static IngredientDto CreateIngredientDto(int recipeId, int foodItemId)
+        public static IngredientDto CreateIngredientDto(int recipeId, int foodItemId, int? id = null)
         {
             return new Faker<IngredientDto>()
-                .RuleFor(i => i.IngredientId, f => f.IndexGlobal + 1)
+                .RuleFor(i => i.IngredientId, f => id ?? f.IndexGlobal + 1)
                 .RuleFor(i => i.RecipeId, recipeId)
                 .RuleFor(i => i.FoodItemId, foodItemId)
                 .RuleFor(i => i.Quantity, f => f.Random.Decimal(1, 100))

@@ -55,8 +55,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
                 // Add the recipe along with its children in one call
                 var createdRecipe = await _recipeRepository.AddRecipeAsync(recipeEntity);
-                await _recipeRepository.SaveChangesAsync(); // Ensure changes are saved
-
+                
                 response.Item = _mapper.Map<RecipeDto>(createdRecipe);
                 response.TotalItems = 1;
             }
@@ -226,8 +225,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
                 // 6. Save changes
                 await _recipeRepository.UpdateRecipeAsync(existingRecipe);
-                await _recipeRepository.SaveChangesAsync();
-
+                
                 // 7. Return updated recipe
                 var updatedRecipeDto = _mapper.Map<RecipeDto>(existingRecipe);
                 response.Item = updatedRecipeDto;

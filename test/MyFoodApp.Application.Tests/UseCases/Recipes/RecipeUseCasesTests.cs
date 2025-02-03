@@ -157,20 +157,30 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
         }
 
         [Fact]
-        public async Task UpdateRecipeAsync_ShouldReturnRecipe_WhenValidRecipeDto()
+        public async Task UpdateRecipeAsync_ShouldReturnRecipe_WhenValidRecipeDto_NewRecords()
         {
             // Arrange
             DbContextHelper.SeedDatabase(_context, ctx =>
             {
-                ctx.Recipes.Add(DomainTestDataFactory.CreateRecipe());
+                ctx.FoodCategories.Add(DomainTestDataFactory.CreateFoodCategory());
             });
-            
+            var foodCategoryId = _context.FoodCategories.First().FoodCategoryId;
+
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.Recipes.Add(DomainTestDataFactory.CreateRecipe());
+                ctx.FoodItems.Add(DomainTestDataFactory.CreateFoodItem(foodCategoryId));
+                ctx.MealSuggestions.Add(DomainTestDataFactory.CreateMealSuggestion());
+            });
             var recipeId = _context.Recipes.First().RecipeId;
+            var foodItemId = _context.FoodItems.First().FoodItemId;
+            var mealSuggestionId = _context.MealSuggestions.First().MealSuggestionId;
+            
             var recipeDto = ApplicationTestDataFactory.CreateRecipeDto(recipeId);
 
-            recipeDto.Steps.Add(ApplicationTestDataFactory.CreateRecipeStepDto(recipeId));
-            recipeDto.MealSuggestions.Add(ApplicationTestDataFactory.CreateRecipeMealSuggestionDto(recipeId, 1));
-            recipeDto.Ingredients.Add(ApplicationTestDataFactory.CreateIngredientDto(recipeId, 1));
+            recipeDto.Steps.Add(ApplicationTestDataFactory.CreateRecipeStepDto(recipeId, 0));
+            recipeDto.MealSuggestions.Add(ApplicationTestDataFactory.CreateRecipeMealSuggestionDto(recipeId, mealSuggestionId));
+            recipeDto.Ingredients.Add(ApplicationTestDataFactory.CreateIngredientDto(recipeId, foodItemId, 0));
 
             // Act
             var result = await _recipeUseCases.UpdateRecipeAsync(recipeId, recipeDto);
@@ -183,6 +193,107 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
                 result.Item.Should().NotBeNull();
                 result.Item.RecipeId.Should().Be(recipeId);
                 result.Item.Title.Should().Be(recipeDto.Title);
+                result.Item.Steps.Should().HaveCount(1);
+                result.Item.MealSuggestions.Should().HaveCount(1);
+                result.Item.Ingredients.Should().HaveCount(1);
+            }
+        }
+
+        [Fact]
+        public async Task UpdateRecipeAsync_ShouldReturnRecipe_WhenValidRecipeDto_ExistingRecords()
+        {
+            // Arrange
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.FoodCategories.Add(DomainTestDataFactory.CreateFoodCategory());
+            });
+            var foodCategoryId = _context.FoodCategories.First().FoodCategoryId;
+
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.Recipes.Add(DomainTestDataFactory.CreateRecipe());
+                ctx.FoodItems.Add(DomainTestDataFactory.CreateFoodItem(foodCategoryId));
+                ctx.MealSuggestions.Add(DomainTestDataFactory.CreateMealSuggestion());
+            });
+            var recipeId = _context.Recipes.First().RecipeId;
+            var foodItemId = _context.FoodItems.First(x => x.FoodCategoryId == foodCategoryId).FoodItemId;
+            var mealSuggestionId = _context.MealSuggestions.First().MealSuggestionId;
+
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.RecipeSteps.Add(DomainTestDataFactory.CreateRecipeStep(recipeId));
+                ctx.Ingredients.Add(DomainTestDataFactory.CreateIngredient(recipeId, foodItemId));
+            });
+            var recipeStepId = _context.RecipeSteps.First(x => x.RecipeId == recipeId).StepId;
+            var ingredientId = _context.Ingredients.First(x => x.RecipeId == recipeId && x.FoodItemId == foodItemId).IngredientId;
+
+            var recipeDto = ApplicationTestDataFactory.CreateRecipeDto(recipeId);
+
+            recipeDto.Steps.Add(ApplicationTestDataFactory.CreateRecipeStepDto(recipeId, recipeStepId));
+            recipeDto.MealSuggestions.Add(ApplicationTestDataFactory.CreateRecipeMealSuggestionDto(recipeId, mealSuggestionId));
+            recipeDto.Ingredients.Add(ApplicationTestDataFactory.CreateIngredientDto(recipeId, foodItemId, ingredientId));
+
+            // Act
+            var result = await _recipeUseCases.UpdateRecipeAsync(recipeId, recipeDto);
+
+            // Assert
+            using (new AssertionScope())
+            {
+                result.ErrorList.Should().BeEmpty();
+                result.Should().NotBeNull();
+                result.Item.Should().NotBeNull();
+                result.Item.RecipeId.Should().Be(recipeId);
+                result.Item.Title.Should().Be(recipeDto.Title);
+                result.Item.Steps.Should().HaveCount(1);
+                result.Item.MealSuggestions.Should().HaveCount(1);
+                result.Item.Ingredients.Should().HaveCount(1);
+            }
+        }
+
+        [Fact]
+        public async Task UpdateRecipeAsync_ShouldReturnRecipe_WhenValidRecipeDto_DeleteRecords()
+        {
+            // Arrange
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.FoodCategories.Add(DomainTestDataFactory.CreateFoodCategory());
+            });
+            var foodCategoryId = _context.FoodCategories.First().FoodCategoryId;
+
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.Recipes.Add(DomainTestDataFactory.CreateRecipe());
+                ctx.FoodItems.Add(DomainTestDataFactory.CreateFoodItem(foodCategoryId));
+                ctx.MealSuggestions.Add(DomainTestDataFactory.CreateMealSuggestion());
+            });
+            var recipeId = _context.Recipes.First().RecipeId;
+            var foodItemId = _context.FoodItems.First(x => x.FoodCategoryId == foodCategoryId).FoodItemId;
+            var mealSuggestionId = _context.MealSuggestions.First().MealSuggestionId;
+
+            DbContextHelper.SeedDatabase(_context, ctx =>
+            {
+                ctx.RecipeSteps.Add(DomainTestDataFactory.CreateRecipeStep(recipeId));
+                ctx.Ingredients.Add(DomainTestDataFactory.CreateIngredient(recipeId, foodItemId));
+            });
+            var recipeStepId = _context.RecipeSteps.First(x => x.RecipeId == recipeId).StepId;
+            var ingredientId = _context.Ingredients.First(x => x.RecipeId == recipeId && x.FoodItemId == foodItemId).IngredientId;
+
+            var recipeDto = ApplicationTestDataFactory.CreateRecipeDto(recipeId);
+
+            // Act
+            var result = await _recipeUseCases.UpdateRecipeAsync(recipeId, recipeDto);
+
+            // Assert
+            using (new AssertionScope())
+            {
+                result.ErrorList.Should().BeEmpty();
+                result.Should().NotBeNull();
+                result.Item.Should().NotBeNull();
+                result.Item.RecipeId.Should().Be(recipeId);
+                result.Item.Title.Should().Be(recipeDto.Title);
+                result.Item.Steps.Should().HaveCount(0);
+                result.Item.MealSuggestions.Should().HaveCount(0);
+                result.Item.Ingredients.Should().HaveCount(0);
             }
         }
 
