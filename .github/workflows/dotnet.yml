@@ -27,8 +27,11 @@ jobs:
     - name: Build
       run: dotnet build ./src/MyFoodApp.sln --no-restore --configuration Release
 
-    - name: Run tests with coverage
-      run: dotnet test ./test/**/*.csproj --no-build --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults
+    - name: Run tests for Application.Tests
+      run: dotnet test ./test/MyFoodApp.Application.Tests/MyFoodApp.Application.Tests.csproj --no-build --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults/ApplicationTests
+
+    - name: Run tests for Infrastructure.Tests
+      run: dotnet test ./test/MyFoodApp.Infrastructure.Tests/MyFoodApp.Infrastructure.Tests.csproj --no-build --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults/InfrastructureTests
 
     - name: Report code coverage
       run: |
