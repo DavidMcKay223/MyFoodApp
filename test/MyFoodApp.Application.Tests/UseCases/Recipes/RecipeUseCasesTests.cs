@@ -58,7 +58,7 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
 
             var updatedRecipeDto = new RecipeDto
             {
-                RecipeId = createdRecipe.Item.RecipeId,
+                RecipeId = createdRecipe.Item!.RecipeId,
                 Title = "Updated Recipe",
                 Description = "Updated Description",
                 Ingredients = createdRecipe.Item.Ingredients,

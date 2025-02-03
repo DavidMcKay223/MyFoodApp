@@ -12,9 +12,6 @@ namespace MyFoodApp.Application.Validators
 
             RuleFor(x => x.Quantity)
                 .GreaterThan(0).WithMessage("Quantity must be greater than zero.");
-
-            RuleFor(x => x.Unit)
-                .NotNull().WithMessage("Unit is required.");
         }
     }
 }

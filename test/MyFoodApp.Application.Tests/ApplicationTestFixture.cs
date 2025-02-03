@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Application.Mappings;
 using MyFoodApp.Domain.Interfaces.Repositories;
 using MyFoodApp.Infrastructure.Persistence;
 using MyFoodApp.Infrastructure.Repositories;
+using MyFoodApp.Infrastructure.Tests.Data;
 using MyFoodApp.Infrastructure.Tests.Helpers;
 
 namespace MyFoodApp.Application.Tests
@@ -14,7 +14,6 @@ namespace MyFoodApp.Application.Tests
         public IMapper Mapper { get; }
         public AppDbContext DbContext { get; }
         public IRecipeRepository RecipeRepository { get; }
-        private readonly SqliteConnection _connection;
 
         public ApplicationTestFixture()
         {
@@ -31,24 +30,14 @@ namespace MyFoodApp.Application.Tests
 
             Mapper = configuration.CreateMapper();
 
-            _connection = new SqliteConnection("DataSource=:memory:");
-            _connection.Open();
+            DbContext = DbContextHelper.CreateTestContext();
 
-            var options = new DbContextOptionsBuilder<AppDbContext>()
-                .UseSqlite(_connection)
-                .Options;
-
-            DbContext = new AppDbContext(options);
-            DbContext.Database.EnsureCreated();
-
-            // Register Use Cases for Other Unit Test:
             RecipeRepository = new RecipeRepository(DbContext);
         }
 
         public void Dispose()
         {
             DbContextHelper.CleanDatabase(DbContext);
-            _connection.Dispose();
         }
     }
 
