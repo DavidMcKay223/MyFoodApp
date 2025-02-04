@@ -1,0 +1,61 @@
+# Directory: Interfaces\Repositories
+
+## File: IFoodItemRepository.cs
+
+```
+using MyFoodApp.Domain.Entities;
+
+namespace MyFoodApp.Domain.Interfaces.Repositories
+{
+    public interface IFoodItemRepository
+    {
+        IQueryable<FoodItem> GetAllFoodItemsAsync();
+        Task<FoodItem?> GetFoodItemByIdAsync(int foodItemId, bool tracking = false);
+    }
+}
+
+```
+
+## File: IMealSuggestionRepository.cs
+
+```
+using MyFoodApp.Domain.Entities;
+
+namespace MyFoodApp.Domain.Interfaces.Repositories
+{
+    public interface IMealSuggestionRepository
+    {
+        IQueryable<MealSuggestion> GetAllMealSuggestionsAsync();
+        Task<MealSuggestion?> GetMealSuggestionByIdAsync(int foodItemId, bool tracking = false);
+    }
+}
+
+```
+
+## File: IRecipeRepository.cs
+
+```
+using MyFoodApp.Domain.Entities;
+
+namespace MyFoodApp.Domain.Interfaces.Repositories
+{
+    //TODO: Refactor this, it grows because of bad suggestions
+    public interface IRecipeRepository
+    {
+        IQueryable<Recipe> GetAllRecipesAsync();
+        Task<Recipe?> GetRecipeByIdAsync(int recipeId, bool tracking = false);
+        Task<Recipe> AddRecipeAsync(Recipe recipe);
+        Task AddRecipeStepRangeAsync(List<RecipeStep> items);
+        Task AddIngredientRangeAsync(List<Ingredient> items);
+        Task AddRecipeMealSuggestionRangeAsync(List<RecipeMealSuggestion> items);
+        Task<Recipe> UpdateRecipeAsync(Recipe recipe);
+        Task DeleteRecipeAsync(Recipe recipe);
+        IQueryable<Recipe> GetRecipesByIngredientsAsync(IEnumerable<int> foodItemIds);
+        Task DeleteIngredientAsync(Ingredient ingredient);
+        Task DeleteStepAsync(RecipeStep step);
+        Task DeleteMealSuggestionAsync(RecipeMealSuggestion suggestion);
+    }
+}
+
+```
+
