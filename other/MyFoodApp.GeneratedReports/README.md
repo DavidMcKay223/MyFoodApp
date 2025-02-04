@@ -4,8 +4,9 @@
 ├── 📁 .github/
 │   └── 📁 workflows/
 ├── 📁 other/
-│   └── 📁 MyFoodApp.ConsoleApp/
-│       └── 🟣 Program.cs
+│   ├── 📁 MyFoodApp.ConsoleApp/
+│   │   └── 🟣 Program.cs
+│   └── 📁 MyFoodApp.GeneratedReports/
 ├── 📁 src/
 │   └── 📁 MyFoodApp/
 │       ├── 📁 MyFoodApp.Application/

@@ -2,7 +2,7 @@
 
 ## File: AppDbContext.cs
 
-```
+```C#
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Domain.Entities;
 

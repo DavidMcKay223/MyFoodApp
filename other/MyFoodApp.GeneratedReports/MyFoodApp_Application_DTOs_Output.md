@@ -2,7 +2,7 @@
 
 ## File: FoodCategoryDto.cs
 
-```
+```C#
 namespace MyFoodApp.Application.DTOs
 {
     public class FoodCategoryDto
@@ -20,7 +20,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: FoodItemDto.cs
 
-```
+```C#
 namespace MyFoodApp.Application.DTOs
 {
     public class FoodItemDto
@@ -44,7 +44,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: FoodItemSearchDto.cs
 
-```
+```C#
 using MyFoodApp.Application.Common;
 using MyFoodApp.Domain.Enums;
 
@@ -66,7 +66,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: FoodItemStoreSectionDto.cs
 
-```
+```C#
 namespace MyFoodApp.Application.DTOs
 {
     public class FoodItemStoreSectionDto
@@ -85,7 +85,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: IngredientDto.cs
 
-```
+```C#
 using MyFoodApp.Domain.Enums;
 
 namespace MyFoodApp.Application.DTOs
@@ -108,7 +108,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: IngredientSearchDto.cs
 
-```
+```C#
 using MyFoodApp.Application.Common;
 using MyFoodApp.Domain.Enums;
 
@@ -129,7 +129,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: MealSuggestionDto.cs
 
-```
+```C#
 using MyFoodApp.Domain.Enums;
 
 namespace MyFoodApp.Application.DTOs
@@ -153,7 +153,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: MealSuggestionSearchDto.cs
 
-```
+```C#
 using MyFoodApp.Application.Common;
 using MyFoodApp.Domain.Enums;
 
@@ -175,7 +175,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: MealSuggestionTagDto.cs
 
-```
+```C#
 namespace MyFoodApp.Application.DTOs
 {
     public class MealSuggestionTagDto
@@ -192,7 +192,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: PriceHistoryDto.cs
 
-```
+```C#
 namespace MyFoodApp.Application.DTOs
 {
     public class PriceHistoryDto
@@ -212,7 +212,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: PriceHistorySearchDto.cs
 
-```
+```C#
 using MyFoodApp.Application.Common;
 using MyFoodApp.Domain.Enums;
 
@@ -234,7 +234,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: RecipeDto.cs
 
-```
+```C#
 namespace MyFoodApp.Application.DTOs
 {
     public class RecipeDto
@@ -257,7 +257,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: RecipeMealSuggestionDto.cs
 
-```
+```C#
 namespace MyFoodApp.Application.DTOs
 {
     public class RecipeMealSuggestionDto
@@ -275,7 +275,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: RecipeSearchDto.cs
 
-```
+```C#
 using MyFoodApp.Application.Common;
 using MyFoodApp.Domain.Enums;
 
@@ -298,7 +298,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: RecipeStepDto.cs
 
-```
+```C#
 namespace MyFoodApp.Application.DTOs
 {
     public class RecipeStepDto
@@ -317,7 +317,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: StoreSectionDto.cs
 
-```
+```C#
 namespace MyFoodApp.Application.DTOs
 {
     public class StoreSectionDto
@@ -335,7 +335,7 @@ namespace MyFoodApp.Application.DTOs
 
 ## File: StoreSectionSearchDto.cs
 
-```
+```C#
 using MyFoodApp.Application.Common;
 using MyFoodApp.Domain.Enums;
 

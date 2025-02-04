@@ -2,7 +2,7 @@
 
 ## File: IFoodItemRepository.cs
 
-```
+```C#
 using MyFoodApp.Domain.Entities;
 
 namespace MyFoodApp.Domain.Interfaces.Repositories
@@ -18,7 +18,7 @@ namespace MyFoodApp.Domain.Interfaces.Repositories
 
 ## File: IMealSuggestionRepository.cs
 
-```
+```C#
 using MyFoodApp.Domain.Entities;
 
 namespace MyFoodApp.Domain.Interfaces.Repositories
@@ -34,7 +34,7 @@ namespace MyFoodApp.Domain.Interfaces.Repositories
 
 ## File: IRecipeRepository.cs
 
-```
+```C#
 using MyFoodApp.Domain.Entities;
 
 namespace MyFoodApp.Domain.Interfaces.Repositories

@@ -2,7 +2,7 @@
 
 ## File: IMealSuggestionUseCases.cs
 
-```
+```C#
 using MyFoodApp.Application.Common;
 using MyFoodApp.Application.DTOs;
 

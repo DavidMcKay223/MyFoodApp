@@ -2,7 +2,7 @@
 
 ## File: RecipeUseCases.cs
 
-```
+```C#
 using MyFoodApp.Application.Common;
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Application.Interfaces.Recipes;

@@ -2,7 +2,7 @@
 
 ## File: FoodCategory.cs
 
-```
+```C#
 using System.ComponentModel.DataAnnotations;
 
 namespace MyFoodApp.Domain.Entities
@@ -28,7 +28,7 @@ namespace MyFoodApp.Domain.Entities
 
 ## File: FoodItem.cs
 
-```
+```C#
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
@@ -67,7 +67,7 @@ namespace MyFoodApp.Domain.Entities
 
 ## File: FoodItemStoreSection.cs
 
-```
+```C#
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyFoodApp.Domain.Entities
@@ -93,7 +93,7 @@ namespace MyFoodApp.Domain.Entities
 
 ## File: Ingredient.cs
 
-```
+```C#
 using MyFoodApp.Domain.Enums;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
@@ -126,7 +126,7 @@ namespace MyFoodApp.Domain.Entities
 
 ## File: MealSuggestion.cs
 
-```
+```C#
 using MyFoodApp.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
@@ -159,7 +159,7 @@ namespace MyFoodApp.Domain.Entities
 
 ## File: MealSuggestionTag.cs
 
-```
+```C#
 using System.ComponentModel.DataAnnotations;
 
 namespace MyFoodApp.Domain.Entities
@@ -182,7 +182,7 @@ namespace MyFoodApp.Domain.Entities
 
 ## File: PriceHistory.cs
 
-```
+```C#
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
@@ -214,7 +214,7 @@ namespace MyFoodApp.Domain.Entities
 
 ## File: Recipe.cs
 
-```
+```C#
 using System.ComponentModel.DataAnnotations;
 
 namespace MyFoodApp.Domain.Entities
@@ -246,7 +246,7 @@ namespace MyFoodApp.Domain.Entities
 
 ## File: RecipeMealSuggestion.cs
 
-```
+```C#
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyFoodApp.Domain.Entities
@@ -269,7 +269,7 @@ namespace MyFoodApp.Domain.Entities
 
 ## File: RecipeStep.cs
 
-```
+```C#
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
@@ -297,7 +297,7 @@ namespace MyFoodApp.Domain.Entities
 
 ## File: StoreSection.cs
 
-```
+```C#
 using System.ComponentModel.DataAnnotations;
 
 namespace MyFoodApp.Domain.Entities

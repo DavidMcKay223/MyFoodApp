@@ -2,7 +2,7 @@
 
 ## File: Login.razor
 
-```
+```C#
 @page "/login"
 @rendermode InteractiveServer
 
@@ -18,7 +18,7 @@
 
 ## File: Register.razor
 
-```
+```C#
 @page "/register"
 @rendermode InteractiveServer
 

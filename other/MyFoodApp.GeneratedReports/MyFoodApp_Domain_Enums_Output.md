@@ -2,7 +2,7 @@
 
 ## File: FoodItemSortBy.cs
 
-```
+```C#
 namespace MyFoodApp.Domain.Enums
 {
     public enum FoodItemSortBy
@@ -18,7 +18,7 @@ namespace MyFoodApp.Domain.Enums
 
 ## File: IngredientSortBy.cs
 
-```
+```C#
 namespace MyFoodApp.Domain.Enums
 {
     public enum IngredientSortBy
@@ -32,7 +32,7 @@ namespace MyFoodApp.Domain.Enums
 
 ## File: MealSuggestionSortBy.cs
 
-```
+```C#
 namespace MyFoodApp.Domain.Enums
 {
     public enum MealSuggestionSortBy
@@ -48,7 +48,7 @@ namespace MyFoodApp.Domain.Enums
 
 ## File: MealType.cs
 
-```
+```C#
 namespace MyFoodApp.Domain.Enums
 {
     public enum MealType
@@ -65,7 +65,7 @@ namespace MyFoodApp.Domain.Enums
 
 ## File: PriceHistorySortBy.cs
 
-```
+```C#
 namespace MyFoodApp.Domain.Enums
 {
     public enum PriceHistorySortBy
@@ -80,7 +80,7 @@ namespace MyFoodApp.Domain.Enums
 
 ## File: RecipeSortBy.cs
 
-```
+```C#
 namespace MyFoodApp.Domain.Enums
 {
     public enum RecipeSortBy
@@ -97,7 +97,7 @@ namespace MyFoodApp.Domain.Enums
 
 ## File: SortOrder.cs
 
-```
+```C#
 namespace MyFoodApp.Domain.Enums
 {
     public enum SortOrder
@@ -111,7 +111,7 @@ namespace MyFoodApp.Domain.Enums
 
 ## File: StoreSectionSortBy.cs
 
-```
+```C#
 namespace MyFoodApp.Domain.Enums
 {
     public enum StoreSectionSortBy
@@ -126,7 +126,7 @@ namespace MyFoodApp.Domain.Enums
 
 ## File: UnitType.cs
 
-```
+```C#
 namespace MyFoodApp.Domain.Enums
 {
     public enum UnitType

@@ -2,7 +2,7 @@
 
 ## File: FoodProfile.cs
 
-```
+```C#
 using AutoMapper;
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Domain.Entities;
@@ -36,7 +36,7 @@ namespace MyFoodApp.Application.Mappings
 
 ## File: IngredientProfile.cs
 
-```
+```C#
 using AutoMapper;
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Domain.Entities;
@@ -59,7 +59,7 @@ namespace MyFoodApp.Application.Mappings
 
 ## File: MealProfile.cs
 
-```
+```C#
 using AutoMapper;
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Domain.Entities;
@@ -86,7 +86,7 @@ namespace MyFoodApp.Application.Mappings
 
 ## File: PriceProfile.cs
 
-```
+```C#
 using AutoMapper;
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Domain.Entities;
@@ -108,7 +108,7 @@ namespace MyFoodApp.Application.Mappings
 
 ## File: RecipeProfile.cs
 
-```
+```C#
 using AutoMapper;
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Domain.Entities;
@@ -141,7 +141,7 @@ namespace MyFoodApp.Application.Mappings
 
 ## File: StoreProfile.cs
 
-```
+```C#
 using AutoMapper;
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Domain.Entities;

@@ -2,7 +2,7 @@
 
 ## File: EditModalRecipe.razor
 
-```
+```C#
 @using MyFoodApp.Application.DTOs
 @using MyFoodApp.Application.Interfaces.Recipes
 @using MyFoodApp.Application.Interfaces.Foods
@@ -170,7 +170,7 @@
 
 ## File: FormEditIngredient.razor
 
-```
+```C#
 @using MyFoodApp.Application.DTOs
 @using MyFoodApp.Domain.Enums
 
@@ -239,7 +239,7 @@
 
 ## File: FormEditRecipeMealSuggestion.razor
 
-```
+```C#
 @using MyFoodApp.Application.DTOs
 
 @code {
@@ -290,7 +290,7 @@
 
 ## File: FormEditRecipeStep.razor
 
-```
+```C#
 @using MyFoodApp.Application.DTOs
 
 @code {
@@ -347,7 +347,7 @@
 
 ## File: FormEditSelectFoodItem.razor
 
-```
+```C#
 @using MyFoodApp.Application.Common
 @using MyFoodApp.Application.DTOs
 @using MyFoodApp.Application.Interfaces.Foods
@@ -379,7 +379,7 @@
 
 ## File: FormEditSelectMealSuggestion.razor
 
-```
+```C#
 @using MyFoodApp.Application.Common
 @using MyFoodApp.Application.DTOs
 @using MyFoodApp.Application.Interfaces.Foods
@@ -410,7 +410,7 @@
 
 ## File: IndexDisplayRecipe.razor
 
-```
+```C#
 @page "/recipes"
 @rendermode InteractiveServer
 
@@ -420,7 +420,7 @@
 
 ## File: IndexEditRecipe.razor
 
-```
+```C#
 @page "/recipes-edit"
 @rendermode InteractiveServer
 
@@ -430,7 +430,7 @@
 
 ## File: ListDisplayRecipe.razor
 
-```
+```C#
 @using MyFoodApp.Application.DTOs
 @using MyFoodApp.Application.Interfaces.Recipes
 @using MyFoodApp.Application.Common
@@ -535,7 +535,7 @@ else
 
 ## File: ListEditRecipe.razor
 
-```
+```C#
 @using MyFoodApp.Application.DTOs
 @using MyFoodApp.Application.Interfaces.Recipes
 @using MyFoodApp.Application.Common
@@ -717,7 +717,7 @@ else
 
 ## File: SearchFormRecipe.razor
 
-```
+```C#
 @using MyFoodApp.Application.DTOs
 
 <div class="row mb-3">
@@ -756,7 +756,7 @@ else
 
 ## File: TableDisplayRecipe.razor
 
-```
+```C#
 @using MyFoodApp.Application.DTOs
 @using MyFoodApp.Domain.Enums
 
@@ -889,7 +889,7 @@ else
 
 ## File: TableFormRecipe.razor
 
-```
+```C#
 @using MyFoodApp.Application.DTOs
 
 @if (Recipes?.Any() == false)

@@ -2,7 +2,7 @@
 
 ## File: CustomTimeInput.razor
 
-```
+```C#
 @using System.Globalization
 @using System.Text.RegularExpressions
 @using System.Diagnostics.CodeAnalysis
@@ -96,7 +96,7 @@
 
 ## File: DisplayError.razor
 
-```
+```C#
 @using MyFoodApp.Application.Common
 
 @if (Errors.Any())
@@ -121,7 +121,7 @@
 
 ## File: SearchButton.razor
 
-```
+```C#
 
 <div class="mb-3">
     @if(OnAdd.HasDelegate)
@@ -153,7 +153,7 @@
 
 ## File: SearchPagination.razor
 
-```
+```C#
 @typeparam TItem
 
 @if (TotalItems > 0)

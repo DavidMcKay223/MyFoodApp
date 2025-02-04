@@ -2,7 +2,7 @@
 
 ## File: AutoMapperConfiguration.cs
 
-```
+```C#
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using MyFoodApp.Application.Mappings;

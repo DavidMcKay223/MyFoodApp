@@ -2,7 +2,7 @@
 
 ## File: FoodItemRepository.cs
 
-```
+```C#
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Domain.Entities;
 using MyFoodApp.Domain.Interfaces.Repositories;
@@ -41,7 +41,7 @@ namespace MyFoodApp.Infrastructure.Repositories
 
 ## File: MealSuggestionRepository.cs
 
-```
+```C#
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Domain.Entities;
 using MyFoodApp.Domain.Interfaces.Repositories;
@@ -80,7 +80,7 @@ namespace MyFoodApp.Infrastructure.Repositories
 
 ## File: RecipeRepository.cs
 
-```
+```C#
 using MyFoodApp.Domain.Entities;
 using MyFoodApp.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;

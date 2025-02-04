@@ -2,7 +2,7 @@
 
 ## File: _Imports.razor
 
-```
+```C#
 @using System.Net.Http
 @using System.Net.Http.Json
 @using Microsoft.AspNetCore.Components.Forms
@@ -18,7 +18,7 @@
 
 ## File: App.razor
 
-```
+```C#
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +45,7 @@
 
 ## File: Routes.razor
 
-```
+```C#
 <Router AppAssembly="typeof(Program).Assembly">
     <Found Context="routeData">
         <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />

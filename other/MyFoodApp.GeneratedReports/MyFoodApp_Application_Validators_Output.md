@@ -2,7 +2,7 @@
 
 ## File: FoodCategoryDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 
@@ -27,7 +27,7 @@ namespace MyFoodApp.Application.Validators
 
 ## File: FoodItemDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 
@@ -58,7 +58,7 @@ public class FoodItemDtoValidator : AbstractValidator<FoodItemDto>
 
 ## File: FoodItemStoreSectionDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 
@@ -84,7 +84,7 @@ namespace MyFoodApp.Application.Validators
 
 ## File: IngredientDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 
@@ -107,7 +107,7 @@ namespace MyFoodApp.Application.Validators
 
 ## File: MealSuggestionDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 
@@ -142,7 +142,7 @@ namespace MyFoodApp.Application.Validators
 
 ## File: MealSuggestionTagDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 
@@ -163,7 +163,7 @@ namespace MyFoodApp.Application.Validators
 
 ## File: PriceHistoryDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 
@@ -193,7 +193,7 @@ namespace MyFoodApp.Application.Validators
 
 ## File: RecipeDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 
@@ -231,7 +231,7 @@ namespace MyFoodApp.Application.Validators
 
 ## File: RecipeMealSuggestionDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 
@@ -251,7 +251,7 @@ namespace MyFoodApp.Application.Validators
 
 ## File: RecipeStepDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 
@@ -275,7 +275,7 @@ namespace MyFoodApp.Application.Validators
 
 ## File: StoreSectionDtoValidator.cs
 
-```
+```C#
 using FluentValidation;
 using MyFoodApp.Application.DTOs;
 

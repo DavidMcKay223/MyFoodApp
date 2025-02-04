@@ -2,7 +2,7 @@
 
 ## File: MainLayout.razor
 
-```
+```C#
 @inherits LayoutComponentBase
 
 <div class="page">
@@ -31,7 +31,7 @@
 
 ## File: NavMenu.razor
 
-```
+```C#
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">MyFoodApp.Web</a>

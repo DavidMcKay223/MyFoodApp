@@ -2,7 +2,7 @@
 
 ## File: Error.cs
 
-```
+```C#
 namespace MyFoodApp.Application.Common
 {
     public class Error
@@ -16,7 +16,7 @@ namespace MyFoodApp.Application.Common
 
 ## File: Response.cs
 
-```
+```C#
 namespace MyFoodApp.Application.Common
 {
     public class Response<T>
@@ -32,7 +32,7 @@ namespace MyFoodApp.Application.Common
 
 ## File: SearchDto.cs
 
-```
+```C#
 namespace MyFoodApp.Application.Common
 {
     public abstract class SearchDto<TSortBy, TSortOrder>

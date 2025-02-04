@@ -2,7 +2,7 @@
 
 ## File: Error.razor
 
-```
+```C#
 @page "/Error"
 @using System.Diagnostics
 
@@ -44,7 +44,7 @@
 
 ## File: Home.razor
 
-```
+```C#
 @page "/"
 
 <PageTitle>Home</PageTitle>

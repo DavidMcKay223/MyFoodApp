@@ -2,7 +2,7 @@
 
 ## File: IRecipeMealSuggestionUseCases.cs
 
-```
+```C#
 using MyFoodApp.Application.Common;
 using MyFoodApp.Application.DTOs;
 
@@ -19,7 +19,7 @@ namespace MyFoodApp.Application.Interfaces.Recipes
 
 ## File: IRecipeStepUseCases.cs
 
-```
+```C#
 namespace MyFoodApp.Application.Interfaces.Recipes
 {
     public interface IRecipeStepUseCases
@@ -31,7 +31,7 @@ namespace MyFoodApp.Application.Interfaces.Recipes
 
 ## File: IRecipeUseCases.cs
 
-```
+```C#
 using MyFoodApp.Application.Common;
 using MyFoodApp.Application.DTOs;
 

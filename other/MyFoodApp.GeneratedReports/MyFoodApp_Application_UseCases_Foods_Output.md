@@ -2,7 +2,7 @@
 
 ## File: FoodItemUseCases.cs
 
-```
+```C#
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
