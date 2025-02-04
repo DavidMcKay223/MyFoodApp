@@ -19,8 +19,54 @@
 ## Project Directory Structure
 [Auto Generated Directory](https://github.com/DavidMcKay223/MyFoodApp/tree/main/other/MyFoodApp.GeneratedReports#readme)
 
-## Class Diagram
+## Project Directory Structure Diagram
+```mermaid
+graph TD;
+    MyFoodApp-main-->src;
+    src-->MyFoodApp;
+    MyFoodApp-->MyFoodApp.Application;
+    MyFoodApp-->MyFoodApp.Domain;
+    MyFoodApp-->MyFoodApp.Infrastructure;
+    MyFoodApp-->MyFoodApp.Shared;
+    MyFoodApp-->MyFoodApp.Web;
 
+    MyFoodApp.Application-->Common;
+    MyFoodApp.Application-->Configurations;
+    MyFoodApp.Application-->DTOs;
+    MyFoodApp.Application-->Interfaces;
+    MyFoodApp.Application-->Mappings;
+    MyFoodApp.Application-->UseCases;
+    MyFoodApp.Application-->Validators;
+
+    MyFoodApp.Domain-->Entities;
+    MyFoodApp.Domain-->Enums;
+    MyFoodApp.Domain-->Interfaces;
+
+    MyFoodApp.Infrastructure-->Migrations;
+    MyFoodApp.Infrastructure-->Persistence;
+    MyFoodApp.Infrastructure-->Repositories;
+
+    MyFoodApp.Shared-->Settings;
+
+    MyFoodApp.Web-->Components;
+    MyFoodApp.Web-->Pages;
+    MyFoodApp.Web-->Shared;
+    MyFoodApp.Web-->Properties;
+    MyFoodApp.Web-->wwwroot;
+
+    Components-->Authentication;
+    Components-->Layout;
+
+    Pages-->Recipes;
+
+    wwwroot-->lib;
+    lib-->bootstrap;
+    bootstrap-->dist;
+    dist-->css;
+    dist-->js;
+```
+
+## Class Diagram
 ```mermaid
 classDiagram
     direction TB
@@ -264,51 +310,4 @@ FROM [MyFoodApp].[dbo].[Ingredients] i
 JOIN [MyFoodApp].[dbo].[FoodItems] fi ON i.FoodItemId = fi.FoodItemId
 JOIN [MyFoodApp].[dbo].[Recipes] r ON i.RecipeId = r.RecipeId
 GROUP BY fi.Name
-```
-
-## Project Folder Structure Diagram
-```mermaid
-graph TD;
-    MyFoodApp-main-->src;
-    src-->MyFoodApp;
-    MyFoodApp-->MyFoodApp.Application;
-    MyFoodApp-->MyFoodApp.Domain;
-    MyFoodApp-->MyFoodApp.Infrastructure;
-    MyFoodApp-->MyFoodApp.Shared;
-    MyFoodApp-->MyFoodApp.Web;
-
-    MyFoodApp.Application-->Common;
-    MyFoodApp.Application-->Configurations;
-    MyFoodApp.Application-->DTOs;
-    MyFoodApp.Application-->Interfaces;
-    MyFoodApp.Application-->Mappings;
-    MyFoodApp.Application-->UseCases;
-    MyFoodApp.Application-->Validators;
-
-    MyFoodApp.Domain-->Entities;
-    MyFoodApp.Domain-->Enums;
-    MyFoodApp.Domain-->Interfaces;
-
-    MyFoodApp.Infrastructure-->Migrations;
-    MyFoodApp.Infrastructure-->Persistence;
-    MyFoodApp.Infrastructure-->Repositories;
-
-    MyFoodApp.Shared-->Settings;
-
-    MyFoodApp.Web-->Components;
-    MyFoodApp.Web-->Pages;
-    MyFoodApp.Web-->Shared;
-    MyFoodApp.Web-->Properties;
-    MyFoodApp.Web-->wwwroot;
-
-    Components-->Authentication;
-    Components-->Layout;
-
-    Pages-->Recipes;
-
-    wwwroot-->lib;
-    lib-->bootstrap;
-    bootstrap-->dist;
-    dist-->css;
-    dist-->js;
 ```
