@@ -4,9 +4,9 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/DavidMcKay223/MyFoodApp/dotnet.yml)](https://github.com/DavidMcKay223/MyFoodApp/actions)
 
 ## Features ✨
-- 🍔 **Food Management**: Track ingredients and recipes.
-- 🛒 **Grocery Integration**: Sync with store sections.
-- 🤖 **AI Recommendations**: Get meal suggestions.
+- 🍔 **Food Management**: Track ingredients and recipes, and food information.
+- 🛒 **Grocery Integration**: Sync with store sections, store lookup along with price checker.
+- 🤖 **Meal Recommendations**: Get meal suggestions, based on existing ingredients.
 
 ## Tech Stack 🛠️
 - **Frontend**: Blazor 🌀
