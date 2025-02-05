@@ -1,7 +1,7 @@
 ﻿@using MyFoodApp.Application.DTOs
 @using MyFoodApp.Application.Interfaces.Calculations
 @using MyFoodApp.Domain.Enums
-@inject ICalorieCalculatorService CalorieCalculatorService
+@inject INutritionCalculatorService CalorieCalculatorService
 
 @if (Recipes?.Any() == false)
 {

@@ -14,10 +14,15 @@
     <InputSelect @bind-Value="Ingredient.FoodItemId" class="form-select">
         @foreach (var foodItem in FoodItemList)
         {
-            <option value="@foodItem.FoodItemId">
-                @foodItem.Name:
-                Protein per unit(@foodItem.ProteinPerUnit)
-                Calories per unit(@foodItem.CaloriesPerUnit)
+            <option value="@foodItem.FoodItemId" class="food-item-option">
+                <span>@foodItem.Name</span>
+                <span class="food-item-details text-info">
+                    (Unit: @foodItem.Unit)<br />
+                    Protein: @foodItem.ProteinPerUnit per unit<br />
+                    Calories: @foodItem.CaloriesPerUnit per unit<br />
+                    Carbohydrates: @foodItem.CarbohydratesPerUnit per unit<br />
+                    Fat: @foodItem.FatPerUnit per unit
+                </span>
             </option>
         }
     </InputSelect>

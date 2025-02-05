@@ -12,4 +12,8 @@
     <ProjectReference Include="..\..\src\MyFoodApp\MyFoodApp.Infrastructure\MyFoodApp.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resource\" />
+  </ItemGroup>
+
 </Project>

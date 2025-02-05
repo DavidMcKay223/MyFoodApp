@@ -87,3 +87,13 @@ h1:focus {
     max-height: 90vh;
     overflow-y: auto;
 }
+
+.food-item-option {
+    display: flex;
+    flex-direction: column;
+}
+
+.food-item-details {
+    font-size: 0.85rem;
+    color: gray;
+}

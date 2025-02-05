@@ -2,7 +2,7 @@
 @using MyFoodApp.Domain.Enums
 @using MyFoodApp.Application.Interfaces.Calculations
 @using System.Globalization
-@inject ICalorieCalculatorService CalorieCalculatorService
+@inject INutritionCalculatorService NutritionCalculatorService
 
 @code {
     [Parameter]
@@ -23,7 +23,7 @@
         {
             if (!_expandedState.ContainsKey(ingredient))
             {
-                _expandedState[ingredient] = true;
+                _expandedState[ingredient] = false;
             }
         }
     }
@@ -35,10 +35,10 @@
         {
             if (ingredient.FoodItem == null) continue;
 
-            _totals.Calories += CalorieCalculatorService.ConvertToCalories(ingredient);
-            _totals.Protein += ingredient.FoodItem.ProteinPerUnit ?? 0.00M * ingredient.Quantity;
-            //_totals.Carbohydrates += ingredient.FoodItem.CarbohydratesPerUnit * ingredient.Quantity;
-            //_totals.Fat += ingredient.FoodItem.FatPerUnit * ingredient.Quantity;
+            _totals.Calories += NutritionCalculatorService.ConvertToCalories(ingredient);
+            _totals.Protein += NutritionCalculatorService.ConvertToProtein(ingredient);
+            _totals.Carbohydrates += NutritionCalculatorService.ConvertToCarbohydrates(ingredient);
+            _totals.Fat += NutritionCalculatorService.ConvertToFat(ingredient);
         }
     }
 
@@ -119,49 +119,63 @@
                     </div>
                 </div>
 
-                @foreach (var ingredient in Ingredients)
-                {
-                    <div class="ingredient-card card mb-3 shadow-sm">
-                        <div class="card-header bg-light d-flex justify-content-between align-items-center">
-                            <button class="btn btn-link text-dark text-decoration-none"
-                                    @onclick="@(() => _expandedState[ingredient] = !_expandedState[ingredient])">
-                                <i class="fas @(_expandedState[ingredient] ? "fa-chevron-down" : "fa-chevron-right") me-2"></i>
-                                @ingredient.FoodItem?.Name
-                            </button>
-                        </div>
+                <div class="container">
+                    <div class="row">
+                        @foreach (var ingredient in Ingredients)
+                        {
+                            <div class="col-4">
+                                <div class="ingredient-card card mb-3 shadow-sm">
+                                    <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-link text-dark text-decoration-none"
+                                                @onclick="@(() => _expandedState[ingredient] = !_expandedState[ingredient])">
+                                            <i class="fas @(_expandedState[ingredient] ? "fa-chevron-down" : "fa-chevron-right") me-2"></i>
+                                            @ingredient.FoodItem?.Name
+                                        </button>
+                                    </div>
 
-                        <div class="collapse @(_expandedState[ingredient] ? "show" : "")">
-                            <div class="card-body">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-md-4">
-                                        @if (ingredient.FoodItem != null)
-                                        {
-                                            <p class="mb-1 text-muted">@ingredient.FoodItem.Description</p>
-                                            <div class="nutrition-facts">
-                                                <div class="d-flex justify-content-between">
-                                                    <span>Calories:</span>
-                                                    <strong>@CalorieCalculatorService.ConvertToCalories(ingredient).ToString("N0")</strong>
+                                    <div class="collapse @(_expandedState[ingredient] ? "show" : "")">
+                                        <div class="card-body">
+                                            <div class="row g-3 align-items-center">
+                                                <div class="col-md-4">
+                                                    @if (ingredient.FoodItem != null)
+                                                    {
+                                                        <p class="mb-1 text-muted">@ingredient.FoodItem.Description</p>
+                                                        <div class="nutrition-facts">
+                                                            <div class="d-flex justify-content-between">
+                                                                <span>Calories:</span>
+                                                                <strong>@NutritionCalculatorService.ConvertToCalories(ingredient).ToString("N0")</strong>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <span>Protein:</span>
+                                                                <strong>@NutritionCalculatorService.ConvertToProtein(ingredient).ToString("N2")g</strong>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <span>Carbohydrates:</span>
+                                                                <strong>@NutritionCalculatorService.ConvertToCarbohydrates(ingredient).ToString("N2")g</strong>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <span>Fat:</span>
+                                                                <strong>@NutritionCalculatorService.ConvertToFat(ingredient).ToString("N2")g</strong>
+                                                            </div>
+                                                            @if (ingredient.FoodItem.FoodCategory != null)
+                                                            {
+                                                                <div class="mt-2">
+                                                                    <span class="badge bg-info">
+                                                                        @ingredient.FoodItem.FoodCategory.Name
+                                                                    </span>
+                                                                </div>
+                                                            }
+                                                        </div>
+                                                    }
                                                 </div>
-                                                <div class="d-flex justify-content-between">
-                                                    <span>Protein:</span>
-                                                    <strong>@(ingredient.FoodItem.ProteinPerUnit * ingredient.Quantity)g</strong>
-                                                </div>
-                                                @if (ingredient.FoodItem.FoodCategory != null)
-                                                {
-                                                    <div class="mt-2">
-                                                        <span class="badge bg-info">
-                                                            @ingredient.FoodItem.FoodCategory.Name
-                                                        </span>
-                                                    </div>
-                                                }
                                             </div>
-                                        }
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        }
                     </div>
-                }
+                </div>
             }
         </div>
     </div>

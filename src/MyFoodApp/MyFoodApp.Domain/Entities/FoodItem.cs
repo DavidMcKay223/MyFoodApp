@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using MyFoodApp.Domain.Enums;
 
 namespace MyFoodApp.Domain.Entities
 {
@@ -23,6 +24,11 @@ namespace MyFoodApp.Domain.Entities
         public decimal? CaloriesPerUnit { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal? ProteinPerUnit { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal? CarbohydratesPerUnit { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal? FatPerUnit { get; set; }
+        public UnitType Unit { get; set; }
 
         // Navigation
         public FoodCategory? FoodCategory { get; set; }

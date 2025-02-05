@@ -9,6 +9,8 @@
         Teaspoon,
         Tablespoon,
         Cup,
-        Piece
+        Piece,
+        Slice,
+        Clove
     }
 }

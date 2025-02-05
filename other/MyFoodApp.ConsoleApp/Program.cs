@@ -104,172 +104,228 @@ namespace MyFoodApp.ConsoleApp
                     new() {
                         Name = "Carrot", Description = "Orange root vegetable",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Vegetables").FoodCategoryId,
-                        CaloriesPerUnit = 41, ProteinPerUnit = 0.9M
+                        CaloriesPerUnit = 41, ProteinPerUnit = 0.9M,
+                        CarbohydratesPerUnit = 9.58M, FatPerUnit = 0.24M,
+                        Unit = UnitType.Gram // Typically measured in grams for recipes
                     },
                     new() {
                         Name = "Spinach", Description = "Leafy green vegetable",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Vegetables").FoodCategoryId,
-                        CaloriesPerUnit = 23, ProteinPerUnit = 2.9M
+                        CaloriesPerUnit = 23, ProteinPerUnit = 2.9M,
+                        CarbohydratesPerUnit = 3.63M, FatPerUnit = 0.39M,
+                        Unit = UnitType.Gram // Typically measured in grams for recipes
                     },
                     new() {
                         Name = "Bell Pepper", Description = "Colorful capsicum",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Vegetables").FoodCategoryId,
-                        CaloriesPerUnit = 31, ProteinPerUnit = 1.0M
+                        CaloriesPerUnit = 31, ProteinPerUnit = 1.0M,
+                        CarbohydratesPerUnit = 6.03M, FatPerUnit = 0.3M,
+                        Unit = UnitType.Gram // Typically measured in grams for recipes
                     },
 
                     // Fruits
                     new() {
                         Name = "Apple", Description = "Crisp pomaceous fruit",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Fruits").FoodCategoryId,
-                        CaloriesPerUnit = 52, ProteinPerUnit = 0.3M
+                        CaloriesPerUnit = 52, ProteinPerUnit = 0.3M,
+                        CarbohydratesPerUnit = 13.81M, FatPerUnit = 0.17M,
+                        Unit = UnitType.Piece // Typically measured as whole pieces
                     },
                     new() {
                         Name = "Banana", Description = "Tropical curved fruit",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Fruits").FoodCategoryId,
-                        CaloriesPerUnit = 89, ProteinPerUnit = 1.1M
+                        CaloriesPerUnit = 89, ProteinPerUnit = 1.1M,
+                        CarbohydratesPerUnit = 22.84M, FatPerUnit = 0.33M,
+                        Unit = UnitType.Piece // Typically measured as whole pieces
                     },
                     new() {
                         Name = "Grapes", Description = "Small sweet berries",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Fruits").FoodCategoryId,
-                        CaloriesPerUnit = 69, ProteinPerUnit = 0.7M
+                        CaloriesPerUnit = 69, ProteinPerUnit = 0.7M,
+                        CarbohydratesPerUnit = 18.1M, FatPerUnit = 0.16M,
+                        Unit = UnitType.Gram // Typically measured in grams for recipes
                     },
 
                     // Dairy & Alternatives
                     new() {
                         Name = "Whole Milk", Description = "Dairy milk 3.25% fat",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Dairy & Alternatives").FoodCategoryId,
-                        CaloriesPerUnit = 61, ProteinPerUnit = 3.2M
+                        CaloriesPerUnit = 61, ProteinPerUnit = 3.2M,
+                        CarbohydratesPerUnit = 4.8M, FatPerUnit = 3.25M,
+                        Unit = UnitType.Milliliter // Typically measured in milliliters
                     },
                     new() {
                         Name = "Almond Milk", Description = "Plant-based milk alternative",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Dairy & Alternatives").FoodCategoryId,
-                        CaloriesPerUnit = 39, ProteinPerUnit = 1.0M
+                        CaloriesPerUnit = 39, ProteinPerUnit = 1.0M,
+                        CarbohydratesPerUnit = 1.52M, FatPerUnit = 2.52M,
+                        Unit = UnitType.Milliliter // Typically measured in milliliters
                     },
                     new() {
                         Name = "Greek Yogurt", Description = "Strained yogurt high in protein",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Dairy & Alternatives").FoodCategoryId,
-                        CaloriesPerUnit = 59, ProteinPerUnit = 10M
+                        CaloriesPerUnit = 59, ProteinPerUnit = 10M,
+                        CarbohydratesPerUnit = 3.6M, FatPerUnit = 0.4M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
 
                     // Grains & Cereals
                     new() {
                         Name = "Brown Rice", Description = "Whole grain rice",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Grains & Cereals").FoodCategoryId,
-                        CaloriesPerUnit = 111, ProteinPerUnit = 2.6M
+                        CaloriesPerUnit = 111, ProteinPerUnit = 2.6M,
+                        CarbohydratesPerUnit = 23M, FatPerUnit = 0.9M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
                     new() {
                         Name = "Whole Wheat Bread", Description = "High fiber bread",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Grains & Cereals").FoodCategoryId,
-                        CaloriesPerUnit = 247, ProteinPerUnit = 13M
+                        CaloriesPerUnit = 247, ProteinPerUnit = 13M,
+                        CarbohydratesPerUnit = 41M, FatPerUnit = 3.4M,
+                        Unit = UnitType.Slice // Typically measured in slices
                     },
                     new() {
                         Name = "Steel-cut Oats", Description = "Minimally processed oats",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Grains & Cereals").FoodCategoryId,
-                        CaloriesPerUnit = 150, ProteinPerUnit = 5M
+                        CaloriesPerUnit = 150, ProteinPerUnit = 5M,
+                        CarbohydratesPerUnit = 27M, FatPerUnit = 2.5M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
 
                     // Proteins
                     new() {
                         Name = "Chicken Breast", Description = "Boneless skinless poultry",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Proteins").FoodCategoryId,
-                        CaloriesPerUnit = 165, ProteinPerUnit = 31M
+                        CaloriesPerUnit = 165, ProteinPerUnit = 31M,
+                        CarbohydratesPerUnit = 0M, FatPerUnit = 3.6M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
                     new() {
                         Name = "Black Beans", Description = "Plant-based protein source",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Proteins").FoodCategoryId,
-                        CaloriesPerUnit = 132, ProteinPerUnit = 8.9M
+                        CaloriesPerUnit = 132, ProteinPerUnit = 8.9M,
+                        CarbohydratesPerUnit = 23.7M, FatPerUnit = 0.54M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
                     new() {
                         Name = "Salmon Fillet", Description = "Fatty fish protein",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Proteins").FoodCategoryId,
-                        CaloriesPerUnit = 208, ProteinPerUnit = 20M
+                        CaloriesPerUnit = 208, ProteinPerUnit = 20M,
+                        CarbohydratesPerUnit = 0M, FatPerUnit = 13M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
 
                     // Seafood
                     new() {
                         Name = "Shrimp", Description = "Small saltwater crustacean",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Seafood").FoodCategoryId,
-                        CaloriesPerUnit = 99, ProteinPerUnit = 24M
+                        CaloriesPerUnit = 99, ProteinPerUnit = 24M,
+                        CarbohydratesPerUnit = 0M, FatPerUnit = 0.3M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
                     new() {
                         Name = "Tuna Steak", Description = "Meaty saltwater fish",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Seafood").FoodCategoryId,
-                        CaloriesPerUnit = 132, ProteinPerUnit = 28M
+                        CaloriesPerUnit = 132, ProteinPerUnit = 28M,
+                        CarbohydratesPerUnit = 0M, FatPerUnit = 1M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
 
                     // Baked Goods
                     new() {
                         Name = "Sourdough Bread", Description = "Fermented dough bread",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Baked Goods").FoodCategoryId,
-                        CaloriesPerUnit = 289, ProteinPerUnit = 9M
+                        CaloriesPerUnit = 289, ProteinPerUnit = 9M,
+                        CarbohydratesPerUnit = 56M, FatPerUnit = 2M,
+                        Unit = UnitType.Slice // Typically measured in slices
                     },
                     new() {
                         Name = "Croissant", Description = "Flaky French pastry",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Baked Goods").FoodCategoryId,
-                        CaloriesPerUnit = 406, ProteinPerUnit = 8M
+                        CaloriesPerUnit = 406, ProteinPerUnit = 8M,
+                        CarbohydratesPerUnit = 45M, FatPerUnit = 21M,
+                        Unit = UnitType.Piece // Typically measured as whole pieces
                     },
 
                     // Condiments & Sauces
                     new() {
                         Name = "Olive Oil", Description = "Mediterranean cooking oil",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Fats & Oils").FoodCategoryId,
-                        CaloriesPerUnit = 884, ProteinPerUnit = 0M
+                        CaloriesPerUnit = 884, ProteinPerUnit = 0M,
+                        CarbohydratesPerUnit = 0M, FatPerUnit = 100M,
+                        Unit = UnitType.Tablespoon // Typically measured in tablespoons
                     },
     
                     // Special Diets
                     new() {
                         Name = "Gluten-Free Pasta", Description = "Wheat-free alternative",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Special Diets").FoodCategoryId,
-                        CaloriesPerUnit = 357, ProteinPerUnit = 7.5M
+                        CaloriesPerUnit = 357, ProteinPerUnit = 7.5M,
+                        CarbohydratesPerUnit = 75M, FatPerUnit = 3M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
     
                     // International
                     new() {
                         Name = "Sushi Rice", Description = "Japanese short-grain rice",
                         FoodCategoryId = foodCategories.First(c => c.Name == "International").FoodCategoryId,
-                        CaloriesPerUnit = 130, ProteinPerUnit = 2.7M
+                        CaloriesPerUnit = 130, ProteinPerUnit = 2.7M,
+                        CarbohydratesPerUnit = 28M, FatPerUnit = 0.3M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
 
                     // Frozen Foods
                     new() {
                         Name = "Frozen Peas", Description = "Flash-frozen vegetables",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Frozen Foods").FoodCategoryId,
-                        CaloriesPerUnit = 81, ProteinPerUnit = 5.4M
+                        CaloriesPerUnit = 81, ProteinPerUnit = 5.4M,
+                        CarbohydratesPerUnit = 14M, FatPerUnit = 0.4M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
 
                     // Legumes
                     new() {
                         Name = "Lentils", Description = "Nutritious pulses",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Legumes").FoodCategoryId,
-                        CaloriesPerUnit = 116, ProteinPerUnit = 9M
+                        CaloriesPerUnit = 116, ProteinPerUnit = 9M,
+                        CarbohydratesPerUnit = 20M, FatPerUnit = 0.4M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
 
                     // Nuts & Seeds
                     new() {
                         Name = "Almonds", Description = "Whole raw almonds",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Nuts & Seeds").FoodCategoryId,
-                        CaloriesPerUnit = 579, ProteinPerUnit = 21M
+                        CaloriesPerUnit = 579, ProteinPerUnit = 21M,
+                        CarbohydratesPerUnit = 21.55M, FatPerUnit = 49.93M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     },
     
                     // Herbs & Spices
                     new() {
                         Name = "Garlic", Description = "Fresh garlic cloves",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Herbs & Spices").FoodCategoryId,
-                        CaloriesPerUnit = 149, ProteinPerUnit = 6.4M
+                        CaloriesPerUnit = 149, ProteinPerUnit = 6.4M,
+                        CarbohydratesPerUnit = 33M, FatPerUnit = 0.5M,
+                        Unit = UnitType.Clove // Typically measured in cloves
                     },
     
                     // Grains & Cereals
                     new() {
                         Name = "Whole Wheat Tortillas", Description = "Soft taco shells",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Grains & Cereals").FoodCategoryId,
-                        CaloriesPerUnit = 138, ProteinPerUnit = 4M
+                        CaloriesPerUnit = 138, ProteinPerUnit = 4M,
+                        CarbohydratesPerUnit = 28M, FatPerUnit = 2M,
+                        Unit = UnitType.Piece // Typically measured as whole pieces
                     },
     
                     // Vegetables
                     new() {
                         Name = "Onion", Description = "Yellow cooking onion",
                         FoodCategoryId = foodCategories.First(c => c.Name == "Vegetables").FoodCategoryId,
-                        CaloriesPerUnit = 40, ProteinPerUnit = 1.1M
+                        CaloriesPerUnit = 40, ProteinPerUnit = 1.1M,
+                        CarbohydratesPerUnit = 9.34M, FatPerUnit = 0.1M,
+                        Unit = UnitType.Gram // Typically measured in grams
                     }
                 };
 
