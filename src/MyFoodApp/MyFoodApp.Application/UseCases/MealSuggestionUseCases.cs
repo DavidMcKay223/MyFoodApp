@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MyFoodApp.Application.Common;
 using MyFoodApp.Application.DTOs;
-using MyFoodApp.Application.Interfaces.Meals;
+using MyFoodApp.Application.Interfaces;
 using MyFoodApp.Domain.Interfaces.Repositories;
 
-namespace MyFoodApp.Application.UseCases.Meals
+namespace MyFoodApp.Application.UseCases
 {
     public class MealSuggestionUseCases : IMealSuggestionUseCases
     {

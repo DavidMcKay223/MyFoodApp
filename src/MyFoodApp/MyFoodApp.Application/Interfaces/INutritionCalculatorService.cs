@@ -1,6 +1,6 @@
 ﻿using MyFoodApp.Application.DTOs;
 
-namespace MyFoodApp.Application.Interfaces.Calculations
+namespace MyFoodApp.Application.Interfaces
 {
     public interface INutritionCalculatorService
     {

@@ -1,8 +1,8 @@
-﻿using MyFoodApp.Application.Interfaces.Calculations;
-using MyFoodApp.Application.DTOs;
+﻿using MyFoodApp.Application.DTOs;
 using MyFoodApp.Domain.Enums;
+using MyFoodApp.Application.Interfaces;
 
-namespace MyFoodApp.Application.UseCases.Calculations
+namespace MyFoodApp.Application.UseCases
 {
     public class NutritionCalculatorService : INutritionCalculatorService
     {

@@ -1,16 +1,15 @@
-﻿using FluentAssertions;
-using FluentAssertions.Execution;
+﻿using Shouldly;
 using Microsoft.Extensions.Logging;
 using MyFoodApp.Application.DTOs;
-using MyFoodApp.Application.Interfaces.Recipes;
+using MyFoodApp.Application.Interfaces;
 using MyFoodApp.Application.Tests.Data;
-using MyFoodApp.Application.UseCases.Recipes;
+using MyFoodApp.Application.UseCases;
 using MyFoodApp.Domain.Entities;
 using MyFoodApp.Infrastructure.Persistence;
 using MyFoodApp.Infrastructure.Tests.Data;
 using MyFoodApp.Infrastructure.Tests.Helpers;
 
-namespace MyFoodApp.Application.Tests.UseCases.Foods
+namespace MyFoodApp.Application.Tests.UseCases
 {
     [Collection("ApplicationTestCollection")]
     public class RecipeUseCasesTests
@@ -31,22 +30,20 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
         {
             // Arrange
             var searchDto = new RecipeSearchDto { Title = "Test Recipe" };
+            var temRecipe = DomainTestDataFactory.CreateRecipe();
+            temRecipe.Title = "Test Recipe";
             DbContextHelper.SeedDatabase(_context, ctx =>
             {
-                ctx.Recipes.Add(DomainTestDataFactory.CreateRecipe());
-                ctx.Recipes.Add(new Recipe() { Title = "Test Recipe", Description = ""});
+                ctx.Recipes.Add(temRecipe);
             });
 
             // Act
             var result = await _recipeUseCases.LookupRecipesAsync(searchDto);
 
             // Assert
-            using (new AssertionScope())
-            {
-                result.ErrorList.Should().BeEmpty();
-                result.Should().NotBeNull();
-                result.List.Should().NotBeEmpty();
-            }
+            result.ShouldNotBeNull();
+            result.ErrorList.ShouldBeEmpty();
+            result.List.ShouldNotBeEmpty();
         }
 
         [Fact]
@@ -80,12 +77,9 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
             var result = await _recipeUseCases.SuggestRecipesBasedOnIngredientsAsync(ingredientIds);
 
             // Assert
-            using (new AssertionScope())
-            {
-                result.ErrorList.Should().BeEmpty();
-                result.Should().NotBeNull();
-                result.List.Should().NotBeEmpty();
-            }
+            result.ShouldNotBeNull();
+            result.ErrorList.ShouldBeEmpty();
+            result.List.ShouldNotBeEmpty();
         }
 
         [Fact]
@@ -102,13 +96,10 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
             var result = await _recipeUseCases.GetRecipeByIdAsync(recipeId);
 
             // Assert
-            using (new AssertionScope())
-            {
-                result.ErrorList.Should().BeEmpty();
-                result.Should().NotBeNull();
-                result.Item.Should().NotBeNull();
-                result.Item!.RecipeId.Should().Be(recipeId);
-            }
+            result.ShouldNotBeNull();
+            result.ErrorList.ShouldBeEmpty();
+            result.Item.ShouldNotBeNull();
+            result.Item.RecipeId.ShouldBe(recipeId);
         }
 
         [Fact]
@@ -141,13 +132,10 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
             var result = await _recipeUseCases.CreateRecipeAsync(recipeDto);
 
             // Assert
-            using (new AssertionScope())
-            {
-                result.ErrorList.Should().BeEmpty();
-                result.Should().NotBeNull();
-                result.Item.Should().NotBeNull();
-                result.Item!.Title.Should().Be(recipeDto.Title);
-            }
+            result.ShouldNotBeNull();
+            result.ErrorList.ShouldBeEmpty();
+            result.Item.ShouldNotBeNull();
+            result.Item.Title.ShouldBe(recipeDto.Title);
         }
 
         [Fact]
@@ -169,7 +157,7 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
             var recipeId = _context.Recipes.First().RecipeId;
             var foodItemId = _context.FoodItems.First().FoodItemId;
             var mealSuggestionId = _context.MealSuggestions.First().MealSuggestionId;
-            
+
             var recipeDto = ApplicationTestDataFactory.CreateRecipeDto(recipeId);
 
             recipeDto.Steps.Add(ApplicationTestDataFactory.CreateRecipeStepDto(recipeId, 0));
@@ -180,17 +168,14 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
             var result = await _recipeUseCases.UpdateRecipeAsync(recipeId, recipeDto);
 
             // Assert
-            using (new AssertionScope())
-            {
-                result.ErrorList.Should().BeEmpty();
-                result.Should().NotBeNull();
-                result.Item.Should().NotBeNull();
-                result.Item.RecipeId.Should().Be(recipeId);
-                result.Item.Title.Should().Be(recipeDto.Title);
-                result.Item.Steps.Should().HaveCount(1);
-                result.Item.MealSuggestions.Should().HaveCount(1);
-                result.Item.Ingredients.Should().HaveCount(1);
-            }
+            result.ShouldNotBeNull();
+            result.ErrorList.ShouldBeEmpty();
+            result.Item.ShouldNotBeNull();
+            result.Item.RecipeId.ShouldBe(recipeId);
+            result.Item.Title.ShouldBe(recipeDto.Title);
+            result.Item.Steps.Count.ShouldBe(1);
+            result.Item.MealSuggestions.Count.ShouldBe(1);
+            result.Item.Ingredients.Count.ShouldBe(1);
         }
 
         [Fact]
@@ -231,17 +216,14 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
             var result = await _recipeUseCases.UpdateRecipeAsync(recipeId, recipeDto);
 
             // Assert
-            using (new AssertionScope())
-            {
-                result.ErrorList.Should().BeEmpty();
-                result.Should().NotBeNull();
-                result.Item.Should().NotBeNull();
-                result.Item.RecipeId.Should().Be(recipeId);
-                result.Item.Title.Should().Be(recipeDto.Title);
-                result.Item.Steps.Should().HaveCount(1);
-                result.Item.MealSuggestions.Should().HaveCount(1);
-                result.Item.Ingredients.Should().HaveCount(1);
-            }
+            result.ShouldNotBeNull();
+            result.ErrorList.ShouldBeEmpty();
+            result.Item.ShouldNotBeNull();
+            result.Item.RecipeId.ShouldBe(recipeId);
+            result.Item.Title.ShouldBe(recipeDto.Title);
+            result.Item.Steps.Count.ShouldBe(1);
+            result.Item.MealSuggestions.Count.ShouldBe(1);
+            result.Item.Ingredients.Count.ShouldBe(1);
         }
 
         [Fact]
@@ -278,17 +260,14 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
             var result = await _recipeUseCases.UpdateRecipeAsync(recipeId, recipeDto);
 
             // Assert
-            using (new AssertionScope())
-            {
-                result.ErrorList.Should().BeEmpty();
-                result.Should().NotBeNull();
-                result.Item.Should().NotBeNull();
-                result.Item.RecipeId.Should().Be(recipeId);
-                result.Item.Title.Should().Be(recipeDto.Title);
-                result.Item.Steps.Should().HaveCount(0);
-                result.Item.MealSuggestions.Should().HaveCount(0);
-                result.Item.Ingredients.Should().HaveCount(0);
-            }
+            result.ShouldNotBeNull();
+            result.ErrorList.ShouldBeEmpty();
+            result.Item.ShouldNotBeNull();
+            result.Item.RecipeId.ShouldBe(recipeId);
+            result.Item.Title.ShouldBe(recipeDto.Title);
+            result.Item.Steps.Count.ShouldBe(0);
+            result.Item.MealSuggestions.Count.ShouldBe(0);
+            result.Item.Ingredients.Count.ShouldBe(0);
         }
 
         [Fact]
@@ -305,12 +284,9 @@ namespace MyFoodApp.Application.Tests.UseCases.Foods
             var result = await _recipeUseCases.DeleteRecipeAsync(recipeId);
 
             // Assert
-            using (new AssertionScope())
-            {
-                result.ErrorList.Should().BeEmpty();
-                result.Should().NotBeNull();
-                result.Item.Should().BeNull();
-            }
+            result.ShouldNotBeNull();
+            result.ErrorList.ShouldBeEmpty();
+            result.Item.ShouldBeNull();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace MyFoodApp.Application.Interfaces.Recommendations
+﻿namespace MyFoodApp.Application.Interfaces
 {
     public interface IGenerateRecommendationsUseCases
     {

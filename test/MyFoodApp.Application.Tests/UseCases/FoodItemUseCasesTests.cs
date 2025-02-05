@@ -1,4 +1,4 @@
-﻿namespace MyFoodApp.Application.Tests.UseCases.Foods
+﻿namespace MyFoodApp.Application.Tests.UseCases
 {
     //[Collection("ApplicationTestCollection")]
     public class FoodItemUseCasesTests

@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+﻿using Shouldly;
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Domain.Interfaces.Repositories;
 using MyFoodApp.Infrastructure.Persistence;
@@ -34,11 +34,11 @@ namespace MyFoodApp.Infrastructure.Tests.Repositories
             var result = await _repository.GetFoodItemByIdAsync(testItem.FoodItemId);
 
             // Assert
-            result.Should().NotBeNull();
-            result!.FoodItemId.Should().Be(testItem.FoodItemId);
-            result.Name.Should().NotBeNullOrEmpty();
-            result.Description.Should().NotBeNullOrEmpty();
-            result.FoodCategoryId.Should().Be(1);
+            result.ShouldNotBeNull();
+            result.FoodItemId.ShouldBe(testItem.FoodItemId);
+            result.Name.ShouldNotBeNullOrEmpty();
+            result.Description.ShouldNotBeNullOrEmpty();
+            result.FoodCategoryId.ShouldBe(1);
         }
 
         [Fact]
@@ -56,12 +56,16 @@ namespace MyFoodApp.Infrastructure.Tests.Repositories
             var result = await _repository.GetAllFoodItemsAsync().ToListAsync();
 
             // Assert
-            result.Should().HaveCount(3);
-            result.Should().AllSatisfy(item =>
+            result.ShouldNotBeNull();
+            result.Count.ShouldBe(3);
+            result.ShouldSatisfyAllConditions(items => 
             {
-                item.Name.Should().NotBeNullOrEmpty();
-                item.Description.Should().NotBeNullOrEmpty();
-                item.FoodCategoryId.Should().Be(1);
+                items.ForEach(item => 
+                {
+                    item.Name.ShouldNotBeNullOrEmpty();
+                    item.Description.ShouldNotBeNullOrEmpty();
+                    item.FoodCategoryId.ShouldBe(1);
+                });
             });
         }
 

@@ -1,13 +1,13 @@
 ﻿using MyFoodApp.Application.Common;
 using MyFoodApp.Application.DTOs;
-using MyFoodApp.Application.Interfaces.Recipes;
 using MyFoodApp.Domain.Entities;
 using MyFoodApp.Domain.Interfaces.Repositories;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using MyFoodApp.Application.Interfaces;
 
-namespace MyFoodApp.Application.UseCases.Recipes
+namespace MyFoodApp.Application.UseCases
 {
     public class RecipeUseCases : IRecipeUseCases
     {
@@ -55,7 +55,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
                 // Add the recipe along with its children in one call
                 var createdRecipe = await _recipeRepository.AddRecipeAsync(recipeEntity);
-                
+
                 response.Item = _mapper.Map<RecipeDto>(createdRecipe);
                 response.TotalItems = 1;
             }
@@ -218,7 +218,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
                 // 6. Save changes
                 await _recipeRepository.UpdateRecipeAsync(existingRecipe);
-                
+
                 // 7. Return updated recipe
                 var updatedRecipeDto = _mapper.Map<RecipeDto>(existingRecipe);
                 response.Item = updatedRecipeDto;

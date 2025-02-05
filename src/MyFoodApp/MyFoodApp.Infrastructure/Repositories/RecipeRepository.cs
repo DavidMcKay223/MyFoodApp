@@ -38,7 +38,7 @@ namespace MyFoodApp.Infrastructure.Repositories
                         .ThenInclude(f => f!.FoodCategory)
                 .Include(r => r.MealSuggestions)
                     .ThenInclude(ms => ms.MealSuggestion)
-                        .ThenInclude(ms => ms.RecipeSuggestions)
+                        .ThenInclude(ms => ms!.RecipeSuggestions)
                             .ThenInclude(ms => ms.Recipe);
 
             var recipe = await query.FirstOrDefaultAsync(r => r.RecipeId == id);

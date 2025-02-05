@@ -1,4 +1,4 @@
-﻿namespace MyFoodApp.Application.Tests.UseCases.Recommendations
+﻿namespace MyFoodApp.Application.Tests.UseCases
 {
     internal class GenerateRecommendationsUseCasesTests
     {

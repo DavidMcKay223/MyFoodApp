@@ -7,13 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\Ingredients\" />
-    <Folder Include="Interfaces\Stores\" />
-    <Folder Include="Interfaces\Prices\" />
     <Folder Include="Services\" />
-    <Folder Include="UseCases\Ingredients\" />
-    <Folder Include="UseCases\Prices\" />
-    <Folder Include="UseCases\Stores\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using MyFoodApp.Application.Common;
 using MyFoodApp.Application.DTOs;
 
-namespace MyFoodApp.Application.Interfaces.Recipes
+namespace MyFoodApp.Application.Interfaces
 {
     public interface IRecipeUseCases
     {
