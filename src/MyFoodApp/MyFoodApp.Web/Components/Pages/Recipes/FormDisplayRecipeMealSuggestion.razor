@@ -1,25 +1,92 @@
 ﻿@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Domain.Enums
+@using MyFoodApp.Application.Interfaces.Calculations
+@using System.Globalization
+@inject ICalorieCalculatorService CalorieCalculatorService
 
 @code {
     [Parameter]
     public required List<RecipeMealSuggestionDto> MealSuggestions { get; set; }
+
+    [Parameter]
+    public required int RecipeId { get; set; }
+
+    private Dictionary<RecipeMealSuggestionDto, bool> _expandedState = new();
+
+    protected override void OnParametersSet()
+    {
+        InitializeExpandedState();
+    }
+
+    private void InitializeExpandedState()
+    {
+        foreach (var suggestion in MealSuggestions)
+        {
+            if (!_expandedState.ContainsKey(suggestion))
+            {
+                _expandedState[suggestion] = true;
+            }
+        }
+    }
 }
 
 @if (MealSuggestions != null)
 {
-    <div class="card mb-3">
-        <div class="card-header">Meal Suggestions</div>
-        <div class="card-body">
-            @for (int i = 0; i < MealSuggestions.Count; i++)
-            {
-                var index = i;
-                <div class="row g-3 mb-3 align-items-end">
-                    <div class="col-md-6">
-                        <div class="form-floating">
+    <div class="card mb-3 shadow-lg">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">
+                <i class="fas fa-utensils me-2"></i>
+                Meal Suggestions (@MealSuggestions.Count)
+            </h3>
+        </div>
 
+        <div class="card-body">
+            @if (MealSuggestions.Count == 0)
+            {
+                <div class="text-center py-4 text-muted">
+                    <i class="fas fa-inbox fa-3x mb-3"></i>
+                    <p class="mb-0">No meal suggestions added yet</p>
+                </div>
+            }
+            else
+            {
+                @foreach (var suggestion in MealSuggestions)
+                {
+                    <div class="suggestion-card card mb-3 shadow-sm">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                            <button class="btn btn-link text-dark text-decoration-none"
+                                    @onclick="@(() => _expandedState[suggestion] = !_expandedState[suggestion])">
+                                <i class="fas @(_expandedState[suggestion] ? "fa-chevron-down" : "fa-chevron-right") me-2"></i>
+                                @suggestion.MealSuggestion.Name
+                            </button>
+                        </div>
+
+                        <div class="collapse @(_expandedState[suggestion] ? "show" : "")">
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <p class="mb-1"><strong>Meal Type:</strong> @suggestion.MealSuggestion.MealType</p>
+                                        <p class="mb-1"><strong>Effective Date:</strong> @suggestion.MealSuggestion.EffectiveDate.ToString("yyyy-MM-dd")</p>
+                                        <p class="mb-1"><strong>Expiration Date:</strong> @suggestion.MealSuggestion.ExpirationDate?.ToString("yyyy-MM-dd")</p>
+                                        <p class="mb-1">
+                                            <strong>Recipe Titles:</strong>
+                                            @if (suggestion.MealSuggestion != null && suggestion.MealSuggestion.RecipeSuggestions.Any())
+                                            {
+                                                @foreach (var recipe in suggestion.MealSuggestion.RecipeSuggestions)
+                                                {
+                                                    @if (recipe.RecipeId != RecipeId)
+                                                    {
+                                                        <span class="badge bg-secondary me-1">@recipe.Recipe?.Title</span>
+                                                    }
+                                                }
+                                            }
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
             }
         </div>
     </div>

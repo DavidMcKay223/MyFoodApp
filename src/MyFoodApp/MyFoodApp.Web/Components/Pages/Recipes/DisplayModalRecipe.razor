@@ -21,11 +21,13 @@
 {
     <div class="modal-backdrop">
         <div class="modal show d-block" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-dialog modal-dialog-centered modal-lg shadow-lg">
                 <div class="modal-content" style="height: 80%;">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Recipe:</h5>
-                        <button type="button" class="btn-close" @onclick="Cancel"></button>
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title">
+                            <i class="fas fa-book-open me-2"></i> Recipe Details
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" @onclick="Cancel"></button>
                     </div>
                     <div class="modal-body">
                         <h5 class="card-title">@Recipe.Title</h5>
@@ -50,7 +52,7 @@
                         <FormDisplayIngredient Ingredients="@Recipe.Ingredients" />
 
                         <!-- Meal Suggestions -->
-                        <FormDisplayRecipeMealSuggestion MealSuggestions="@Recipe.MealSuggestions" />
+                        <FormDisplayRecipeMealSuggestion MealSuggestions="@Recipe.MealSuggestions" RecipeId="@Recipe.RecipeId" />
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>

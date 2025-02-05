@@ -23,12 +23,13 @@ namespace MyFoodApp.Infrastructure.Repositories
                         .ThenInclude(f => f!.FoodCategory)
                 .Include(r => r.MealSuggestions)
                     .ThenInclude(ms => ms.MealSuggestion)
+                .AsNoTracking()
                 .AsQueryable();
 
             return recipes;
         }
 
-        public async Task<Recipe?> GetRecipeByIdAsync(int id, bool tracking = false)
+        public async Task<Recipe?> GetRecipeByIdAsync(int id)
         {
             var query = _context.Recipes
                 .Include(r => r.Steps)
@@ -36,7 +37,21 @@ namespace MyFoodApp.Infrastructure.Repositories
                     .ThenInclude(i => i.FoodItem)
                         .ThenInclude(f => f!.FoodCategory)
                 .Include(r => r.MealSuggestions)
-                    .ThenInclude(ms => ms.MealSuggestion);
+                    .ThenInclude(ms => ms.MealSuggestion)
+                        .ThenInclude(ms => ms.RecipeSuggestions)
+                            .ThenInclude(ms => ms.Recipe);
+
+            var recipe = await query.FirstOrDefaultAsync(r => r.RecipeId == id);
+
+            return recipe;
+        }
+
+        public async Task<Recipe?> GetRecipeByIdAsync(int id, bool tracking)
+        {
+            var query = _context.Recipes
+                .Include(r => r.Steps)
+                .Include(r => r.Ingredients)
+                .Include(r => r.MealSuggestions);
 
             return tracking
                 ? await query.FirstOrDefaultAsync(r => r.RecipeId == id)
