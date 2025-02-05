@@ -142,6 +142,10 @@
                                                         <p class="mb-1 text-muted">@ingredient.FoodItem.Description</p>
                                                         <div class="nutrition-facts">
                                                             <div class="d-flex justify-content-between">
+                                                                <span>Quantity:</span>
+                                                                <strong>@ingredient.Quantity.ToString("N2") @ingredient.Unit</strong>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
                                                                 <span>Calories:</span>
                                                                 <strong>@NutritionCalculatorService.ConvertToCalories(ingredient).ToString("N0")</strong>
                                                             </div>
