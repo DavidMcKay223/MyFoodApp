@@ -138,7 +138,9 @@ namespace MyFoodApp.Domain.Enums
         Teaspoon,
         Tablespoon,
         Cup,
-        Piece
+        Piece,
+        Slice,
+        Clove
     }
 }
 

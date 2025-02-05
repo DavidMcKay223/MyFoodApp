@@ -5,6 +5,7 @@
 │   └── 📁 workflows/
 ├── 📁 other/
 │   ├── 📁 MyFoodApp.ConsoleApp/
+│   │   ├── 📁 Resource/
 │   │   └── 🟣 Program.cs
 │   └── 📁 MyFoodApp.GeneratedReports/
 ├── 📁 src/
@@ -35,16 +36,11 @@
 │       │   │   ├── 🟣 StoreSectionDto.cs
 │       │   │   └── 🟣 StoreSectionSearchDto.cs
 │       │   ├── 📁 Interfaces/
-│       │   │   ├── 📁 Foods/
-│       │   │   │   └── 🟣 IFoodItemUseCases.cs
-│       │   │   ├── 📁 Meals/
-│       │   │   │   └── 🟣 IMealSuggestionUseCases.cs
-│       │   │   ├── 📁 Recipes/
-│       │   │   │   ├── 🟣 IRecipeMealSuggestionUseCases.cs
-│       │   │   │   ├── 🟣 IRecipeStepUseCases.cs
-│       │   │   │   └── 🟣 IRecipeUseCases.cs
-│       │   │   └── 📁 Recommendations/
-│       │   │       └── 🟣 IGenerateRecommendationsUseCases.cs
+│       │   │   ├── 🟣 IFoodItemUseCases.cs
+│       │   │   ├── 🟣 IGenerateRecommendationsUseCases.cs
+│       │   │   ├── 🟣 IMealSuggestionUseCases.cs
+│       │   │   ├── 🟣 INutritionCalculatorService.cs
+│       │   │   └── 🟣 IRecipeUseCases.cs
 │       │   ├── 📁 Mappings/
 │       │   │   ├── 🟣 FoodProfile.cs
 │       │   │   ├── 🟣 IngredientProfile.cs
@@ -53,14 +49,11 @@
 │       │   │   ├── 🟣 RecipeProfile.cs
 │       │   │   └── 🟣 StoreProfile.cs
 │       │   ├── 📁 UseCases/
-│       │   │   ├── 📁 Foods/
-│       │   │   │   └── 🟣 FoodItemUseCases.cs
-│       │   │   ├── 📁 Meals/
-│       │   │   │   └── 🟣 MealSuggestionUseCases.cs
-│       │   │   ├── 📁 Recipes/
-│       │   │   │   └── 🟣 RecipeUseCases.cs
-│       │   │   └── 📁 Recommendations/
-│       │   │       └── 🟣 GenerateRecommendationsUseCases.cs
+│       │   │   ├── 🟣 FoodItemUseCases.cs
+│       │   │   ├── 🟣 GenerateRecommendationsUseCases.cs
+│       │   │   ├── 🟣 MealSuggestionUseCases.cs
+│       │   │   ├── 🟣 NutritionCalculatorService.cs
+│       │   │   └── 🟣 RecipeUseCases.cs
 │       │   └── 📁 Validators/
 │       │       ├── 🟣 FoodCategoryDtoValidator.cs
 │       │       ├── 🟣 FoodItemDtoValidator.cs
@@ -105,6 +98,10 @@
 │       │   ├── 📁 Migrations/
 │       │   │   ├── 🟣 20250202045404_InitialMigration.cs
 │       │   │   ├── 🟣 20250202045404_InitialMigration.Designer.cs
+│       │   │   ├── 🟣 20250205074814_UpdateFoodItem.cs
+│       │   │   ├── 🟣 20250205074814_UpdateFoodItem.Designer.cs
+│       │   │   ├── 🟣 20250205081417_UpdateFoodItem2.cs
+│       │   │   ├── 🟣 20250205081417_UpdateFoodItem2.Designer.cs
 │       │   │   └── 🟣 AppDbContextModelSnapshot.cs
 │       │   ├── 📁 Persistence/
 │       │   │   └── 🟣 AppDbContext.cs
@@ -125,7 +122,11 @@
 │           │   │   └── 🌀 NavMenu.razor
 │           │   ├── 📁 Pages/
 │           │   │   ├── 📁 Recipes/
+│           │   │   │   ├── 🌀 DisplayModalRecipe.razor
 │           │   │   │   ├── 🌀 EditModalRecipe.razor
+│           │   │   │   ├── 🌀 FormDisplayIngredient.razor
+│           │   │   │   ├── 🌀 FormDisplayRecipeMealSuggestion.razor
+│           │   │   │   ├── 🌀 FormDisplayRecipeStep.razor
 │           │   │   │   ├── 🌀 FormEditIngredient.razor
 │           │   │   │   ├── 🌀 FormEditRecipeMealSuggestion.razor
 │           │   │   │   ├── 🌀 FormEditRecipeStep.razor
@@ -161,14 +162,10 @@
     │   ├── 📁 Data/
     │   │   └── 🟣 ApplicationTestDataFactory.cs
     │   ├── 📁 UseCases/
-    │   │   ├── 📁 Foods/
-    │   │   │   └── 🟣 FoodItemUseCasesTests.cs
-    │   │   ├── 📁 Meals/
-    │   │   │   └── 🟣 MealSuggestionUseCasesTests.cs
-    │   │   ├── 📁 Recipes/
-    │   │   │   └── 🟣 RecipeUseCasesTests.cs
-    │   │   └── 📁 Recommendations/
-    │   │       └── 🟣 GenerateRecommendationsUseCasesTests.cs
+    │   │   ├── 🟣 FoodItemUseCasesTests.cs
+    │   │   ├── 🟣 GenerateRecommendationsUseCasesTests.cs
+    │   │   ├── 🟣 MealSuggestionUseCasesTests.cs
+    │   │   └── 🟣 RecipeUseCasesTests.cs
     │   ├── 📁 Validators/
     │   │   ├── 🟣 FoodCategoryDtoValidatorTests.cs
     │   │   ├── 🟣 FoodItemDtoValidatorTests.cs

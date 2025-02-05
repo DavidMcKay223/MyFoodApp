@@ -1,12 +1,80 @@
 # Directory: Components\Pages\Recipes
 
+## File: DisplayModalRecipe.razor
+
+```C#
+@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Application.Common
+@using MyFoodApp.Web.Components.Shared
+
+@code {
+    private RecipeDto? Recipe;
+
+    public void Show(RecipeDto recipeToDisplay)
+    {
+        Recipe = recipeToDisplay;
+        StateHasChanged();
+    }
+
+    private void Cancel()
+    {
+        Recipe = null;
+    }
+}
+
+@if (Recipe != null)
+{
+    <div class="modal-backdrop">
+        <div class="modal show d-block" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg shadow-lg">
+                <div class="modal-content" style="height: 80%;">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title">
+                            <i class="fas fa-book-open me-2"></i> Recipe Details
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" @onclick="Cancel"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="card-title">@Recipe.Title</h5>
+                        <p class="card-text">@Recipe.Description</p>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <p><strong>Prep Time (minutes):</strong> <span class="text-primary">@Recipe.PrepTimeMinutes</span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><strong>Cook Time (minutes):</strong> <span class="text-primary">@Recipe.CookTimeMinutes</span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><strong>Servings:</strong> <span class="text-primary">@Recipe.Servings</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Recipe Steps -->
+                        <FormDisplayRecipeStep Steps="@Recipe.Steps" />
+
+                        <!-- Ingredients -->
+                        <FormDisplayIngredient Ingredients="@Recipe.Ingredients" />
+
+                        <!-- Meal Suggestions -->
+                        <FormDisplayRecipeMealSuggestion MealSuggestions="@Recipe.MealSuggestions" RecipeId="@Recipe.RecipeId" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+```
+
 ## File: EditModalRecipe.razor
 
 ```C#
 @using MyFoodApp.Application.DTOs
-@using MyFoodApp.Application.Interfaces.Recipes
-@using MyFoodApp.Application.Interfaces.Foods
-@using MyFoodApp.Application.Interfaces.Meals
+@using MyFoodApp.Application.Interfaces
 @using MyFoodApp.Application.Validators
 @using MyFoodApp.Application.Common
 @using MyFoodApp.Web.Components.Shared
@@ -162,6 +230,383 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+}
+
+```
+
+## File: FormDisplayIngredient.razor
+
+```C#
+@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Domain.Enums
+@using MyFoodApp.Application.Interfaces
+@using System.Globalization
+@inject INutritionCalculatorService NutritionCalculatorService
+
+@code {
+    [Parameter]
+    public required List<IngredientDto> Ingredients { get; set; }
+
+    private Dictionary<IngredientDto, bool> _expandedState = new();
+    private NutritionTotals _totals = new();
+
+    protected override void OnParametersSet()
+    {
+        CalculateTotals();
+        InitializeExpandedState();
+    }
+
+    private void InitializeExpandedState()
+    {
+        foreach (var ingredient in Ingredients)
+        {
+            if (!_expandedState.ContainsKey(ingredient))
+            {
+                _expandedState[ingredient] = false;
+            }
+        }
+    }
+
+    private void CalculateTotals()
+    {
+        _totals = new NutritionTotals();
+        foreach (var ingredient in Ingredients)
+        {
+            if (ingredient.FoodItem == null) continue;
+
+            _totals.Calories += NutritionCalculatorService.ConvertToCalories(ingredient);
+            _totals.Protein += NutritionCalculatorService.ConvertToProtein(ingredient);
+            _totals.Carbohydrates += NutritionCalculatorService.ConvertToCarbohydrates(ingredient);
+            _totals.Fat += NutritionCalculatorService.ConvertToFat(ingredient);
+        }
+    }
+
+    private string GetNutritionProgressStyle(decimal value)
+    {
+        var percentage = (value / 2000) * 100; // Based on 2000 calorie diet
+        return $"width: {Math.Min(percentage, 100)}%;";
+    }
+
+    private class NutritionTotals
+    {
+        public decimal Calories { get; set; }
+        public decimal Protein { get; set; }
+        public decimal Carbohydrates { get; set; }
+        public decimal Fat { get; set; }
+    }
+}
+
+@if (Ingredients != null)
+{
+    <div class="card mb-3 shadow-lg">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">
+                <i class="fas fa-carrot me-2"></i>
+                Ingredients (@Ingredients.Count)
+            </h3>
+            <button class="btn btn-sm btn-light" @onclick="() => CalculateTotals()">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+
+        <div class="card-body">
+            @if (Ingredients.Count == 0)
+            {
+                <div class="text-center py-4 text-muted">
+                    <i class="fas fa-inbox fa-3x mb-3"></i>
+                    <p class="mb-0">No ingredients added yet</p>
+                </div>
+            }
+            else
+            {
+                <div class="row g-3 mb-4">
+                    <div class="col-md-3">
+                        <div class="card bg-light shadow-sm">
+                            <div class="card-body">
+                                <h6 class="text-uppercase text-muted mb-3">Total Calories</h6>
+                                <h2 class="mb-0">@_totals.Calories.ToString("N0")</h2>
+                                <div class="progress mt-2" style="height: 5px;">
+                                    <div class="progress-bar bg-warning"
+                                         style="@GetNutritionProgressStyle(_totals.Calories)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-light shadow-sm">
+                            <div class="card-body">
+                                <h6 class="text-uppercase text-muted mb-3">Protein</h6>
+                                <h2 class="mb-0">@_totals.Protein.ToString("N1")<small class="text-muted">g</small></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-light shadow-sm">
+                            <div class="card-body">
+                                <h6 class="text-uppercase text-muted mb-3">Carbs</h6>
+                                <h2 class="mb-0">@_totals.Carbohydrates.ToString("N1")<small class="text-muted">g</small></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-light shadow-sm">
+                            <div class="card-body">
+                                <h6 class="text-uppercase text-muted mb-3">Fat</h6>
+                                <h2 class="mb-0">@_totals.Fat.ToString("N1")<small class="text-muted">g</small></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        @foreach (var ingredient in Ingredients)
+                        {
+                            <div class="col-4">
+                                <div class="ingredient-card card mb-3 shadow-sm">
+                                    <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-link text-dark text-decoration-none"
+                                                @onclick="@(() => _expandedState[ingredient] = !_expandedState[ingredient])">
+                                            <i class="fas @(_expandedState[ingredient] ? "fa-chevron-down" : "fa-chevron-right") me-2"></i>
+                                            @ingredient.FoodItem?.Name
+                                        </button>
+                                    </div>
+
+                                    <div class="collapse @(_expandedState[ingredient] ? "show" : "")">
+                                        <div class="card-body">
+                                            <div class="row g-3 align-items-center">
+                                                <div class="col-md-4">
+                                                    @if (ingredient.FoodItem != null)
+                                                    {
+                                                        <p class="mb-1 text-muted">@ingredient.FoodItem.Description</p>
+                                                        <div class="nutrition-facts">
+                                                            <div class="d-flex justify-content-between">
+                                                                <span>Quantity:</span>
+                                                                <strong>@ingredient.Quantity.ToString("N2") @ingredient.Unit</strong>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <span>Calories:</span>
+                                                                <strong>@NutritionCalculatorService.ConvertToCalories(ingredient).ToString("N0")</strong>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <span>Protein:</span>
+                                                                <strong>@NutritionCalculatorService.ConvertToProtein(ingredient).ToString("N2")g</strong>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <span>Carbohydrates:</span>
+                                                                <strong>@NutritionCalculatorService.ConvertToCarbohydrates(ingredient).ToString("N2")g</strong>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <span>Fat:</span>
+                                                                <strong>@NutritionCalculatorService.ConvertToFat(ingredient).ToString("N2")g</strong>
+                                                            </div>
+                                                            @if (ingredient.FoodItem.FoodCategory != null)
+                                                            {
+                                                                <div class="mt-2">
+                                                                    <span class="badge bg-info">
+                                                                        @ingredient.FoodItem.FoodCategory.Name
+                                                                    </span>
+                                                                </div>
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+```
+
+## File: FormDisplayRecipeMealSuggestion.razor
+
+```C#
+@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Domain.Enums
+@using MyFoodApp.Application.Interfaces
+@using System.Globalization
+@inject INutritionCalculatorService CalorieCalculatorService
+
+@code {
+    [Parameter]
+    public required List<RecipeMealSuggestionDto> MealSuggestions { get; set; }
+
+    [Parameter]
+    public required int RecipeId { get; set; }
+
+    private Dictionary<RecipeMealSuggestionDto, bool> _expandedState = new();
+
+    protected override void OnParametersSet()
+    {
+        InitializeExpandedState();
+    }
+
+    private void InitializeExpandedState()
+    {
+        foreach (var suggestion in MealSuggestions)
+        {
+            if (!_expandedState.ContainsKey(suggestion))
+            {
+                _expandedState[suggestion] = true;
+            }
+        }
+    }
+}
+
+@if (MealSuggestions != null)
+{
+    <div class="card mb-3 shadow-lg">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">
+                <i class="fas fa-utensils me-2"></i>
+                Meal Suggestions (@MealSuggestions.Count)
+            </h3>
+        </div>
+
+        <div class="card-body">
+            @if (MealSuggestions.Count == 0)
+            {
+                <div class="text-center py-4 text-muted">
+                    <i class="fas fa-inbox fa-3x mb-3"></i>
+                    <p class="mb-0">No meal suggestions added yet</p>
+                </div>
+            }
+            else
+            {
+                <div class="container">
+                    <div class="row">
+                        @foreach (var suggestion in MealSuggestions)
+                        {
+                            <div class="col-4">
+                                <div class="suggestion-card card mb-3 shadow-sm">
+                                    <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-link text-dark text-decoration-none"
+                                                @onclick="@(() => _expandedState[suggestion] = !_expandedState[suggestion])">
+                                            <i class="fas @(_expandedState[suggestion] ? "fa-chevron-down" : "fa-chevron-right") me-2"></i>
+                                            @suggestion.MealSuggestion?.Name
+                                        </button>
+                                    </div>
+
+                                    <div class="collapse @(_expandedState[suggestion] ? "show" : "")">
+                                        <div class="card-body">
+                                            <div class="row g-3">
+                                                <div class="col-md-4">
+                                                    <p><span class="badge bg-primary bg-opacity-10 text-primary me-1">@suggestion.MealSuggestion?.MealType</span> </p>
+                                                    <p>
+                                                        @if (suggestion.MealSuggestion != null && suggestion.MealSuggestion.RecipeSuggestions != null)
+                                                        {
+                                                            @foreach (var recipe in suggestion.MealSuggestion.RecipeSuggestions)
+                                                            {
+                                                                @if (recipe.RecipeId != RecipeId)
+                                                                {
+                                                                    <span class="badge bg-secondary me-1">@recipe.Recipe?.Title</span>
+                                                                }
+                                                            }
+                                                        }
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+```
+
+## File: FormDisplayRecipeStep.razor
+
+```C#
+@using MyFoodApp.Application.DTOs
+
+@code {
+    [Parameter]
+    public required List<RecipeStepDto> Steps { get; set; }
+
+    private Dictionary<RecipeStepDto, bool> _expandedState = new();
+
+    protected override void OnParametersSet()
+    {
+        InitializeExpandedState();
+    }
+
+    private void InitializeExpandedState()
+    {
+        foreach (var step in Steps)
+        {
+            if (!_expandedState.ContainsKey(step))
+            {
+                _expandedState[step] = true;
+            }
+        }
+    }
+}
+
+@if (Steps != null)
+{
+    <div class="card mb-3 shadow-lg">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">
+                <i class="fas fa-list-ol me-2"></i>
+                Steps (@Steps.Count)
+            </h3>
+        </div>
+
+        <div class="card-body">
+            @if (Steps.Count == 0)
+            {
+                <div class="text-center py-4 text-muted">
+                    <i class="fas fa-inbox fa-3x mb-3"></i>
+                    <p class="mb-0">No steps added yet</p>
+                </div>
+            }
+            else
+            {
+                <ul class="list-unstyled">
+                    @foreach (var step in Steps)
+                    {
+                        <li class="mb-3">
+                            <div class="step-card card shadow-sm">
+                                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-link text-dark text-decoration-none"
+                                            @onclick="@(() => _expandedState[step] = !_expandedState[step])">
+                                        <i class="fas @(_expandedState[step] ? "fa-chevron-down" : "fa-chevron-right") me-2"></i>
+                                        <strong>Step @step.StepNumber</strong>
+                                    </button>
+                                </div>
+
+                                <div class="collapse @(_expandedState[step] ? "show" : "")">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="step-@step.StepNumber">Instruction</label>
+                                            <textarea id="step-@step.StepNumber"
+                                                      class="form-control"
+                                                      rows="3"
+                                                      @bind="step.Instruction" readonly></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
         </div>
     </div>
 }
@@ -350,7 +795,6 @@
 ```C#
 @using MyFoodApp.Application.Common
 @using MyFoodApp.Application.DTOs
-@using MyFoodApp.Application.Interfaces.Foods
 
 @code {
     [Parameter]
@@ -364,10 +808,15 @@
     <InputSelect @bind-Value="Ingredient.FoodItemId" class="form-select">
         @foreach (var foodItem in FoodItemList)
         {
-            <option value="@foodItem.FoodItemId">
-                @foodItem.Name:
-                Protein per unit(@foodItem.ProteinPerUnit)
-                Calories per unit(@foodItem.CaloriesPerUnit)
+            <option value="@foodItem.FoodItemId" class="food-item-option">
+                <span>@foodItem.Name</span>
+                <span class="food-item-details text-info">
+                    (Unit: @foodItem.Unit)<br />
+                    Protein: @foodItem.ProteinPerUnit per unit<br />
+                    Calories: @foodItem.CaloriesPerUnit per unit<br />
+                    Carbohydrates: @foodItem.CarbohydratesPerUnit per unit<br />
+                    Fat: @foodItem.FatPerUnit per unit
+                </span>
             </option>
         }
     </InputSelect>
@@ -382,7 +831,6 @@
 ```C#
 @using MyFoodApp.Application.Common
 @using MyFoodApp.Application.DTOs
-@using MyFoodApp.Application.Interfaces.Foods
 
 @code {
     [Parameter]
@@ -432,7 +880,7 @@
 
 ```C#
 @using MyFoodApp.Application.DTOs
-@using MyFoodApp.Application.Interfaces.Recipes
+@using MyFoodApp.Application.Interfaces
 @using MyFoodApp.Application.Common
 @using MyFoodApp.Web.Components.Shared
 @inject IRecipeUseCases RecipeUseCases
@@ -451,10 +899,12 @@ else
 
     <SearchButton OnSearch="Search" OnReset="ResetSearch" OnAdd="ShowAddModal" />
 
-    <TableDisplayRecipe Recipes="Recipes" OnEdit="ShowEditModal" />
+    <TableDisplayRecipe Recipes="Recipes" OnEdit="ShowEditModal" OnDisplay="ShowDisplayModal" />
 
     <SearchPagination TItem="RecipeDto" TotalItems="@totalItems" PageSize="@pageSize" CurrentPage="@currentPage" OnPageChanged="OnPageChanged" OnPageSizeChangedCallback="OnPageSizeChanged" />
 }
+
+<DisplayModalRecipe @ref="displayModal" />
 
 <EditModalRecipe @ref="editModal" OnRecipeSaved="LoadRecipes" />
 
@@ -462,6 +912,7 @@ else
     private List<RecipeDto>? Recipes;
     private bool isLoading = true;
     private EditModalRecipe? editModal;
+    private DisplayModalRecipe? displayModal;
     private RecipeSearchDto searchDto = new();
     private int totalItems;
     private int pageSize = 10;
@@ -496,6 +947,15 @@ else
         if (response.Item != null)
         {
             editModal!.Show(response.Item);
+        }
+    }
+
+    private async void ShowDisplayModal(int id)
+    {
+        var response = await RecipeUseCases.GetRecipeByIdAsync(id);
+        if (response.Item != null)
+        {
+            displayModal!.Show(response.Item);
         }
     }
 
@@ -537,7 +997,7 @@ else
 
 ```C#
 @using MyFoodApp.Application.DTOs
-@using MyFoodApp.Application.Interfaces.Recipes
+@using MyFoodApp.Application.Interfaces
 @using MyFoodApp.Application.Common
 @using MyFoodApp.Web.Components.Shared
 @inject IRecipeUseCases RecipeUseCases
@@ -758,7 +1218,9 @@ else
 
 ```C#
 @using MyFoodApp.Application.DTOs
+@using MyFoodApp.Application.Interfaces
 @using MyFoodApp.Domain.Enums
+@inject INutritionCalculatorService CalorieCalculatorService
 
 @if (Recipes?.Any() == false)
 {
@@ -797,7 +1259,7 @@ else
                             <div class="col-6">
                                 <div class="d-flex align-items-center text-muted">
                                     <i class="bi bi-fire me-2"></i>
-                                    <span>@(CalculateCalories(recipe)) cal/serving</span>
+                                    <span>@(CalorieCalculatorService.CalculateCalories(recipe)) cal/serving</span>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -849,10 +1311,22 @@ else
                             <span class="text-muted small">
                                 @recipe.Servings <i class="bi bi-people ms-1"></i>
                             </span>
-                            <button class="btn btn-outline-primary btn-sm"
-                                    @onclick="() => OnEdit.InvokeAsync(recipe.RecipeId)">
-                                <i class="bi bi-pencil me-2"></i>Edit
-                            </button>
+                            <div class="mb-3">
+                                @if (OnDisplay.HasDelegate)
+                                {
+                                    <button class="btn btn-outline-primary btn-sm me-2"
+                                            @onclick="() => OnDisplay.InvokeAsync(recipe.RecipeId)">
+                                        <i class="bi bi-pencil me-2"></i>View
+                                    </button>
+                                }
+                                @if (OnEdit.HasDelegate)
+                                {
+                                    <button class="btn btn-outline-danger btn-sm me-2"
+                                            @onclick="() => OnEdit.InvokeAsync(recipe.RecipeId)">
+                                        <i class="bi bi-pencil me-2"></i>Edit
+                                    </button>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -868,21 +1342,8 @@ else
     [Parameter]
     public EventCallback<int> OnEdit { get; set; }
 
-    private string CalculateCalories(RecipeDto recipe)
-    {
-        try
-        {
-            var totalCalories = recipe.Ingredients
-                .Sum(i => i.Quantity * (i.FoodItem?.CaloriesPerUnit ?? 0));
-
-            var perServing = totalCalories / recipe.Servings;
-            return perServing > 0 ? perServing.ToString("N0") : "N/A";
-        }
-        catch
-        {
-            return "N/A";
-        }
-    }
+    [Parameter]
+    public EventCallback<int> OnDisplay { get; set; }
 }
 
 ```
