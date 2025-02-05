@@ -1,0 +1,168 @@
+﻿@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Domain.Enums
+@using MyFoodApp.Application.Interfaces.Calculations
+@using System.Globalization
+@inject ICalorieCalculatorService CalorieCalculatorService
+
+@code {
+    [Parameter]
+    public required List<IngredientDto> Ingredients { get; set; }
+
+    private Dictionary<IngredientDto, bool> _expandedState = new();
+    private NutritionTotals _totals = new();
+
+    protected override void OnParametersSet()
+    {
+        CalculateTotals();
+        InitializeExpandedState();
+    }
+
+    private void InitializeExpandedState()
+    {
+        foreach (var ingredient in Ingredients)
+        {
+            if (!_expandedState.ContainsKey(ingredient))
+            {
+                _expandedState[ingredient] = false;
+            }
+        }
+    }
+
+    private void CalculateTotals()
+    {
+        _totals = new NutritionTotals();
+        foreach (var ingredient in Ingredients)
+        {
+            if (ingredient.FoodItem == null) continue;
+            
+            _totals.Calories += CalorieCalculatorService.ConvertToCalories(ingredient);
+            _totals.Protein += ingredient.FoodItem.ProteinPerUnit ?? 0.00M * ingredient.Quantity;
+            //_totals.Carbohydrates += ingredient.FoodItem.CarbohydratesPerUnit * ingredient.Quantity;
+            //_totals.Fat += ingredient.FoodItem.FatPerUnit * ingredient.Quantity;
+        }
+    }
+
+    private string GetNutritionProgressStyle(decimal value)
+    {
+        var percentage = (value / 2000) * 100; // Based on 2000 calorie diet
+        return $"width: {Math.Min(percentage, 100)}%;";
+    }
+
+    private class NutritionTotals
+    {
+        public decimal Calories { get; set; }
+        public decimal Protein { get; set; }
+        public decimal Carbohydrates { get; set; }
+        public decimal Fat { get; set; }
+    }
+}
+
+@if (Ingredients != null)
+{
+    <div class="card mb-3 shadow-lg">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">
+                <i class="fas fa-carrot me-2"></i>
+                Ingredients (@Ingredients.Count)
+            </h3>
+            <button class="btn btn-sm btn-light" @onclick="() => CalculateTotals()">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+        
+        <div class="card-body">
+            @if (Ingredients.Count == 0)
+            {
+                <div class="text-center py-4 text-muted">
+                    <i class="fas fa-inbox fa-3x mb-3"></i>
+                    <p class="mb-0">No ingredients added yet</p>
+                </div>
+            }
+            else
+            {
+                <div class="row g-3 mb-4">
+                    <div class="col-md-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="text-uppercase text-muted mb-3">Total Calories</h6>
+                                <h2 class="mb-0">@_totals.Calories.ToString("N0")</h2>
+                                <div class="progress mt-2" style="height: 5px;">
+                                    <div class="progress-bar bg-warning" 
+                                         style="@GetNutritionProgressStyle(_totals.Calories)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="text-uppercase text-muted mb-3">Protein</h6>
+                                <h2 class="mb-0">@_totals.Protein.ToString("N1")<small class="text-muted">g</small></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="text-uppercase text-muted mb-3">Carbs</h6>
+                                <h2 class="mb-0">@_totals.Carbohydrates.ToString("N1")<small class="text-muted">g</small></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="text-uppercase text-muted mb-3">Fat</h6>
+                                <h2 class="mb-0">@_totals.Fat.ToString("N1")<small class="text-muted">g</small></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @foreach (var ingredient in Ingredients)
+                {
+                    <div class="ingredient-card card mb-3 shadow-sm">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                            <button class="btn btn-link text-dark text-decoration-none" 
+                                    @onclick="@(() => _expandedState[ingredient] = !_expandedState[ingredient])">
+                                <i class="fas @(_expandedState[ingredient] ? "fa-chevron-down" : "fa-chevron-right") me-2"></i>
+                                @ingredient.FoodItem?.Name
+                            </button>
+                        </div>
+                        
+                        <div class="collapse @(_expandedState[ingredient] ? "show" : "")">
+                            <div class="card-body">
+                                <div class="row g-3 align-items-center">
+                                    <div class="col-md-4">
+                                        @if (ingredient.FoodItem != null)
+                                        {
+                                            <p class="mb-1 text-muted">@ingredient.FoodItem.Description</p>
+                                            <div class="nutrition-facts">
+                                                <div class="d-flex justify-content-between">
+                                                    <span>Calories:</span>
+                                                    <strong>@CalorieCalculatorService.ConvertToCalories(ingredient)</strong>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span>Protein:</span>
+                                                    <strong>@(ingredient.FoodItem.ProteinPerUnit * ingredient.Quantity)g</strong>
+                                                </div>
+                                                @if (ingredient.FoodItem.FoodCategory != null)
+                                                {
+                                                    <div class="mt-2">
+                                                        <span class="badge bg-info">
+                                                            @ingredient.FoodItem.FoodCategory.Name
+                                                        </span>
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}

@@ -1,7 +1,5 @@
 ﻿using FluentValidation.TestHelper;
 using MyFoodApp.Application.DTOs;
-using MyFoodApp.Application.Validators;
-using Xunit;
 
 namespace MyFoodApp.Application.Tests.Validators
 {

@@ -17,9 +17,12 @@ namespace MyFoodApp.Infrastructure.Repositories
         public IQueryable<Recipe> GetAllRecipesAsync()
         {
             var recipes = _context.Recipes
-                .Include(r => r.Ingredients)
                 .Include(r => r.Steps)
+                .Include(r => r.Ingredients)
+                    .ThenInclude(i => i.FoodItem)
+                        .ThenInclude(f => f!.FoodCategory)
                 .Include(r => r.MealSuggestions)
+                    .ThenInclude(ms => ms.MealSuggestion)
                 .AsQueryable();
 
             return recipes;
@@ -28,9 +31,12 @@ namespace MyFoodApp.Infrastructure.Repositories
         public async Task<Recipe?> GetRecipeByIdAsync(int id, bool tracking = false)
         {
             var query = _context.Recipes
-                .Include(r => r.Ingredients)
                 .Include(r => r.Steps)
-                .Include(r => r.MealSuggestions);
+                .Include(r => r.Ingredients)
+                    .ThenInclude(i => i.FoodItem)
+                        .ThenInclude(f => f!.FoodCategory)
+                .Include(r => r.MealSuggestions)
+                    .ThenInclude(ms => ms.MealSuggestion);
 
             return tracking
                 ? await query.FirstOrDefaultAsync(r => r.RecipeId == id)
@@ -60,7 +66,12 @@ namespace MyFoodApp.Infrastructure.Repositories
         public IQueryable<Recipe> GetRecipesByIngredientsAsync(IEnumerable<int> ingredientIds)
         {
             var recipes = _context.Recipes
+                .Include(r => r.Steps)
                 .Include(r => r.Ingredients)
+                    .ThenInclude(i => i.FoodItem)
+                        .ThenInclude(f => f!.FoodCategory)
+                .Include(r => r.MealSuggestions)
+                    .ThenInclude(ms => ms.MealSuggestion)
                 .Where(r => r.Ingredients.Any(i => ingredientIds.Contains(i.FoodItemId)))
                 .AsQueryable();
 

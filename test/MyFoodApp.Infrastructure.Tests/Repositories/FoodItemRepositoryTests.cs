@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using MyFoodApp.Domain.Entities;
 using MyFoodApp.Domain.Interfaces.Repositories;
 using MyFoodApp.Infrastructure.Persistence;
 using MyFoodApp.Infrastructure.Repositories;

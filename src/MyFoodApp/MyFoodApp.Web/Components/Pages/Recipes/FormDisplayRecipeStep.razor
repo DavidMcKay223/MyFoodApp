@@ -1,0 +1,23 @@
+﻿@using MyFoodApp.Application.DTOs
+
+@code {
+    [Parameter]
+    public required List<RecipeStepDto> Steps { get; set; }
+}
+
+@if (Steps != null)
+{
+    <div class="card mb-3">
+        <div class="card-header">Steps</div>
+        <div class="card-body">
+            <ul class="list-unstyled">
+                @for (int i = 0; i < Steps.Count; i++)
+                {
+                    <li class="mb-3">
+                        <p><strong>@Steps[i].StepNumber</strong> <span>@Steps[i].Instruction</span></p>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}

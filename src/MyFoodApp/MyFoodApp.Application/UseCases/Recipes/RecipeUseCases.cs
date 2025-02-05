@@ -122,14 +122,7 @@ namespace MyFoodApp.Application.UseCases.Recipes
 
             try
             {
-                var query = _recipeRepository.GetAllRecipesAsync()
-                    .Include(r => r.Steps)
-                    .Include(r => r.Ingredients)
-                        .ThenInclude(i => i.FoodItem)
-                            .ThenInclude(f => f.FoodCategory)
-                    .Include(r => r.MealSuggestions)
-                        .ThenInclude(ms => ms.MealSuggestion)
-                    .AsQueryable();
+                var query = _recipeRepository.GetAllRecipesAsync();
 
                 // Apply filters based on searchDto properties
                 if (!string.IsNullOrEmpty(searchDto.Title))

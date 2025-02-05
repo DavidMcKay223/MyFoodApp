@@ -18,10 +18,12 @@ else
 
     <SearchButton OnSearch="Search" OnReset="ResetSearch" OnAdd="ShowAddModal" />
 
-    <TableDisplayRecipe Recipes="Recipes" OnEdit="ShowEditModal" />
+    <TableDisplayRecipe Recipes="Recipes" OnEdit="ShowEditModal" OnDisplay="ShowDisplayModal" />
 
     <SearchPagination TItem="RecipeDto" TotalItems="@totalItems" PageSize="@pageSize" CurrentPage="@currentPage" OnPageChanged="OnPageChanged" OnPageSizeChangedCallback="OnPageSizeChanged" />
 }
+
+<DisplayModalRecipe @ref="displayModal" />
 
 <EditModalRecipe @ref="editModal" OnRecipeSaved="LoadRecipes" />
 
@@ -29,6 +31,7 @@ else
     private List<RecipeDto>? Recipes;
     private bool isLoading = true;
     private EditModalRecipe? editModal;
+    private DisplayModalRecipe? displayModal;
     private RecipeSearchDto searchDto = new();
     private int totalItems;
     private int pageSize = 10;
@@ -63,6 +66,15 @@ else
         if (response.Item != null)
         {
             editModal!.Show(response.Item);
+        }
+    }
+
+    private async void ShowDisplayModal(int id)
+    {
+        var response = await RecipeUseCases.GetRecipeByIdAsync(id);
+        if (response.Item != null)
+        {
+            displayModal!.Show(response.Item);
         }
     }
 

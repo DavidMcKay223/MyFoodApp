@@ -2,7 +2,6 @@
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Application.Validators;
 using MyFoodApp.Domain.Enums;
-using Xunit;
 
 namespace MyFoodApp.Application.Tests.Validators
 {

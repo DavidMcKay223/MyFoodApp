@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.Data.Sqlite;
 using MyFoodApp.Application.Mappings;
 using MyFoodApp.Domain.Interfaces.Repositories;
 using MyFoodApp.Infrastructure.Persistence;
 using MyFoodApp.Infrastructure.Repositories;
-using MyFoodApp.Infrastructure.Tests.Data;
 using MyFoodApp.Infrastructure.Tests.Helpers;
 
 namespace MyFoodApp.Application.Tests

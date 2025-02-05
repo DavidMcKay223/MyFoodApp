@@ -2,7 +2,6 @@
 
 namespace MyFoodApp.Domain.Interfaces.Repositories
 {
-    //TODO: Refactor this, it grows because of bad suggestions
     public interface IRecipeRepository
     {
         IQueryable<Recipe> GetAllRecipesAsync();

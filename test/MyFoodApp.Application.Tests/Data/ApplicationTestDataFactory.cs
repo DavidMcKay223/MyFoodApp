@@ -1,7 +1,6 @@
 ﻿using Bogus;
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Domain.Enums;
-using MyFoodApp.Domain.Entities;
 
 namespace MyFoodApp.Application.Tests.Data
 {

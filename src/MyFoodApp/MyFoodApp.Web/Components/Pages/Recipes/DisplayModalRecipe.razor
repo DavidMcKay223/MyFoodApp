@@ -1,0 +1,62 @@
+﻿@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Application.Common
+@using MyFoodApp.Web.Components.Shared
+
+@code {
+    private RecipeDto? Recipe;
+
+    public void Show(RecipeDto recipeToDisplay)
+    {
+        Recipe = recipeToDisplay;
+        StateHasChanged();
+    }
+
+    private void Cancel()
+    {
+        Recipe = null;
+    }
+}
+
+@if (Recipe != null)
+{
+    <div class="modal-backdrop">
+        <div class="modal show d-block" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content" style="height: 80%;">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Recipe:</h5>
+                        <button type="button" class="btn-close" @onclick="Cancel"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="card-title">@Recipe.Title</h5>
+                        <p class="card-text">@Recipe.Description</p>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <p><strong>Prep Time (minutes):</strong> <span class="text-primary">@Recipe.PrepTimeMinutes</span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><strong>Cook Time (minutes):</strong> <span class="text-primary">@Recipe.CookTimeMinutes</span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><strong>Servings:</strong> <span class="text-primary">@Recipe.Servings</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Recipe Steps -->
+                        <FormDisplayRecipeStep Steps="@Recipe.Steps" />
+
+                        <!-- Ingredients -->
+                        <FormDisplayIngredient Ingredients="@Recipe.Ingredients" />
+
+                        <!-- Meal Suggestions -->
+                        <FormDisplayRecipeMealSuggestion MealSuggestions="@Recipe.MealSuggestions" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

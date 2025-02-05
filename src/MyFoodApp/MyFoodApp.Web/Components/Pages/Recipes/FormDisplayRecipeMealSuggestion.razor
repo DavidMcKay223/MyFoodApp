@@ -1,0 +1,26 @@
+﻿@using MyFoodApp.Application.DTOs
+
+@code {
+    [Parameter]
+    public required List<RecipeMealSuggestionDto> MealSuggestions { get; set; }
+}
+
+@if (MealSuggestions != null)
+{
+    <div class="card mb-3">
+        <div class="card-header">Meal Suggestions</div>
+        <div class="card-body">
+            @for (int i = 0; i < MealSuggestions.Count; i++)
+            {
+                var index = i;
+                <div class="row g-3 mb-3 align-items-end">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

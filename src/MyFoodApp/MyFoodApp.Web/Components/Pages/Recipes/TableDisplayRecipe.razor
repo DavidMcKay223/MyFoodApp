@@ -1,5 +1,7 @@
 ﻿@using MyFoodApp.Application.DTOs
+@using MyFoodApp.Application.Interfaces.Calculations
 @using MyFoodApp.Domain.Enums
+@inject ICalorieCalculatorService CalorieCalculatorService
 
 @if (Recipes?.Any() == false)
 {
@@ -38,7 +40,7 @@ else
                             <div class="col-6">
                                 <div class="d-flex align-items-center text-muted">
                                     <i class="bi bi-fire me-2"></i>
-                                    <span>@(CalculateCalories(recipe)) cal/serving</span>
+                                    <span>@(CalorieCalculatorService.CalculateCalories(recipe)) cal/serving</span>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -90,10 +92,22 @@ else
                             <span class="text-muted small">
                                 @recipe.Servings <i class="bi bi-people ms-1"></i>
                             </span>
-                            <button class="btn btn-outline-primary btn-sm"
-                                    @onclick="() => OnEdit.InvokeAsync(recipe.RecipeId)">
-                                <i class="bi bi-pencil me-2"></i>Edit
-                            </button>
+                            <div class="mb-3">
+                                @if (OnDisplay.HasDelegate)
+                                {
+                                    <button class="btn btn-outline-primary btn-sm me-2"
+                                            @onclick="() => OnDisplay.InvokeAsync(recipe.RecipeId)">
+                                        <i class="bi bi-pencil me-2"></i>View
+                                    </button>
+                                }
+                                @if (OnEdit.HasDelegate)
+                                {
+                                    <button class="btn btn-outline-danger btn-sm me-2"
+                                            @onclick="() => OnEdit.InvokeAsync(recipe.RecipeId)">
+                                        <i class="bi bi-pencil me-2"></i>Edit
+                                    </button>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -109,79 +123,6 @@ else
     [Parameter]
     public EventCallback<int> OnEdit { get; set; }
 
-    private string CalculateCalories(RecipeDto recipe)
-    {
-        try
-        {
-            var totalCalories = recipe.Ingredients
-                .Sum(i => ConvertToCalories(i));
-
-            var perServing = totalCalories / recipe.Servings;
-            return perServing > 0 ? perServing.ToString("N0") : "N/A";
-        }
-        catch
-        {
-            return "N/A";
-        }
-    }
-
-    private decimal ConvertToCalories(IngredientDto ingredient)
-    {
-        decimal caloriesPerUnit = ingredient.FoodItem?.CaloriesPerUnit ?? 0;
-        decimal quantityInGrams;
-
-        switch (ingredient.Unit)
-        {
-            case UnitType.Gram:
-                quantityInGrams = ingredient.Quantity;
-                break;
-            case UnitType.Kilogram:
-                quantityInGrams = ingredient.Quantity * 1000;
-                break;
-            case UnitType.Milliliter:
-                // Assuming density of water, 1 milliliter = 1 gram
-                quantityInGrams = ingredient.Quantity;
-                break;
-            case UnitType.Liter:
-                // Assuming density of water, 1 liter = 1000 grams
-                quantityInGrams = ingredient.Quantity * 1000;
-                break;
-            case UnitType.Teaspoon:
-                // Assuming 1 teaspoon = 5 grams (adjust based on substance)
-                quantityInGrams = ingredient.Quantity * 5;
-                break;
-            case UnitType.Tablespoon:
-                // Assuming 1 tablespoon = 15 grams (adjust based on substance)
-                quantityInGrams = ingredient.Quantity * 15;
-                break;
-            case UnitType.Cup:
-                // Assuming 1 cup = 240 grams (adjust based on substance)
-                quantityInGrams = ingredient.Quantity * 240;
-                break;
-            case UnitType.Piece:
-                // Assuming average weight per piece for certain food items
-                quantityInGrams = ingredient.Quantity * GetAverageWeightPerPiece(ingredient.FoodItem.Name);
-                break;
-            default:
-                quantityInGrams = ingredient.Quantity;
-                break;
-        }
-
-        // Calories per gram
-        return quantityInGrams * (caloriesPerUnit / 100);
-    }
-
-    private decimal GetAverageWeightPerPiece(string foodItemName)
-    {
-        // Define average weights for specific food items
-        return foodItemName switch
-        {
-            "Bell Pepper" => 120,
-            "Carrot" => 75,
-            "Banana" => 120,
-            "Onion" => 110,
-            "Garlic" => 5,
-            _ => 100 // Default weight
-        };
-    }
+    [Parameter]
+    public EventCallback<int> OnDisplay { get; set; }
 }

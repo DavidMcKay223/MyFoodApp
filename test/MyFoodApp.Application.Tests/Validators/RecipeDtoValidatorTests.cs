@@ -1,5 +1,4 @@
-﻿using FluentValidation.TestHelper;
-using MyFoodApp.Application.Validators;
+﻿using MyFoodApp.Application.Validators;
 
 namespace MyFoodApp.Application.Tests.Validators
 {

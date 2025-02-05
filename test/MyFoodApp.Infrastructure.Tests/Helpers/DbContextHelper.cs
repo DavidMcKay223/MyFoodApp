@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MyFoodApp.Domain.Entities;
 using MyFoodApp.Infrastructure.Persistence;
-using MyFoodApp.Infrastructure.Tests.Data;
 
 namespace MyFoodApp.Infrastructure.Tests.Helpers
 {
