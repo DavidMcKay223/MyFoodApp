@@ -31,7 +31,7 @@ namespace MyFoodApp.Infrastructure.Tests.Helpers
 
         public static void SeedDatabase(AppDbContext context, Action<AppDbContext> seedAction)
         {
-            context.ChangeTracker.Entries().ToList().ForEach(e => e.State = EntityState.Detached);
+            //context.ChangeTracker.Entries().ToList().ForEach(e => e.State = EntityState.Detached);
 
             seedAction(context);
             context.SaveChanges();

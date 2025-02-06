@@ -12,7 +12,7 @@ namespace MyFoodApp.Application.DTOs
         public DateTime? ExpirationDate { get; set; }
 
         // Navigation Properties
-        public List<RecipeMealSuggestionDto>? RecipeSuggestions { get; set; }
-        public List<MealSuggestionTagDto>? Tags { get; set; }
+        public List<RecipeMealSuggestionDto> RecipeSuggestions { get; set; } = [];
+        public List<MealSuggestionTagDto> Tags { get; set; } = [];
     }
 }

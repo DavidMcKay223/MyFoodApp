@@ -42,6 +42,9 @@ builder.Services.AddScoped<IFoodItemUseCases, FoodItemUseCases>();
 builder.Services.AddScoped<IMealSuggestionRepository, MealSuggestionRepository>();
 builder.Services.AddScoped<IMealSuggestionUseCases, MealSuggestionUseCases>();
 
+builder.Services.AddScoped<IGenerateRecommendationsRepository, GenerateRecommendationsRepository>();
+builder.Services.AddScoped<IGenerateRecommendationsUseCases, GenerateRecommendationsUseCases>();
+
 // Database:
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
@@ -49,10 +52,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         sqlOptions =>
         {
             sqlOptions.MigrationsAssembly("MyFoodApp.Infrastructure");
-            sqlOptions.EnableRetryOnFailure(
-                maxRetryCount: 5,
-                maxRetryDelay: TimeSpan.FromSeconds(30),
-                errorNumbersToAdd: null);
         }),
         ServiceLifetime.Scoped);
 

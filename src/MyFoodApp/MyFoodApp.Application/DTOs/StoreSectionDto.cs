@@ -7,6 +7,6 @@
         public required string Description { get; set; }
 
         // Navigation Property
-        public List<FoodItemStoreSectionDto>? FoodItems { get; set; }
+        public List<FoodItemStoreSectionDto> FoodItems { get; set; } = [];
     }
 }
