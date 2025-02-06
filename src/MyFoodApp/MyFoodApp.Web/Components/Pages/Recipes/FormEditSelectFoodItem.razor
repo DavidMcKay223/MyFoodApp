@@ -11,20 +11,23 @@
 
 <div class="form-floating">
     <InputSelect @bind-Value="Ingredient.FoodItemId" class="form-select">
-        @foreach (var foodItem in FoodItemList)
+        @{
+            var groupedFoodItems = FoodItemList.GroupBy(fi => fi.FoodCategory?.Name);
+        }
+        @foreach (var categoryGroup in groupedFoodItems)
         {
-            <option value="@foodItem.FoodItemId" class="food-item-option">
-                <span>@foodItem.Name</span>
-                <span class="food-item-details text-info">
-                    (Unit: @foodItem.Unit)<br />
-                    Protein: @foodItem.ProteinPerUnit per unit<br />
-                    Calories: @foodItem.CaloriesPerUnit per unit<br />
-                    Carbohydrates: @foodItem.CarbohydratesPerUnit per unit<br />
-                    Fat: @foodItem.FatPerUnit per unit
-                </span>
-            </option>
+            <optgroup label="@categoryGroup.Key">
+                @foreach (var foodItem in categoryGroup)
+                {
+                    <option value="@foodItem.FoodItemId" class="food-item-option"
+                            title="@String.Format("Unit Type: {0}\n\tCalories: {2}\n\tProtein: {1}\n\tCarbohydrates: {3}\n\tFat: {4}", @foodItem.Unit, @foodItem.ProteinPerUnit, @foodItem.CaloriesPerUnit, @foodItem.CarbohydratesPerUnit, @foodItem.FatPerUnit)">
+                        @foodItem.Name
+                    </option>
+                }
+            </optgroup>
         }
     </InputSelect>
+
     <label>Food Item</label>
     <ValidationMessage For="@(() => Ingredient.FoodItemId)" />
 </div>

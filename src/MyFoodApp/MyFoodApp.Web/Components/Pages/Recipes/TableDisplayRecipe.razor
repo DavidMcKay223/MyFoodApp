@@ -78,7 +78,7 @@ else
                                     @foreach (var suggestion in recipe.MealSuggestions)
                                     {
                                         <span class="badge bg-primary bg-opacity-10 text-primary">
-                                            @suggestion.MealSuggestion?.MealType
+                                            @suggestion.MealSuggestion?.MealType - @suggestion.MealSuggestion?.Name
                                         </span>
                                     }
                                 </div>

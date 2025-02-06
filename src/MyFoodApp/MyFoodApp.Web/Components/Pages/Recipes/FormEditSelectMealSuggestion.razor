@@ -11,14 +11,22 @@
 
 <div class="form-floating">
     <InputSelect @bind-Value="RecipeMealSuggestion.MealSuggestionId" class="form-select">
-        @foreach (var mealSuggestion in MealSuggestionList)
+        @{
+            var groupedMealSuggestions = MealSuggestionList.GroupBy(ms => ms.MealType);
+        }
+        @foreach (var mealTypeGroup in groupedMealSuggestions)
         {
-            <option value="@mealSuggestion.MealSuggestionId">
-                @mealSuggestion.MealType:
-                @mealSuggestion.Name
-            </option>
+            <optgroup label="@mealTypeGroup.Key">
+                @foreach (var mealSuggestion in mealTypeGroup)
+                {
+                    <option value="@mealSuggestion.MealSuggestionId">
+                        @mealSuggestion.Name
+                    </option>
+                }
+            </optgroup>
         }
     </InputSelect>
-    <label>Food Item</label>
+
+    <label>Meal Suggestion Item</label>
     <ValidationMessage For="@(() => RecipeMealSuggestion.MealSuggestionId)" />
 </div>

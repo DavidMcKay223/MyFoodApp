@@ -17,6 +17,9 @@ namespace MyFoodApp.Infrastructure.Repositories
         public IQueryable<FoodItem> GetAllFoodItemsAsync()
         {
             var recipes = _context.FoodItems
+                .Include(x => x.FoodCategory)
+                .OrderBy(x => x.FoodCategory!.Name)
+                    .ThenBy(x => x.Name)
                 .AsNoTracking()
                 .AsQueryable();
 
