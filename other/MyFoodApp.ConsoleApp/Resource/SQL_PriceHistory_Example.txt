@@ -1,0 +1,84 @@
+-- Declare a table variable to hold the FoodItem data (you can replace this with a direct query if needed)
+DECLARE @FoodItems TABLE (
+    FoodItemId INT,
+    FoodCategoryId INT
+);
+
+-- Insert the FoodItem data into the table variable (replace with your actual query if needed)
+INSERT INTO @FoodItems (FoodItemId, FoodCategoryId)
+SELECT FoodItemId, FoodCategoryId
+FROM FoodItems;  -- Or WHERE conditions if you want to filter
+
+-- Declare a table variable to store the generated price history
+DECLARE @PriceHistory TABLE (
+    FoodItemId INT,
+    Price DECIMAL(18, 2), -- Adjust precision as needed
+    StartDate DATE,
+    EndDate DATE
+);
+
+-- Insert the generated price history data into the table variable
+INSERT INTO @PriceHistory (FoodItemId, Price, StartDate, EndDate)
+SELECT fi.FoodItemId,
+       CAST(FLOOR(RAND() * (high - low + 1)) + low AS DECIMAL(18,2)), -- Generates a random price within the range
+       '2023-01-01',  -- Start Date
+       '2024-01-01'   -- End Date
+FROM @FoodItems fi
+CROSS APPLY (
+    SELECT 
+        CASE fi.FoodCategoryId
+            WHEN 1 THEN 1.00  -- Vegetables: $1.00 - $2.50
+            WHEN 2 THEN 1.50  -- Fruits: $1.50 - $3.00
+            WHEN 3 THEN 2.00  -- Dairy: $2.00 - $4.00
+            WHEN 4 THEN 0.75  -- Grains: $0.75 - $2.00
+            WHEN 5 THEN 4.00  -- Proteins: $4.00 - $8.00
+            WHEN 6 THEN 7.00  -- Seafood: $7.00 - $12.00
+            WHEN 7 THEN 2.00  -- Baked Goods: $2.00 - $5.00
+            WHEN 8 THEN 1.50  -- Condiments: $1.50 - $3.50
+            WHEN 9 THEN 1.25  -- Snacks: $1.25 - $3.00
+            WHEN 10 THEN 1.00 -- Beverages: $1.00 - $2.50
+            WHEN 11 THEN 3.00 -- Fats & Oils: $3.00 - $6.00
+            WHEN 12 THEN 5.00 -- Prepared Foods: $5.00 - $10.00
+            WHEN 13 THEN 2.00 -- Herbs & Spices: $2.00 - $4.00
+            WHEN 14 THEN 0.75 -- Legumes: $0.75 - $2.00
+            WHEN 15 THEN 5.00 -- Nuts & Seeds: $5.00 - $10.00
+            WHEN 16 THEN 3.00 -- Fermented Foods: $3.00 - $7.00
+            WHEN 17 THEN 1.50 -- Frozen Foods: $1.50 - $3.50
+            WHEN 18 THEN 1.25 -- Canned/Preserved: $1.25 - $3.00
+            WHEN 19 THEN 4.00 -- International: $4.00 - $9.00
+            WHEN 20 THEN 3.00 -- Special Diets: $3.00 - $7.00
+            ELSE 1.00       -- Default: $1.00 - $3.00
+        END AS low,
+        CASE fi.FoodCategoryId
+            WHEN 1 THEN 2.50
+            WHEN 2 THEN 3.00
+            WHEN 3 THEN 4.00
+            WHEN 4 THEN 2.00
+            WHEN 5 THEN 8.00
+            WHEN 6 THEN 12.00
+            WHEN 7 THEN 5.00
+            WHEN 8 THEN 3.50
+            WHEN 9 THEN 3.00
+            WHEN 10 THEN 2.50
+            WHEN 11 THEN 6.00
+            WHEN 12 THEN 10.00
+            WHEN 13 THEN 4.00
+            WHEN 14 THEN 2.00
+            WHEN 15 THEN 10.00
+            WHEN 16 THEN 7.00
+            WHEN 17 THEN 3.50
+            WHEN 18 THEN 3.00
+            WHEN 19 THEN 9.00
+            WHEN 20 THEN 7.00
+            ELSE 3.00
+        END AS high
+) AS price_range;
+
+
+-- Insert the price history from the table variable into your actual PriceHistories table
+INSERT INTO PriceHistories (FoodItemId, Price, StartDate, EndDate)
+SELECT FoodItemId, Price, StartDate, EndDate
+FROM @PriceHistory;
+
+-- (Optional) Select the generated price history to view it
+SELECT * FROM @PriceHistory;

@@ -1115,6 +1115,16 @@
       "Unit": 0
     },
     {
+      "Name": "Flour (All-Purpose)",
+      "Description": "Finely ground wheat flour",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
       "Name": "Millet",
       "Description": "Small-seeded grain",
       "FoodCategoryId": 4,
@@ -1332,6 +1342,16 @@
       "ProteinPerUnit": 9.00,
       "CarbohydratesPerUnit": 20.00,
       "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Pancetta",
+      "Description": "Italian cured pork belly",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 541.00,
+      "ProteinPerUnit": 22.00,
+      "CarbohydratesPerUnit": 1.00,
+      "FatPerUnit": 48.00,
       "Unit": 0
     },
     {
@@ -1735,6 +1755,16 @@
       "Unit": 0
     },
     {
+      "Name": "Baking Soda",
+      "Description": "Leavening agent",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 0.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
       "Name": "Barbecue Sauce",
       "Description": "Smoky sauce",
       "FoodCategoryId": 8,
@@ -1845,6 +1875,16 @@
       "Unit": 0
     },
     {
+      "Name": "Salt",
+      "Description": "Sodium chloride",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 0.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
       "Name": "Soy Sauce",
       "Description": "Salty fermented sauce",
       "FoodCategoryId": 8,
@@ -1865,12 +1905,32 @@
       "Unit": 0
     },
     {
+      "Name": "Vanilla Extract",
+      "Description": "Flavoring agent derived from vanilla beans",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 5.00,
+      "FatPerUnit": 0.00,
+      "Unit": 2
+    },
+    {
       "Name": "Worcestershire Sauce",
       "Description": "Savory sauce",
       "FoodCategoryId": 8,
       "CaloriesPerUnit": 15.00,
       "ProteinPerUnit": 0.10,
       "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Brown Sugar",
+      "Description": "Sucrose with molasses",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 375.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 95.00,
       "FatPerUnit": 0.00,
       "Unit": 0
     },
@@ -2015,6 +2075,16 @@
       "Unit": 0
     },
     {
+      "Name": "Sugar (Granulated)",
+      "Description": "Sweet crystalline sucrose",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 400.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 100.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
       "Name": "Trail Mix",
       "Description": "Nut and seed mix",
       "FoodCategoryId": 9,
@@ -2051,6 +2121,16 @@
       "CaloriesPerUnit": 110.00,
       "ProteinPerUnit": 0.00,
       "CarbohydratesPerUnit": 27.00,
+      "FatPerUnit": 0.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Espresso",
+      "Description": "Concentrated coffee beverage",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 5.00,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 1.00,
       "FatPerUnit": 0.00,
       "Unit": 3
     },
@@ -2352,6 +2432,16 @@
       "ProteinPerUnit": 3.00,
       "CarbohydratesPerUnit": 8.00,
       "FatPerUnit": 2.00,
+      "Unit": 2
+    },
+    {
+      "Name": "Chicken Broth",
+      "Description": "Savory liquid made by simmering chicken",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 20.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 1.00,
+      "FatPerUnit": 0.00,
       "Unit": 2
     },
     {
