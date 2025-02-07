@@ -3685,12 +3685,1890 @@
       "Unit": 0
     }
   ],
-  "FoodItemStoreSections": [],
+  "FoodItemStoreSections": [
+    {
+      "FoodItemId": 1,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 2,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 3,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 4,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 5,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 6,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 7,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 8,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 9,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 10,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 11,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 12,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 13,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 14,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 15,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 16,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 17,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 18,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 19,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 20,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 21,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 22,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 23,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 24,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 25,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 26,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 27,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 28,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 29,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 30,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 31,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 32,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 33,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 34,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 35,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 36,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 37,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 38,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 39,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 40,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 41,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 42,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 43,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 44,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 45,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 46,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 47,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 48,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 49,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 50,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 51,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 52,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 53,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 54,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 55,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 56,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 57,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 58,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 59,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 60,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 61,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 62,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 63,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 64,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 65,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 66,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 67,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 68,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 69,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 70,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 71,
+      "StoreSectionId": 1,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 72,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 73,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 74,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 75,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 76,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 77,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 78,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 79,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 80,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 81,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 82,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 83,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 84,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 85,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 86,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 87,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 88,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 89,
+      "StoreSectionId": 2,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 90,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 91,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 92,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 93,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 94,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 95,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 96,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 97,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 98,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 99,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 100,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 101,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 102,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 103,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 104,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 105,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 106,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 107,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 108,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 109,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 110,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 111,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 112,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 113,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 114,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 115,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 116,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 117,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 118,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 119,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 120,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 121,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 122,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 123,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 124,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 125,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 126,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 127,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 128,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 129,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 130,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 131,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 132,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 133,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 134,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 135,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 136,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 137,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 138,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 139,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 140,
+      "StoreSectionId": 4,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 141,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 142,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 143,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 144,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 145,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 146,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 147,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 148,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 149,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 150,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 151,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 152,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 153,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 154,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 155,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 156,
+      "StoreSectionId": 3,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 157,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 158,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 159,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 160,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 161,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 162,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 163,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 164,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 165,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 166,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 167,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 168,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 169,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 170,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 171,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 172,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 173,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 174,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 175,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 176,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 177,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 178,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 179,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 180,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 181,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 182,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 183,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 184,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 185,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 186,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 187,
+      "StoreSectionId": 8,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 188,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 189,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 190,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 191,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 192,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 193,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 194,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 195,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 196,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 197,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 198,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 199,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 200,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 201,
+      "StoreSectionId": 9,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 202,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 203,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 204,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 205,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 206,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 207,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 208,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 209,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 210,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 211,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 212,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 213,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 214,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 215,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 216,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 217,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 218,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 219,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 220,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 221,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 222,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 223,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 224,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 225,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 226,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 227,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 228,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 229,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 230,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 231,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 232,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 233,
+      "StoreSectionId": 16,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 234,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 235,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 236,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 237,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 238,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 239,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 240,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 241,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 242,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 243,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 244,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 245,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 246,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 247,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 248,
+      "StoreSectionId": 17,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 249,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 250,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 251,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 252,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 253,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 254,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 255,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 256,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 257,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 258,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 259,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 260,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 261,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 262,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 263,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 264,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 265,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 266,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 267,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 268,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 269,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 270,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 271,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 272,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 273,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 274,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 275,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 276,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 277,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 278,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 279,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 280,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 281,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 282,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 283,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 284,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 285,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 286,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 287,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 288,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 289,
+      "StoreSectionId": 6,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 290,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 291,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 292,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 293,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 294,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 295,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 296,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 297,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 298,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 299,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 300,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 301,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 302,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 303,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 304,
+      "StoreSectionId": 5,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 305,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 306,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 307,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 308,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 309,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 310,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 311,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 312,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 313,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 314,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 315,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 316,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 317,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 318,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 319,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 320,
+      "StoreSectionId": 7,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 321,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 322,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 323,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 324,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 325,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 326,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 327,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 328,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 329,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 330,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 331,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 332,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 333,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 334,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 335,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 336,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 337,
+      "StoreSectionId": 13,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 338,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 339,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 340,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 341,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 342,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 343,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 344,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 345,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 346,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 347,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 348,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 349,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 350,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 351,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    },
+    {
+      "FoodItemId": 352,
+      "StoreSectionId": 14,
+      "ShelfNumber": null
+    }
+  ],
   "PriceHistories": [],
-  "Recipes": [],
-  "Ingredients": [],
-  "RecipeSteps": [],
-  "MealSuggestions": [],
+  "MealSuggestions": [
+    {
+      "Name": "Quick & Easy",
+      "MealType": 0,
+      "Description": "Recipes that are fast and simple to prepare.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Healthy & Nutritious",
+      "MealType": 0,
+      "Description": "Recipes focused on nutrition and well-being.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Comfort Food",
+      "MealType": 0,
+      "Description": "Classic and satisfying dishes.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "International Cuisine",
+      "MealType": 0,
+      "Description": "Recipes inspired by different cultures.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Vegetarian/Vegan",
+      "MealType": 0,
+      "Description": "Plant-based recipes.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Low-Carb",
+      "MealType": 0,
+      "Description": "Recipes with a focus on reducing carbohydrates.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "High-Protein",
+      "MealType": 0,
+      "Description": "Recipes designed to be high in protein.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Kid-Friendly",
+      "MealType": 0,
+      "Description": "Recipes that appeal to children.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Meal Prep",
+      "MealType": 0,
+      "Description": "Recipes suitable for preparing meals in advance.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Budget-Friendly",
+      "MealType": 0,
+      "Description": "Recipes that are economical to make.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Breakfast",
+      "MealType": 1,
+      "Description": "Recipes suitable for breakfast.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Lunch",
+      "MealType": 2,
+      "Description": "Recipes suitable for lunch.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Dinner",
+      "MealType": 3,
+      "Description": "Recipes suitable for dinner.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Snack",
+      "MealType": 4,
+      "Description": "Recipes suitable for snacks.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Dessert",
+      "MealType": 5,
+      "Description": "Recipes suitable for dessert.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Workout Fuel",
+      "MealType": 0,
+      "Description": "Recipes that provide energy for workouts.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    },
+    {
+      "Name": "Recovery Meals",
+      "MealType": 0,
+      "Description": "Recipes to aid recovery after physical activity.",
+      "EffectiveDate": "2025-02-06T00:00:00",
+      "ExpirationDate": "2025-12-31T00:00:00"
+    }
+  ],
   "MealSuggestionTags": [
     {
       "TagName": "Quick"
@@ -3719,6 +5597,5 @@
     {
       "TagName": "Kid-Friendly"
     }
-  ],
-  "RecipeMealSuggestions": []
+  ]
 }

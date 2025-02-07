@@ -81,28 +81,12 @@ namespace MyFoodApp.ConsoleApp
             context.PriceHistories.AddRange(seedData.PriceHistories);
             context.SaveChanges();
 
-            // 6. Add Recipes
-            context.Recipes.AddRange(seedData.Recipes);
-            context.SaveChanges();
-
-            // 7. Add Ingredients
-            context.Ingredients.AddRange(seedData.Ingredients);
-            context.SaveChanges();
-
-            // 8. Add Recipe Steps
-            context.RecipeSteps.AddRange(seedData.RecipeSteps);
-            context.SaveChanges();
-
-            // 9. Add Meal Suggestions
+            // 6. Add Meal Suggestions
             context.MealSuggestions.AddRange(seedData.MealSuggestions);
             context.SaveChanges();
 
-            // 10. Add Meal Suggestion Tags
+            // 7. Add Meal Suggestion Tags
             context.MealSuggestionTags.AddRange(seedData.MealSuggestionTags);
-            context.SaveChanges();
-
-            // 11. Add Recipe-Meal Suggestion Relationships
-            context.RecipeMealSuggestions.AddRange(seedData.RecipeMealSuggestions);
             context.SaveChanges();
 
             Console.WriteLine("Test data populated successfully!");
@@ -148,23 +132,11 @@ namespace MyFoodApp.ConsoleApp
             Console.WriteLine("// 5. Load Price Histories");
             seedData.PriceHistories = context.PriceHistories.ToList();
 
-            Console.WriteLine("// 6. Load Recipes");
-            seedData.Recipes = context.Recipes.ToList();
-
-            Console.WriteLine("// 7. Load Ingredients");
-            seedData.Ingredients = context.Ingredients.ToList();
-
-            Console.WriteLine("// 8. Load Recipe Steps (with RecipeName)");
-            seedData.RecipeSteps = context.RecipeSteps.ToList();
-
-            Console.WriteLine("// 9. Load Meal Suggestions");
+            Console.WriteLine("// 6. Load Meal Suggestions");
             seedData.MealSuggestions = context.MealSuggestions.ToList();
 
-            Console.WriteLine("// 10. Load Meal Suggestion Tags");
+            Console.WriteLine("// 7. Load Meal Suggestion Tags");
             seedData.MealSuggestionTags = context.MealSuggestionTags.ToList();
-
-            Console.WriteLine("// 11. Load Recipe-Meal Suggestion Relationships");
-            seedData.RecipeMealSuggestions = context.RecipeMealSuggestions.ToList();
 
             return seedData;
         }

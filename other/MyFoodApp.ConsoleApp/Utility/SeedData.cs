@@ -14,11 +14,7 @@ namespace MyFoodApp.ConsoleApp.Utility
         public List<FoodItem> FoodItems { get; set; }
         public List<FoodItemStoreSection> FoodItemStoreSections { get; set; }
         public List<PriceHistory> PriceHistories { get; set; }
-        public List<Recipe> Recipes { get; set; }
-        public List<Ingredient> Ingredients { get; set; }
-        public List<RecipeStep> RecipeSteps { get; set; }
         public List<MealSuggestion> MealSuggestions { get; set; }
         public List<MealSuggestionTag> MealSuggestionTags { get; set; }
-        public List<RecipeMealSuggestion> RecipeMealSuggestions { get; set; }
     }
 }

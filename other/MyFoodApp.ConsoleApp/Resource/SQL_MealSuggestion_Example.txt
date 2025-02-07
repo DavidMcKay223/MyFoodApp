@@ -1,0 +1,91 @@
+-- Note this mapping needs to be redone to match properly not a big deal, 
+-- some categories do not belong in others
+
+-- Quick & Easy -> Quick
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(1, 1) -- Quick
+
+-- Healthy & Nutritious
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(2, 2), -- Vegetarian
+(2, 3), -- High-Protein
+(2, 5) -- Low-Carb
+
+-- Comfort Food
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(3, 9) -- Kid-Friendly
+
+-- International Cuisine
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(4, 9) -- Kid-Friendly
+
+-- Vegetarian/Vegan -> Vegetarian
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(5, 2) -- Vegetarian
+
+-- Low-Carb
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(6, 5) -- Low-Carb
+
+-- High-Protein
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(7, 3) -- High-Protein
+
+-- Kid-Friendly
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(8, 9) -- Kid-Friendly
+
+-- Meal Prep
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(9, 6) -- Meal Prep
+
+-- Budget-Friendly
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(10, 7) -- Budget-Friendly
+
+-- Breakfast
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(11, 1) -- Quick
+
+-- Lunch
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(12, 1) -- Quick
+
+-- Dinner
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(13, 1) -- Quick
+
+-- Snack
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(14, 1) -- Quick
+
+-- Dessert
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(15, 1) -- Quick
+
+-- Workout Fuel
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(16, 3), -- High-Protein
+(16, 5) -- Low-Carb
+
+-- Recovery Meals
+INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
+VALUES
+(17, 3), -- High-Protein
+(17, 6) -- Meal Prep
