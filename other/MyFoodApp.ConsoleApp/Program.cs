@@ -135,7 +135,12 @@ namespace MyFoodApp.ConsoleApp
             seedData.StoreSections = context.StoreSections.ToList();
 
             Console.WriteLine("// 3. Load Food Items");
-            seedData.FoodItems = context.FoodItems.ToList();
+            seedData.FoodItems = context.FoodItems
+                .OrderBy(x => x.FoodCategoryId)
+                .ThenBy(x => x.Name)
+                .GroupBy(x => new { x.FoodCategoryId, x.Name })
+                .Select(g => g.First())
+                .ToList();
 
             Console.WriteLine("// 4. Load FoodItemStoreSections");
             seedData.FoodItemStoreSections = context.FoodItemStoreSections.ToList();

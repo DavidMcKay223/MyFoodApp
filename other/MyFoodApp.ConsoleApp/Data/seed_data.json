@@ -165,6 +165,126 @@
   ],
   "FoodItems": [
     {
+      "Name": "Acorn Squash",
+      "Description": "Small winter squash",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 40.00,
+      "ProteinPerUnit": 0.80,
+      "CarbohydratesPerUnit": 10.42,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Artichoke",
+      "Description": "Edible thistle flower bud",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 47.00,
+      "ProteinPerUnit": 3.30,
+      "CarbohydratesPerUnit": 10.51,
+      "FatPerUnit": 0.15,
+      "Unit": 0
+    },
+    {
+      "Name": "Arugula",
+      "Description": "Peppery leafy green",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 25.00,
+      "ProteinPerUnit": 2.60,
+      "CarbohydratesPerUnit": 3.65,
+      "FatPerUnit": 0.70,
+      "Unit": 0
+    },
+    {
+      "Name": "Asparagus",
+      "Description": "Green stalk vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 20.00,
+      "ProteinPerUnit": 2.20,
+      "CarbohydratesPerUnit": 3.88,
+      "FatPerUnit": 0.12,
+      "Unit": 0
+    },
+    {
+      "Name": "Beetroot",
+      "Description": "Deep red root vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 43.00,
+      "ProteinPerUnit": 1.60,
+      "CarbohydratesPerUnit": 9.56,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Bell Pepper",
+      "Description": "Colorful capsicum",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 31.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 6.03,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Bitter Melon",
+      "Description": "Bitter green gourd",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 17.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 3.70,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Bok Choy",
+      "Description": "Chinese leafy green vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 13.00,
+      "ProteinPerUnit": 1.50,
+      "CarbohydratesPerUnit": 2.20,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Broccoli",
+      "Description": "Green cruciferous vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 34.00,
+      "ProteinPerUnit": 2.80,
+      "CarbohydratesPerUnit": 6.60,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Brussels Sprouts",
+      "Description": "Miniature cabbage-like vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 43.00,
+      "ProteinPerUnit": 3.40,
+      "CarbohydratesPerUnit": 8.95,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Butternut Squash",
+      "Description": "Sweet winter squash",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 45.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 11.69,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Cabbage",
+      "Description": "Leafy green or purple vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 25.00,
+      "ProteinPerUnit": 1.30,
+      "CarbohydratesPerUnit": 5.80,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
       "Name": "Carrot",
       "Description": "Orange root vegetable",
       "FoodCategoryId": 1,
@@ -172,6 +292,286 @@
       "ProteinPerUnit": 0.90,
       "CarbohydratesPerUnit": 9.58,
       "FatPerUnit": 0.24,
+      "Unit": 0
+    },
+    {
+      "Name": "Cassava",
+      "Description": "Starchy tropical root",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 160.00,
+      "ProteinPerUnit": 1.40,
+      "CarbohydratesPerUnit": 38.06,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Cauliflower",
+      "Description": "White cruciferous vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 25.00,
+      "ProteinPerUnit": 1.90,
+      "CarbohydratesPerUnit": 4.97,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Celery",
+      "Description": "Crunchy stalk vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 16.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Chayote",
+      "Description": "Green squash-like vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 19.00,
+      "ProteinPerUnit": 0.80,
+      "CarbohydratesPerUnit": 4.51,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Collard Greens",
+      "Description": "Leafy green vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 32.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 5.40,
+      "FatPerUnit": 0.60,
+      "Unit": 0
+    },
+    {
+      "Name": "Cucumber",
+      "Description": "Green watery vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 16.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 3.63,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Daikon Radish",
+      "Description": "Large white radish",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 18.00,
+      "ProteinPerUnit": 0.60,
+      "CarbohydratesPerUnit": 4.10,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Delicata Squash",
+      "Description": "Sweet winter squash",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 40.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 9.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Eggplant",
+      "Description": "Purple nightshade vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 25.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 5.88,
+      "FatPerUnit": 0.18,
+      "Unit": 0
+    },
+    {
+      "Name": "Endive",
+      "Description": "Bitter leafy green",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 17.00,
+      "ProteinPerUnit": 1.30,
+      "CarbohydratesPerUnit": 3.35,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Fennel",
+      "Description": "Aromatic bulb vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 31.00,
+      "ProteinPerUnit": 1.20,
+      "CarbohydratesPerUnit": 7.30,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Hubbard Squash",
+      "Description": "Large winter squash",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 40.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Jicama",
+      "Description": "Crunchy root vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 38.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 8.82,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Kabocha Squash",
+      "Description": "Japanese winter squash",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 30.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 7.00,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Kale",
+      "Description": "Leafy green vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 49.00,
+      "ProteinPerUnit": 4.30,
+      "CarbohydratesPerUnit": 8.75,
+      "FatPerUnit": 0.90,
+      "Unit": 0
+    },
+    {
+      "Name": "Kohlrabi",
+      "Description": "Bulbous stem vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 27.00,
+      "ProteinPerUnit": 1.70,
+      "CarbohydratesPerUnit": 6.20,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Leek",
+      "Description": "Mild-flavored onion relative",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 61.00,
+      "ProteinPerUnit": 1.50,
+      "CarbohydratesPerUnit": 14.15,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Mustard Greens",
+      "Description": "Spicy leafy green vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 27.00,
+      "ProteinPerUnit": 2.90,
+      "CarbohydratesPerUnit": 4.70,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Okra",
+      "Description": "Green pod vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 33.00,
+      "ProteinPerUnit": 1.90,
+      "CarbohydratesPerUnit": 7.45,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Onion",
+      "Description": "Yellow cooking onion",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 40.00,
+      "ProteinPerUnit": 1.10,
+      "CarbohydratesPerUnit": 9.34,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Parsnip",
+      "Description": "Cream-colored root vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 75.00,
+      "ProteinPerUnit": 1.20,
+      "CarbohydratesPerUnit": 17.99,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Pattypan Squash",
+      "Description": "Small summer squash",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 18.00,
+      "ProteinPerUnit": 1.20,
+      "CarbohydratesPerUnit": 3.84,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Plantain",
+      "Description": "Starchy banana-like fruit",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 122.00,
+      "ProteinPerUnit": 1.30,
+      "CarbohydratesPerUnit": 31.89,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Pumpkin",
+      "Description": "Orange winter squash",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 26.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 6.50,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Radicchio",
+      "Description": "Red-purple leafy vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 23.00,
+      "ProteinPerUnit": 1.40,
+      "CarbohydratesPerUnit": 4.48,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Radish",
+      "Description": "Crunchy root vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 16.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 3.40,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Rutabaga",
+      "Description": "Yellow root vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 37.00,
+      "ProteinPerUnit": 1.10,
+      "CarbohydratesPerUnit": 8.62,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Spaghetti Squash",
+      "Description": "Stringy winter squash",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 31.00,
+      "ProteinPerUnit": 0.60,
+      "CarbohydratesPerUnit": 6.91,
+      "FatPerUnit": 0.60,
       "Unit": 0
     },
     {
@@ -185,12 +585,82 @@
       "Unit": 0
     },
     {
-      "Name": "Bell Pepper",
-      "Description": "Colorful capsicum",
+      "Name": "Sweet Potato",
+      "Description": "Orange root vegetable",
       "FoodCategoryId": 1,
-      "CaloriesPerUnit": 31.00,
-      "ProteinPerUnit": 1.00,
-      "CarbohydratesPerUnit": 6.03,
+      "CaloriesPerUnit": 86.00,
+      "ProteinPerUnit": 1.60,
+      "CarbohydratesPerUnit": 20.12,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Swiss Chard",
+      "Description": "Colorful leafy green vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 19.00,
+      "ProteinPerUnit": 1.80,
+      "CarbohydratesPerUnit": 3.74,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Taro Root",
+      "Description": "Starchy tropical root vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 112.00,
+      "ProteinPerUnit": 1.50,
+      "CarbohydratesPerUnit": 26.46,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Turnip",
+      "Description": "Root vegetable with a peppery flavor",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 28.00,
+      "ProteinPerUnit": 0.90,
+      "CarbohydratesPerUnit": 6.43,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Watercress",
+      "Description": "Aquatic leafy green",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 11.00,
+      "ProteinPerUnit": 2.30,
+      "CarbohydratesPerUnit": 1.29,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Yam",
+      "Description": "Starchy tuber vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 118.00,
+      "ProteinPerUnit": 1.50,
+      "CarbohydratesPerUnit": 27.88,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Yellow Squash",
+      "Description": "Yellow summer squash",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 16.00,
+      "ProteinPerUnit": 1.20,
+      "CarbohydratesPerUnit": 3.35,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Zucchini",
+      "Description": "Green summer squash",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 17.00,
+      "ProteinPerUnit": 1.20,
+      "CarbohydratesPerUnit": 3.10,
       "FatPerUnit": 0.30,
       "Unit": 0
     },
@@ -205,6 +675,26 @@
       "Unit": 7
     },
     {
+      "Name": "Apricots",
+      "Description": "Small orange fruit",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 48.00,
+      "ProteinPerUnit": 1.40,
+      "CarbohydratesPerUnit": 11.12,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Avocados",
+      "Description": "Green fruit with a large pit",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 160.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 9.00,
+      "FatPerUnit": 15.00,
+      "Unit": 0
+    },
+    {
       "Name": "Banana",
       "Description": "Tropical curved fruit",
       "FoodCategoryId": 2,
@@ -215,6 +705,46 @@
       "Unit": 7
     },
     {
+      "Name": "Blackberries",
+      "Description": "Dark purple-black berries",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 43.00,
+      "ProteinPerUnit": 1.40,
+      "CarbohydratesPerUnit": 10.24,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Blueberries",
+      "Description": "Small blue-purple berries",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 57.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 14.40,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Cherries",
+      "Description": "Small sweet fruit",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 50.00,
+      "ProteinPerUnit": 0.80,
+      "CarbohydratesPerUnit": 12.63,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Grapefruit",
+      "Description": "Large citrus fruit with a pink or yellow flesh",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 42.00,
+      "ProteinPerUnit": 0.80,
+      "CarbohydratesPerUnit": 10.70,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
       "Name": "Grapes",
       "Description": "Small sweet berries",
       "FoodCategoryId": 2,
@@ -222,6 +752,276 @@
       "ProteinPerUnit": 0.70,
       "CarbohydratesPerUnit": 18.10,
       "FatPerUnit": 0.16,
+      "Unit": 0
+    },
+    {
+      "Name": "Kiwis",
+      "Description": "Small fuzzy fruit with green flesh",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 61.00,
+      "ProteinPerUnit": 1.10,
+      "CarbohydratesPerUnit": 14.66,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Lemons",
+      "Description": "Yellow citrus fruit with a sour taste",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 29.00,
+      "ProteinPerUnit": 0.40,
+      "CarbohydratesPerUnit": 9.32,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Limes",
+      "Description": "Green citrus fruit with a sour taste",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 30.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 10.54,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Mandarins",
+      "Description": "Small citrus fruit",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 53.00,
+      "ProteinPerUnit": 0.80,
+      "CarbohydratesPerUnit": 13.30,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Nectarines",
+      "Description": "Smooth-skinned fruit",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 44.00,
+      "ProteinPerUnit": 1.10,
+      "CarbohydratesPerUnit": 10.55,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Oranges",
+      "Description": "Citrus fruit with a thick skin",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 45.00,
+      "ProteinPerUnit": 0.90,
+      "CarbohydratesPerUnit": 11.30,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Peaches",
+      "Description": "Sweet fruit with a fuzzy skin",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 39.00,
+      "ProteinPerUnit": 0.90,
+      "CarbohydratesPerUnit": 9.54,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Pears",
+      "Description": "Sweet fruit with a green or yellow skin",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 57.00,
+      "ProteinPerUnit": 0.40,
+      "CarbohydratesPerUnit": 15.23,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Pineapple",
+      "Description": "Tropical fruit with a spiky skin",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 50.00,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 13.12,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Plums",
+      "Description": "Sweet fruit with a purple or red skin",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 46.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 11.44,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Raspberries",
+      "Description": "Red-pink berries with a tart taste",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 52.00,
+      "ProteinPerUnit": 1.20,
+      "CarbohydratesPerUnit": 11.94,
+      "FatPerUnit": 0.70,
+      "Unit": 0
+    },
+    {
+      "Name": "Strawberries",
+      "Description": "Red berry with seeds on the outside",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 32.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 7.68,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Almond Milk",
+      "Description": "Plant-based milk alternative",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 39.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 1.52,
+      "FatPerUnit": 2.52,
+      "Unit": 2
+    },
+    {
+      "Name": "Butter",
+      "Description": "Dairy product",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 717.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 1.00,
+      "FatPerUnit": 81.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cheese (Cheddar)",
+      "Description": "Hard cheese",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 403.00,
+      "ProteinPerUnit": 25.00,
+      "CarbohydratesPerUnit": 2.00,
+      "FatPerUnit": 33.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cheese (Mozzarella)",
+      "Description": "Semi-soft cheese",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 280.00,
+      "ProteinPerUnit": 28.00,
+      "CarbohydratesPerUnit": 2.00,
+      "FatPerUnit": 17.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cheese (Parmesan)",
+      "Description": "Hard, granular cheese",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 406.00,
+      "ProteinPerUnit": 32.00,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 26.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cream",
+      "Description": "Dairy product",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 204.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 21.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Greek Yogurt",
+      "Description": "Strained yogurt high in protein",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 59.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 3.60,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Ice Cream",
+      "Description": "Frozen dessert",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 207.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 22.00,
+      "FatPerUnit": 12.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Kefir",
+      "Description": "Fermented milk drink",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 64.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 5.00,
+      "FatPerUnit": 3.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Milk (Almond)",
+      "Description": "Nut-based beverage",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 13.00,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 1.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Milk (Cow)",
+      "Description": "Dairy beverage",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 42.00,
+      "ProteinPerUnit": 3.40,
+      "CarbohydratesPerUnit": 4.80,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Milk (Soy)",
+      "Description": "Legume-based beverage",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 33.00,
+      "ProteinPerUnit": 3.30,
+      "CarbohydratesPerUnit": 2.00,
+      "FatPerUnit": 1.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Ricotta Cheese",
+      "Description": "Soft cheese",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 174.00,
+      "ProteinPerUnit": 11.00,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 13.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Sour Cream",
+      "Description": "Fermented dairy product",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 214.00,
+      "ProteinPerUnit": 2.80,
+      "CarbohydratesPerUnit": 3.50,
+      "FatPerUnit": 21.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Whipped Cream",
+      "Description": "Cream that is beaten until it is light and fluffy",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 224.00,
+      "ProteinPerUnit": 2.30,
+      "CarbohydratesPerUnit": 9.00,
+      "FatPerUnit": 21.00,
       "Unit": 0
     },
     {
@@ -235,23 +1035,43 @@
       "Unit": 2
     },
     {
-      "Name": "Almond Milk",
-      "Description": "Plant-based milk alternative",
+      "Name": "Yogurt (Cow)",
+      "Description": "Fermented dairy product",
       "FoodCategoryId": 3,
-      "CaloriesPerUnit": 39.00,
-      "ProteinPerUnit": 1.00,
-      "CarbohydratesPerUnit": 1.52,
-      "FatPerUnit": 2.52,
-      "Unit": 2
+      "CaloriesPerUnit": 59.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 8.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
     },
     {
-      "Name": "Greek Yogurt",
-      "Description": "Strained yogurt high in protein",
+      "Name": "Yogurt (Greek)",
+      "Description": "Strained yogurt",
       "FoodCategoryId": 3,
       "CaloriesPerUnit": 59.00,
       "ProteinPerUnit": 10.00,
       "CarbohydratesPerUnit": 3.60,
       "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Amaranth",
+      "Description": "Nutritious grain",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 102.00,
+      "ProteinPerUnit": 3.70,
+      "CarbohydratesPerUnit": 19.00,
+      "FatPerUnit": 1.60,
+      "Unit": 0
+    },
+    {
+      "Name": "Barley",
+      "Description": "Cereal grain",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 123.00,
+      "ProteinPerUnit": 3.50,
+      "CarbohydratesPerUnit": 26.00,
+      "FatPerUnit": 0.70,
       "Unit": 0
     },
     {
@@ -265,14 +1085,124 @@
       "Unit": 0
     },
     {
-      "Name": "Whole Wheat Bread",
-      "Description": "High fiber bread",
+      "Name": "Corn",
+      "Description": "Cereal grain",
       "FoodCategoryId": 4,
-      "CaloriesPerUnit": 247.00,
-      "ProteinPerUnit": 13.00,
-      "CarbohydratesPerUnit": 41.00,
-      "FatPerUnit": 3.40,
-      "Unit": 8
+      "CaloriesPerUnit": 96.00,
+      "ProteinPerUnit": 3.40,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 1.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Couscous",
+      "Description": "Small steamed granules of semolina",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 112.00,
+      "ProteinPerUnit": 3.80,
+      "CarbohydratesPerUnit": 23.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Farro",
+      "Description": "Ancient grain",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 105.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 21.00,
+      "FatPerUnit": 0.70,
+      "Unit": 0
+    },
+    {
+      "Name": "Millet",
+      "Description": "Small-seeded grain",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 119.00,
+      "ProteinPerUnit": 3.50,
+      "CarbohydratesPerUnit": 24.00,
+      "FatPerUnit": 0.60,
+      "Unit": 0
+    },
+    {
+      "Name": "Oats",
+      "Description": "Whole grain cereal",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 68.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 12.00,
+      "FatPerUnit": 1.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Pasta (Wheat)",
+      "Description": "Dried pasta",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 131.00,
+      "ProteinPerUnit": 5.50,
+      "CarbohydratesPerUnit": 26.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Polenta",
+      "Description": "Cornmeal porridge",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 87.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 19.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Quinoa",
+      "Description": "Gluten-free grain",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 111.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 1.90,
+      "Unit": 0
+    },
+    {
+      "Name": "Rice (Brown)",
+      "Description": "Whole grain rice",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 111.00,
+      "ProteinPerUnit": 2.30,
+      "CarbohydratesPerUnit": 23.50,
+      "FatPerUnit": 0.90,
+      "Unit": 0
+    },
+    {
+      "Name": "Rice (White)",
+      "Description": "Staple grain",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 130.00,
+      "ProteinPerUnit": 2.70,
+      "CarbohydratesPerUnit": 28.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Rye Bread",
+      "Description": "Dense bread",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 80.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 1.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Spelt",
+      "Description": "Ancient grain",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 127.00,
+      "ProteinPerUnit": 4.50,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
     },
     {
       "Name": "Steel-cut Oats",
@@ -285,13 +1215,43 @@
       "Unit": 0
     },
     {
-      "Name": "Chicken Breast",
-      "Description": "Boneless skinless poultry",
+      "Name": "Wheat Bread",
+      "Description": "Leavened bread",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 75.00,
+      "ProteinPerUnit": 2.50,
+      "CarbohydratesPerUnit": 14.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Whole Wheat Bread",
+      "Description": "High fiber bread",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 247.00,
+      "ProteinPerUnit": 13.00,
+      "CarbohydratesPerUnit": 41.00,
+      "FatPerUnit": 3.40,
+      "Unit": 8
+    },
+    {
+      "Name": "Whole Wheat Tortillas",
+      "Description": "Soft taco shells",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 138.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 28.00,
+      "FatPerUnit": 2.00,
+      "Unit": 7
+    },
+    {
+      "Name": "Almonds",
+      "Description": "Nut",
       "FoodCategoryId": 5,
-      "CaloriesPerUnit": 165.00,
-      "ProteinPerUnit": 31.00,
-      "CarbohydratesPerUnit": 0.00,
-      "FatPerUnit": 3.60,
+      "CaloriesPerUnit": 579.00,
+      "ProteinPerUnit": 21.00,
+      "CarbohydratesPerUnit": 21.00,
+      "FatPerUnit": 46.00,
       "Unit": 0
     },
     {
@@ -305,6 +1265,96 @@
       "Unit": 0
     },
     {
+      "Name": "Chicken Breast",
+      "Description": "Boneless skinless poultry",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 165.00,
+      "ProteinPerUnit": 31.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 3.60,
+      "Unit": 0
+    },
+    {
+      "Name": "Chickpeas",
+      "Description": "Legume",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 164.00,
+      "ProteinPerUnit": 8.80,
+      "CarbohydratesPerUnit": 27.40,
+      "FatPerUnit": 2.60,
+      "Unit": 0
+    },
+    {
+      "Name": "Eggs",
+      "Description": "Poultry product",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 78.00,
+      "ProteinPerUnit": 6.00,
+      "CarbohydratesPerUnit": 1.00,
+      "FatPerUnit": 5.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Ground Beef",
+      "Description": "Minced beef",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 213.00,
+      "ProteinPerUnit": 22.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Kidney Beans",
+      "Description": "Legume",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 127.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 22.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Lamb",
+      "Description": "Red meat",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 294.00,
+      "ProteinPerUnit": 25.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 20.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Lentils",
+      "Description": "Legume",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 116.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Peanut Butter",
+      "Description": "Nut butter",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 188.00,
+      "ProteinPerUnit": 7.00,
+      "CarbohydratesPerUnit": 7.00,
+      "FatPerUnit": 16.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pork Chop",
+      "Description": "Cut of pork",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 26.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
       "Name": "Salmon Fillet",
       "Description": "Fatty fish protein",
       "FoodCategoryId": 5,
@@ -312,6 +1362,156 @@
       "ProteinPerUnit": 20.00,
       "CarbohydratesPerUnit": 0.00,
       "FatPerUnit": 13.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Tempeh",
+      "Description": "Fermented soy product",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 192.00,
+      "ProteinPerUnit": 19.00,
+      "CarbohydratesPerUnit": 8.00,
+      "FatPerUnit": 11.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Tofu",
+      "Description": "Soy product",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 76.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 5.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Turkey Breast",
+      "Description": "Lean poultry",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 189.00,
+      "ProteinPerUnit": 30.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 5.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Walnuts",
+      "Description": "Nut",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 654.00,
+      "ProteinPerUnit": 15.00,
+      "CarbohydratesPerUnit": 14.00,
+      "FatPerUnit": 65.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Catfish",
+      "Description": "Freshwater fish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 105.00,
+      "ProteinPerUnit": 18.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Clams",
+      "Description": "Shellfish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 128.00,
+      "ProteinPerUnit": 22.00,
+      "CarbohydratesPerUnit": 5.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cod",
+      "Description": "White fish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 82.00,
+      "ProteinPerUnit": 18.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Crab",
+      "Description": "Shellfish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 87.00,
+      "ProteinPerUnit": 18.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 1.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Lobster",
+      "Description": "Shellfish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 98.00,
+      "ProteinPerUnit": 21.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 1.80,
+      "Unit": 0
+    },
+    {
+      "Name": "Mackerel",
+      "Description": "Oily fish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 191.00,
+      "ProteinPerUnit": 18.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 13.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Mussels",
+      "Description": "Shellfish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 146.00,
+      "ProteinPerUnit": 24.00,
+      "CarbohydratesPerUnit": 5.00,
+      "FatPerUnit": 5.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Oysters",
+      "Description": "Shellfish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 68.00,
+      "ProteinPerUnit": 7.00,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Salmon",
+      "Description": "Oily fish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 206.00,
+      "ProteinPerUnit": 22.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 13.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Sardines",
+      "Description": "Oily fish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 208.00,
+      "ProteinPerUnit": 25.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 11.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Scallops",
+      "Description": "Shellfish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 95.00,
+      "ProteinPerUnit": 17.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 1.00,
       "Unit": 0
     },
     {
@@ -325,6 +1525,36 @@
       "Unit": 0
     },
     {
+      "Name": "Tilapia",
+      "Description": "White fish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 96.00,
+      "ProteinPerUnit": 20.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Trout",
+      "Description": "Freshwater fish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 107.00,
+      "ProteinPerUnit": 19.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Tuna",
+      "Description": "Lean fish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 128.00,
+      "ProteinPerUnit": 27.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 1.40,
+      "Unit": 0
+    },
+    {
       "Name": "Tuna Steak",
       "Description": "Meaty saltwater fish",
       "FoodCategoryId": 6,
@@ -332,6 +1562,146 @@
       "ProteinPerUnit": 28.00,
       "CarbohydratesPerUnit": 0.00,
       "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Bagel",
+      "Description": "Ring-shaped bread",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 250.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 50.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Bread (White)",
+      "Description": "Loaf of white bread",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 75.00,
+      "ProteinPerUnit": 2.50,
+      "CarbohydratesPerUnit": 14.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Bread (Whole Wheat)",
+      "Description": "Loaf of whole wheat bread",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 70.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 13.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Brownie",
+      "Description": "Chocolate treat",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cake (Slice)",
+      "Description": "Slice of cake",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 250.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 35.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cookie",
+      "Description": "Small sweet treat",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 70.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Croissant",
+      "Description": "Flaky French pastry",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 406.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 45.00,
+      "FatPerUnit": 21.00,
+      "Unit": 7
+    },
+    {
+      "Name": "Doughnut",
+      "Description": "Fried sweet treat",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Muffin",
+      "Description": "Small cake",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 8.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pancake",
+      "Description": "Flat cake",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 80.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pastry",
+      "Description": "Flaky baked good",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 12.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pie (Slice)",
+      "Description": "Slice of pie",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 250.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 12.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Roll",
+      "Description": "Small bread roll",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 18.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Scone",
+      "Description": "Small baked good",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 8.00,
       "Unit": 0
     },
     {
@@ -345,14 +1715,554 @@
       "Unit": 8
     },
     {
-      "Name": "Croissant",
-      "Description": "Flaky French pastry",
+      "Name": "Waffle",
+      "Description": "Grid-shaped cake",
       "FoodCategoryId": 7,
-      "CaloriesPerUnit": 406.00,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 18.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Aioli",
+      "Description": "Garlic mayonnaise",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 75.00,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 1.00,
+      "FatPerUnit": 8.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Barbecue Sauce",
+      "Description": "Smoky sauce",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 26.00,
+      "ProteinPerUnit": 0.10,
+      "CarbohydratesPerUnit": 6.00,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Honey Mustard",
+      "Description": "Sweet and tangy sauce",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 50.00,
+      "ProteinPerUnit": 0.20,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Hot Sauce",
+      "Description": "Spicy sauce",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 5.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 1.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Ketchup",
+      "Description": "Tomato-based condiment",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 1.70,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Mayonnaise",
+      "Description": "Condiment",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 94.00,
+      "ProteinPerUnit": 0.10,
+      "CarbohydratesPerUnit": 0.50,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Mustard",
+      "Description": "Condiment",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 15.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 1.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pesto",
+      "Description": "Basil-based sauce",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 45.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 2.00,
+      "FatPerUnit": 4.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Relish",
+      "Description": "Pickle relish",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 30.00,
+      "ProteinPerUnit": 0.20,
+      "CarbohydratesPerUnit": 7.00,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    },
+    {
+      "Name": "Salad Dressing (Italian)",
+      "Description": "Vinaigrette dressing",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 45.00,
+      "ProteinPerUnit": 0.10,
+      "CarbohydratesPerUnit": 1.00,
+      "FatPerUnit": 4.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Salad Dressing (Ranch)",
+      "Description": "Creamy dressing",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 60.00,
+      "ProteinPerUnit": 0.20,
+      "CarbohydratesPerUnit": 2.00,
+      "FatPerUnit": 6.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Salsa",
+      "Description": "Tomato-based sauce",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 24.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 5.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Soy Sauce",
+      "Description": "Salty fermented sauce",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 53.00,
       "ProteinPerUnit": 8.00,
-      "CarbohydratesPerUnit": 45.00,
-      "FatPerUnit": 21.00,
-      "Unit": 7
+      "CarbohydratesPerUnit": 4.90,
+      "FatPerUnit": 0.00,
+      "Unit": 2
+    },
+    {
+      "Name": "Tartar Sauce",
+      "Description": "Creamy sauce",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 70.00,
+      "ProteinPerUnit": 0.20,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 7.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Worcestershire Sauce",
+      "Description": "Savory sauce",
+      "FoodCategoryId": 8,
+      "CaloriesPerUnit": 15.00,
+      "ProteinPerUnit": 0.10,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Brownie",
+      "Description": "Chocolate treat",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Candy Bar",
+      "Description": "Sweet treat",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 250.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 12.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Chocolate",
+      "Description": "Sweet treat",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cookies",
+      "Description": "Sweet treat",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 70.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Crackers",
+      "Description": "Salty snack",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 80.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Dark Chocolate",
+      "Description": "High-cocoa content chocolate",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 546.00,
+      "ProteinPerUnit": 7.00,
+      "CarbohydratesPerUnit": 59.00,
+      "FatPerUnit": 31.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Fruit Snack",
+      "Description": "Chewy treat",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 80.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 18.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Granola Bar",
+      "Description": "Snack bar",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 7.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Gummy Bears",
+      "Description": "Chewy treat",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Ice Cream",
+      "Description": "Frozen dessert",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Popcorn",
+      "Description": "Whole grain snack",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 60.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 12.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Popsicle",
+      "Description": "Frozen treat",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 50.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 12.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Potato Chips",
+      "Description": "Salted crispy snacks",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 536.00,
+      "ProteinPerUnit": 7.00,
+      "CarbohydratesPerUnit": 53.00,
+      "FatPerUnit": 34.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pretzels",
+      "Description": "Salty snack",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Trail Mix",
+      "Description": "Nut and seed mix",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 180.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 12.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Yogurt Parfait",
+      "Description": "Yogurt and granola",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 5.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Coffee",
+      "Description": "Brewed beverage",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 2.00,
+      "ProteinPerUnit": 0.10,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 0.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Energy Drink",
+      "Description": "Stimulant beverage",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 110.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 27.00,
+      "FatPerUnit": 0.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Green Tea",
+      "Description": "Brewed tea leaves",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 1.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.20,
+      "FatPerUnit": 0.00,
+      "Unit": 2
+    },
+    {
+      "Name": "Hot Chocolate",
+      "Description": "Chocolate beverage",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 4.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Iced Tea",
+      "Description": "Chilled beverage",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 2.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 0.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Juice (Apple)",
+      "Description": "Fruit juice",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 46.00,
+      "ProteinPerUnit": 0.10,
+      "CarbohydratesPerUnit": 11.00,
+      "FatPerUnit": 0.10,
+      "Unit": 3
+    },
+    {
+      "Name": "Juice (Orange)",
+      "Description": "Fruit juice",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 45.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 0.20,
+      "Unit": 3
+    },
+    {
+      "Name": "Lemonade",
+      "Description": "Citrus beverage",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 0.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Orange Juice",
+      "Description": "Freshly squeezed citrus juice",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 45.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 10.40,
+      "FatPerUnit": 0.20,
+      "Unit": 2
+    },
+    {
+      "Name": "Smoothie",
+      "Description": "Blended beverage",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 5.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Soda",
+      "Description": "Carbonated beverage",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 40.00,
+      "FatPerUnit": 0.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Sports Drink",
+      "Description": "Electrolyte beverage",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 70.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 17.00,
+      "FatPerUnit": 0.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Tea",
+      "Description": "Brewed beverage",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 2.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 0.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Water",
+      "Description": "Essential for hydration",
+      "FoodCategoryId": 10,
+      "CaloriesPerUnit": 0.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 0.00,
+      "Unit": 3
+    },
+    {
+      "Name": "Avocado Oil",
+      "Description": "Liquid fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Butter",
+      "Description": "Dairy fat product",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 717.00,
+      "ProteinPerUnit": 0.90,
+      "CarbohydratesPerUnit": 0.10,
+      "FatPerUnit": 81.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Canola Oil",
+      "Description": "Liquid fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Coconut Oil",
+      "Description": "Solid fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Duck Fat",
+      "Description": "Animal fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Ghee",
+      "Description": "Clarified butter",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Grapeseed Oil",
+      "Description": "Liquid fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Lard",
+      "Description": "Animal fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 115.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 13.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Margarine",
+      "Description": "Vegetable fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 11.00,
+      "Unit": 5
     },
     {
       "Name": "Olive Oil",
@@ -365,53 +2275,273 @@
       "Unit": 5
     },
     {
-      "Name": "Gluten-Free Pasta",
-      "Description": "Wheat-free alternative",
-      "FoodCategoryId": 20,
-      "CaloriesPerUnit": 357.00,
-      "ProteinPerUnit": 7.50,
-      "CarbohydratesPerUnit": 75.00,
+      "Name": "Peanut Oil",
+      "Description": "Liquid fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Sesame Oil",
+      "Description": "Liquid fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Shortening",
+      "Description": "Vegetable fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 110.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 12.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Sunflower Oil",
+      "Description": "Liquid fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Vegetable Oil",
+      "Description": "Liquid fat",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 14.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Burger",
+      "Description": "Sandwich with patty",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 300.00,
+      "ProteinPerUnit": 15.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 15.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Burrito",
+      "Description": "Tortilla with filling",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 300.00,
+      "ProteinPerUnit": 15.00,
+      "CarbohydratesPerUnit": 35.00,
+      "FatPerUnit": 12.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Soup",
+      "Description": "Chicken noodle soup",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 60.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 8.00,
+      "FatPerUnit": 2.00,
+      "Unit": 2
+    },
+    {
+      "Name": "Chicken Curry",
+      "Description": "Indian dish",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 12.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 8.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Fries",
+      "Description": "Fried potatoes",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Pizza",
+      "Description": "Pre-made pepperoni pizza",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 285.00,
+      "ProteinPerUnit": 12.00,
+      "CarbohydratesPerUnit": 36.00,
+      "FatPerUnit": 10.00,
+      "Unit": 7
+    },
+    {
+      "Name": "Lasagna",
+      "Description": "Italian pasta dish",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 350.00,
+      "ProteinPerUnit": 18.00,
+      "CarbohydratesPerUnit": 35.00,
+      "FatPerUnit": 15.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Macaroni and Cheese",
+      "Description": "Pasta and cheese dish",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 250.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 12.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pad Thai",
+      "Description": "Noodle dish",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 250.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pizza (Slice)",
+      "Description": "Flatbread with toppings",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 8.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Salad",
+      "Description": "Vegetable dish",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 8.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Sandwich",
+      "Description": "Bread with filling",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 8.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Soup",
+      "Description": "Liquid dish",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 10.00,
       "FatPerUnit": 3.00,
       "Unit": 0
     },
     {
-      "Name": "Sushi Rice",
-      "Description": "Japanese short-grain rice",
-      "FoodCategoryId": 19,
-      "CaloriesPerUnit": 130.00,
-      "ProteinPerUnit": 2.70,
-      "CarbohydratesPerUnit": 28.00,
-      "FatPerUnit": 0.30,
+      "Name": "Spaghetti and Meatballs",
+      "Description": "Pasta and meat dish",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 300.00,
+      "ProteinPerUnit": 15.00,
+      "CarbohydratesPerUnit": 40.00,
+      "FatPerUnit": 10.00,
       "Unit": 0
     },
     {
-      "Name": "Frozen Peas",
-      "Description": "Flash-frozen vegetables",
-      "FoodCategoryId": 17,
-      "CaloriesPerUnit": 81.00,
-      "ProteinPerUnit": 5.40,
-      "CarbohydratesPerUnit": 14.00,
-      "FatPerUnit": 0.40,
+      "Name": "Sushi",
+      "Description": "Japanese dish",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 2.00,
       "Unit": 0
     },
     {
-      "Name": "Lentils",
-      "Description": "Nutritious pulses",
-      "FoodCategoryId": 14,
-      "CaloriesPerUnit": 116.00,
-      "ProteinPerUnit": 9.00,
-      "CarbohydratesPerUnit": 20.00,
-      "FatPerUnit": 0.40,
+      "Name": "Taco",
+      "Description": "Tortilla with filling",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 7.00,
       "Unit": 0
     },
     {
-      "Name": "Almonds",
-      "Description": "Whole raw almonds",
-      "FoodCategoryId": 15,
-      "CaloriesPerUnit": 579.00,
-      "ProteinPerUnit": 21.00,
-      "CarbohydratesPerUnit": 21.55,
-      "FatPerUnit": 49.93,
+      "Name": "Wrap",
+      "Description": "Tortilla with filling",
+      "FoodCategoryId": 12,
+      "CaloriesPerUnit": 250.00,
+      "ProteinPerUnit": 12.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Basil",
+      "Description": "A fragrant herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 22.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Chives",
+      "Description": "An oniony herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 30.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 5.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cilantro",
+      "Description": "A citrusy herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 23.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 4.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cinnamon",
+      "Description": "Aromatic bark spice",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 247.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 80.00,
+      "FatPerUnit": 1.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Dill",
+      "Description": "A tangy herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 43.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 7.00,
+      "FatPerUnit": 1.00,
       "Unit": 0
     },
     {
@@ -425,591 +2555,1142 @@
       "Unit": 9
     },
     {
-      "Name": "Whole Wheat Tortillas",
-      "Description": "Soft taco shells",
-      "FoodCategoryId": 4,
-      "CaloriesPerUnit": 138.00,
-      "ProteinPerUnit": 4.00,
-      "CarbohydratesPerUnit": 28.00,
-      "FatPerUnit": 2.00,
-      "Unit": 7
+      "Name": "Ginger",
+      "Description": "A spicy root",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 80.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 18.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
     },
     {
-      "Name": "Onion",
-      "Description": "Yellow cooking onion",
-      "FoodCategoryId": 1,
+      "Name": "Lemongrass",
+      "Description": "A citrusy herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 99.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Mint",
+      "Description": "A refreshing herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 70.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Oregano",
+      "Description": "A pungent herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 265.00,
+      "ProteinPerUnit": 11.00,
+      "CarbohydratesPerUnit": 69.00,
+      "FatPerUnit": 4.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Parsley",
+      "Description": "A versatile herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 36.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 6.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Rosemary",
+      "Description": "A woody herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 331.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 50.00,
+      "FatPerUnit": 15.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Sage",
+      "Description": "An earthy herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 315.00,
+      "ProteinPerUnit": 11.00,
+      "CarbohydratesPerUnit": 68.00,
+      "FatPerUnit": 12.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Tarragon",
+      "Description": "A licorice-like herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 294.00,
+      "ProteinPerUnit": 23.00,
+      "CarbohydratesPerUnit": 47.00,
+      "FatPerUnit": 8.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Thyme",
+      "Description": "A delicate herb",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 276.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 64.00,
+      "FatPerUnit": 5.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Adzuki Beans",
+      "Description": "Small, red beans",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 128.00,
+      "ProteinPerUnit": 7.00,
+      "CarbohydratesPerUnit": 23.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Black Beans",
+      "Description": "Small, black, oval beans",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 114.00,
+      "ProteinPerUnit": 7.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Chickpeas",
+      "Description": "Versatile legumes",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 164.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 27.00,
+      "FatPerUnit": 2.60,
+      "Unit": 0
+    },
+    {
+      "Name": "Chickpeas (Garbanzo Beans)",
+      "Description": "Round, beige beans",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 164.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 27.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cowpeas (Black-Eyed Peas)",
+      "Description": "Small, white beans with a black eye",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 119.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 21.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Edamame",
+      "Description": "Young soybeans",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 122.00,
+      "ProteinPerUnit": 11.00,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 5.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Fava Beans (Broad Beans)",
+      "Description": "Large, flat beans",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 73.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 13.00,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Great Northern Beans",
+      "Description": "Medium-sized, white, oval beans",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 139.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Kidney Beans",
+      "Description": "Dark red, kidney-shaped beans",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 127.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 22.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Lentils",
+      "Description": "Nutritious pulses",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 116.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Lima Beans",
+      "Description": "Large, flat, kidney-shaped beans",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 147.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 26.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Mung Beans",
+      "Description": "Small, green beans",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 88.00,
+      "ProteinPerUnit": 6.00,
+      "CarbohydratesPerUnit": 16.00,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Navy Beans",
+      "Description": "Small, white, oval beans",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 132.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 24.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Peas",
+      "Description": "Small, green, round seeds",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 81.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 14.00,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Pinto Beans",
+      "Description": "Tan beans with brown speckles",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 143.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 26.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Split Peas",
+      "Description": "Dried peas split in half",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 160.00,
+      "ProteinPerUnit": 11.00,
+      "CarbohydratesPerUnit": 29.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Almonds",
+      "Description": "Whole raw almonds",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 579.00,
+      "ProteinPerUnit": 21.00,
+      "CarbohydratesPerUnit": 21.55,
+      "FatPerUnit": 49.93,
+      "Unit": 0
+    },
+    {
+      "Name": "Brazil Nuts",
+      "Description": "Large, triangular nuts",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 656.00,
+      "ProteinPerUnit": 14.00,
+      "CarbohydratesPerUnit": 12.00,
+      "FatPerUnit": 67.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Cashews",
+      "Description": "Kidney-shaped seeds",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 553.00,
+      "ProteinPerUnit": 18.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 43.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Chia Seeds",
+      "Description": "Small, black or white seeds",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 486.00,
+      "ProteinPerUnit": 17.00,
+      "CarbohydratesPerUnit": 42.00,
+      "FatPerUnit": 31.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Flax Seeds",
+      "Description": "Small, brown or golden seeds",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 534.00,
+      "ProteinPerUnit": 18.00,
+      "CarbohydratesPerUnit": 29.00,
+      "FatPerUnit": 42.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Hazelnuts (Filberts)",
+      "Description": "Sweet, flavorful nuts",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 628.00,
+      "ProteinPerUnit": 15.00,
+      "CarbohydratesPerUnit": 17.00,
+      "FatPerUnit": 61.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Hemp Seeds (Hemp Hearts)",
+      "Description": "Nutty seeds",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 553.00,
+      "ProteinPerUnit": 30.00,
+      "CarbohydratesPerUnit": 11.00,
+      "FatPerUnit": 44.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Macadamia Nuts",
+      "Description": "Rich, creamy nuts",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 718.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 14.00,
+      "FatPerUnit": 76.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Peanuts",
+      "Description": "Legumes, but commonly considered nuts",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 567.00,
+      "ProteinPerUnit": 26.00,
+      "CarbohydratesPerUnit": 16.00,
+      "FatPerUnit": 49.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pecans",
+      "Description": "Sweet, buttery nuts",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 691.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 14.00,
+      "FatPerUnit": 72.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pine Nuts (Pignoli)",
+      "Description": "Small, elongated seeds",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 673.00,
+      "ProteinPerUnit": 14.00,
+      "CarbohydratesPerUnit": 13.00,
+      "FatPerUnit": 68.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pistachios",
+      "Description": "Green-colored seeds",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 557.00,
+      "ProteinPerUnit": 20.00,
+      "CarbohydratesPerUnit": 28.00,
+      "FatPerUnit": 46.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pumpkin Seeds (Pepitas)",
+      "Description": "Flat, green seeds",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 554.00,
+      "ProteinPerUnit": 30.00,
+      "CarbohydratesPerUnit": 11.00,
+      "FatPerUnit": 49.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Sunflower Seeds",
+      "Description": "Seeds of the sunflower plant",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 584.00,
+      "ProteinPerUnit": 24.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 50.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Walnuts",
+      "Description": "Crunchy tree nuts",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 654.00,
+      "ProteinPerUnit": 15.00,
+      "CarbohydratesPerUnit": 14.00,
+      "FatPerUnit": 65.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Kefir",
+      "Description": "Fermented milk drink",
+      "FoodCategoryId": 16,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Kimchi",
+      "Description": "Spicy fermented cabbage",
+      "FoodCategoryId": 16,
+      "CaloriesPerUnit": 15.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 2.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Kombucha",
+      "Description": "Fermented tea drink",
+      "FoodCategoryId": 16,
+      "CaloriesPerUnit": 30.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 8.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Miso",
+      "Description": "Fermented soybean paste",
+      "FoodCategoryId": 16,
+      "CaloriesPerUnit": 60.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 8.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Miso Paste",
+      "Description": "Fermented soybean paste",
+      "FoodCategoryId": 16,
+      "CaloriesPerUnit": 199.00,
+      "ProteinPerUnit": 11.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 6.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Natto",
+      "Description": "Fermented soybeans",
+      "FoodCategoryId": 16,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 18.00,
+      "CarbohydratesPerUnit": 5.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Pickles",
+      "Description": "Fermented cucumbers",
+      "FoodCategoryId": 16,
+      "CaloriesPerUnit": 15.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Sauerkraut",
+      "Description": "Fermented cabbage",
+      "FoodCategoryId": 16,
+      "CaloriesPerUnit": 20.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 4.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Tempeh",
+      "Description": "Fermented soybean product",
+      "FoodCategoryId": 16,
+      "CaloriesPerUnit": 190.00,
+      "ProteinPerUnit": 19.00,
+      "CarbohydratesPerUnit": 8.00,
+      "FatPerUnit": 11.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Yogurt",
+      "Description": "Fermented milk product",
+      "FoodCategoryId": 16,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 5.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Berries (Mixed)",
+      "Description": "Frozen assortment of berries",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 60.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Blueberries",
+      "Description": "Frozen whole blueberries",
+      "FoodCategoryId": 17,
       "CaloriesPerUnit": 40.00,
-      "ProteinPerUnit": 1.10,
-      "CarbohydratesPerUnit": 9.34,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Broccoli",
+      "Description": "Flash-frozen florets",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 34.00,
+      "ProteinPerUnit": 2.80,
+      "CarbohydratesPerUnit": 6.60,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Chicken Nuggets",
+      "Description": "Frozen chicken nuggets ready to bake",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 250.00,
+      "ProteinPerUnit": 15.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 12.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Corn",
+      "Description": "Frozen kernels of corn",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 80.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 18.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen French Fries",
+      "Description": "Frozen french fries ready to bake",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 7.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Mango Chunks",
+      "Description": "Frozen chunks of mango",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 60.00,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Meal (TV Dinner)",
+      "Description": "Frozen pre-made meal",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 300.00,
+      "ProteinPerUnit": 15.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Peas",
+      "Description": "Flash-frozen vegetables",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 81.00,
+      "ProteinPerUnit": 5.40,
+      "CarbohydratesPerUnit": 14.00,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Pineapple Chunks",
+      "Description": "Frozen chunks of pineapple",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 50.00,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 12.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Pizza",
+      "Description": "Frozen pizza ready to bake",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 8.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Raspberries",
+      "Description": "Frozen whole raspberries",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 50.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 12.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Spinach",
+      "Description": "Frozen leaves of spinach",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 25.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 4.00,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Strawberries",
+      "Description": "Frozen whole strawberries",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 30.00,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 7.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Waffles",
+      "Description": "Frozen waffles ready to toast",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 18.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Baked Beans",
+      "Description": "Canned baked beans in sauce",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 7.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Black Beans",
+      "Description": "Canned black beans",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 110.00,
+      "ProteinPerUnit": 7.00,
+      "CarbohydratesPerUnit": 19.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Carrots",
+      "Description": "Canned sliced carrots",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 30.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 7.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Chickpeas",
+      "Description": "Canned chickpeas (garbanzo beans)",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 140.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Corn",
+      "Description": "Canned kernels of corn",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 70.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Fruit Cocktail",
+      "Description": "Canned mixed fruit in syrup or juice",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 60.00,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Green Beans",
+      "Description": "Canned green beans",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 20.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 4.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Kidney Beans",
+      "Description": "Canned kidney beans",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 7.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 0.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Peaches",
+      "Description": "Canned sliced peaches in syrup or juice",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 60.00,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Peas",
+      "Description": "Canned green peas",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 70.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 12.00,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Pineapple",
+      "Description": "Canned pineapple chunks or rings in juice",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 50.00,
+      "ProteinPerUnit": 0.50,
+      "CarbohydratesPerUnit": 12.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Salmon",
+      "Description": "Canned salmon",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 22.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 7.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Sardines",
+      "Description": "Canned sardines in oil or water",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 25.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 11.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Tomatoes",
+      "Description": "Canned diced or whole tomatoes",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 20.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 4.00,
+      "FatPerUnit": 0.20,
+      "Unit": 0
+    },
+    {
+      "Name": "Canned Tuna",
+      "Description": "Preserved in water",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 22.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Strawberry Jam",
+      "Description": "Fruit preserves",
+      "FoodCategoryId": 18,
+      "CaloriesPerUnit": 278.00,
+      "ProteinPerUnit": 0.30,
+      "CarbohydratesPerUnit": 68.00,
       "FatPerUnit": 0.10,
       "Unit": 0
-    }
-  ],
-  "FoodItemStoreSections": [
-    {
-      "FoodItemId": 1,
-      "StoreSectionId": 1,
-      "ShelfNumber": 3
     },
     {
-      "FoodItemId": 2,
-      "StoreSectionId": 1,
-      "ShelfNumber": 2
-    },
-    {
-      "FoodItemId": 3,
-      "StoreSectionId": 1,
-      "ShelfNumber": 4
-    },
-    {
-      "FoodItemId": 4,
-      "StoreSectionId": 1,
-      "ShelfNumber": 1
-    },
-    {
-      "FoodItemId": 5,
-      "StoreSectionId": 1,
-      "ShelfNumber": 1
-    },
-    {
-      "FoodItemId": 6,
-      "StoreSectionId": 1,
-      "ShelfNumber": 2
-    },
-    {
-      "FoodItemId": 7,
-      "StoreSectionId": 2,
-      "ShelfNumber": 2
-    },
-    {
-      "FoodItemId": 8,
-      "StoreSectionId": 2,
-      "ShelfNumber": 3
-    },
-    {
-      "FoodItemId": 9,
-      "StoreSectionId": 2,
-      "ShelfNumber": 1
-    },
-    {
-      "FoodItemId": 10,
-      "StoreSectionId": 6,
-      "ShelfNumber": 4
-    },
-    {
-      "FoodItemId": 11,
-      "StoreSectionId": 3,
-      "ShelfNumber": 1
-    },
-    {
-      "FoodItemId": 12,
-      "StoreSectionId": 6,
-      "ShelfNumber": 5
-    },
-    {
-      "FoodItemId": 13,
-      "StoreSectionId": 4,
-      "ShelfNumber": 5
-    },
-    {
-      "FoodItemId": 14,
-      "StoreSectionId": 6,
-      "ShelfNumber": 6
-    },
-    {
-      "FoodItemId": 15,
-      "StoreSectionId": 4,
-      "ShelfNumber": 7
-    },
-    {
-      "FoodItemId": 16,
-      "StoreSectionId": 4,
-      "ShelfNumber": 8
-    },
-    {
-      "FoodItemId": 17,
-      "StoreSectionId": 4,
-      "ShelfNumber": 7
-    },
-    {
-      "FoodItemId": 18,
-      "StoreSectionId": 3,
-      "ShelfNumber": 2
-    },
-    {
-      "FoodItemId": 19,
-      "StoreSectionId": 3,
-      "ShelfNumber": 3
-    },
-    {
-      "FoodItemId": 20,
-      "StoreSectionId": 16,
-      "ShelfNumber": 5
-    },
-    {
-      "FoodItemId": 21,
-      "StoreSectionId": 14,
-      "ShelfNumber": 4
-    },
-    {
-      "FoodItemId": 22,
-      "StoreSectionId": 13,
-      "ShelfNumber": 9
-    },
-    {
-      "FoodItemId": 23,
-      "StoreSectionId": 5,
-      "ShelfNumber": 12
-    },
-    {
-      "FoodItemId": 24,
-      "StoreSectionId": 6,
-      "ShelfNumber": 7
-    }
-  ],
-  "PriceHistories": [
-    {
-      "FoodItemId": 1,
-      "Price": 1.29,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": "2023-06-30T00:00:00"
-    },
-    {
-      "FoodItemId": 1,
-      "Price": 1.49,
-      "StartDate": "2023-07-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 2,
-      "Price": 2.49,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": "2023-08-31T00:00:00"
-    },
-    {
-      "FoodItemId": 2,
-      "Price": 1.99,
-      "StartDate": "2023-09-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 4,
-      "Price": 1.29,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": "2023-09-30T00:00:00"
-    },
-    {
-      "FoodItemId": 4,
-      "Price": 1.49,
-      "StartDate": "2023-10-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 5,
-      "Price": 0.49,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 7,
-      "Price": 3.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": "2023-06-30T00:00:00"
-    },
-    {
-      "FoodItemId": 7,
-      "Price": 4.29,
-      "StartDate": "2023-07-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 8,
-      "Price": 3.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 10,
-      "Price": 2.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": "2023-05-31T00:00:00"
-    },
-    {
-      "FoodItemId": 10,
-      "Price": 3.29,
-      "StartDate": "2023-06-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 13,
-      "Price": 5.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": "2023-08-31T00:00:00"
-    },
-    {
-      "FoodItemId": 13,
-      "Price": 6.49,
-      "StartDate": "2023-09-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 15,
-      "Price": 9.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": "2023-04-30T00:00:00"
-    },
-    {
-      "FoodItemId": 15,
-      "Price": 8.99,
-      "StartDate": "2023-05-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 16,
-      "Price": 12.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": "2023-03-31T00:00:00"
-    },
-    {
-      "FoodItemId": 16,
-      "Price": 14.99,
-      "StartDate": "2023-04-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 18,
-      "Price": 5.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 19,
-      "Price": 2.50,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 21,
-      "Price": 4.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": "2023-11-30T00:00:00"
-    },
-    {
-      "FoodItemId": 21,
-      "Price": 3.99,
-      "StartDate": "2023-12-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 22,
-      "Price": 6.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 23,
-      "Price": 2.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 24,
-      "Price": 1.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": null
-    },
-    {
-      "FoodItemId": 20,
-      "Price": 8.99,
-      "StartDate": "2023-01-01T00:00:00",
-      "EndDate": "2023-09-30T00:00:00"
-    },
-    {
-      "FoodItemId": 20,
-      "Price": 12.99,
-      "StartDate": "2023-10-01T00:00:00",
-      "EndDate": null
-    }
-  ],
-  "Recipes": [
-    {
-      "Title": "Chicken & Veggie Stir-Fry",
-      "Description": "Quick Asian-inspired stir-fry with fresh vegetables",
-      "PrepTimeMinutes": 20,
-      "CookTimeMinutes": 15,
-      "Servings": 4
-    },
-    {
-      "Title": "Salmon Rice Bowl",
-      "Description": "Healthy grain bowl with grilled salmon",
-      "PrepTimeMinutes": 15,
-      "CookTimeMinutes": 25,
-      "Servings": 2
-    },
-    {
-      "Title": "Greek Yogurt Parfait",
-      "Description": "Layered breakfast parfait with fresh fruit",
-      "PrepTimeMinutes": 5,
-      "CookTimeMinutes": 0,
-      "Servings": 1
-    },
-    {
-      "Title": "Black Bean Tacos",
-      "Description": "Vegetarian tacos with spicy black beans",
-      "PrepTimeMinutes": 10,
-      "CookTimeMinutes": 15,
-      "Servings": 4
-    },
-    {
-      "Title": "Shrimp Garlic Pasta",
-      "Description": "Creamy pasta with fresh shrimp",
-      "PrepTimeMinutes": 15,
-      "CookTimeMinutes": 20,
-      "Servings": 3
-    },
-    {
-      "Title": "Lentil Soup",
-      "Description": "Hearty vegetarian soup",
-      "PrepTimeMinutes": 10,
-      "CookTimeMinutes": 40,
-      "Servings": 6
-    },
-    {
-      "Title": "Test",
-      "Description": "Test",
-      "PrepTimeMinutes": 0,
-      "CookTimeMinutes": 0,
-      "Servings": 1
-    }
-  ],
-  "Ingredients": [
-    {
-      "RecipeId": 1,
-      "FoodItemId": 13,
-      "Quantity": 500.00,
+      "Name": "Beef Bourguignon",
+      "Description": "French beef stew",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 400.00,
+      "ProteinPerUnit": 30.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 20.00,
       "Unit": 0
     },
     {
-      "RecipeId": 1,
-      "FoodItemId": 3,
-      "Quantity": 2.00,
-      "Unit": 7
-    },
-    {
-      "RecipeId": 1,
-      "FoodItemId": 1,
-      "Quantity": 200.00,
+      "Name": "Chicken Tikka Masala",
+      "Description": "Indian chicken curry dish",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 350.00,
+      "ProteinPerUnit": 20.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 15.00,
       "Unit": 0
     },
     {
-      "RecipeId": 1,
-      "FoodItemId": 20,
-      "Quantity": 30.00,
-      "Unit": 2
-    },
-    {
-      "RecipeId": 2,
-      "FoodItemId": 15,
-      "Quantity": 400.00,
+      "Name": "Curry Paste",
+      "Description": "Thai seasoning paste",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 5.00,
       "Unit": 0
     },
     {
-      "RecipeId": 2,
-      "FoodItemId": 10,
-      "Quantity": 200.00,
+      "Name": "Falafel",
+      "Description": "Middle Eastern chickpea fritters",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 8.00,
       "Unit": 0
     },
     {
-      "RecipeId": 2,
-      "FoodItemId": 2,
-      "Quantity": 100.00,
+      "Name": "Feijoada",
+      "Description": "Brazilian black bean stew",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 350.00,
+      "ProteinPerUnit": 20.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 15.00,
       "Unit": 0
     },
     {
-      "RecipeId": 3,
-      "FoodItemId": 9,
-      "Quantity": 150.00,
+      "Name": "Goulash",
+      "Description": "Hungarian stew",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 300.00,
+      "ProteinPerUnit": 20.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 15.00,
       "Unit": 0
     },
     {
-      "RecipeId": 3,
-      "FoodItemId": 5,
-      "Quantity": 1.00,
-      "Unit": 7
-    },
-    {
-      "RecipeId": 3,
-      "FoodItemId": 25,
-      "Quantity": 30.00,
+      "Name": "Hummus",
+      "Description": "Middle Eastern chickpea dip",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 250.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 15.00,
       "Unit": 0
     },
     {
-      "RecipeId": 4,
-      "FoodItemId": 14,
-      "Quantity": 400.00,
+      "Name": "Kimchi Fried Rice",
+      "Description": "Korean fried rice with kimchi",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 300.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 40.00,
+      "FatPerUnit": 10.00,
       "Unit": 0
     },
     {
-      "RecipeId": 4,
-      "FoodItemId": 3,
-      "Quantity": 1.00,
-      "Unit": 7
-    },
-    {
-      "RecipeId": 4,
-      "FoodItemId": 27,
-      "Quantity": 8.00,
-      "Unit": 7
-    },
-    {
-      "RecipeId": 4,
-      "FoodItemId": 28,
-      "Quantity": 1.00,
-      "Unit": 7
-    },
-    {
-      "RecipeId": 5,
-      "FoodItemId": 16,
-      "Quantity": 300.00,
+      "Name": "Moussaka",
+      "Description": "Greek eggplant and meat casserole",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 350.00,
+      "ProteinPerUnit": 15.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 20.00,
       "Unit": 0
     },
     {
-      "RecipeId": 5,
-      "FoodItemId": 21,
-      "Quantity": 200.00,
+      "Name": "Pad Thai",
+      "Description": "Thai stir-fried noodle dish",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 300.00,
+      "ProteinPerUnit": 12.00,
+      "CarbohydratesPerUnit": 40.00,
+      "FatPerUnit": 10.00,
       "Unit": 0
     },
     {
-      "RecipeId": 5,
-      "FoodItemId": 26,
-      "Quantity": 3.00,
-      "Unit": 7
-    },
-    {
-      "RecipeId": 5,
-      "FoodItemId": 20,
-      "Quantity": 30.00,
-      "Unit": 2
-    },
-    {
-      "RecipeId": 6,
-      "FoodItemId": 24,
-      "Quantity": 250.00,
+      "Name": "Paella",
+      "Description": "Spanish rice dish with seafood and meat",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 400.00,
+      "ProteinPerUnit": 25.00,
+      "CarbohydratesPerUnit": 40.00,
+      "FatPerUnit": 15.00,
       "Unit": 0
     },
     {
-      "RecipeId": 6,
-      "FoodItemId": 1,
-      "Quantity": 150.00,
+      "Name": "Pho",
+      "Description": "Vietnamese noodle soup",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 250.00,
+      "ProteinPerUnit": 15.00,
+      "CarbohydratesPerUnit": 30.00,
+      "FatPerUnit": 5.00,
       "Unit": 0
     },
     {
-      "RecipeId": 6,
-      "FoodItemId": 28,
-      "Quantity": 1.00,
-      "Unit": 7
-    },
-    {
-      "RecipeId": 6,
-      "FoodItemId": 26,
-      "Quantity": 2.00,
-      "Unit": 7
-    },
-    {
-      "RecipeId": 7,
-      "FoodItemId": 16,
-      "Quantity": 1.00,
+      "Name": "Spring Rolls",
+      "Description": "Vietnamese rice paper rolls",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 5.00,
       "Unit": 0
     },
     {
-      "RecipeId": 7,
-      "FoodItemId": 18,
-      "Quantity": 1.00,
+      "Name": "Sushi Rice",
+      "Description": "Japanese short-grain rice",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 130.00,
+      "ProteinPerUnit": 2.70,
+      "CarbohydratesPerUnit": 28.00,
+      "FatPerUnit": 0.30,
       "Unit": 0
     },
     {
-      "RecipeId": 7,
-      "FoodItemId": 13,
-      "Quantity": 1.00,
+      "Name": "Sushi Roll",
+      "Description": "Japanese dish with rice and seafood",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 5.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Tacos al Pastor",
+      "Description": "Mexican marinated pork tacos",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 180.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 8.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Tiramisu",
+      "Description": "Italian dessert",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 300.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 40.00,
+      "FatPerUnit": 15.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Dairy-Free Ice Cream",
+      "Description": "Plant-based ice cream alternative",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 7.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Dairy-Free Yogurt",
+      "Description": "Plant-based yogurt alternative",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 100.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Gluten-Free Bread",
+      "Description": "Bread made without gluten",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 70.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Gluten-Free Pasta",
+      "Description": "Wheat-free alternative",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 357.00,
+      "ProteinPerUnit": 7.50,
+      "CarbohydratesPerUnit": 75.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "High-Fiber Cereal",
+      "Description": "Cereal with high fiber content",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 120.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "High-Protein Bar",
+      "Description": "Snack bar with high protein content",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 20.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 8.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Low-Carb Bread",
+      "Description": "Bread with reduced carbohydrate content",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 60.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 8.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Low-Carb Pasta",
+      "Description": "Pasta with reduced carbohydrate content",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 80.00,
+      "ProteinPerUnit": 6.00,
+      "CarbohydratesPerUnit": 12.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Low-Sodium Crackers",
+      "Description": "Crackers with reduced sodium",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 60.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 12.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Low-Sodium Soup",
+      "Description": "Soup with reduced sodium",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 80.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Paleo Granola",
+      "Description": "Granola made with paleo-friendly ingredients",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 180.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Sugar-Free Candy",
+      "Description": "Candy made without sugar",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 30.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 8.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Sugar-Free Cookies",
+      "Description": "Cookies made without sugar",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 50.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 10.00,
+      "FatPerUnit": 2.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Vegan Burger",
+      "Description": "Plant-based burger patty",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 200.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 10.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Vegan Cheese",
+      "Description": "Plant-based cheese alternative",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 280.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 15.00,
+      "FatPerUnit": 23.00,
       "Unit": 0
     }
   ],
-  "RecipeSteps": [
-    {
-      "RecipeId": 1,
-      "StepNumber": 1,
-      "Instruction": "Slice chicken breast into thin strips"
-    },
-    {
-      "RecipeId": 1,
-      "StepNumber": 2,
-      "Instruction": "Julienne carrots and bell peppers"
-    },
-    {
-      "RecipeId": 1,
-      "StepNumber": 3,
-      "Instruction": "Heat olive oil in wok and cook chicken until browned"
-    },
-    {
-      "RecipeId": 2,
-      "StepNumber": 1,
-      "Instruction": "Season salmon with salt and pepper 3"
-    },
-    {
-      "RecipeId": 2,
-      "StepNumber": 2,
-      "Instruction": "Grill salmon at 200°C for 12-15 minutes 2"
-    },
-    {
-      "RecipeId": 2,
-      "StepNumber": 3,
-      "Instruction": "Assemble bowl with rice, spinach, and flaked salmon 1"
-    }
-  ],
-  "MealSuggestions": [
-    {
-      "Name": "High-Protein Lunch Pack",
-      "MealType": 1,
-      "Description": "Muscle-building meals with 30g+ protein",
-      "EffectiveDate": "2023-01-01T00:00:00",
-      "ExpirationDate": "2024-01-01T00:00:00"
-    },
-    {
-      "Name": "Vegetarian Dinner Options",
-      "MealType": 2,
-      "Description": "Meat-free evening meals",
-      "EffectiveDate": "2023-01-01T00:00:00",
-      "ExpirationDate": null
-    },
-    {
-      "Name": "Quick Weeknight Dinners",
-      "MealType": 2,
-      "Description": "30-minute meals for busy families",
-      "EffectiveDate": "2023-01-01T00:00:00",
-      "ExpirationDate": null
-    },
-    {
-      "Name": "Mediterranean Diet Plan",
-      "MealType": 2,
-      "Description": "Heart-healthy Mediterranean recipes",
-      "EffectiveDate": "2023-01-01T00:00:00",
-      "ExpirationDate": null
-    },
-    {
-      "Name": "Post-Workout Recovery",
-      "MealType": 3,
-      "Description": "Protein-packed recovery snacks",
-      "EffectiveDate": "2023-01-01T00:00:00",
-      "ExpirationDate": null
-    },
-    {
-      "Name": "Summer Salad Bar",
-      "MealType": 1,
-      "Description": "Light seasonal salads",
-      "EffectiveDate": "2023-06-01T00:00:00",
-      "ExpirationDate": "2023-09-30T00:00:00"
-    }
-  ],
+  "FoodItemStoreSections": [],
+  "PriceHistories": [],
+  "Recipes": [],
+  "Ingredients": [],
+  "RecipeSteps": [],
+  "MealSuggestions": [],
   "MealSuggestionTags": [
     {
       "TagName": "Quick"
@@ -1039,50 +3720,5 @@
       "TagName": "Kid-Friendly"
     }
   ],
-  "RecipeMealSuggestions": [
-    {
-      "RecipeId": 1,
-      "MealSuggestionId": 1
-    },
-    {
-      "RecipeId": 2,
-      "MealSuggestionId": 1
-    },
-    {
-      "RecipeId": 7,
-      "MealSuggestionId": 1
-    },
-    {
-      "RecipeId": 4,
-      "MealSuggestionId": 2
-    },
-    {
-      "RecipeId": 6,
-      "MealSuggestionId": 2
-    },
-    {
-      "RecipeId": 7,
-      "MealSuggestionId": 2
-    },
-    {
-      "RecipeId": 1,
-      "MealSuggestionId": 3
-    },
-    {
-      "RecipeId": 5,
-      "MealSuggestionId": 3
-    },
-    {
-      "RecipeId": 7,
-      "MealSuggestionId": 3
-    },
-    {
-      "RecipeId": 3,
-      "MealSuggestionId": 4
-    },
-    {
-      "RecipeId": 3,
-      "MealSuggestionId": 5
-    }
-  ]
+  "RecipeMealSuggestions": []
 }
