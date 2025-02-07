@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
@@ -11,7 +12,10 @@ namespace MyFoodApp.Domain.Entities
         public int MealSuggestionId { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public Recipe? Recipe { get; set; }
+
+        [JsonIgnore]
         public MealSuggestion? MealSuggestion { get; set; }
     }
 }

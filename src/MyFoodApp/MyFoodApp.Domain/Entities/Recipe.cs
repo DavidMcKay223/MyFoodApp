@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class Recipe
     {
         [Key]
+        [JsonIgnore]
         public int RecipeId { get; set; }
 
         [Required]
@@ -19,8 +21,13 @@ namespace MyFoodApp.Domain.Entities
         public int Servings { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public ICollection<Ingredient> Ingredients { get; set; } = [];
+
+        [JsonIgnore]
         public ICollection<RecipeStep> Steps { get; set; } = [];
+
+        [JsonIgnore]
         public ICollection<RecipeMealSuggestion> MealSuggestions { get; set; } = [];
     }
 }

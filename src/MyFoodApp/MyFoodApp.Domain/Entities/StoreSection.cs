@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class StoreSection
     {
         [Key]
+        [JsonIgnore]
         public int StoreSectionId { get; set; }
 
         [Required]
@@ -15,6 +17,7 @@ namespace MyFoodApp.Domain.Entities
         public required string Description { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public ICollection<FoodItemStoreSection> FoodItems { get; set; } = [];
     }
 }

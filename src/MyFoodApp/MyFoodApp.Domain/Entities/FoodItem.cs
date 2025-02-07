@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using MyFoodApp.Domain.Enums;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class FoodItem
     {
         [Key]
+        [JsonIgnore]
         public int FoodItemId { get; set; }
 
         [Required]
@@ -31,9 +33,16 @@ namespace MyFoodApp.Domain.Entities
         public UnitType Unit { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public FoodCategory? FoodCategory { get; set; }
+
+        [JsonIgnore]
         public ICollection<PriceHistory> PriceHistories { get; set; } = [];
+
+        [JsonIgnore]
         public ICollection<FoodItemStoreSection> StoreSections { get; set; } = [];
+
+        [JsonIgnore]
         public ICollection<Ingredient> Ingredients { get; set; } = [];
     }
 }

@@ -1,0 +1,1088 @@
+{
+  "FoodCategories": [
+    {
+      "Name": "Vegetables",
+      "Description": "All forms of vegetables including leafy greens, roots, and cruciferous"
+    },
+    {
+      "Name": "Fruits",
+      "Description": "Fresh, dried, and preserved fruits"
+    },
+    {
+      "Name": "Dairy & Alternatives",
+      "Description": "Animal dairy products and plant-based alternatives"
+    },
+    {
+      "Name": "Grains & Cereals",
+      "Description": "Wheat, rice, oats, barley, and derived products"
+    },
+    {
+      "Name": "Proteins",
+      "Description": "Animal and plant-based protein sources"
+    },
+    {
+      "Name": "Seafood",
+      "Description": "Fish, shellfish, and aquatic foods"
+    },
+    {
+      "Name": "Baked Goods",
+      "Description": "Bread, pastries, and other bakery items"
+    },
+    {
+      "Name": "Condiments & Sauces",
+      "Description": "Spreads, dressings, and flavor enhancers"
+    },
+    {
+      "Name": "Snacks & Sweets",
+      "Description": "Processed snacks, candies, and desserts"
+    },
+    {
+      "Name": "Beverages",
+      "Description": "All drinkable liquids excluding plain water"
+    },
+    {
+      "Name": "Fats & Oils",
+      "Description": "Cooking oils, butter, and lipid-based products"
+    },
+    {
+      "Name": "Prepared Foods",
+      "Description": "Ready-to-eat meals and processed food items"
+    },
+    {
+      "Name": "Herbs & Spices",
+      "Description": "Culinary flavorings and seasoning agents"
+    },
+    {
+      "Name": "Legumes",
+      "Description": "Beans, lentils, peas, and related plants"
+    },
+    {
+      "Name": "Nuts & Seeds",
+      "Description": "Tree nuts, peanuts, and edible seeds"
+    },
+    {
+      "Name": "Fermented Foods",
+      "Description": "Kimchi, yogurt, sauerkraut, and cultured products"
+    },
+    {
+      "Name": "Frozen Foods",
+      "Description": "Flash-frozen fruits, vegetables, and meals"
+    },
+    {
+      "Name": "Canned/Preserved",
+      "Description": "Long-shelf-life packaged foods"
+    },
+    {
+      "Name": "International",
+      "Description": "Ethnic-specific food ingredients"
+    },
+    {
+      "Name": "Special Diets",
+      "Description": "Gluten-free, vegan, keto, and allergy-friendly items"
+    }
+  ],
+  "StoreSections": [
+    {
+      "Name": "Produce",
+      "Description": "Fresh fruits, vegetables, and herbs"
+    },
+    {
+      "Name": "Dairy & Eggs",
+      "Description": "Milk, cheese, yogurt, and egg products"
+    },
+    {
+      "Name": "Bakery",
+      "Description": "Fresh bread, pastries, and baked goods"
+    },
+    {
+      "Name": "Meat & Seafood",
+      "Description": "Fresh and packaged meats, poultry, and fish"
+    },
+    {
+      "Name": "Frozen Foods",
+      "Description": "Frozen meals, vegetables, and desserts"
+    },
+    {
+      "Name": "Pantry Staples",
+      "Description": "Dry goods, grains, pasta, and cooking essentials"
+    },
+    {
+      "Name": "Canned Goods",
+      "Description": "Preserved vegetables, soups, and prepared foods"
+    },
+    {
+      "Name": "Snack Aisle",
+      "Description": "Chips, cookies, nuts, and convenience snacks"
+    },
+    {
+      "Name": "Beverage Aisle",
+      "Description": "Non-alcoholic drinks, juices, and bottled waters"
+    },
+    {
+      "Name": "Alcohol & Wine",
+      "Description": "Beer, wine, and spirits section"
+    },
+    {
+      "Name": "Health & Wellness",
+      "Description": "Vitamins, supplements, and health foods"
+    },
+    {
+      "Name": "Household Essentials",
+      "Description": "Cleaning supplies and paper goods"
+    },
+    {
+      "Name": "International Cuisine",
+      "Description": "Ethnic foods and imported products"
+    },
+    {
+      "Name": "Specialty Diets",
+      "Description": "Gluten-free, vegan, and allergy-friendly products"
+    },
+    {
+      "Name": "Deli & Prepared Foods",
+      "Description": "Ready-to-eat meals and charcuterie"
+    },
+    {
+      "Name": "Condiments & Sauces",
+      "Description": "Spices, oils, dressings, and flavorings"
+    },
+    {
+      "Name": "Baby & Child Care",
+      "Description": "Infant formula and child nutrition products"
+    },
+    {
+      "Name": "Pet Care",
+      "Description": "Pet food and animal supplies"
+    },
+    {
+      "Name": "Seasonal & Holiday",
+      "Description": "Special occasion items and decorations"
+    },
+    {
+      "Name": "Checkout Zone",
+      "Description": "Impulse buy items near registers"
+    }
+  ],
+  "FoodItems": [
+    {
+      "Name": "Carrot",
+      "Description": "Orange root vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 41.00,
+      "ProteinPerUnit": 0.90,
+      "CarbohydratesPerUnit": 9.58,
+      "FatPerUnit": 0.24,
+      "Unit": 0
+    },
+    {
+      "Name": "Spinach",
+      "Description": "Leafy green vegetable",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 23.00,
+      "ProteinPerUnit": 2.90,
+      "CarbohydratesPerUnit": 3.63,
+      "FatPerUnit": 0.39,
+      "Unit": 0
+    },
+    {
+      "Name": "Bell Pepper",
+      "Description": "Colorful capsicum",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 31.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 6.03,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Apple",
+      "Description": "Crisp pomaceous fruit",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 52.00,
+      "ProteinPerUnit": 0.30,
+      "CarbohydratesPerUnit": 13.81,
+      "FatPerUnit": 0.17,
+      "Unit": 7
+    },
+    {
+      "Name": "Banana",
+      "Description": "Tropical curved fruit",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 89.00,
+      "ProteinPerUnit": 1.10,
+      "CarbohydratesPerUnit": 22.84,
+      "FatPerUnit": 0.33,
+      "Unit": 7
+    },
+    {
+      "Name": "Grapes",
+      "Description": "Small sweet berries",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 69.00,
+      "ProteinPerUnit": 0.70,
+      "CarbohydratesPerUnit": 18.10,
+      "FatPerUnit": 0.16,
+      "Unit": 0
+    },
+    {
+      "Name": "Whole Milk",
+      "Description": "Dairy milk 3.25% fat",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 61.00,
+      "ProteinPerUnit": 3.20,
+      "CarbohydratesPerUnit": 4.80,
+      "FatPerUnit": 3.25,
+      "Unit": 2
+    },
+    {
+      "Name": "Almond Milk",
+      "Description": "Plant-based milk alternative",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 39.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 1.52,
+      "FatPerUnit": 2.52,
+      "Unit": 2
+    },
+    {
+      "Name": "Greek Yogurt",
+      "Description": "Strained yogurt high in protein",
+      "FoodCategoryId": 3,
+      "CaloriesPerUnit": 59.00,
+      "ProteinPerUnit": 10.00,
+      "CarbohydratesPerUnit": 3.60,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Brown Rice",
+      "Description": "Whole grain rice",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 111.00,
+      "ProteinPerUnit": 2.60,
+      "CarbohydratesPerUnit": 23.00,
+      "FatPerUnit": 0.90,
+      "Unit": 0
+    },
+    {
+      "Name": "Whole Wheat Bread",
+      "Description": "High fiber bread",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 247.00,
+      "ProteinPerUnit": 13.00,
+      "CarbohydratesPerUnit": 41.00,
+      "FatPerUnit": 3.40,
+      "Unit": 8
+    },
+    {
+      "Name": "Steel-cut Oats",
+      "Description": "Minimally processed oats",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 5.00,
+      "CarbohydratesPerUnit": 27.00,
+      "FatPerUnit": 2.50,
+      "Unit": 0
+    },
+    {
+      "Name": "Chicken Breast",
+      "Description": "Boneless skinless poultry",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 165.00,
+      "ProteinPerUnit": 31.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 3.60,
+      "Unit": 0
+    },
+    {
+      "Name": "Black Beans",
+      "Description": "Plant-based protein source",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 132.00,
+      "ProteinPerUnit": 8.90,
+      "CarbohydratesPerUnit": 23.70,
+      "FatPerUnit": 0.54,
+      "Unit": 0
+    },
+    {
+      "Name": "Salmon Fillet",
+      "Description": "Fatty fish protein",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 208.00,
+      "ProteinPerUnit": 20.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 13.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Shrimp",
+      "Description": "Small saltwater crustacean",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 99.00,
+      "ProteinPerUnit": 24.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Tuna Steak",
+      "Description": "Meaty saltwater fish",
+      "FoodCategoryId": 6,
+      "CaloriesPerUnit": 132.00,
+      "ProteinPerUnit": 28.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 1.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Sourdough Bread",
+      "Description": "Fermented dough bread",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 289.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 56.00,
+      "FatPerUnit": 2.00,
+      "Unit": 8
+    },
+    {
+      "Name": "Croissant",
+      "Description": "Flaky French pastry",
+      "FoodCategoryId": 7,
+      "CaloriesPerUnit": 406.00,
+      "ProteinPerUnit": 8.00,
+      "CarbohydratesPerUnit": 45.00,
+      "FatPerUnit": 21.00,
+      "Unit": 7
+    },
+    {
+      "Name": "Olive Oil",
+      "Description": "Mediterranean cooking oil",
+      "FoodCategoryId": 11,
+      "CaloriesPerUnit": 884.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 100.00,
+      "Unit": 5
+    },
+    {
+      "Name": "Gluten-Free Pasta",
+      "Description": "Wheat-free alternative",
+      "FoodCategoryId": 20,
+      "CaloriesPerUnit": 357.00,
+      "ProteinPerUnit": 7.50,
+      "CarbohydratesPerUnit": 75.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Sushi Rice",
+      "Description": "Japanese short-grain rice",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 130.00,
+      "ProteinPerUnit": 2.70,
+      "CarbohydratesPerUnit": 28.00,
+      "FatPerUnit": 0.30,
+      "Unit": 0
+    },
+    {
+      "Name": "Frozen Peas",
+      "Description": "Flash-frozen vegetables",
+      "FoodCategoryId": 17,
+      "CaloriesPerUnit": 81.00,
+      "ProteinPerUnit": 5.40,
+      "CarbohydratesPerUnit": 14.00,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Lentils",
+      "Description": "Nutritious pulses",
+      "FoodCategoryId": 14,
+      "CaloriesPerUnit": 116.00,
+      "ProteinPerUnit": 9.00,
+      "CarbohydratesPerUnit": 20.00,
+      "FatPerUnit": 0.40,
+      "Unit": 0
+    },
+    {
+      "Name": "Almonds",
+      "Description": "Whole raw almonds",
+      "FoodCategoryId": 15,
+      "CaloriesPerUnit": 579.00,
+      "ProteinPerUnit": 21.00,
+      "CarbohydratesPerUnit": 21.55,
+      "FatPerUnit": 49.93,
+      "Unit": 0
+    },
+    {
+      "Name": "Garlic",
+      "Description": "Fresh garlic cloves",
+      "FoodCategoryId": 13,
+      "CaloriesPerUnit": 149.00,
+      "ProteinPerUnit": 6.40,
+      "CarbohydratesPerUnit": 33.00,
+      "FatPerUnit": 0.50,
+      "Unit": 9
+    },
+    {
+      "Name": "Whole Wheat Tortillas",
+      "Description": "Soft taco shells",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 138.00,
+      "ProteinPerUnit": 4.00,
+      "CarbohydratesPerUnit": 28.00,
+      "FatPerUnit": 2.00,
+      "Unit": 7
+    },
+    {
+      "Name": "Onion",
+      "Description": "Yellow cooking onion",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 40.00,
+      "ProteinPerUnit": 1.10,
+      "CarbohydratesPerUnit": 9.34,
+      "FatPerUnit": 0.10,
+      "Unit": 0
+    }
+  ],
+  "FoodItemStoreSections": [
+    {
+      "FoodItemId": 1,
+      "StoreSectionId": 1,
+      "ShelfNumber": 3
+    },
+    {
+      "FoodItemId": 2,
+      "StoreSectionId": 1,
+      "ShelfNumber": 2
+    },
+    {
+      "FoodItemId": 3,
+      "StoreSectionId": 1,
+      "ShelfNumber": 4
+    },
+    {
+      "FoodItemId": 4,
+      "StoreSectionId": 1,
+      "ShelfNumber": 1
+    },
+    {
+      "FoodItemId": 5,
+      "StoreSectionId": 1,
+      "ShelfNumber": 1
+    },
+    {
+      "FoodItemId": 6,
+      "StoreSectionId": 1,
+      "ShelfNumber": 2
+    },
+    {
+      "FoodItemId": 7,
+      "StoreSectionId": 2,
+      "ShelfNumber": 2
+    },
+    {
+      "FoodItemId": 8,
+      "StoreSectionId": 2,
+      "ShelfNumber": 3
+    },
+    {
+      "FoodItemId": 9,
+      "StoreSectionId": 2,
+      "ShelfNumber": 1
+    },
+    {
+      "FoodItemId": 10,
+      "StoreSectionId": 6,
+      "ShelfNumber": 4
+    },
+    {
+      "FoodItemId": 11,
+      "StoreSectionId": 3,
+      "ShelfNumber": 1
+    },
+    {
+      "FoodItemId": 12,
+      "StoreSectionId": 6,
+      "ShelfNumber": 5
+    },
+    {
+      "FoodItemId": 13,
+      "StoreSectionId": 4,
+      "ShelfNumber": 5
+    },
+    {
+      "FoodItemId": 14,
+      "StoreSectionId": 6,
+      "ShelfNumber": 6
+    },
+    {
+      "FoodItemId": 15,
+      "StoreSectionId": 4,
+      "ShelfNumber": 7
+    },
+    {
+      "FoodItemId": 16,
+      "StoreSectionId": 4,
+      "ShelfNumber": 8
+    },
+    {
+      "FoodItemId": 17,
+      "StoreSectionId": 4,
+      "ShelfNumber": 7
+    },
+    {
+      "FoodItemId": 18,
+      "StoreSectionId": 3,
+      "ShelfNumber": 2
+    },
+    {
+      "FoodItemId": 19,
+      "StoreSectionId": 3,
+      "ShelfNumber": 3
+    },
+    {
+      "FoodItemId": 20,
+      "StoreSectionId": 16,
+      "ShelfNumber": 5
+    },
+    {
+      "FoodItemId": 21,
+      "StoreSectionId": 14,
+      "ShelfNumber": 4
+    },
+    {
+      "FoodItemId": 22,
+      "StoreSectionId": 13,
+      "ShelfNumber": 9
+    },
+    {
+      "FoodItemId": 23,
+      "StoreSectionId": 5,
+      "ShelfNumber": 12
+    },
+    {
+      "FoodItemId": 24,
+      "StoreSectionId": 6,
+      "ShelfNumber": 7
+    }
+  ],
+  "PriceHistories": [
+    {
+      "FoodItemId": 1,
+      "Price": 1.29,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2023-06-30T00:00:00"
+    },
+    {
+      "FoodItemId": 1,
+      "Price": 1.49,
+      "StartDate": "2023-07-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 2,
+      "Price": 2.49,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2023-08-31T00:00:00"
+    },
+    {
+      "FoodItemId": 2,
+      "Price": 1.99,
+      "StartDate": "2023-09-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 4,
+      "Price": 1.29,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2023-09-30T00:00:00"
+    },
+    {
+      "FoodItemId": 4,
+      "Price": 1.49,
+      "StartDate": "2023-10-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 5,
+      "Price": 0.49,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 7,
+      "Price": 3.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2023-06-30T00:00:00"
+    },
+    {
+      "FoodItemId": 7,
+      "Price": 4.29,
+      "StartDate": "2023-07-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 8,
+      "Price": 3.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 10,
+      "Price": 2.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2023-05-31T00:00:00"
+    },
+    {
+      "FoodItemId": 10,
+      "Price": 3.29,
+      "StartDate": "2023-06-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 13,
+      "Price": 5.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2023-08-31T00:00:00"
+    },
+    {
+      "FoodItemId": 13,
+      "Price": 6.49,
+      "StartDate": "2023-09-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 15,
+      "Price": 9.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2023-04-30T00:00:00"
+    },
+    {
+      "FoodItemId": 15,
+      "Price": 8.99,
+      "StartDate": "2023-05-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 16,
+      "Price": 12.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2023-03-31T00:00:00"
+    },
+    {
+      "FoodItemId": 16,
+      "Price": 14.99,
+      "StartDate": "2023-04-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 18,
+      "Price": 5.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 19,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 21,
+      "Price": 4.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2023-11-30T00:00:00"
+    },
+    {
+      "FoodItemId": 21,
+      "Price": 3.99,
+      "StartDate": "2023-12-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 22,
+      "Price": 6.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 23,
+      "Price": 2.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 24,
+      "Price": 1.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": null
+    },
+    {
+      "FoodItemId": 20,
+      "Price": 8.99,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2023-09-30T00:00:00"
+    },
+    {
+      "FoodItemId": 20,
+      "Price": 12.99,
+      "StartDate": "2023-10-01T00:00:00",
+      "EndDate": null
+    }
+  ],
+  "Recipes": [
+    {
+      "Title": "Chicken & Veggie Stir-Fry",
+      "Description": "Quick Asian-inspired stir-fry with fresh vegetables",
+      "PrepTimeMinutes": 20,
+      "CookTimeMinutes": 15,
+      "Servings": 4
+    },
+    {
+      "Title": "Salmon Rice Bowl",
+      "Description": "Healthy grain bowl with grilled salmon",
+      "PrepTimeMinutes": 15,
+      "CookTimeMinutes": 25,
+      "Servings": 2
+    },
+    {
+      "Title": "Greek Yogurt Parfait",
+      "Description": "Layered breakfast parfait with fresh fruit",
+      "PrepTimeMinutes": 5,
+      "CookTimeMinutes": 0,
+      "Servings": 1
+    },
+    {
+      "Title": "Black Bean Tacos",
+      "Description": "Vegetarian tacos with spicy black beans",
+      "PrepTimeMinutes": 10,
+      "CookTimeMinutes": 15,
+      "Servings": 4
+    },
+    {
+      "Title": "Shrimp Garlic Pasta",
+      "Description": "Creamy pasta with fresh shrimp",
+      "PrepTimeMinutes": 15,
+      "CookTimeMinutes": 20,
+      "Servings": 3
+    },
+    {
+      "Title": "Lentil Soup",
+      "Description": "Hearty vegetarian soup",
+      "PrepTimeMinutes": 10,
+      "CookTimeMinutes": 40,
+      "Servings": 6
+    },
+    {
+      "Title": "Test",
+      "Description": "Test",
+      "PrepTimeMinutes": 0,
+      "CookTimeMinutes": 0,
+      "Servings": 1
+    }
+  ],
+  "Ingredients": [
+    {
+      "RecipeId": 1,
+      "FoodItemId": 13,
+      "Quantity": 500.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 1,
+      "FoodItemId": 3,
+      "Quantity": 2.00,
+      "Unit": 7
+    },
+    {
+      "RecipeId": 1,
+      "FoodItemId": 1,
+      "Quantity": 200.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 1,
+      "FoodItemId": 20,
+      "Quantity": 30.00,
+      "Unit": 2
+    },
+    {
+      "RecipeId": 2,
+      "FoodItemId": 15,
+      "Quantity": 400.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 2,
+      "FoodItemId": 10,
+      "Quantity": 200.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 2,
+      "FoodItemId": 2,
+      "Quantity": 100.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 3,
+      "FoodItemId": 9,
+      "Quantity": 150.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 3,
+      "FoodItemId": 5,
+      "Quantity": 1.00,
+      "Unit": 7
+    },
+    {
+      "RecipeId": 3,
+      "FoodItemId": 25,
+      "Quantity": 30.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 4,
+      "FoodItemId": 14,
+      "Quantity": 400.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 4,
+      "FoodItemId": 3,
+      "Quantity": 1.00,
+      "Unit": 7
+    },
+    {
+      "RecipeId": 4,
+      "FoodItemId": 27,
+      "Quantity": 8.00,
+      "Unit": 7
+    },
+    {
+      "RecipeId": 4,
+      "FoodItemId": 28,
+      "Quantity": 1.00,
+      "Unit": 7
+    },
+    {
+      "RecipeId": 5,
+      "FoodItemId": 16,
+      "Quantity": 300.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 5,
+      "FoodItemId": 21,
+      "Quantity": 200.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 5,
+      "FoodItemId": 26,
+      "Quantity": 3.00,
+      "Unit": 7
+    },
+    {
+      "RecipeId": 5,
+      "FoodItemId": 20,
+      "Quantity": 30.00,
+      "Unit": 2
+    },
+    {
+      "RecipeId": 6,
+      "FoodItemId": 24,
+      "Quantity": 250.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 6,
+      "FoodItemId": 1,
+      "Quantity": 150.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 6,
+      "FoodItemId": 28,
+      "Quantity": 1.00,
+      "Unit": 7
+    },
+    {
+      "RecipeId": 6,
+      "FoodItemId": 26,
+      "Quantity": 2.00,
+      "Unit": 7
+    },
+    {
+      "RecipeId": 7,
+      "FoodItemId": 16,
+      "Quantity": 1.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 7,
+      "FoodItemId": 18,
+      "Quantity": 1.00,
+      "Unit": 0
+    },
+    {
+      "RecipeId": 7,
+      "FoodItemId": 13,
+      "Quantity": 1.00,
+      "Unit": 0
+    }
+  ],
+  "RecipeSteps": [
+    {
+      "RecipeId": 1,
+      "StepNumber": 1,
+      "Instruction": "Slice chicken breast into thin strips"
+    },
+    {
+      "RecipeId": 1,
+      "StepNumber": 2,
+      "Instruction": "Julienne carrots and bell peppers"
+    },
+    {
+      "RecipeId": 1,
+      "StepNumber": 3,
+      "Instruction": "Heat olive oil in wok and cook chicken until browned"
+    },
+    {
+      "RecipeId": 2,
+      "StepNumber": 1,
+      "Instruction": "Season salmon with salt and pepper 3"
+    },
+    {
+      "RecipeId": 2,
+      "StepNumber": 2,
+      "Instruction": "Grill salmon at 200°C for 12-15 minutes 2"
+    },
+    {
+      "RecipeId": 2,
+      "StepNumber": 3,
+      "Instruction": "Assemble bowl with rice, spinach, and flaked salmon 1"
+    }
+  ],
+  "MealSuggestions": [
+    {
+      "Name": "High-Protein Lunch Pack",
+      "MealType": 1,
+      "Description": "Muscle-building meals with 30g+ protein",
+      "EffectiveDate": "2023-01-01T00:00:00",
+      "ExpirationDate": "2024-01-01T00:00:00"
+    },
+    {
+      "Name": "Vegetarian Dinner Options",
+      "MealType": 2,
+      "Description": "Meat-free evening meals",
+      "EffectiveDate": "2023-01-01T00:00:00",
+      "ExpirationDate": null
+    },
+    {
+      "Name": "Quick Weeknight Dinners",
+      "MealType": 2,
+      "Description": "30-minute meals for busy families",
+      "EffectiveDate": "2023-01-01T00:00:00",
+      "ExpirationDate": null
+    },
+    {
+      "Name": "Mediterranean Diet Plan",
+      "MealType": 2,
+      "Description": "Heart-healthy Mediterranean recipes",
+      "EffectiveDate": "2023-01-01T00:00:00",
+      "ExpirationDate": null
+    },
+    {
+      "Name": "Post-Workout Recovery",
+      "MealType": 3,
+      "Description": "Protein-packed recovery snacks",
+      "EffectiveDate": "2023-01-01T00:00:00",
+      "ExpirationDate": null
+    },
+    {
+      "Name": "Summer Salad Bar",
+      "MealType": 1,
+      "Description": "Light seasonal salads",
+      "EffectiveDate": "2023-06-01T00:00:00",
+      "ExpirationDate": "2023-09-30T00:00:00"
+    }
+  ],
+  "MealSuggestionTags": [
+    {
+      "TagName": "Quick"
+    },
+    {
+      "TagName": "Vegetarian"
+    },
+    {
+      "TagName": "High-Protein"
+    },
+    {
+      "TagName": "Gluten-Free"
+    },
+    {
+      "TagName": "Low-Carb"
+    },
+    {
+      "TagName": "Meal Prep"
+    },
+    {
+      "TagName": "Budget-Friendly"
+    },
+    {
+      "TagName": "Dairy-Free"
+    },
+    {
+      "TagName": "Kid-Friendly"
+    }
+  ],
+  "RecipeMealSuggestions": [
+    {
+      "RecipeId": 1,
+      "MealSuggestionId": 1
+    },
+    {
+      "RecipeId": 2,
+      "MealSuggestionId": 1
+    },
+    {
+      "RecipeId": 7,
+      "MealSuggestionId": 1
+    },
+    {
+      "RecipeId": 4,
+      "MealSuggestionId": 2
+    },
+    {
+      "RecipeId": 6,
+      "MealSuggestionId": 2
+    },
+    {
+      "RecipeId": 7,
+      "MealSuggestionId": 2
+    },
+    {
+      "RecipeId": 1,
+      "MealSuggestionId": 3
+    },
+    {
+      "RecipeId": 5,
+      "MealSuggestionId": 3
+    },
+    {
+      "RecipeId": 7,
+      "MealSuggestionId": 3
+    },
+    {
+      "RecipeId": 3,
+      "MealSuggestionId": 4
+    },
+    {
+      "RecipeId": 3,
+      "MealSuggestionId": 5
+    }
+  ]
+}

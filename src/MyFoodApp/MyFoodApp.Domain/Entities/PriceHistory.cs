@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class PriceHistory
     {
         [Key]
+        [JsonIgnore]
         public int PriceHistoryId { get; set; }
 
         [ForeignKey("FoodItem")]
@@ -21,6 +23,7 @@ namespace MyFoodApp.Domain.Entities
         public DateTime? EndDate { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public FoodItem? FoodItem { get; set; }
     }
 }

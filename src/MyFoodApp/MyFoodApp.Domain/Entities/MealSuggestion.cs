@@ -1,11 +1,13 @@
 ﻿using MyFoodApp.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class MealSuggestion
     {
         [Key]
+        [JsonIgnore]
         public int MealSuggestionId { get; set; }
 
         [Required]
@@ -21,7 +23,10 @@ namespace MyFoodApp.Domain.Entities
         public DateTime? ExpirationDate { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public ICollection<RecipeMealSuggestion> RecipeSuggestions { get; set; } = [];
+
+        [JsonIgnore]
         public ICollection<MealSuggestionTag> Tags { get; set; } = [];
     }
 }
