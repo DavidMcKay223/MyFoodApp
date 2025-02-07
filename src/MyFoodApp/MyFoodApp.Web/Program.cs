@@ -45,6 +45,9 @@ builder.Services.AddScoped<IMealSuggestionUseCases, MealSuggestionUseCases>();
 builder.Services.AddScoped<IGenerateRecommendationsRepository, GenerateRecommendationsRepository>();
 builder.Services.AddScoped<IGenerateRecommendationsUseCases, GenerateRecommendationsUseCases>();
 
+builder.Services.AddScoped<IGeneratorPdfRepository, GeneratorPdfRepository>();
+builder.Services.AddScoped<IGeneratorPdf, GeneratorPdf>();
+
 // Database:
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(

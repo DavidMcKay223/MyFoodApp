@@ -3,10 +3,12 @@
 @using MyFoodApp.Application.Common
 @using MyFoodApp.Web.Components.Shared
 @inject IGenerateRecommendationsUseCases GenerateRecommendationsUseCases
+@inject IGeneratorPdf PdfGenerator
 
 @code {
     private Response<MealSuggestionTagDto>? Response;
     private Dictionary<MealSuggestionTagDto, bool> _expandedState = new();
+    private List<int> RecipeIdList = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -36,10 +38,29 @@
             }
         }
     }
+
+    private async Task AddRecipeFromList(int id)
+    {
+        RecipeIdList.Add(id);
+    }
+
+    private async Task RemoveRecipeFromList(int id)
+    {
+        RecipeIdList.Remove(id);
+    }
+
+    private async Task DownloadPdf()
+    {
+        await PdfGenerator.RecipeListDownloadPdfAsync("recipe_document.pdf", RecipeIdList);
+    }
 }
 
 <div class="container">
     <h1 class="my-4 text-center">Meal Suggestion</h1>
+    @if (RecipeIdList.Count > 0)
+    {
+        <button class="btn btn-secondary mb-3" @onclick="DownloadPdf">Download PDF</button>
+    }
 </div>
 
 <div class="container">
@@ -103,6 +124,14 @@
                                                                     @if (recipeSuggestion.Recipe != null)
                                                                     {
                                                                         <h5 class="card-title fs-6">@recipeSuggestion.Recipe.Title</h5>
+                                                                        if (!RecipeIdList.Contains(recipeSuggestion.Recipe.RecipeId))
+                                                                        {
+                                                                            <button class="btn btn-primary" @onclick="() => AddRecipeFromList(recipeSuggestion.Recipe.RecipeId)">Add Recipe Download</button>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <button class="btn btn-danger" @onclick="() => RemoveRecipeFromList(recipeSuggestion.Recipe.RecipeId)">Remove Recipe Download</button>
+                                                                        }
                                                                         <p class="card-text text-muted small">@recipeSuggestion.Recipe.Description</p>
                                                                         <div class="d-flex justify-content-between small text-muted mb-3">
                                                                             <span>
