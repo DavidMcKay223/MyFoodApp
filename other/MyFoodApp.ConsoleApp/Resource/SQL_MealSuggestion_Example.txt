@@ -1,91 +1,50 @@
--- Note this mapping needs to be redone to match properly not a big deal, 
--- some categories do not belong in others
-
--- Quick & Easy -> Quick
 INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
 VALUES
-(1, 1) -- Quick
+(10	,7), --	Budget-Friendly	Budget-Friendly
+(3	,7), --	Comfort Food	Budget-Friendly
+(4	,7), --	International Cuisine	Budget-Friendly
+(2	,8), --	Healthy & Nutritious	Dairy-Free
+(7	,3), --	High-Protein	High-Protein
+(17	,3), --	Recovery Meals	High-Protein
+(16	,3), --	Workout Fuel	High-Protein
+(8	,9), --	Kid-Friendly	Kid-Friendly
+(2	,5), --	Healthy & Nutritious	Low-Carb
+(6	,5), --	Low-Carb	Low-Carb
+(16	,5), --	Workout Fuel	Low-Carb
+(13	,6), --	Dinner	Meal Prep
+(12	,6), --	Lunch	Meal Prep
+(9	,6), --	Meal Prep	Meal Prep
+(17	,6), --	Recovery Meals	Meal Prep
+(11	,1), --	Breakfast	Quick
+(15	,1), --	Dessert	Quick
+(12	,1), --	Lunch	Quick
+(1	,1), --	Quick & Easy	Quick
+(14	,1), --	Snack	Quick
+(2	,2), --	Healthy & Nutritious	Vegetarian
+(5	,2) --	Vegetarian/Vegan	Vegetarian
 
--- Healthy & Nutritious
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(2, 2), -- Vegetarian
-(2, 3), -- High-Protein
-(2, 5) -- Low-Carb
+SELECT
+	ms.MealSuggestionId,
+	mst.TagId,
+    ms.Name AS MealSuggestionName,
+    mst.TagName AS TagName
+FROM
+    [MyFoodApp].[dbo].[MealSuggestions] AS ms
+INNER JOIN
+    [MyFoodApp].[dbo].[MealSuggestionTagMapping] AS mstm ON ms.MealSuggestionId = mstm.MealSuggestionId
+INNER JOIN
+    [MyFoodApp].[dbo].[MealSuggestionTags] AS mst ON mstm.TagId = mst.TagId
+ORDER BY
+    mst.TagName, ms.Name;
 
--- Comfort Food
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(3, 9) -- Kid-Friendly
-
--- International Cuisine
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(4, 9) -- Kid-Friendly
-
--- Vegetarian/Vegan -> Vegetarian
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(5, 2) -- Vegetarian
-
--- Low-Carb
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(6, 5) -- Low-Carb
-
--- High-Protein
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(7, 3) -- High-Protein
-
--- Kid-Friendly
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(8, 9) -- Kid-Friendly
-
--- Meal Prep
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(9, 6) -- Meal Prep
-
--- Budget-Friendly
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(10, 7) -- Budget-Friendly
-
--- Breakfast
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(11, 1) -- Quick
-
--- Lunch
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(12, 1) -- Quick
-
--- Dinner
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(13, 1) -- Quick
-
--- Snack
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(14, 1) -- Quick
-
--- Dessert
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(15, 1) -- Quick
-
--- Workout Fuel
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(16, 3), -- High-Protein
-(16, 5) -- Low-Carb
-
--- Recovery Meals
-INSERT INTO [MyFoodApp].[dbo].[MealSuggestionTagMapping] ([MealSuggestionId], [TagId])
-VALUES
-(17, 3), -- High-Protein
-(17, 6) -- Meal Prep
+SELECT
+	ms.MealSuggestionId,
+    ms.Name AS MealSuggestionName
+FROM
+    [MyFoodApp].[dbo].[MealSuggestions] AS ms
+LEFT JOIN  -- Use LEFT JOIN to include all MealSuggestions
+    [MyFoodApp].[dbo].[MealSuggestionTagMapping] AS mstm ON ms.MealSuggestionId = mstm.MealSuggestionId
+WHERE
+    mstm.MealSuggestionId IS NULL  -- Filter for MealSuggestions with no matching TagMapping
+ORDER BY
+    ms.Name;
