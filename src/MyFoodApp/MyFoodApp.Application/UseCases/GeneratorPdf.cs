@@ -96,13 +96,8 @@ namespace MyFoodApp.Application.UseCases
                                         sb.Append($" - Price: {priceHistory.Price:C}");
                                     }
 
-                                    var storeSection = ingredient.FoodItem.StoreSections
-                                        .FirstOrDefault()?.StoreSection;
-                                    if (storeSection != null)
-                                    {
-                                        sb.Append($" - Section: {storeSection.Name}");
-                                    }
-
+                                    sb.Append($" - Section: {ingredient?.FoodItem?.FoodCategory?.Name}");
+                                    
                                     ingredientList.Add(sb.ToString());
                                 }
 

@@ -1,0 +1,338 @@
+-- Recipe 1: Cheesy Chicken Quesadillas
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Cheesy Chicken Quesadillas', 'Easy and cheesy quesadillas that kids love!', 15, 20, 4);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheesy Chicken Quesadillas'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Chicken Breast'), 200, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheesy Chicken Quesadillas'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cheese (Cheddar)'), 100, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheesy Chicken Quesadillas'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Whole Wheat Tortillas'), 4, 7;  -- Unit 7 for count
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheesy Chicken Quesadillas'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Lunch');
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheesy Chicken Quesadillas'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Dinner');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheesy Chicken Quesadillas'), 1, 'Cook the chicken and shred it.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheesy Chicken Quesadillas'), 2, 'Sprinkle cheese on one half of a tortilla.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheesy Chicken Quesadillas'), 3, 'Add the shredded chicken.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheesy Chicken Quesadillas'), 4, 'Fold the tortilla in half and cook in a skillet until golden brown and the cheese is melted.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheesy Chicken Quesadillas'), 5, 'Cut into wedges and serve.';
+
+-- Recipe 2:  Peanut Butter and Banana "Sushi"
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Peanut Butter and Banana "Sushi"', 'Fun and healthy snack for kids!', 10, 0, 2); -- Cook time 0
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Banana "Sushi"'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Banana'), 2, 7; -- Unit 7 for count
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Banana "Sushi"'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Peanut Butter'), 50, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Banana "Sushi"'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Whole Wheat Bread'), 2, 7;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Banana "Sushi"'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Snack');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Banana "Sushi"'), 1, 'Spread peanut butter on the bread.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Banana "Sushi"'), 2, 'Place a banana on the bread.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Banana "Sushi"'), 3, 'Roll up the bread.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Banana "Sushi"'), 4, 'Cut into slices like sushi.';
+
+-- Recipe 3: Mini Fruit Pizzas
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Mini Fruit Pizzas', 'Colorful and delicious dessert pizzas!', 20, 15, 6);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Flour (All-Purpose)'), 150, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Sugar (Granulated)'), 50, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Butter'), 50, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cream Cheese'), 100, 0; -- For frosting
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Strawberries'), 100, 0; -- Example fruit
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Blueberries'), 100, 0; -- Example fruit
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Kiwis'), 100, 0; -- Example fruit
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Dessert');
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Snack');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), 1, 'Make the cookie dough and bake mini cookies.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), 2, 'Mix cream cheese with a little sugar for frosting.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), 3, 'Spread the frosting on the cookies.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Fruit Pizzas'), 4, 'Arrange the fruit on top.';
+
+-- Recipe 1:  Fruity Pebble Pancakes
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Fruity Pebble Pancakes', 'Colorful and fun pancakes!', 15, 20, 4);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruity Pebble Pancakes'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Flour (All-Purpose)'), 150, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruity Pebble Pancakes'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Eggs'), 2, 7;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruity Pebble Pancakes'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Milk (Cow)'), 100, 2; -- Unit 2 for ml/l
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruity Pebble Pancakes'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Sugar (Granulated)'), 20, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruity Pebble Pancakes'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Fruity Pebbles Cereal'), 50, 0; -- Add this cereal to your FoodItems
+
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruity Pebble Pancakes'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Breakfast');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruity Pebble Pancakes'), 1, 'Mix the flour, eggs, milk, and sugar.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruity Pebble Pancakes'), 2, 'Stir in the Fruity Pebbles cereal.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruity Pebble Pancakes'), 3, 'Cook the pancakes on a griddle until golden brown.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruity Pebble Pancakes'), 4, 'Serve with syrup or fruit.';
+
+
+-- Recipe 2: Scrambled Eggs with Cheese and Toast
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Scrambled Eggs with Cheese and Toast', 'A classic and easy breakfast.', 10, 15, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Scrambled Eggs with Cheese and Toast'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Eggs'), 4, 7;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Scrambled Eggs with Cheese and Toast'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cheese (Cheddar)'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Scrambled Eggs with Cheese and Toast'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Wheat Bread'), 2, 7;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Scrambled Eggs with Cheese and Toast'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Butter'), 20, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Scrambled Eggs with Cheese and Toast'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Breakfast');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Scrambled Eggs with Cheese and Toast'), 1, 'Whisk the eggs with a little milk or cream.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Scrambled Eggs with Cheese and Toast'), 2, 'Melt butter in a skillet and cook the eggs until scrambled.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Scrambled Eggs with Cheese and Toast'), 3, 'Add cheese to the eggs and cook until melted.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Scrambled Eggs with Cheese and Toast'), 4, 'Toast the bread.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Scrambled Eggs with Cheese and Toast'), 5, 'Serve the scrambled eggs with toast.';
+
+
+-- Recipe 3: Yogurt Parfait with Berries and Granola
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Yogurt Parfait with Berries and Granola', 'A healthy and delicious breakfast.', 5, 0, 1);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Yogurt Parfait with Berries and Granola'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Yogurt (Cow)'), 150, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Yogurt Parfait with Berries and Granola'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Strawberries'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Yogurt Parfait with Berries and Granola'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Blueberries'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Yogurt Parfait with Berries and Granola'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Granola'), 30, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Yogurt Parfait with Berries and Granola'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Honey'), 10, 2;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Yogurt Parfait with Berries and Granola'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Breakfast');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Yogurt Parfait with Berries and Granola'), 1, 'Layer yogurt, berries, and granola in a glass or bowl.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Yogurt Parfait with Berries and Granola'), 2, 'Drizzle with honey.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Yogurt Parfait with Berries and Granola'), 3, 'Serve immediately.';
+
+
+-- Recipe 4: Breakfast Burrito
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Breakfast Burrito', 'A hearty and satisfying breakfast.', 15, 20, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Eggs'), 4, 7;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cheese (Cheddar)'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Ground Beef'), 100, 0; -- Or use vegetarian option
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Whole Wheat Tortillas'), 2, 7;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Salsa'), 50, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Breakfast');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), 1, 'Cook the ground beef and drain any excess fat.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), 2, 'Scramble the eggs.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), 3, 'Warm the tortillas.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), 4, 'Assemble the burritos with eggs, beef, cheese, and salsa.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Breakfast Burrito'), 5, 'Fold the tortillas and serve.';
+
+-- Recipe 1: Mini Chicken Caesar Wraps
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Mini Chicken Caesar Wraps', 'Easy and delicious wraps perfect for lunchboxes.', 15, 15, 4);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Chicken Breast'), 200, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cheese (Parmesan)'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Lettuce (Romaine)'), 100, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Whole Wheat Tortillas'), 4, 7;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Salad Dressing (Ranch)'), 50, 2; -- Or Caesar dressing
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Lunch');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), 1, 'Cook the chicken and shred it.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), 2, 'Chop the lettuce.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), 3, 'Mix the chicken, lettuce, cheese, and dressing.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), 4, 'Wrap the mixture in tortillas.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Mini Chicken Caesar Wraps'), 5, 'Cut into smaller pieces if desired.';
+
+
+-- Recipe 2: Ham and Cheese Sandwiches with Apple Slices
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Ham and Cheese Sandwiches with Apple Slices', 'A simple and satisfying lunch.', 10, 0, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ham and Cheese Sandwiches with Apple Slices'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Ham'), 100, 0; -- Add Ham to FoodItems
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ham and Cheese Sandwiches with Apple Slices'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cheese (Cheddar)'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ham and Cheese Sandwiches with Apple Slices'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Wheat Bread'), 4, 7;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ham and Cheese Sandwiches with Apple Slices'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Apple'), 2, 7;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ham and Cheese Sandwiches with Apple Slices'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Lunch');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ham and Cheese Sandwiches with Apple Slices'), 1, 'Spread butter or mayonnaise (optional) on the bread.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ham and Cheese Sandwiches with Apple Slices'), 2, 'Layer ham and cheese on the bread.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ham and Cheese Sandwiches with Apple Slices'), 3, 'Slice the apple.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ham and Cheese Sandwiches with Apple Slices'), 4, 'Serve the sandwiches with apple slices.';
+
+
+
+-- Recipe 3: Tuna Salad with Crackers
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Tuna Salad with Crackers', 'A quick and easy lunch option.', 10, 0, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Tuna Salad with Crackers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Canned Tuna'), 150, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Tuna Salad with Crackers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Mayonnaise'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Tuna Salad with Crackers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Celery'), 20, 0;  -- Add Celery to FoodItems
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Tuna Salad with Crackers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Crackers'), 50, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Tuna Salad with Crackers'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Lunch');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Tuna Salad with Crackers'), 1, 'Drain the tuna.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Tuna Salad with Crackers'), 2, 'Chop the celery.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Tuna Salad with Crackers'), 3, 'Mix the tuna, mayonnaise, and celery.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Tuna Salad with Crackers'), 4, 'Serve the tuna salad with crackers.';
+
+
+
+-- Recipe 4:  Peanut Butter and Jelly Sandwiches
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Peanut Butter and Jelly Sandwiches', 'A classic kid-friendly lunch!', 5, 0, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Jelly Sandwiches'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Peanut Butter'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Jelly Sandwiches'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Strawberry Jam'), 50, 0; -- Or other jelly
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Jelly Sandwiches'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Wheat Bread'), 4, 7;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Jelly Sandwiches'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Lunch');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Jelly Sandwiches'), 1, 'Spread peanut butter on one slice of bread.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Jelly Sandwiches'), 2, 'Spread jelly on the other slice of bread.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Jelly Sandwiches'), 3, 'Put the two slices of bread together.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Peanut Butter and Jelly Sandwiches'), 4, 'Cut in half (optional).';
+
+-- Recipe 1: Ants on a Log
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Ants on a Log', 'A classic and healthy snack.', 5, 0, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ants on a Log'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Celery'), 2, 7;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ants on a Log'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Peanut Butter'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ants on a Log'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Raisins'), 20, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ants on a Log'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Snack');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ants on a Log'), 1, 'Wash and cut the celery stalks into smaller pieces.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ants on a Log'), 2, 'Spread peanut butter on the celery.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Ants on a Log'), 3, 'Place raisins on top of the peanut butter like ants on a log.';
+
+
+-- Recipe 2: Fruit Skewers
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Fruit Skewers', 'Colorful and refreshing snack.', 10, 0, 4);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruit Skewers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Strawberries'), 100, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruit Skewers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Grapes'), 100, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruit Skewers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Kiwis'), 2, 7;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruit Skewers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Pineapple'), 100, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruit Skewers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Skewers'), 4, 7; -- Add Skewers to FoodItems
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruit Skewers'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Snack');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruit Skewers'), 1, 'Wash and cut the fruit into bite-sized pieces.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Fruit Skewers'), 2, 'Thread the fruit onto the skewers.';
+
+
+
+-- Recipe 3:  Popcorn
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Popcorn', 'A classic movie snack.', 5, 5, 4);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Popcorn'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Popcorn Kernels'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Popcorn'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Vegetable Oil'), 20, 2;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Popcorn'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Salt'), 5, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Popcorn'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Snack');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Popcorn'), 1, 'Add oil and popcorn kernels to a pot.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Popcorn'), 2, 'Cover the pot and heat over medium heat until the kernels start popping.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Popcorn'), 3, 'Shake the pot occasionally until the popping slows down.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Popcorn'), 4, 'Remove from heat and let cool slightly. Add salt to taste.';
+
+
+-- Recipe 4: Cheese and Crackers
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Cheese and Crackers', 'Simple and satisfying snack.', 5, 0, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheese and Crackers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cheese (Cheddar)'), 50, 0;
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheese and Crackers'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Crackers'), 50, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheese and Crackers'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Snack');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheese and Crackers'), 1, 'Slice or cube the cheese.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Cheese and Crackers'), 2, 'Arrange the cheese and crackers on a plate.';
+
+
+-- Recipe 5: Hard-boiled Eggs
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Hard-boiled Eggs', 'A protein-packed snack.', 5, 15, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hard-boiled Eggs'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Eggs'), 2, 7;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hard-boiled Eggs'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Snack');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hard-boiled Eggs'), 1, 'Place eggs in a pot and cover with cold water.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hard-boiled Eggs'), 2, 'Bring the water to a boil, then remove from heat and cover the pot.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hard-boiled Eggs'), 3, 'Let the eggs sit in the hot water for 10-12 minutes.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hard-boiled Eggs'), 4, 'Transfer the eggs to an ice bath to cool.';
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hard-boiled Eggs'), 5, 'Peel the eggs and enjoy.';

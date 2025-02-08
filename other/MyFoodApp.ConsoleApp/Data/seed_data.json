@@ -465,6 +465,16 @@
       "Unit": 0
     },
     {
+      "Name": "Lettuce (Romaine)",
+      "Description": "Crisp, leafy green vegetable.",
+      "FoodCategoryId": 1,
+      "CaloriesPerUnit": 17.00,
+      "ProteinPerUnit": 1.00,
+      "CarbohydratesPerUnit": 3.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
       "Name": "Mustard Greens",
       "Description": "Spicy leafy green vegetable",
       "FoodCategoryId": 1,
@@ -855,6 +865,16 @@
       "Unit": 0
     },
     {
+      "Name": "Raisins",
+      "Description": "Dried grapes.",
+      "FoodCategoryId": 2,
+      "CaloriesPerUnit": 300.00,
+      "ProteinPerUnit": 3.00,
+      "CarbohydratesPerUnit": 80.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
       "Name": "Raspberries",
       "Description": "Red-pink berries with a tart taste",
       "FoodCategoryId": 2,
@@ -1165,6 +1185,16 @@
       "Unit": 0
     },
     {
+      "Name": "Popcorn Kernels",
+      "Description": "Unpopped kernels of corn.",
+      "FoodCategoryId": 4,
+      "CaloriesPerUnit": 375.00,
+      "ProteinPerUnit": 13.00,
+      "CarbohydratesPerUnit": 78.00,
+      "FatPerUnit": 5.00,
+      "Unit": 0
+    },
+    {
       "Name": "Quinoa",
       "Description": "Gluten-free grain",
       "FoodCategoryId": 4,
@@ -1312,6 +1342,16 @@
       "ProteinPerUnit": 22.00,
       "CarbohydratesPerUnit": 0.00,
       "FatPerUnit": 14.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Ham",
+      "Description": "Cured meat from a pig's leg.",
+      "FoodCategoryId": 5,
+      "CaloriesPerUnit": 150.00,
+      "ProteinPerUnit": 20.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 8.00,
       "Unit": 0
     },
     {
@@ -2005,6 +2045,16 @@
       "Unit": 0
     },
     {
+      "Name": "Fruity Pebbles Cereal",
+      "Description": "Breakfast cereal with colorful rice pebbles.",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 370.00,
+      "ProteinPerUnit": 2.00,
+      "CarbohydratesPerUnit": 85.00,
+      "FatPerUnit": 3.00,
+      "Unit": 0
+    },
+    {
       "Name": "Granola Bar",
       "Description": "Snack bar",
       "FoodCategoryId": 9,
@@ -2021,6 +2071,16 @@
       "CaloriesPerUnit": 100.00,
       "ProteinPerUnit": 1.00,
       "CarbohydratesPerUnit": 25.00,
+      "FatPerUnit": 0.00,
+      "Unit": 0
+    },
+    {
+      "Name": "Honey",
+      "Description": "Sweetener produced by bees.",
+      "FoodCategoryId": 9,
+      "CaloriesPerUnit": 300.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 82.00,
       "FatPerUnit": 0.00,
       "Unit": 0
     },
@@ -3573,6 +3633,16 @@
       "CarbohydratesPerUnit": 30.00,
       "FatPerUnit": 5.00,
       "Unit": 0
+    },
+    {
+      "Name": "Skewers",
+      "Description": "Wooden or metal sticks for grilling or serving food.",
+      "FoodCategoryId": 19,
+      "CaloriesPerUnit": 0.00,
+      "ProteinPerUnit": 0.00,
+      "CarbohydratesPerUnit": 0.00,
+      "FatPerUnit": 0.00,
+      "Unit": 7
     },
     {
       "Name": "Spring Rolls",
@@ -5537,7 +5607,2174 @@
       "ShelfNumber": null
     }
   ],
-  "PriceHistories": [],
+  "PriceHistories": [
+    {
+      "FoodItemId": 1,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 2,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 3,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 4,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 5,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 6,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 7,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 8,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 9,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 10,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 11,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 12,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 13,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 14,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 15,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 16,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 17,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 18,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 19,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 20,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 21,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 22,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 23,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 24,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 25,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 26,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 27,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 28,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 29,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 30,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 31,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 32,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 33,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 34,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 35,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 36,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 37,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 38,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 39,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 40,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 41,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 42,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 43,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 44,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 45,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 46,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 47,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 48,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 49,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 50,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 51,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 52,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 53,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 54,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 55,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 56,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 57,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 58,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 59,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 60,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 61,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 62,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 63,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 64,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 65,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 66,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 67,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 68,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 69,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 70,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 71,
+      "Price": 1.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 72,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 73,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 74,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 75,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 76,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 77,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 78,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 79,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 80,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 81,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 82,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 83,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 84,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 85,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 86,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 87,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 88,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 89,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 90,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 91,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 92,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 93,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 94,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 95,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 96,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 97,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 98,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 99,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 100,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 101,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 102,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 103,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 104,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 105,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 106,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 107,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 108,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 109,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 110,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 111,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 112,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 113,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 114,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 115,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 116,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 117,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 118,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 119,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 120,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 121,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 122,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 123,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 124,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 125,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 126,
+      "Price": 5.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 127,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 128,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 129,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 130,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 131,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 132,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 133,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 134,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 135,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 136,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 137,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 138,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 139,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 140,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 141,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 142,
+      "Price": 9.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 143,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 144,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 145,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 146,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 147,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 148,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 149,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 150,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 151,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 152,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 153,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 154,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 155,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 156,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 157,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 158,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 159,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 160,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 161,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 162,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 163,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 164,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 165,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 166,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 167,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 168,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 169,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 170,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 171,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 172,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 173,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 174,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 175,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 176,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 177,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 178,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 179,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 180,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 181,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 182,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 183,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 184,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 185,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 186,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 187,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 188,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 189,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 190,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 191,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 192,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 193,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 194,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 195,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 196,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 197,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 198,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 199,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 200,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 201,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 202,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 203,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 204,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 205,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 206,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 207,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 208,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 209,
+      "Price": 1.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 210,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 211,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 212,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 213,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 214,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 215,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 216,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 217,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 218,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 219,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 220,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 221,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 222,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 223,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 224,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 225,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 226,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 227,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 228,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 229,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 230,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 231,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 232,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 233,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 234,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 235,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 236,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 237,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 238,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 239,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 240,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 241,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 242,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 243,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 244,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 245,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 246,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 247,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 248,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 249,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 250,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 251,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 252,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 253,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 254,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 255,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 256,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 257,
+      "Price": 3.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 258,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 259,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 260,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 261,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 262,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 263,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 264,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 265,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 266,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 267,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 268,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 269,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 270,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 271,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 272,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 273,
+      "Price": 0.75,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 274,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 275,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 276,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 277,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 278,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 279,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 280,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 281,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 282,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 283,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 284,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 285,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 286,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 287,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 288,
+      "Price": 7.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 289,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 290,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 291,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 292,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 293,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 294,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 295,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 296,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 297,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 298,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 299,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 300,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 301,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 302,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 303,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 304,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 305,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 306,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 307,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 308,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 309,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 310,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 311,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 312,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 313,
+      "Price": 2.50,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 314,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 315,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 316,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 317,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 318,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 319,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 320,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 321,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 322,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 323,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 324,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 325,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 326,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 327,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 328,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 329,
+      "Price": 1.25,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 330,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 331,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 332,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 333,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 334,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 335,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 336,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 337,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 338,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 339,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 340,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 341,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 342,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 343,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 344,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 345,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 346,
+      "Price": 6.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 347,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 348,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 349,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 350,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 351,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 352,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 353,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 354,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 355,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 356,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 357,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 358,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 359,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 360,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    },
+    {
+      "FoodItemId": 361,
+      "Price": 4.00,
+      "StartDate": "2023-01-01T00:00:00",
+      "EndDate": "2024-01-01T00:00:00"
+    }
+  ],
   "MealSuggestions": [
     {
       "Name": "Quick & Easy",

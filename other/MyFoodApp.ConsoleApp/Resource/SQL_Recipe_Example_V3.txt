@@ -1,0 +1,246 @@
+-- Recipe: Vegetarian Pasta Primavera (Dinner, Vegetarian)
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Vegetarian Pasta Primavera', 'A colorful pasta dish with fresh vegetables.', 20, 25, 4);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Pasta (Wheat)'), 300, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Zucchini'), 2, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Bell Pepper'), 1, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Carrot'), 100, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Olive Oil'), 30, 5;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Garlic'), 3, 9;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cheese (Parmesan)'), 50, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Dinner');
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Vegetarian/Vegan');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), 1, 'Cook pasta according to package instructions. Drain and set aside.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), 2, 'Slice zucchini, bell pepper, and carrots into thin strips.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), 3, 'Heat olive oil in a pan. Add minced garlic and sauté until fragrant.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), 4, 'Add vegetables and sauté until tender.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegetarian Pasta Primavera'), 5, 'Toss cooked pasta with vegetables. Top with grated Parmesan.';
+
+-- Recipe: Lentil Soup (Dinner, Healthy)
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Hearty Lentil Soup', 'Nutritious soup packed with protein and veggies.', 15, 40, 6);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Lentils'), 200, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Onion'), 1, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Carrot'), 150, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Garlic'), 2, 9;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Vegetable Oil'), 20, 5;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Spinach'), 100, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Dinner');
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Healthy & Nutritious');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), 1, 'Rinse lentils thoroughly. Dice onion and carrots.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), 2, 'Heat oil in a pot. Sauté onion and garlic until soft.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), 3, 'Add carrots and lentils. Cover with 6 cups of water.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), 4, 'Simmer for 30 minutes until lentils are tender.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Hearty Lentil Soup'), 5, 'Stir in spinach and cook for 2 more minutes. Season with salt.';
+
+-- Recipe: Veggie Sticks with Hummus (Snack)
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Veggie Sticks with Hummus', 'Crunchy vegetables with creamy dip.', 10, 0, 4);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Veggie Sticks with Hummus'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Carrot'), 2, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Veggie Sticks with Hummus'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Celery'), 2, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Veggie Sticks with Hummus'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cucumber'), 1, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Veggie Sticks with Hummus'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Hummus'), 150, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Veggie Sticks with Hummus'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Snack');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Veggie Sticks with Hummus'), 1, 'Wash and peel carrots. Cut into sticks.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Veggie Sticks with Hummus'), 2, 'Slice celery and cucumber into sticks.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Veggie Sticks with Hummus'), 3, 'Arrange veggies on a plate with hummus in a bowl.';
+
+-- Recipe: Quinoa Salad (Lunch, Healthy)
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Quinoa Salad Bowl', 'Protein-packed salad with fresh ingredients.', 20, 15, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Quinoa Salad Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Quinoa'), 150, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Quinoa Salad Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cucumber'), 1, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Quinoa Salad Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Bell Pepper'), 1, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Quinoa Salad Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Olive Oil'), 30, 5;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Quinoa Salad Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Lemon'), 1, 7;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Quinoa Salad Bowl'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Lunch');
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Quinoa Salad Bowl'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Healthy & Nutritious');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Quinoa Salad Bowl'), 1, 'Cook quinoa according to package instructions. Let cool.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Quinoa Salad Bowl'), 2, 'Dice cucumber and bell pepper.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Quinoa Salad Bowl'), 3, 'Mix quinoa with vegetables. Drizzle with olive oil and lemon juice.';
+
+-- Recipe: Chicken Tikka Masala
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Chicken Tikka Masala', 'A creamy and flavorful Indian curry dish.', 20, 40, 4);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Chicken Breast'), 500, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Yogurt (Cow)'), 200, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Tomato'), 3, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Onion'), 1, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Garlic'), 3, 9;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Ginger'), 20, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cumin'), 5, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Coriander'), 5, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Cream'), 100, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Dinner');
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'International Cuisine');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), 1, 'Marinate chicken in yogurt, garlic, ginger, cumin, and coriander for 1 hour.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), 2, 'Grill or pan-fry the chicken until cooked. Set aside.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), 3, 'Sauté onions, garlic, and ginger in a pan until soft. Add tomatoes and cook until pulpy.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), 4, 'Blend the tomato mixture into a smooth sauce.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), 5, 'Add cream and cooked chicken to the sauce. Simmer for 10 minutes.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Chicken Tikka Masala'), 6, 'Serve with rice or naan.';
+
+-- Recipe: Vegan Buddha Bowl
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Vegan Buddha Bowl', 'A nutrient-packed bowl with grains, veggies, and plant-based protein.', 15, 20, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Quinoa'), 100, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Chickpeas'), 150, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Kale'), 100, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Sweet Potato'), 1, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Avocado'), 1, 7;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Tahini'), 30, 0;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Lunch');
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Vegetarian/Vegan');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), 1, 'Cook quinoa according to package instructions.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), 2, 'Roast sweet potato cubes in the oven at 400°F for 15 minutes.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), 3, 'Sauté kale in olive oil until wilted.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), 4, 'Assemble the bowl with quinoa, roasted sweet potato, kale, chickpeas, and avocado slices.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Vegan Buddha Bowl'), 5, 'Drizzle with tahini dressing.';
+
+-- Recipe: Grilled Salmon with Asparagus
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Grilled Salmon with Asparagus', 'A high-protein, healthy dinner option.', 10, 20, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Grilled Salmon with Asparagus'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Salmon Fillet'), 300, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Grilled Salmon with Asparagus'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Asparagus'), 200, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Grilled Salmon with Asparagus'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Olive Oil'), 20, 5;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Grilled Salmon with Asparagus'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Lemon'), 1, 7;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Grilled Salmon with Asparagus'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Dinner');
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Grilled Salmon with Asparagus'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'High-Protein');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Grilled Salmon with Asparagus'), 1, 'Preheat grill or grill pan.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Grilled Salmon with Asparagus'), 2, 'Season salmon with salt, pepper, and olive oil. Grill for 5-7 minutes per side.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Grilled Salmon with Asparagus'), 3, 'Toss asparagus with olive oil and grill for 5 minutes.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Grilled Salmon with Asparagus'), 4, 'Serve salmon with grilled asparagus and a lemon wedge.';
+
+-- Recipe: Miso Soup
+INSERT INTO Recipes (Title, Description, PrepTimeMinutes, CookTimeMinutes, Servings)
+VALUES ('Miso Soup', 'A traditional Japanese soup with tofu and seaweed.', 10, 15, 2);
+
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Miso Soup'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Miso Paste'), 30, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Miso Soup'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Tofu'), 100, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Miso Soup'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Seaweed'), 10, 0;
+INSERT INTO Ingredients (RecipeId, FoodItemId, Quantity, Unit)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Miso Soup'), (SELECT FoodItemId FROM FoodItems WHERE Name = 'Green Onion'), 2, 7;
+
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Miso Soup'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'Snack');
+INSERT INTO RecipeMealSuggestions (RecipeId, MealSuggestionId)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Miso Soup'), (SELECT MealSuggestionId FROM MealSuggestions WHERE Name = 'International Cuisine');
+
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Miso Soup'), 1, 'Bring 4 cups of water to a boil.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Miso Soup'), 2, 'Dissolve miso paste in the water.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Miso Soup'), 3, 'Add tofu cubes and seaweed. Simmer for 5 minutes.';
+INSERT INTO RecipeSteps (RecipeId, StepNumber, Instruction)
+SELECT (SELECT RecipeId FROM Recipes WHERE Title = 'Miso Soup'), 4, 'Garnish with chopped green onions and serve.';
+
