@@ -34,6 +34,7 @@ namespace MyFoodApp.Infrastructure.Repositories
                         .ThenInclude(f => f.StoreSections)
                             .ThenInclude(fi => fi.StoreSection)
                 .Where(x => idList.Contains(x.RecipeId))
+                .OrderBy(x => x.Title)
                 .ToListAsync();
         }
     }
