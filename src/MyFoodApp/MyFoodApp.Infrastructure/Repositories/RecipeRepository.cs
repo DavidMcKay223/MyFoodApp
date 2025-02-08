@@ -23,7 +23,6 @@ namespace MyFoodApp.Infrastructure.Repositories
                         .ThenInclude(f => f!.FoodCategory)
                 .Include(r => r.MealSuggestions)
                     .ThenInclude(ms => ms.MealSuggestion)
-                .AsNoTracking()
                 .AsQueryable();
 
             return recipes;

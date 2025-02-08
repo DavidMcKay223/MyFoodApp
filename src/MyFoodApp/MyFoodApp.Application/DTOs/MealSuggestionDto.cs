@@ -1,4 +1,5 @@
 ﻿using MyFoodApp.Domain.Enums;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Application.DTOs
 {
@@ -12,7 +13,10 @@ namespace MyFoodApp.Application.DTOs
         public DateTime? ExpirationDate { get; set; }
 
         // Navigation Properties
+        [JsonIgnore]
         public List<RecipeMealSuggestionDto> RecipeSuggestions { get; set; } = [];
+
+        [JsonIgnore]
         public List<MealSuggestionTagDto> Tags { get; set; } = [];
     }
 }

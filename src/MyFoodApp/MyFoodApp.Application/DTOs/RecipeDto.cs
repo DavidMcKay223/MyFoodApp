@@ -1,4 +1,6 @@
-﻿namespace MyFoodApp.Application.DTOs
+﻿using Newtonsoft.Json;
+
+namespace MyFoodApp.Application.DTOs
 {
     public class RecipeDto
     {
@@ -11,7 +13,9 @@
 
         // Navigation Properties
         public List<RecipeStepDto> Steps { get; set; } = [];
+
         public List<IngredientDto> Ingredients { get; set; } = [];
+
         public List<RecipeMealSuggestionDto> MealSuggestions { get; set; } = [];
     }
 }

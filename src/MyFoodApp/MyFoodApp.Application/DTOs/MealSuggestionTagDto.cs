@@ -1,4 +1,6 @@
-﻿namespace MyFoodApp.Application.DTOs
+﻿using Newtonsoft.Json;
+
+namespace MyFoodApp.Application.DTOs
 {
     public class MealSuggestionTagDto
     {
@@ -6,6 +8,7 @@
         public required string TagName { get; set; }
 
         // Navigation Property
+        [JsonIgnore]
         public List<MealSuggestionDto> MealSuggestions { get; set; } = [];
     }
 }
