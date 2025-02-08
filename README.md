@@ -7,6 +7,7 @@
 - 🍔 **Food Management**: Track ingredients and recipes, and food information.
 - 🛒 **Grocery Integration**: Sync with store sections, store lookup along with price checker.
 - 🤖 **Meal Recommendations**: Get meal suggestions, based on existing ingredients.
+- 📄 **Grocery List**: Generates Recipes and Grocery List PDF. [Example Output File](https://github.com/DavidMcKay223/MyFoodApp/blob/main/other/MyFoodApp.GeneratedReports/recipe_document.pdf)
 
 ## Tech Stack 🛠️
 - **Frontend**: Blazor 🌀
