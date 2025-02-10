@@ -54,7 +54,7 @@
                     <div class="row">
                         @foreach (var suggestion in MealSuggestions)
                         {
-                            <div class="col-4">
+                            <div class="col-md-6">
                                 <div class="suggestion-card card mb-3 shadow-sm">
                                     <div class="card-header bg-light d-flex justify-content-between align-items-center">
                                         <button class="btn btn-link text-dark text-decoration-none"
@@ -67,7 +67,7 @@
                                     <div class="collapse @(_expandedState[suggestion] ? "show" : "")">
                                         <div class="card-body">
                                             <div class="row g-3">
-                                                <div class="col-md-4">
+                                                <div class="col-md-12">
                                                     <p><span class="badge bg-primary bg-opacity-10 text-primary me-1">@suggestion.MealSuggestion?.MealType</span> </p>
                                                     <p>
                                                         @if (suggestion.MealSuggestion != null && suggestion.MealSuggestion.RecipeSuggestions != null)

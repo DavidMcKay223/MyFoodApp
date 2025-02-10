@@ -73,6 +73,49 @@ h1:focus {
     font-size: 0.85em;
 }
 
+.food-item-option {
+    display: flex;
+    flex-direction: column;
+}
+
+.food-item-details {
+    font-size: 0.85rem;
+    color: gray;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .img-fluid {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    .skills-table .col-md-4 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
 .modal-backdrop {
     position: fixed;
     top: 0;
@@ -86,14 +129,4 @@ h1:focus {
 .modal-content {
     max-height: 90vh;
     overflow-y: auto;
-}
-
-.food-item-option {
-    display: flex;
-    flex-direction: column;
-}
-
-.food-item-details {
-    font-size: 0.85rem;
-    color: gray;
 }
