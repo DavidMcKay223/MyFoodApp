@@ -57,11 +57,9 @@
         if (isValidUser)
         {
             var AuthService = AuthStateProvider as CustomAuthStateProvider;
-            AuthService.MarkUserAsAuthenticated(user.Id, user.UserName);
+            await AuthService.MarkUserAsAuthenticated(user.Id, user.UserName);
 
-            var authState = await AuthStateProvider.GetAuthenticationStateAsync();
-
-            NavigationManager.NavigateTo("/");
+            NavigationManager.NavigateTo("/", true);
         }
         else
         {
