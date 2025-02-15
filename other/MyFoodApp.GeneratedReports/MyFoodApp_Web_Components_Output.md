@@ -13,6 +13,7 @@
 @using Microsoft.JSInterop
 @using MyFoodApp.Web
 @using MyFoodApp.Web.Components
+@using Microsoft.AspNetCore.Components.Authorization
 
 ```
 
@@ -27,6 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
     <link rel="stylesheet" href="@Assets["lib/bootstrap/dist/css/bootstrap.min.css"]" />
+    <link rel="stylesheet" href="@Assets["lib/bootstrap-icons/bootstrap-icons.css"]" />
     <link rel="stylesheet" href="@Assets["app.css"]" />
     <link rel="stylesheet" href="@Assets["MyFoodApp.Web.styles.css"]" />
     <ImportMap />
@@ -37,6 +39,17 @@
 <body>
     <Routes />
     <script src="_framework/blazor.web.js"></script>
+
+    <script>
+        window.downloadFile = (fileName, contentType, byteBase64) => {
+          const link = document.createElement('a');
+          link.href = `data:${contentType};base64,${byteBase64}`;
+          link.download = fileName;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        };
+    </script>
 </body>
 
 </html>
@@ -46,12 +59,14 @@
 ## File: Routes.razor
 
 ```C#
-<Router AppAssembly="typeof(Program).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
-        <FocusOnNavigate RouteData="routeData" Selector="h1" />
-    </Found>
-</Router>
+<CascadingAuthenticationState>
+    <Router AppAssembly="typeof(Program).Assembly">
+        <Found Context="routeData">
+            <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
+            <FocusOnNavigate RouteData="routeData" Selector="h1" />
+        </Found>
+    </Router>
+</CascadingAuthenticationState>
 
 ```
 

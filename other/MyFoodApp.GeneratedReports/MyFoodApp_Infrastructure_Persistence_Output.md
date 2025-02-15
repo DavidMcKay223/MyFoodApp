@@ -3,13 +3,20 @@
 ## File: AppDbContext.cs
 
 ```C#
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Domain.Entities;
+using MyFoodApp.Domain.Entities.Authentication;
 
 namespace MyFoodApp.Infrastructure.Persistence
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<IdentityUser>
     {
+        // Authentication:
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+
         public DbSet<FoodCategory> FoodCategories { get; set; }
         public DbSet<FoodItem> FoodItems { get; set; }
         public DbSet<FoodItemStoreSection> FoodItemStoreSections { get; set; }
@@ -24,20 +31,10 @@ namespace MyFoodApp.Infrastructure.Persistence
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("DefaultConnection", options =>
-                    options.EnableRetryOnFailure(
-                        maxRetryCount: 5,
-                        maxRetryDelay: TimeSpan.FromSeconds(30),
-                        errorNumbersToAdd: null));
-            }
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             // Configure composite keys for join tables
             modelBuilder.Entity<FoodItemStoreSection>()
                 .HasKey(fss => new { fss.FoodItemId, fss.StoreSectionId });
@@ -96,12 +93,6 @@ namespace MyFoodApp.Infrastructure.Persistence
                 .HasOne(rms => rms.MealSuggestion)
                 .WithMany(ms => ms.RecipeSuggestions)
                 .HasForeignKey(rms => rms.MealSuggestionId);
-        }
-
-        [Obsolete("Do not use", true)]
-        public void DetachAllEntities()
-        {
-            this.ChangeTracker.Entries().ToList().ForEach(e => e.State = EntityState.Detached);
         }
     }
 }

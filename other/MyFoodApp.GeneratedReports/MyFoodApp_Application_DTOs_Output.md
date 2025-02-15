@@ -3,6 +3,8 @@
 ## File: FoodCategoryDto.cs
 
 ```C#
+using Newtonsoft.Json;
+
 namespace MyFoodApp.Application.DTOs
 {
     public class FoodCategoryDto
@@ -12,6 +14,7 @@ namespace MyFoodApp.Application.DTOs
         public required string Description { get; set; }
 
         // Navigation Property
+        [JsonIgnore]
         public List<FoodItemDto> FoodItems { get; set; } = [];
     }
 }
@@ -22,6 +25,7 @@ namespace MyFoodApp.Application.DTOs
 
 ```C#
 using MyFoodApp.Domain.Enums;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Application.DTOs
 {
@@ -39,8 +43,14 @@ namespace MyFoodApp.Application.DTOs
 
         // Navigation Properties
         public FoodCategoryDto? FoodCategory { get; set; }
+
+        [JsonIgnore]
         public List<PriceHistoryDto> PriceHistories { get; set; } = [];
+
+        [JsonIgnore]
         public List<FoodItemStoreSectionDto> StoreSections { get; set; } = [];
+
+        [JsonIgnore]
         public List<IngredientDto> Ingredients { get; set; } = [];
     }
 }
@@ -136,6 +146,7 @@ namespace MyFoodApp.Application.DTOs
 
 ```C#
 using MyFoodApp.Domain.Enums;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Application.DTOs
 {
@@ -149,8 +160,11 @@ namespace MyFoodApp.Application.DTOs
         public DateTime? ExpirationDate { get; set; }
 
         // Navigation Properties
-        public List<RecipeMealSuggestionDto>? RecipeSuggestions { get; set; }
-        public List<MealSuggestionTagDto>? Tags { get; set; }
+        [JsonIgnore]
+        public List<RecipeMealSuggestionDto> RecipeSuggestions { get; set; } = [];
+
+        [JsonIgnore]
+        public List<MealSuggestionTagDto> Tags { get; set; } = [];
     }
 }
 
@@ -181,6 +195,8 @@ namespace MyFoodApp.Application.DTOs
 ## File: MealSuggestionTagDto.cs
 
 ```C#
+using Newtonsoft.Json;
+
 namespace MyFoodApp.Application.DTOs
 {
     public class MealSuggestionTagDto
@@ -189,6 +205,7 @@ namespace MyFoodApp.Application.DTOs
         public required string TagName { get; set; }
 
         // Navigation Property
+        [JsonIgnore]
         public List<MealSuggestionDto> MealSuggestions { get; set; } = [];
     }
 }
@@ -240,6 +257,8 @@ namespace MyFoodApp.Application.DTOs
 ## File: RecipeDto.cs
 
 ```C#
+using Newtonsoft.Json;
+
 namespace MyFoodApp.Application.DTOs
 {
     public class RecipeDto
@@ -253,7 +272,9 @@ namespace MyFoodApp.Application.DTOs
 
         // Navigation Properties
         public List<RecipeStepDto> Steps { get; set; } = [];
+
         public List<IngredientDto> Ingredients { get; set; } = [];
+
         public List<RecipeMealSuggestionDto> MealSuggestions { get; set; } = [];
     }
 }
@@ -323,6 +344,8 @@ namespace MyFoodApp.Application.DTOs
 ## File: StoreSectionDto.cs
 
 ```C#
+using Newtonsoft.Json;
+
 namespace MyFoodApp.Application.DTOs
 {
     public class StoreSectionDto
@@ -332,7 +355,8 @@ namespace MyFoodApp.Application.DTOs
         public required string Description { get; set; }
 
         // Navigation Property
-        public List<FoodItemStoreSectionDto>? FoodItems { get; set; }
+        [JsonIgnore]
+        public List<FoodItemStoreSectionDto> FoodItems { get; set; } = [];
     }
 }
 

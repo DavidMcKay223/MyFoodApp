@@ -3,6 +3,7 @@
 ## File: FoodCategory.cs
 
 ```C#
+using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 
 namespace MyFoodApp.Domain.Entities
@@ -10,6 +11,7 @@ namespace MyFoodApp.Domain.Entities
     public class FoodCategory
     {
         [Key]
+        [JsonIgnore]
         public int FoodCategoryId { get; set; }
 
         [Required]
@@ -20,6 +22,7 @@ namespace MyFoodApp.Domain.Entities
         public required string Description { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public ICollection<FoodItem> FoodItems { get; set; } = [];
     }
 }
@@ -32,12 +35,14 @@ namespace MyFoodApp.Domain.Entities
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using MyFoodApp.Domain.Enums;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class FoodItem
     {
         [Key]
+        [JsonIgnore]
         public int FoodItemId { get; set; }
 
         [Required]
@@ -62,9 +67,16 @@ namespace MyFoodApp.Domain.Entities
         public UnitType Unit { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public FoodCategory? FoodCategory { get; set; }
+
+        [JsonIgnore]
         public ICollection<PriceHistory> PriceHistories { get; set; } = [];
+
+        [JsonIgnore]
         public ICollection<FoodItemStoreSection> StoreSections { get; set; } = [];
+
+        [JsonIgnore]
         public ICollection<Ingredient> Ingredients { get; set; } = [];
     }
 }
@@ -75,6 +87,7 @@ namespace MyFoodApp.Domain.Entities
 
 ```C#
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
@@ -90,7 +103,10 @@ namespace MyFoodApp.Domain.Entities
         public int? ShelfNumber { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public FoodItem? FoodItem { get; set; }
+
+        [JsonIgnore]
         public StoreSection? StoreSection { get; set; }
     }
 }
@@ -103,12 +119,14 @@ namespace MyFoodApp.Domain.Entities
 using MyFoodApp.Domain.Enums;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class Ingredient
     {
         [Key]
+        [JsonIgnore]
         public int IngredientId { get; set; }
 
         [ForeignKey("Recipe")]
@@ -123,7 +141,10 @@ namespace MyFoodApp.Domain.Entities
         public UnitType Unit { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public Recipe? Recipe { get; set; }
+
+        [JsonIgnore]
         public FoodItem? FoodItem { get; set; }
     }
 }
@@ -135,12 +156,14 @@ namespace MyFoodApp.Domain.Entities
 ```C#
 using MyFoodApp.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class MealSuggestion
     {
         [Key]
+        [JsonIgnore]
         public int MealSuggestionId { get; set; }
 
         [Required]
@@ -156,7 +179,10 @@ namespace MyFoodApp.Domain.Entities
         public DateTime? ExpirationDate { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public ICollection<RecipeMealSuggestion> RecipeSuggestions { get; set; } = [];
+
+        [JsonIgnore]
         public ICollection<MealSuggestionTag> Tags { get; set; } = [];
     }
 }
@@ -167,12 +193,14 @@ namespace MyFoodApp.Domain.Entities
 
 ```C#
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class MealSuggestionTag
     {
         [Key]
+        [JsonIgnore]
         public int TagId { get; set; }
 
         [Required]
@@ -180,6 +208,7 @@ namespace MyFoodApp.Domain.Entities
         public required string TagName { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public ICollection<MealSuggestion> MealSuggestions { get; set; } = [];
     }
 }
@@ -191,12 +220,14 @@ namespace MyFoodApp.Domain.Entities
 ```C#
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class PriceHistory
     {
         [Key]
+        [JsonIgnore]
         public int PriceHistoryId { get; set; }
 
         [ForeignKey("FoodItem")]
@@ -212,6 +243,7 @@ namespace MyFoodApp.Domain.Entities
         public DateTime? EndDate { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public FoodItem? FoodItem { get; set; }
     }
 }
@@ -222,12 +254,14 @@ namespace MyFoodApp.Domain.Entities
 
 ```C#
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class Recipe
     {
         [Key]
+        [JsonIgnore]
         public int RecipeId { get; set; }
 
         [Required]
@@ -242,8 +276,13 @@ namespace MyFoodApp.Domain.Entities
         public int Servings { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public ICollection<Ingredient> Ingredients { get; set; } = [];
+
+        [JsonIgnore]
         public ICollection<RecipeStep> Steps { get; set; } = [];
+
+        [JsonIgnore]
         public ICollection<RecipeMealSuggestion> MealSuggestions { get; set; } = [];
     }
 }
@@ -254,6 +293,7 @@ namespace MyFoodApp.Domain.Entities
 
 ```C#
 using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
@@ -266,7 +306,10 @@ namespace MyFoodApp.Domain.Entities
         public int MealSuggestionId { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public Recipe? Recipe { get; set; }
+
+        [JsonIgnore]
         public MealSuggestion? MealSuggestion { get; set; }
     }
 }
@@ -278,12 +321,14 @@ namespace MyFoodApp.Domain.Entities
 ```C#
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class RecipeStep
     {
         [Key]
+        [JsonIgnore]
         public int StepId { get; set; }
 
         [ForeignKey("Recipe")]
@@ -295,6 +340,7 @@ namespace MyFoodApp.Domain.Entities
         public required string Instruction { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public Recipe? Recipe { get; set; }
     }
 }
@@ -305,12 +351,14 @@ namespace MyFoodApp.Domain.Entities
 
 ```C#
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MyFoodApp.Domain.Entities
 {
     public class StoreSection
     {
         [Key]
+        [JsonIgnore]
         public int StoreSectionId { get; set; }
 
         [Required]
@@ -321,6 +369,7 @@ namespace MyFoodApp.Domain.Entities
         public required string Description { get; set; }
 
         // Navigation
+        [JsonIgnore]
         public ICollection<FoodItemStoreSection> FoodItems { get; set; } = [];
     }
 }

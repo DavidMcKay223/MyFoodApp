@@ -364,7 +364,7 @@
                     <div class="row">
                         @foreach (var ingredient in Ingredients)
                         {
-                            <div class="col-4">
+                            <div class="col-md-6">
                                 <div class="ingredient-card card mb-3 shadow-sm">
                                     <div class="card-header bg-light d-flex justify-content-between align-items-center">
                                         <button class="btn btn-link text-dark text-decoration-none"
@@ -377,10 +377,10 @@
                                     <div class="collapse @(_expandedState[ingredient] ? "show" : "")">
                                         <div class="card-body">
                                             <div class="row g-3 align-items-center">
-                                                <div class="col-md-4">
+                                                <div class="col-md-12">
                                                     @if (ingredient.FoodItem != null)
                                                     {
-                                                        <p class="mb-1 text-muted">@ingredient.FoodItem.Description</p>
+                                                        <p class="mb-1 text-muted text-nowrap">@ingredient.FoodItem.Description</p>
                                                         <div class="nutrition-facts">
                                                             <div class="d-flex justify-content-between">
                                                                 <span>Quantity:</span>
@@ -487,7 +487,7 @@
                     <div class="row">
                         @foreach (var suggestion in MealSuggestions)
                         {
-                            <div class="col-4">
+                            <div class="col-md-6">
                                 <div class="suggestion-card card mb-3 shadow-sm">
                                     <div class="card-header bg-light d-flex justify-content-between align-items-center">
                                         <button class="btn btn-link text-dark text-decoration-none"
@@ -500,7 +500,7 @@
                                     <div class="collapse @(_expandedState[suggestion] ? "show" : "")">
                                         <div class="card-body">
                                             <div class="row g-3">
-                                                <div class="col-md-4">
+                                                <div class="col-md-12">
                                                     <p><span class="badge bg-primary bg-opacity-10 text-primary me-1">@suggestion.MealSuggestion?.MealType</span> </p>
                                                     <p>
                                                         @if (suggestion.MealSuggestion != null && suggestion.MealSuggestion.RecipeSuggestions != null)
@@ -806,20 +806,23 @@
 
 <div class="form-floating">
     <InputSelect @bind-Value="Ingredient.FoodItemId" class="form-select">
-        @foreach (var foodItem in FoodItemList)
+        @{
+            var groupedFoodItems = FoodItemList.GroupBy(fi => fi.FoodCategory?.Name);
+        }
+        @foreach (var categoryGroup in groupedFoodItems)
         {
-            <option value="@foodItem.FoodItemId" class="food-item-option">
-                <span>@foodItem.Name</span>
-                <span class="food-item-details text-info">
-                    (Unit: @foodItem.Unit)<br />
-                    Protein: @foodItem.ProteinPerUnit per unit<br />
-                    Calories: @foodItem.CaloriesPerUnit per unit<br />
-                    Carbohydrates: @foodItem.CarbohydratesPerUnit per unit<br />
-                    Fat: @foodItem.FatPerUnit per unit
-                </span>
-            </option>
+            <optgroup label="@categoryGroup.Key">
+                @foreach (var foodItem in categoryGroup)
+                {
+                    <option value="@foodItem.FoodItemId" class="food-item-option"
+                            title="@String.Format("Unit Type: {0}\n\tCalories: {2}\n\tProtein: {1}\n\tCarbohydrates: {3}\n\tFat: {4}", @foodItem.Unit, @foodItem.ProteinPerUnit, @foodItem.CaloriesPerUnit, @foodItem.CarbohydratesPerUnit, @foodItem.FatPerUnit)">
+                        @foodItem.Name
+                    </option>
+                }
+            </optgroup>
         }
     </InputSelect>
+
     <label>Food Item</label>
     <ValidationMessage For="@(() => Ingredient.FoodItemId)" />
 </div>
@@ -842,15 +845,23 @@
 
 <div class="form-floating">
     <InputSelect @bind-Value="RecipeMealSuggestion.MealSuggestionId" class="form-select">
-        @foreach (var mealSuggestion in MealSuggestionList)
+        @{
+            var groupedMealSuggestions = MealSuggestionList.GroupBy(ms => ms.MealType);
+        }
+        @foreach (var mealTypeGroup in groupedMealSuggestions)
         {
-            <option value="@mealSuggestion.MealSuggestionId">
-                @mealSuggestion.MealType:
-                @mealSuggestion.Name
-            </option>
+            <optgroup label="@mealTypeGroup.Key">
+                @foreach (var mealSuggestion in mealTypeGroup)
+                {
+                    <option value="@mealSuggestion.MealSuggestionId">
+                        @mealSuggestion.Name
+                    </option>
+                }
+            </optgroup>
         }
     </InputSelect>
-    <label>Food Item</label>
+
+    <label>Meal Suggestion Item</label>
     <ValidationMessage For="@(() => RecipeMealSuggestion.MealSuggestionId)" />
 </div>
 
@@ -1297,7 +1308,7 @@ else
                                     @foreach (var suggestion in recipe.MealSuggestions)
                                     {
                                         <span class="badge bg-primary bg-opacity-10 text-primary">
-                                            @suggestion.MealSuggestion?.MealType
+                                            @suggestion.MealSuggestion?.MealType - @suggestion.MealSuggestion?.Name
                                         </span>
                                     }
                                 </div>
@@ -1316,7 +1327,7 @@ else
                                 {
                                     <button class="btn btn-outline-primary btn-sm me-2"
                                             @onclick="() => OnDisplay.InvokeAsync(recipe.RecipeId)">
-                                        <i class="bi bi-pencil me-2"></i>View
+                                        <i class="bi bi-view-list me-2"></i>View
                                     </button>
                                 }
                                 @if (OnEdit.HasDelegate)

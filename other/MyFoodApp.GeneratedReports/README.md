@@ -5,7 +5,12 @@
 │   └── 📁 workflows/
 ├── 📁 other/
 │   ├── 📁 MyFoodApp.ConsoleApp/
+│   │   ├── 📁 Data/
 │   │   ├── 📁 Resource/
+│   │   ├── 📁 Utility/
+│   │   │   ├── 🟣 DataSeeder.cs
+│   │   │   ├── 🟣 FileUtility.cs
+│   │   │   └── 🟣 SeedData.cs
 │   │   └── 🟣 Program.cs
 │   └── 📁 MyFoodApp.GeneratedReports/
 ├── 📁 src/
@@ -18,6 +23,11 @@
 │       │   ├── 📁 Configurations/
 │       │   │   └── 🟣 AutoMapperConfiguration.cs
 │       │   ├── 📁 DTOs/
+│       │   │   ├── 📁 Authentication/
+│       │   │   │   ├── 🟣 ForgotPasswordDto.cs
+│       │   │   │   ├── 🟣 LoginUserDto.cs
+│       │   │   │   ├── 🟣 RegisterUserDto.cs
+│       │   │   │   └── 🟣 UserDto.cs
 │       │   │   ├── 🟣 FoodCategoryDto.cs
 │       │   │   ├── 🟣 FoodItemDto.cs
 │       │   │   ├── 🟣 FoodItemSearchDto.cs
@@ -36,8 +46,11 @@
 │       │   │   ├── 🟣 StoreSectionDto.cs
 │       │   │   └── 🟣 StoreSectionSearchDto.cs
 │       │   ├── 📁 Interfaces/
+│       │   │   ├── 📁 Authentication/
+│       │   │   │   └── 🟣 IAuthenticationUseCases.cs
 │       │   │   ├── 🟣 IFoodItemUseCases.cs
 │       │   │   ├── 🟣 IGenerateRecommendationsUseCases.cs
+│       │   │   ├── 🟣 IGeneratorPdf.cs
 │       │   │   ├── 🟣 IMealSuggestionUseCases.cs
 │       │   │   ├── 🟣 INutritionCalculatorService.cs
 │       │   │   └── 🟣 IRecipeUseCases.cs
@@ -49,8 +62,11 @@
 │       │   │   ├── 🟣 RecipeProfile.cs
 │       │   │   └── 🟣 StoreProfile.cs
 │       │   ├── 📁 UseCases/
+│       │   │   ├── 📁 Authentication/
+│       │   │   │   └── 🟣 AuthenticationUseCases.cs
 │       │   │   ├── 🟣 FoodItemUseCases.cs
 │       │   │   ├── 🟣 GenerateRecommendationsUseCases.cs
+│       │   │   ├── 🟣 GeneratorPdf.cs
 │       │   │   ├── 🟣 MealSuggestionUseCases.cs
 │       │   │   ├── 🟣 NutritionCalculatorService.cs
 │       │   │   └── 🟣 RecipeUseCases.cs
@@ -68,6 +84,9 @@
 │       │       └── 🟣 StoreSectionDtoValidator.cs
 │       ├── 📁 MyFoodApp.Domain/
 │       │   ├── 📁 Entities/
+│       │   │   ├── 📁 Authentication/
+│       │   │   │   ├── 🟣 Role.cs
+│       │   │   │   └── 🟣 User.cs
 │       │   │   ├── 🟣 FoodCategory.cs
 │       │   │   ├── 🟣 FoodItem.cs
 │       │   │   ├── 🟣 FoodItemStoreSection.cs
@@ -91,7 +110,12 @@
 │       │   │   └── 🟣 UnitType.cs
 │       │   └── 📁 Interfaces/
 │       │       └── 📁 Repositories/
+│       │           ├── 📁 Authentication/
+│       │           │   ├── 🟣 IRoleRepository.cs
+│       │           │   └── 🟣 IUserRepository.cs
 │       │           ├── 🟣 IFoodItemRepository.cs
+│       │           ├── 🟣 IGenerateRecommendationsRepository.cs
+│       │           ├── 🟣 IGeneratorPdfRepository.cs
 │       │           ├── 🟣 IMealSuggestionRepository.cs
 │       │           └── 🟣 IRecipeRepository.cs
 │       ├── 📁 MyFoodApp.Infrastructure/
@@ -102,11 +126,20 @@
 │       │   │   ├── 🟣 20250205074814_UpdateFoodItem.Designer.cs
 │       │   │   ├── 🟣 20250205081417_UpdateFoodItem2.cs
 │       │   │   ├── 🟣 20250205081417_UpdateFoodItem2.Designer.cs
+│       │   │   ├── 🟣 20250215005142_NewAuthentication.cs
+│       │   │   ├── 🟣 20250215005142_NewAuthentication.Designer.cs
+│       │   │   ├── 🟣 20250215014342_Auth-UserRoles.cs
+│       │   │   ├── 🟣 20250215014342_Auth-UserRoles.Designer.cs
 │       │   │   └── 🟣 AppDbContextModelSnapshot.cs
 │       │   ├── 📁 Persistence/
 │       │   │   └── 🟣 AppDbContext.cs
 │       │   └── 📁 Repositories/
+│       │       ├── 📁 Authentication/
+│       │       │   ├── 🟣 RoleRepository.cs
+│       │       │   └── 🟣 UserRepository.cs
 │       │       ├── 🟣 FoodItemRepository.cs
+│       │       ├── 🟣 GenerateRecommendationsRepository.cs
+│       │       ├── 🟣 GeneratorPdfRepository.cs
 │       │       ├── 🟣 MealSuggestionRepository.cs
 │       │       └── 🟣 RecipeRepository.cs
 │       ├── 📁 MyFoodApp.Shared/
@@ -115,6 +148,7 @@
 │       └── 📁 MyFoodApp.Web/
 │           ├── 📁 Components/
 │           │   ├── 📁 Authentication/
+│           │   │   ├── 🟣 CustomAuthStateProvider.cs
 │           │   │   ├── 🌀 Login.razor
 │           │   │   └── 🌀 Register.razor
 │           │   ├── 📁 Layout/
@@ -139,6 +173,9 @@
 │           │   │   │   ├── 🌀 SearchFormRecipe.razor
 │           │   │   │   ├── 🌀 TableDisplayRecipe.razor
 │           │   │   │   └── 🌀 TableFormRecipe.razor
+│           │   │   ├── 📁 Suggestions/
+│           │   │   │   ├── 🌀 IndexMealSuggestionTag.razor
+│           │   │   │   └── 🌀 ListMealSuggestionTag.razor
 │           │   │   ├── 🌀 Error.razor
 │           │   │   └── 🌀 Home.razor
 │           │   ├── 📁 Shared/
@@ -152,10 +189,12 @@
 │           ├── 📁 Properties/
 │           ├── 📁 wwwroot/
 │           │   └── 📁 lib/
-│           │       └── 📁 bootstrap/
-│           │           └── 📁 dist/
-│           │               ├── 📁 css/
-│           │               └── 📁 js/
+│           │       ├── 📁 bootstrap/
+│           │       │   └── 📁 dist/
+│           │       │       ├── 📁 css/
+│           │       │       └── 📁 js/
+│           │       └── 📁 bootstrap-icons/
+│           │           └── 📁 fonts/
 │           └── 🟣 Program.cs
 └── 📁 test/
     ├── 📁 MyFoodApp.Application.Tests/

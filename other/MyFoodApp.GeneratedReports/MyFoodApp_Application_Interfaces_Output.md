@@ -20,10 +20,34 @@ namespace MyFoodApp.Application.Interfaces
 ## File: IGenerateRecommendationsUseCases.cs
 
 ```C#
+using MyFoodApp.Application.Common;
+using MyFoodApp.Application.DTOs;
+
 namespace MyFoodApp.Application.Interfaces
 {
     public interface IGenerateRecommendationsUseCases
     {
+        Task<Response<MealSuggestionTagDto>> GetMealSuggestionWithRecipeListAsync();
+    }
+}
+
+```
+
+## File: IGeneratorPdf.cs
+
+```C#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyFoodApp.Application.Interfaces
+{
+    public interface IGeneratorPdf
+    {
+        public Task GenerateAndDownloadPdfAsync(string fileName, string content);
+        public Task RecipeListDownloadPdfAsync(string fileName, List<int> recipeIdList);
     }
 }
 

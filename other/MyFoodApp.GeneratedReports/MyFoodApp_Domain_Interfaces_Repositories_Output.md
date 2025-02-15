@@ -16,6 +16,46 @@ namespace MyFoodApp.Domain.Interfaces.Repositories
 
 ```
 
+## File: IGenerateRecommendationsRepository.cs
+
+```C#
+using MyFoodApp.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyFoodApp.Domain.Interfaces.Repositories
+{
+    public interface IGenerateRecommendationsRepository
+    {
+        IQueryable<MealSuggestionTag> GetAllMealSuggestionsTagsAsync();
+    }
+}
+
+```
+
+## File: IGeneratorPdfRepository.cs
+
+```C#
+using MyFoodApp.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyFoodApp.Domain.Interfaces.Repositories
+{
+    public interface IGeneratorPdfRepository
+    {
+        Task<List<Recipe>> GetAllRecipesByIdListAsync(List<int> idList);
+    }
+}
+
+```
+
 ## File: IMealSuggestionRepository.cs
 
 ```C#

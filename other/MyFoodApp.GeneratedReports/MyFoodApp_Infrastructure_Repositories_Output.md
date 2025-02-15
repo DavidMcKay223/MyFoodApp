@@ -22,6 +22,9 @@ namespace MyFoodApp.Infrastructure.Repositories
         public IQueryable<FoodItem> GetAllFoodItemsAsync()
         {
             var recipes = _context.FoodItems
+                .Include(x => x.FoodCategory)
+                .OrderBy(x => x.FoodCategory!.Name)
+                    .ThenBy(x => x.Name)
                 .AsNoTracking()
                 .AsQueryable();
 
@@ -33,6 +36,91 @@ namespace MyFoodApp.Infrastructure.Repositories
             return tracking
                 ? await _context.FoodItems.FirstOrDefaultAsync(r => r.FoodItemId == foodItemId)
                 : await _context.FoodItems.AsNoTracking().FirstOrDefaultAsync(r => r.FoodItemId == foodItemId);
+        }
+    }
+}
+
+```
+
+## File: GenerateRecommendationsRepository.cs
+
+```C#
+using Microsoft.EntityFrameworkCore;
+using MyFoodApp.Domain.Entities;
+using MyFoodApp.Domain.Interfaces.Repositories;
+using MyFoodApp.Infrastructure.Persistence;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyFoodApp.Infrastructure.Repositories
+{
+    public class GenerateRecommendationsRepository : IGenerateRecommendationsRepository
+    {
+        private readonly AppDbContext _context;
+
+        public GenerateRecommendationsRepository(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public IQueryable<MealSuggestionTag> GetAllMealSuggestionsTagsAsync()
+        {
+            var recipes = _context.MealSuggestionTags
+                .Include(x => x.MealSuggestions)
+                    .ThenInclude(x => x.RecipeSuggestions)
+                        .ThenInclude(x => x.Recipe)
+                            .ThenInclude(x => x!.Ingredients)
+                                .ThenInclude(x => x.FoodItem)
+                .AsQueryable();
+
+            return recipes;
+        }
+    }
+}
+
+```
+
+## File: GeneratorPdfRepository.cs
+
+```C#
+using Microsoft.EntityFrameworkCore;
+using MyFoodApp.Domain.Entities;
+using MyFoodApp.Domain.Interfaces.Repositories;
+using MyFoodApp.Infrastructure.Persistence;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyFoodApp.Infrastructure.Repositories
+{
+    public class GeneratorPdfRepository : IGeneratorPdfRepository
+    {
+        private readonly AppDbContext _context;
+
+        public GeneratorPdfRepository(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<List<Recipe>> GetAllRecipesByIdListAsync(List<int> idList)
+        {
+            return await _context.Recipes
+                .Include(r => r.Steps)
+                .Include(r => r.Ingredients)
+                    .ThenInclude(i => i.FoodItem)
+                        .ThenInclude(f => f.FoodCategory)
+                .Include(r => r.Ingredients)
+                    .ThenInclude(i => i.FoodItem)
+                        .ThenInclude(f => f.PriceHistories)
+                .Include(r => r.Ingredients)
+                .Where(x => idList.Contains(x.RecipeId))
+                .OrderBy(x => x.Title)
+                .ToListAsync();
         }
     }
 }
@@ -106,7 +194,6 @@ namespace MyFoodApp.Infrastructure.Repositories
                         .ThenInclude(f => f!.FoodCategory)
                 .Include(r => r.MealSuggestions)
                     .ThenInclude(ms => ms.MealSuggestion)
-                .AsNoTracking()
                 .AsQueryable();
 
             return recipes;
