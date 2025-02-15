@@ -66,16 +66,25 @@ builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.AddScoped<IAuthenticationUseCases, AuthenticationUseCases>();
-
-builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
-
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.LoginPath = "/login";
         options.AccessDeniedPath = "/access-denied";
     });
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(20);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddScoped<IAuthenticationUseCases, AuthenticationUseCases>();
+builder.Services.AddScoped<SessionAuthenticationStateService>();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 
 // Database:
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -97,6 +106,20 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
 }
+
+app.UseSession();
+
+//begin SetString() hack
+app.Use(async delegate (HttpContext Context, Func<Task> Next)
+{
+    //this throwaway session variable will "prime" the SetString() method
+    //to allow it to be called after the response has started
+    var TempKey = Guid.NewGuid().ToString(); //create a random key
+    Context.Session.Set(TempKey, Array.Empty<byte>()); //set the throwaway session variable
+    Context.Session.Remove(TempKey); //remove the throwaway session variable
+    await Next(); //continue on with the request
+});
+//end SetString() hack
 
 app.UseAntiforgery();
 

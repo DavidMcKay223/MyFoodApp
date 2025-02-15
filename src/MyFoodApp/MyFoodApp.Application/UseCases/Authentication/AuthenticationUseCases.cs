@@ -57,6 +57,7 @@ namespace MyFoodApp.Application.UseCases.Authentication
             return response;
         }
 
+        [Obsolete("This method uses HTTP and blazor doesnt like that!")]
         public async Task<Response<UserDto>> LoginUserAsync(LoginUserDto loginDto)
         {
             var response = new Response<UserDto>();
