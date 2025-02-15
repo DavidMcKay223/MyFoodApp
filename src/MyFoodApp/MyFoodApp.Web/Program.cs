@@ -112,15 +112,15 @@ if (!app.Environment.IsDevelopment())
 app.UseSession();
 
 //begin SetString() hack
-//app.Use(async delegate (HttpContext Context, Func<Task> Next)
-//{
-//    //this throwaway session variable will "prime" the SetString() method
-//    //to allow it to be called after the response has started
-//    var TempKey = Guid.NewGuid().ToString(); //create a random key
-//    Context.Session.Set(TempKey, Array.Empty<byte>()); //set the throwaway session variable
-//    Context.Session.Remove(TempKey); //remove the throwaway session variable
-//    await Next(); //continue on with the request
-//});
+app.Use(async delegate (HttpContext Context, Func<Task> Next)
+{
+    //this throwaway session variable will "prime" the SetString() method
+    //to allow it to be called after the response has started
+    var TempKey = Guid.NewGuid().ToString(); //create a random key
+    Context.Session.Set(TempKey, Array.Empty<byte>()); //set the throwaway session variable
+    Context.Session.Remove(TempKey); //remove the throwaway session variable
+    await Next(); //continue on with the request
+});
 //end SetString() hack
 
 app.UseAntiforgery();
