@@ -2,8 +2,12 @@
 @rendermode InteractiveServer
 @using MyFoodApp.Application.Interfaces.Authentication
 @using MyFoodApp.Application.DTOs.Authentication
-@inject IAuthenticationUseCases AuthenticationUseCases
+@using Microsoft.AspNetCore.Identity
+@using MyFoodApp.Domain.Entities.Authentication
+@using MyFoodApp.Web.Authentication
 @inject NavigationManager NavigationManager
+@inject UserManager<User> _userManager
+@inject AuthenticationStateProvider AuthStateProvider
 
 <PageTitle>Login</PageTitle>
 
@@ -16,7 +20,7 @@
     </div>
 }
 
-<EditForm Model="@loginDto" OnValidSubmit="@HandleLogin">
+<EditForm Model="@loginDto" OnValidSubmit="@HandleLogin" FormName="loginForm">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -36,26 +40,32 @@
 </EditForm>
 
 @code {
-    private LoginUserDto loginDto = new LoginUserDto();
+    protected LoginUserDto loginDto { get; set; }
     private string? errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        loginDto ??= new LoginUserDto();
+    }
 
     private async Task HandleLogin()
     {
         errorMessage = null;
 
-        var response = await AuthenticationUseCases.LoginUserAsync(loginDto);
+        var user = await _userManager.FindByNameAsync(loginDto.UsernameOrEmail);
+        var isValidUser = await _userManager.CheckPasswordAsync(user, loginDto.Password);
+        if (isValidUser)
+        {
+            var AuthService = AuthStateProvider as CustomAuthStateProvider;
+            AuthService.MarkUserAsAuthenticated(user.Id, user.UserName);
 
-        if (response.ErrorList.Any())
-        {
-            errorMessage = string.Join("\r\n", response.ErrorList.Select(e => e.Message));
-        }
-        else if (response.Item != null)
-        {
-            NavigationManager.NavigateTo("/");
+            var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+
+            NavigationManager.NavigateTo("/", forceLoad: true);
         }
         else
         {
-            errorMessage = "Login failed unexpectedly.";
+            // Handle login failure
         }
     }
 }

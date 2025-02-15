@@ -1,5 +1,6 @@
 using Blazored.FluentValidation;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -58,7 +59,6 @@ builder.Services.AddScoped<IGeneratorPdfRepository, GeneratorPdfRepository>();
 builder.Services.AddScoped<IGeneratorPdf, GeneratorPdf>();
 
 // Authentication:
-builder.Services.AddAuthenticationCore();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
@@ -66,9 +66,16 @@ builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.AddScoped<IAuthenticationUseCases, AuthenticationUseCases>();
+
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 
-builder.Services.AddScoped<IAuthenticationUseCases, AuthenticationUseCases>();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/login";
+        options.AccessDeniedPath = "/access-denied";
+    });
 
 // Database:
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -90,9 +97,6 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
 }
-
-app.UseAuthentication();
-app.UseAuthorization();
 
 app.UseAntiforgery();
 

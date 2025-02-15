@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using MyFoodApp.Web.Authentication
+@inherits LayoutComponentBase
+@inject AuthenticationStateProvider AuthStateProvider
 
 <div class="page">
     <div class="sidebar">
@@ -8,12 +10,20 @@
     <main>
         <div class="top-row px-4">
             <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <AuthorizeView>
+                <Authorized>
+                    <p>Welcome, @context.User.Identity.Name!</p>
+                    <button>Logout</button>
+                </Authorized>
+                <NotAuthorized>
+                    <p>You are not logged in.</p>
+                    <NavLink href="/login">Login</NavLink>
+                </NotAuthorized>
+            </AuthorizeView>
         </div>
 
         <article class="content px-4">
-            <CascadingAuthenticationState>
-                @Body
-            </CascadingAuthenticationState>
+            @Body
         </article>
     </main>
 </div>
@@ -23,3 +33,17 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+
+@code {
+    private bool _isInitialized; // Track initialization
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && !_isInitialized) // Only initialize once
+        {
+            _isInitialized = true; // Mark as initialized
+            var authService = (CustomAuthStateProvider)AuthStateProvider;
+            await authService.InitializeAuthenticationStateAsync();
+        }
+    }
+}
