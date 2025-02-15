@@ -15,7 +15,6 @@ namespace MyFoodApp.Web.Authentication
 
         private AuthenticationState _anonymousState = new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
 
-        // Modify constructor
         public CustomAuthStateProvider(UserManager<User> userManager, SessionAuthenticationStateService sessionAuthService)
         {
             _userManager = userManager;
@@ -35,7 +34,6 @@ namespace MyFoodApp.Web.Authentication
                     var user = await _userManager.FindByIdAsync(userId);
                     if (user != null)
                     {
-                        // Add roles or other claims here
                         var roles = await _userManager.GetRolesAsync(user);
                         var claims = new List<Claim>
                         {
@@ -58,7 +56,6 @@ namespace MyFoodApp.Web.Authentication
                     newAuthState = _anonymousState;
                 }
 
-                // Check if the state has changed
                 if (!AreAuthenticationStatesEqual(_authState, newAuthState))
                 {
                     _authState = newAuthState;

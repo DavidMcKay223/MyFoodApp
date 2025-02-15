@@ -20,6 +20,7 @@ using MyFoodApp.Infrastructure.Repositories.Authentication;
 using MyFoodApp.Web.Authentication;
 using MyFoodApp.Web.Components;
 using MyFoodApp.Web.Components.Authentication;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,14 +68,6 @@ builder.Services.AddIdentity<User, IdentityRole>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddCascadingAuthenticationState();
-
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = "/login";
-        options.AccessDeniedPath = "/access-denied";
-    });
-
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession(options =>
 {
@@ -109,23 +102,12 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
 }
 
-app.UseSession();
-
-//begin SetString() hack
-app.Use(async delegate (HttpContext Context, Func<Task> Next)
-{
-    //this throwaway session variable will "prime" the SetString() method
-    //to allow it to be called after the response has started
-    var TempKey = Guid.NewGuid().ToString(); //create a random key
-    Context.Session.Set(TempKey, Array.Empty<byte>()); //set the throwaway session variable
-    Context.Session.Remove(TempKey); //remove the throwaway session variable
-    await Next(); //continue on with the request
-});
-//end SetString() hack
-
 app.UseAntiforgery();
 
 app.MapStaticAssets();
+
+app.UseSession();
+
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
