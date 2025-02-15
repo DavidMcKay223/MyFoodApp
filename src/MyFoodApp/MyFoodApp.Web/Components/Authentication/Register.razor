@@ -1,10 +1,70 @@
 ﻿@page "/register"
 @rendermode InteractiveServer
+@using MyFoodApp.Application.Interfaces.Authentication
+@using MyFoodApp.Application.DTOs.Authentication
+@inject IAuthenticationUseCases AuthenticationUseCases
+@inject NavigationManager NavigationManager
 
 <PageTitle>Register</PageTitle>
 
 <h3>Register</h3>
 
-@code {
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">
+        @errorMessage
+    </div>
+}
 
+<EditForm Model="@registerDto" OnValidSubmit="@HandleRegistration">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <InputText id="username" class="form-control" @bind-Value="registerDto.Username" />
+        <ValidationMessage For="@(() => registerDto.Username)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <InputText id="email" type="email" class="form-control" @bind-Value="registerDto.Email" />
+        <ValidationMessage For="@(() => registerDto.Email)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <InputText id="password" type="password" class="form-control" @bind-Value="registerDto.Password" />
+        <ValidationMessage For="@(() => registerDto.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+    <p class="mt-3">
+        Already have an account? <a href="/login">Login</a>
+    </p>
+</EditForm>
+
+@code {
+    private RegisterUserDto registerDto = new RegisterUserDto();
+    private string? errorMessage;
+
+    private async Task HandleRegistration()
+    {
+        errorMessage = null;
+
+        var response = await AuthenticationUseCases.RegisterUserAsync(registerDto);
+
+        if (response.ErrorList.Any())
+        {
+            errorMessage = string.Join("<br>", response.ErrorList.Select(e => e.Message));
+        }
+        else if (response.Item != null)
+        {
+            NavigationManager.NavigateTo("/login");
+        }
+        else
+        {
+            errorMessage = "Registration failed unexpectedly.";
+        }
+    }
 }

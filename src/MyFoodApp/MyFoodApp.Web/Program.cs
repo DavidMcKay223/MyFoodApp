@@ -1,15 +1,24 @@
 using Blazored.FluentValidation;
 using FluentValidation;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MyFoodApp.Application.Configurations;
 using MyFoodApp.Application.DTOs;
 using MyFoodApp.Application.Interfaces;
+using MyFoodApp.Application.Interfaces.Authentication;
 using MyFoodApp.Application.UseCases;
+using MyFoodApp.Application.UseCases.Authentication;
 using MyFoodApp.Application.Validators;
+using MyFoodApp.Domain.Entities.Authentication;
 using MyFoodApp.Domain.Interfaces.Repositories;
+using MyFoodApp.Domain.Interfaces.Repositories.Authentication;
 using MyFoodApp.Infrastructure.Persistence;
 using MyFoodApp.Infrastructure.Repositories;
+using MyFoodApp.Infrastructure.Repositories.Authentication;
+using MyFoodApp.Web.Authentication;
 using MyFoodApp.Web.Components;
+using MyFoodApp.Web.Components.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +57,19 @@ builder.Services.AddScoped<IGenerateRecommendationsUseCases, GenerateRecommendat
 builder.Services.AddScoped<IGeneratorPdfRepository, GeneratorPdfRepository>();
 builder.Services.AddScoped<IGeneratorPdf, GeneratorPdf>();
 
+// Authentication:
+builder.Services.AddAuthenticationCore();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
+
+builder.Services.AddScoped<IAuthenticationUseCases, AuthenticationUseCases>();
+
 // Database:
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
@@ -68,6 +90,9 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
 }
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseAntiforgery();
 

@@ -1,10 +1,61 @@
 ﻿@page "/login"
 @rendermode InteractiveServer
+@using MyFoodApp.Application.Interfaces.Authentication
+@using MyFoodApp.Application.DTOs.Authentication
+@inject IAuthenticationUseCases AuthenticationUseCases
+@inject NavigationManager NavigationManager
 
 <PageTitle>Login</PageTitle>
 
 <h3>Login</h3>
 
-@code {
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">
+        @errorMessage
+    </div>
+}
 
+<EditForm Model="@loginDto" OnValidSubmit="@HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label for="usernameOrEmail" class="form-label">Username or Email</label>
+        <InputText id="usernameOrEmail" class="form-control" @bind-Value="loginDto.UsernameOrEmail" />
+        <ValidationMessage For="@(() => loginDto.UsernameOrEmail)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <InputText id="password" type="password" class="form-control" @bind-Value="loginDto.Password" />
+        <ValidationMessage For="@(() => loginDto.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</EditForm>
+
+@code {
+    private LoginUserDto loginDto = new LoginUserDto();
+    private string? errorMessage;
+
+    private async Task HandleLogin()
+    {
+        errorMessage = null;
+
+        var response = await AuthenticationUseCases.LoginUserAsync(loginDto);
+
+        if (response.ErrorList.Any())
+        {
+            errorMessage = string.Join("\r\n", response.ErrorList.Select(e => e.Message));
+        }
+        else if (response.Item != null)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            errorMessage = "Login failed unexpectedly.";
+        }
+    }
 }
