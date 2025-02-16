@@ -109,11 +109,6 @@ h1:focus {
         max-width: 70%;
         margin: 0 auto;
     }
-
-    .skills-table .col-md-4 {
-        width: 100%;
-        margin-bottom: 10px;
-    }
 }
 
 .modal-backdrop {
