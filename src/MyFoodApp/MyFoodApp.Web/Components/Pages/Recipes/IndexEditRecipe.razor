@@ -1,4 +1,5 @@
 ﻿@page "/recipes-edit"
 @rendermode InteractiveServer
+@attribute [Authorize(Roles = "Admin")]
 
 <ListEditRecipe />
