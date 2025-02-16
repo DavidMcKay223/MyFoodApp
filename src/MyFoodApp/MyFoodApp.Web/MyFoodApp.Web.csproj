@@ -24,4 +24,8 @@
     <ProjectReference Include="..\MyFoodApp.Shared\MyFoodApp.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Components\Admin\" />
+  </ItemGroup>
+
 </Project>
