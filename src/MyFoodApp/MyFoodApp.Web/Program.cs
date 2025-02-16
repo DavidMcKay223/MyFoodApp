@@ -17,10 +17,9 @@ using MyFoodApp.Domain.Interfaces.Repositories.Authentication;
 using MyFoodApp.Infrastructure.Persistence;
 using MyFoodApp.Infrastructure.Repositories;
 using MyFoodApp.Infrastructure.Repositories.Authentication;
-using MyFoodApp.Web.Authentication;
 using MyFoodApp.Web.Components;
-using MyFoodApp.Web.Components.Authentication;
 using Microsoft.Extensions.Logging;
+using MyFoodApp.Web.Components.Account;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -60,26 +59,10 @@ builder.Services.AddScoped<IGeneratorPdfRepository, GeneratorPdfRepository>();
 builder.Services.AddScoped<IGeneratorPdf, GeneratorPdf>();
 
 // Authentication:
-builder.Services.AddScoped<IRoleRepository, RoleRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-
-builder.Services.AddIdentity<User, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
-
 builder.Services.AddCascadingAuthenticationState();
-builder.Services.AddHttpContextAccessor();
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(20);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
-builder.Services.AddDistributedMemoryCache();
-
-builder.Services.AddScoped<IAuthenticationUseCases, AuthenticationUseCases>();
-builder.Services.AddScoped<SessionAuthenticationStateService>();
-builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
+builder.Services.AddScoped<IdentityUserAccessor>();
+builder.Services.AddScoped<IdentityRedirectManager>();
+builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 
 // Database:
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -90,6 +73,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
             sqlOptions.MigrationsAssembly("MyFoodApp.Infrastructure");
         }),
         ServiceLifetime.Scoped);
+
+builder.Services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddSignInManager()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddSingleton<IEmailSender<User>, IdentityNoOpEmailSender>();
 
 // Register AutoMapper
 builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
@@ -106,10 +96,11 @@ app.UseAntiforgery();
 
 app.MapStaticAssets();
 
-app.UseSession();
-
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+// Add additional endpoints required by the Identity /Account Razor components.
+app.MapAdditionalIdentityEndpoints();
 
 // Apply pending migrations automatically
 using (var scope = app.Services.CreateScope())
