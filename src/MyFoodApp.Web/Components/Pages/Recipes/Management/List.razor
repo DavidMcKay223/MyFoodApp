@@ -22,7 +22,7 @@ else
 
     <SearchButton OnSearch="Search" OnReset="ResetSearch" OnAdd="ShowAddModal" />
 
-    <MyFoodApp.Web.Components.Pages.Recipes.Manage.Table Recipes="Recipes" OnEdit="ShowEditModal" OnDelete="DeleteRecipe" />
+    <MyFoodApp.Web.Components.Pages.Recipes.Management.Table Recipes="Recipes" OnEdit="ShowEditModal" OnDelete="DeleteRecipe" />
 
     <SearchPagination TItem="RecipeDto" TotalItems="@totalItems" PageSize="@pageSize" CurrentPage="@currentPage" OnPageChanged="OnPageChanged" OnPageSizeChangedCallback="OnPageSizeChanged" />
 

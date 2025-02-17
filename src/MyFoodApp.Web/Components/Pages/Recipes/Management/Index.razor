@@ -1,0 +1,5 @@
+﻿@page "/recipes-edit"
+@rendermode InteractiveServer
+@attribute [Authorize(Roles = "Admin")]
+
+<MyFoodApp.Web.Components.Pages.Recipes.Management.List />
