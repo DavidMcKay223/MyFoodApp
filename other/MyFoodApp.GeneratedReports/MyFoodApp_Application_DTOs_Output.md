@@ -12,10 +12,6 @@ namespace MyFoodApp.Application.DTOs
         public int FoodCategoryId { get; set; }
         public required string Name { get; set; }
         public required string Description { get; set; }
-
-        // Navigation Property
-        [JsonIgnore]
-        public List<FoodItemDto> FoodItems { get; set; } = [];
     }
 }
 
@@ -43,15 +39,6 @@ namespace MyFoodApp.Application.DTOs
 
         // Navigation Properties
         public FoodCategoryDto? FoodCategory { get; set; }
-
-        [JsonIgnore]
-        public List<PriceHistoryDto> PriceHistories { get; set; } = [];
-
-        [JsonIgnore]
-        public List<FoodItemStoreSectionDto> StoreSections { get; set; } = [];
-
-        [JsonIgnore]
-        public List<IngredientDto> Ingredients { get; set; } = [];
     }
 }
 
@@ -114,7 +101,7 @@ namespace MyFoodApp.Application.DTOs
         public UnitType Unit { get; set; }
 
         // Navigation Properties
-        public RecipeDto? Recipe { get; set; }
+        //public RecipeDto? Recipe { get; set; }
         public FoodItemDto? FoodItem { get; set; }
     }
 }
@@ -333,9 +320,6 @@ namespace MyFoodApp.Application.DTOs
         public int RecipeId { get; set; }
         public int StepNumber { get; set; }
         public required string Instruction { get; set; }
-
-        // Navigation Property
-        public RecipeDto? Recipe { get; set; }
     }
 }
 
@@ -353,10 +337,6 @@ namespace MyFoodApp.Application.DTOs
         public int StoreSectionId { get; set; }
         public required string Name { get; set; }
         public required string Description { get; set; }
-
-        // Navigation Property
-        [JsonIgnore]
-        public List<FoodItemStoreSectionDto> FoodItems { get; set; } = [];
     }
 }
 

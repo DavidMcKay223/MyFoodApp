@@ -46,8 +46,7 @@ namespace MyFoodApp.Application.Interfaces
 {
     public interface IGeneratorPdf
     {
-        public Task GenerateAndDownloadPdfAsync(string fileName, string content);
-        public Task RecipeListDownloadPdfAsync(string fileName, List<int> recipeIdList);
+        public Task<byte[]> GenerateRecipeListPdfAsync(List<int> recipeIdList);
     }
 }
 

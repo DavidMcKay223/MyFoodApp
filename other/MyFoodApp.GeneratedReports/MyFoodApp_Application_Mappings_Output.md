@@ -14,14 +14,10 @@ namespace MyFoodApp.Application.Mappings
         public FoodProfile()
         {
             CreateMap<FoodCategory, FoodCategoryDto>()
-                .ForMember(dest => dest.FoodItems, opt => opt.MapFrom(src => src.FoodItems))
                 .ReverseMap();
 
             CreateMap<FoodItem, FoodItemDto>()
                 .ForMember(dest => dest.FoodCategory, opt => opt.MapFrom(src => src.FoodCategory))
-                .ForMember(dest => dest.PriceHistories, opt => opt.MapFrom(src => src.PriceHistories))
-                .ForMember(dest => dest.StoreSections, opt => opt.MapFrom(src => src.StoreSections))
-                .ForMember(dest => dest.Ingredients, opt => opt.MapFrom(src => src.Ingredients))
                 .ReverseMap();
 
             CreateMap<FoodItemStoreSection, FoodItemStoreSectionDto>()
@@ -48,7 +44,6 @@ namespace MyFoodApp.Application.Mappings
         public IngredientProfile()
         {
             CreateMap<Ingredient, IngredientDto>()
-                .ForMember(dest => dest.Recipe, opt => opt.MapFrom(src => src.Recipe))
                 .ForMember(dest => dest.FoodItem, opt => opt.MapFrom(src => src.FoodItem))
                 .ReverseMap()
                 .ForMember(dest => dest.Recipe, opt => opt.Ignore())
@@ -131,14 +126,22 @@ namespace MyFoodApp.Application.Mappings
                 .ForMember(dest => dest.MealSuggestions, opt => opt.Ignore());
 
             CreateMap<RecipeMealSuggestion, RecipeMealSuggestionDto>()
-                .ForMember(dest => dest.Recipe, opt => opt.MapFrom(src => src.Recipe))
+                .ForMember(dest => dest.Recipe, opt => opt.MapFrom(src => new RecipeDto
+                {
+                    // Copy only top-level properties of Recipe
+                    RecipeId = src.RecipeId,
+                    Title = src.Recipe.Title,
+                    Description = src.Recipe.Description,
+                    CookTimeMinutes = src.Recipe.CookTimeMinutes,
+                    PrepTimeMinutes = src.Recipe.PrepTimeMinutes,
+                    Servings = src.Recipe.Servings,
+                }))
                 .ForMember(dest => dest.MealSuggestion, opt => opt.MapFrom(src => src.MealSuggestion))
                 .ReverseMap()
                 .ForMember(dest => dest.Recipe, opt => opt.Ignore())
                 .ForMember(dest => dest.MealSuggestion, opt => opt.Ignore());
 
             CreateMap<RecipeStep, RecipeStepDto>()
-                .ForMember(dest => dest.Recipe, opt => opt.MapFrom(src => src.Recipe))
                 .ReverseMap()
                 .ForMember(dest => dest.Recipe, opt => opt.Ignore());
         }
@@ -161,7 +164,6 @@ namespace MyFoodApp.Application.Mappings
         public StoreProfile()
         {
             CreateMap<StoreSection, StoreSectionDto>()
-                .ForMember(dest => dest.FoodItems, opt => opt.MapFrom(src => src.FoodItems))
                 .ReverseMap();
         }
     }

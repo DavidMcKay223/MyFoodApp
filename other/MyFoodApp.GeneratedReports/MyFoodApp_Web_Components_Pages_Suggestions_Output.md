@@ -20,11 +20,13 @@
 @using MyFoodApp.Web.Components.Shared
 @inject IGenerateRecommendationsUseCases GenerateRecommendationsUseCases
 @inject IGeneratorPdf PdfGenerator
+@inject IJSRuntime JSRuntime
 
 @code {
     private Response<MealSuggestionTagDto>? Response;
     private Dictionary<MealSuggestionTagDto, bool> _expandedState = new();
     private List<int> RecipeIdList = new();
+    private Boolean isLoading = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -67,7 +69,11 @@
 
     private async Task DownloadPdf()
     {
-        await PdfGenerator.RecipeListDownloadPdfAsync("recipe_document.pdf", RecipeIdList);
+        isLoading = true;
+        var pdfBytes = await PdfGenerator.GenerateRecipeListPdfAsync(RecipeIdList);
+        var pdfBase64 = Convert.ToBase64String(pdfBytes);
+        await JSRuntime.InvokeVoidAsync("downloadFile", "recipe_document.pdf", "application/pdf", pdfBase64);
+        isLoading = false;
     }
 }
 
@@ -77,12 +83,25 @@
     {
         <button class="btn btn-secondary mb-3" @onclick="DownloadPdf">Download PDF</button>
     }
+
+    @if(isLoading)
+    {
+        <div class="d-flex justify-content-center my-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    }
 </div>
 
 <div class="container">
     @if (Response == null)
     {
-        <p><em>Loading...</em></p>
+        <div class="d-flex justify-content-center my-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
     }
     else if (Response.ErrorList.Any())
     {
