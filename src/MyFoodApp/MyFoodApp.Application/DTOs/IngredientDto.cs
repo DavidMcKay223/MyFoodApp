@@ -11,7 +11,7 @@ namespace MyFoodApp.Application.DTOs
         public UnitType Unit { get; set; }
 
         // Navigation Properties
-        public RecipeDto? Recipe { get; set; }
+        //public RecipeDto? Recipe { get; set; }
         public FoodItemDto? FoodItem { get; set; }
     }
 }

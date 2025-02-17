@@ -9,7 +9,6 @@ namespace MyFoodApp.Application.Mappings
         public IngredientProfile()
         {
             CreateMap<Ingredient, IngredientDto>()
-                .ForMember(dest => dest.Recipe, opt => opt.MapFrom(src => src.Recipe))
                 .ForMember(dest => dest.FoodItem, opt => opt.MapFrom(src => src.FoodItem))
                 .ReverseMap()
                 .ForMember(dest => dest.Recipe, opt => opt.Ignore())

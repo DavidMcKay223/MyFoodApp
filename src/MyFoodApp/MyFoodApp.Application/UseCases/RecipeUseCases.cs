@@ -158,9 +158,14 @@ namespace MyFoodApp.Application.UseCases
                     query = query.Where(r => r.Servings <= searchDto.ServingsMax.Value);
                 }
 
-                var recipes = await query.ToListAsync();
+                response.TotalItems = await query.CountAsync();
+
+                var recipes = await query
+                    .Skip((searchDto.PageNumber) * searchDto.PageSize)
+                    .Take(searchDto.PageSize)
+                    .ToListAsync();
+
                 response.List = _mapper.Map<List<RecipeDto>>(recipes);
-                response.TotalItems = response.List.Count;
             }
             catch (Exception ex)
             {
