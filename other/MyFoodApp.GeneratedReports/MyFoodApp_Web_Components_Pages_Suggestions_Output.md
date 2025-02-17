@@ -5,6 +5,7 @@
 ```C#
 @page "/mealsuggestion"
 @rendermode InteractiveServer
+@attribute [Authorize]
 
 <ListMealSuggestionTag />
 

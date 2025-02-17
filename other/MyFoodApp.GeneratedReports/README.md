@@ -23,11 +23,6 @@
 │       │   ├── 📁 Configurations/
 │       │   │   └── 🟣 AutoMapperConfiguration.cs
 │       │   ├── 📁 DTOs/
-│       │   │   ├── 📁 Authentication/
-│       │   │   │   ├── 🟣 ForgotPasswordDto.cs
-│       │   │   │   ├── 🟣 LoginUserDto.cs
-│       │   │   │   ├── 🟣 RegisterUserDto.cs
-│       │   │   │   └── 🟣 UserDto.cs
 │       │   │   ├── 🟣 FoodCategoryDto.cs
 │       │   │   ├── 🟣 FoodItemDto.cs
 │       │   │   ├── 🟣 FoodItemSearchDto.cs
@@ -46,8 +41,6 @@
 │       │   │   ├── 🟣 StoreSectionDto.cs
 │       │   │   └── 🟣 StoreSectionSearchDto.cs
 │       │   ├── 📁 Interfaces/
-│       │   │   ├── 📁 Authentication/
-│       │   │   │   └── 🟣 IAuthenticationUseCases.cs
 │       │   │   ├── 🟣 IFoodItemUseCases.cs
 │       │   │   ├── 🟣 IGenerateRecommendationsUseCases.cs
 │       │   │   ├── 🟣 IGeneratorPdf.cs
@@ -62,8 +55,6 @@
 │       │   │   ├── 🟣 RecipeProfile.cs
 │       │   │   └── 🟣 StoreProfile.cs
 │       │   ├── 📁 UseCases/
-│       │   │   ├── 📁 Authentication/
-│       │   │   │   └── 🟣 AuthenticationUseCases.cs
 │       │   │   ├── 🟣 FoodItemUseCases.cs
 │       │   │   ├── 🟣 GenerateRecommendationsUseCases.cs
 │       │   │   ├── 🟣 GeneratorPdf.cs
@@ -147,10 +138,52 @@
 │       │       └── 🟣 JwtSettings.cs
 │       └── 📁 MyFoodApp.Web/
 │           ├── 📁 Components/
-│           │   ├── 📁 Authentication/
-│           │   │   ├── 🟣 CustomAuthStateProvider.cs
-│           │   │   ├── 🌀 Login.razor
-│           │   │   └── 🌀 Register.razor
+│           │   ├── 📁 Account/
+│           │   │   ├── 📁 Pages/
+│           │   │   │   ├── 📁 Manage/
+│           │   │   │   │   ├── 🌀 _Imports.razor
+│           │   │   │   │   ├── 🌀 ChangePassword.razor
+│           │   │   │   │   ├── 🌀 DeletePersonalData.razor
+│           │   │   │   │   ├── 🌀 Disable2fa.razor
+│           │   │   │   │   ├── 🌀 Email.razor
+│           │   │   │   │   ├── 🌀 EnableAuthenticator.razor
+│           │   │   │   │   ├── 🌀 ExternalLogins.razor
+│           │   │   │   │   ├── 🌀 GenerateRecoveryCodes.razor
+│           │   │   │   │   ├── 🌀 Index.razor
+│           │   │   │   │   ├── 🌀 PersonalData.razor
+│           │   │   │   │   ├── 🌀 ResetAuthenticator.razor
+│           │   │   │   │   ├── 🌀 SetPassword.razor
+│           │   │   │   │   └── 🌀 TwoFactorAuthentication.razor
+│           │   │   │   ├── 🌀 _Imports.razor
+│           │   │   │   ├── 🌀 AccessDenied.razor
+│           │   │   │   ├── 🌀 ConfirmEmail.razor
+│           │   │   │   ├── 🌀 ConfirmEmailChange.razor
+│           │   │   │   ├── 🌀 ExternalLogin.razor
+│           │   │   │   ├── 🌀 ForgotPassword.razor
+│           │   │   │   ├── 🌀 ForgotPasswordConfirmation.razor
+│           │   │   │   ├── 🌀 InvalidPasswordReset.razor
+│           │   │   │   ├── 🌀 InvalidUser.razor
+│           │   │   │   ├── 🌀 Lockout.razor
+│           │   │   │   ├── 🌀 Login.razor
+│           │   │   │   ├── 🌀 LoginWith2fa.razor
+│           │   │   │   ├── 🌀 LoginWithRecoveryCode.razor
+│           │   │   │   ├── 🌀 Register.razor
+│           │   │   │   ├── 🌀 RegisterConfirmation.razor
+│           │   │   │   ├── 🌀 ResendEmailConfirmation.razor
+│           │   │   │   ├── 🌀 ResetPassword.razor
+│           │   │   │   └── 🌀 ResetPasswordConfirmation.razor
+│           │   │   ├── 📁 Shared/
+│           │   │   │   ├── 🌀 ExternalLoginPicker.razor
+│           │   │   │   ├── 🌀 ManageLayout.razor
+│           │   │   │   ├── 🌀 ManageNavMenu.razor
+│           │   │   │   ├── 🌀 RedirectToLogin.razor
+│           │   │   │   ├── 🌀 ShowRecoveryCodes.razor
+│           │   │   │   └── 🌀 StatusMessage.razor
+│           │   │   ├── 🟣 IdentityComponentsEndpointRouteBuilderExtensions.cs
+│           │   │   ├── 🟣 IdentityNoOpEmailSender.cs
+│           │   │   ├── 🟣 IdentityRedirectManager.cs
+│           │   │   ├── 🟣 IdentityRevalidatingAuthenticationStateProvider.cs
+│           │   │   └── 🟣 IdentityUserAccessor.cs
 │           │   ├── 📁 Layout/
 │           │   │   ├── 🌀 MainLayout.razor
 │           │   │   └── 🌀 NavMenu.razor

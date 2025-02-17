@@ -12,13 +12,41 @@
 
     <main>
         <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <AuthorizeView>
+                <Authorized>
+                    <div class="d-flex align-items-center gap-3">
+                        <!-- User badge with icon -->
+                        <NavLink href="/Account/Manage" class="text-decoration-none d-flex align-items-center gap-2">
+                            <span class="bi bi-person-circle fs-5"></span>
+                            <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill">
+                                @context.User.Identity?.Name
+                            </span>
+                        </NavLink>
+
+                        <!-- Logout button -->
+                        <form action="Account/Logout" method="post">
+                            <AntiforgeryToken />
+                            <input type="hidden" name="ReturnUrl" value="" />
+                            <button type="submit" class="btn btn-outline-secondary d-flex align-items-center gap-1">
+                                <span class="bi bi-arrow-bar-left"></span>
+                                <span>Logout</span>
+                            </button>
+                        </form>
+                    </div>
+                </Authorized>
+                <NotAuthorized>
+                    <div class="d-flex align-items-center gap-3">
+                        <p class="mb-0 text-muted">You are not logged in.</p>
+                        <NavLink href="/Account/Login" class="btn btn-primary">
+                            Login
+                        </NavLink>
+                    </div>
+                </NotAuthorized>
+            </AuthorizeView>
         </div>
 
         <article class="content px-4">
-            <CascadingAuthenticationState>
-                @Body
-            </CascadingAuthenticationState>
+            @Body
         </article>
     </main>
 </div>
@@ -63,23 +91,15 @@
                         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Meal Suggestion
                     </NavLink>
                 </div>
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="profile"> <span class="oi oi-person" aria-hidden="true"></span> Profile </NavLink>
-                </div>
-                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="logout">
-                        <span class="oi oi-account-logout" aria-hidden="true"></span> Logout
-                    </NavLink>
-                </div>
             </Authorized>
             <NotAuthorized>
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="register">
+                    <NavLink class="nav-link" href="/Account/Register">
                         <span class="oi oi-person-add" aria-hidden="true"></span> Register
                     </NavLink>
                 </div>
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="login">
+                    <NavLink class="nav-link" href="/Account/Login">
                         <span class="oi oi-account-login" aria-hidden="true"></span> Login
                     </NavLink>
                 </div>

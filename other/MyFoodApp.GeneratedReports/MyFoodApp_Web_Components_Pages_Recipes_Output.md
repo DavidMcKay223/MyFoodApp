@@ -872,6 +872,7 @@
 ```C#
 @page "/recipes"
 @rendermode InteractiveServer
+@attribute [Authorize]
 
 <ListDisplayRecipe />
 
@@ -882,6 +883,7 @@
 ```C#
 @page "/recipes-edit"
 @rendermode InteractiveServer
+@attribute [Authorize(Roles = "Admin")]
 
 <ListEditRecipe />
 

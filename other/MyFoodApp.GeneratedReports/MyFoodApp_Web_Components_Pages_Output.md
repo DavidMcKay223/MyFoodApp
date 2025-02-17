@@ -46,6 +46,7 @@
 
 ```C#
 @page "/"
+@attribute [Authorize]
 
 <PageTitle>Home</PageTitle>
 
