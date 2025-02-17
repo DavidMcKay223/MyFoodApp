@@ -9,7 +9,6 @@ namespace MyFoodApp.Application.Mappings
         public StoreProfile()
         {
             CreateMap<StoreSection, StoreSectionDto>()
-                .ForMember(dest => dest.FoodItems, opt => opt.MapFrom(src => src.FoodItems))
                 .ReverseMap();
         }
     }

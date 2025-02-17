@@ -17,14 +17,5 @@ namespace MyFoodApp.Application.DTOs
 
         // Navigation Properties
         public FoodCategoryDto? FoodCategory { get; set; }
-
-        [JsonIgnore]
-        public List<PriceHistoryDto> PriceHistories { get; set; } = [];
-
-        [JsonIgnore]
-        public List<FoodItemStoreSectionDto> StoreSections { get; set; } = [];
-
-        [JsonIgnore]
-        public List<IngredientDto> Ingredients { get; set; } = [];
     }
 }

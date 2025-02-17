@@ -18,14 +18,22 @@ namespace MyFoodApp.Application.Mappings
                 .ForMember(dest => dest.MealSuggestions, opt => opt.Ignore());
 
             CreateMap<RecipeMealSuggestion, RecipeMealSuggestionDto>()
-                .ForMember(dest => dest.Recipe, opt => opt.MapFrom(src => src.Recipe))
+                .ForMember(dest => dest.Recipe, opt => opt.MapFrom(src => new RecipeDto
+                {
+                    // Copy only top-level properties of Recipe
+                    RecipeId = src.RecipeId,
+                    Title = src.Recipe.Title,
+                    Description = src.Recipe.Description,
+                    CookTimeMinutes = src.Recipe.CookTimeMinutes,
+                    PrepTimeMinutes = src.Recipe.PrepTimeMinutes,
+                    Servings = src.Recipe.Servings,
+                }))
                 .ForMember(dest => dest.MealSuggestion, opt => opt.MapFrom(src => src.MealSuggestion))
                 .ReverseMap()
                 .ForMember(dest => dest.Recipe, opt => opt.Ignore())
                 .ForMember(dest => dest.MealSuggestion, opt => opt.Ignore());
 
             CreateMap<RecipeStep, RecipeStepDto>()
-                .ForMember(dest => dest.Recipe, opt => opt.MapFrom(src => src.Recipe))
                 .ReverseMap()
                 .ForMember(dest => dest.Recipe, opt => opt.Ignore());
         }
