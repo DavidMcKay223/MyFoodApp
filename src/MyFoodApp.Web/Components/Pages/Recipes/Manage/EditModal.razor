@@ -138,13 +138,13 @@
                             </div>
 
                             <!-- Recipe Steps -->
-                            <FormEditRecipeStep Steps="@Recipe.Steps" />
+                            <MyFoodApp.Web.Components.Pages.Recipes.Steps.Edit Steps="@Recipe.Steps" />
 
                             <!-- Ingredients -->
-                            <FormEditIngredient Ingredients="@Recipe.Ingredients" FoodItemList="FoodItemList" />
+                            <MyFoodApp.Web.Components.Pages.Recipes.Ingredients.Edit Ingredients="@Recipe.Ingredients" FoodItemList="FoodItemList" />
 
                             <!-- Meal Suggestions -->
-                            <FormEditRecipeMealSuggestion MealSuggestions="@Recipe.MealSuggestions" MealSuggestionList="MealSuggestionList" />
+                            <MyFoodApp.Web.Components.Pages.Recipes.MealSuggestions.Edit MealSuggestions="@Recipe.MealSuggestions" MealSuggestionList="MealSuggestionList" />
                         </EditForm>
 
                         <DisplayError Errors="Errors" />

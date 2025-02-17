@@ -18,24 +18,24 @@
 }
 else
 {
-    <SearchFormRecipe SearchDto="searchDto" />
+    <Search SearchDto="searchDto" />
 
     <SearchButton OnSearch="Search" OnReset="ResetSearch" OnAdd="ShowAddModal" />
 
-    <TableFormRecipe Recipes="Recipes" OnEdit="ShowEditModal" OnDelete="DeleteRecipe" />
+    <MyFoodApp.Web.Components.Pages.Recipes.Manage.Table Recipes="Recipes" OnEdit="ShowEditModal" OnDelete="DeleteRecipe" />
 
     <SearchPagination TItem="RecipeDto" TotalItems="@totalItems" PageSize="@pageSize" CurrentPage="@currentPage" OnPageChanged="OnPageChanged" OnPageSizeChangedCallback="OnPageSizeChanged" />
 
     <DisplayError Errors="Errors" />
 }
 
-<EditModalRecipe @ref="editModal" OnRecipeSaved="LoadRecipes" />
+<EditModal @ref="editModal" OnRecipeSaved="LoadRecipes" />
 
 @code {
     private List<RecipeDto>? Recipes;
     private List<Error> Errors { get; set; } = new();
     private bool isLoading = true;
-    private EditModalRecipe? editModal;
+    private EditModal? editModal;
     private RecipeSearchDto searchDto = new();
     private int totalItems;
     private int pageSize = 10;
