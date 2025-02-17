@@ -188,26 +188,30 @@
 │       │   │   └── 🌀 NavMenu.razor
 │       │   ├── 📁 Pages/
 │       │   │   ├── 📁 Recipes/
-│       │   │   │   ├── 🌀 DisplayModalRecipe.razor
-│       │   │   │   ├── 🌀 EditModalRecipe.razor
-│       │   │   │   ├── 🌀 FormDisplayIngredient.razor
-│       │   │   │   ├── 🌀 FormDisplayRecipeMealSuggestion.razor
-│       │   │   │   ├── 🌀 FormDisplayRecipeStep.razor
-│       │   │   │   ├── 🌀 FormEditIngredient.razor
-│       │   │   │   ├── 🌀 FormEditRecipeMealSuggestion.razor
-│       │   │   │   ├── 🌀 FormEditRecipeStep.razor
-│       │   │   │   ├── 🌀 FormEditSelectFoodItem.razor
-│       │   │   │   ├── 🌀 FormEditSelectMealSuggestion.razor
-│       │   │   │   ├── 🌀 IndexDisplayRecipe.razor
-│       │   │   │   ├── 🌀 IndexEditRecipe.razor
-│       │   │   │   ├── 🌀 ListDisplayRecipe.razor
-│       │   │   │   ├── 🌀 ListEditRecipe.razor
-│       │   │   │   ├── 🌀 SearchFormRecipe.razor
-│       │   │   │   ├── 🌀 TableDisplayRecipe.razor
-│       │   │   │   └── 🌀 TableFormRecipe.razor
+│       │   │   │   ├── 📁 Ingredients/
+│       │   │   │   │   ├── 🌀 Display.razor
+│       │   │   │   │   ├── 🌀 Edit.razor
+│       │   │   │   │   └── 🌀 SelectFoodItem.razor
+│       │   │   │   ├── 📁 Manage/
+│       │   │   │   │   ├── 🌀 EditModal.razor
+│       │   │   │   │   ├── 🌀 Index.razor
+│       │   │   │   │   ├── 🌀 List.razor
+│       │   │   │   │   └── 🌀 Table.razor
+│       │   │   │   ├── 📁 MealSuggestions/
+│       │   │   │   │   ├── 🌀 Display.razor
+│       │   │   │   │   ├── 🌀 Edit.razor
+│       │   │   │   │   └── 🌀 SelectMealSuggestion.razor
+│       │   │   │   ├── 📁 Steps/
+│       │   │   │   │   ├── 🌀 Display.razor
+│       │   │   │   │   └── 🌀 Edit.razor
+│       │   │   │   ├── 🌀 DisplayModal.razor
+│       │   │   │   ├── 🌀 Index.razor
+│       │   │   │   ├── 🌀 List.razor
+│       │   │   │   ├── 🌀 Search.razor
+│       │   │   │   └── 🌀 Table.razor
 │       │   │   ├── 📁 Suggestions/
-│       │   │   │   ├── 🌀 IndexMealSuggestionTag.razor
-│       │   │   │   └── 🌀 ListMealSuggestionTag.razor
+│       │   │   │   ├── 🌀 Index.razor
+│       │   │   │   └── 🌀 TagList.razor
 │       │   │   ├── 🌀 Error.razor
 │       │   │   └── 🌀 Home.razor
 │       │   ├── 📁 Shared/

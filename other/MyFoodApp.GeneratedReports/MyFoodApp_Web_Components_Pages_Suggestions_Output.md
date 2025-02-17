@@ -1,17 +1,17 @@
 # Directory: Components\Pages\Suggestions
 
-## File: IndexMealSuggestionTag.razor
+## File: Index.razor
 
 ```C#
 @page "/mealsuggestion"
 @rendermode InteractiveServer
 @attribute [Authorize]
 
-<ListMealSuggestionTag />
+<TagList />
 
 ```
 
-## File: ListMealSuggestionTag.razor
+## File: TagList.razor
 
 ```C#
 @using MyFoodApp.Application.DTOs
