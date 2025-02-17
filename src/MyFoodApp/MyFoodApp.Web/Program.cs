@@ -82,6 +82,8 @@ builder.Services.AddSingleton<IEmailSender<User>, IdentityNoOpEmailSender>();
 // Register AutoMapper
 builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
 
+builder.Services.AddScoped<HttpClient>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
