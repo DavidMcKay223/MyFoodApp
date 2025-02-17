@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MyFoodApp\MyFoodApp.Application\MyFoodApp.Application.csproj" />
-    <ProjectReference Include="..\..\src\MyFoodApp\MyFoodApp.Infrastructure\MyFoodApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\MyFoodApp.Application\MyFoodApp.Application.csproj" />
+    <ProjectReference Include="..\..\src\MyFoodApp.Infrastructure\MyFoodApp.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
