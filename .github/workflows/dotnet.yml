@@ -22,10 +22,10 @@ jobs:
         dotnet-version: '9.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore ./src/MyFoodApp.sln
+      run: dotnet restore ./MyFoodApp.sln
 
     - name: Build
-      run: dotnet build ./src/MyFoodApp.sln --no-restore --configuration Release
+      run: dotnet build ./MyFoodApp.sln --no-restore --configuration Release
 
     - name: Run tests for Application.Tests
       run: dotnet test ./test/MyFoodApp.Application.Tests/MyFoodApp.Application.Tests.csproj --no-build --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults/ApplicationTests
