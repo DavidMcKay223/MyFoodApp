@@ -18,65 +18,85 @@ else
         {
             <div class="col">
                 <div class="card h-100 shadow-sm hover-shadow-lg overflow-hidden transition-all">
-                    @if (recipe.Photos?.Any() == true)
-                    {
-                        <div class="ratio ratio-16x9 position-relative">
-                            <div class="carousel-inner h-100 rounded-top">
-                                @foreach (var (photo, index) in recipe.Photos.Select((p, i) => (p, i)))
+                    <div class="ratio ratio-16x9 position-relative rounded-top">
+                        @if (recipe.Photos?.Any() == true)
+                        {
+                            @if (recipe.Photos.Count == 1)
+                            {
+                                var photo = recipe.Photos.First();
+                                @if (photo.ImageData != null && photo.ImageContentType != null)
                                 {
-                                    <div class="carousel-item h-100 @(GetActiveClass(index, recipe.RecipeId))">
-                                        @if (photo.ImageData != null && photo.ImageContentType != null)
+                                    <img src="data:@photo.ImageContentType;base64,@Convert.ToBase64String(photo.ImageData)"
+                                         class="d-block w-100 h-100 object-fit-cover rounded-top"
+                                         alt="@photo.Caption" />
+                                }
+                                else
+                                {
+                                    <div class="d-flex align-items-center justify-content-center bg-secondary text-white h-100 rounded-top">
+                                        <i class="bi bi-image fs-1"></i>
+                                    </div>
+                                }
+                            }
+                            else // Multiple photos - Use Carousel
+                            {
+                                <div id="recipeCarousel_@recipe.RecipeId" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="5000">
+                                    <div class="carousel-inner h-100 rounded-top">
+                                        @foreach (var (photo, index) in recipe.Photos.Select((p, i) => (p, i)))
                                         {
-                                            <img src="data:@photo.ImageContentType;base64,@Convert.ToBase64String(photo.ImageData)"
-                                                 class="d-block w-100 h-100 object-fit-cover"
-                                                 alt="@photo.Caption" />
-                                        }
-                                        else
-                                        {
-                                            <div class="d-flex align-items-center justify-content-center bg-secondary text-white h-100">
-                                                <i class="bi bi-image fs-1"></i>
-                                            </div>
-                                        }
-                                        @if (!string.IsNullOrEmpty(photo.Caption))
-                                        {
-                                            <div class="carousel-caption bg-dark bg-opacity-50 rounded">
-                                                <p class="mb-0">@photo.Caption</p>
+                                            <div class="carousel-item h-100 @(index == GetActiveIndex(recipe.RecipeId) ? "active" : "")">
+                                                @if (photo.ImageData != null && photo.ImageContentType != null)
+                                                {
+                                                    <img src="data:@photo.ImageContentType;base64,@Convert.ToBase64String(photo.ImageData)"
+                                                         class="d-block w-100 h-100 object-fit-cover rounded-top"
+                                                         alt="@photo.Caption" />
+                                                }
+                                                else
+                                                {
+                                                    <div class="d-flex align-items-center justify-content-center bg-secondary text-white h-100 rounded-top">
+                                                        <i class="bi bi-image fs-1"></i>
+                                                    </div>
+                                                }
+                                                @if (!string.IsNullOrEmpty(photo.Caption))
+                                                {
+                                                    <div class="carousel-caption bg-dark bg-opacity-50 rounded">
+                                                        <p class="mb-0">@photo.Caption</p>
+                                                    </div>
+                                                }
                                             </div>
                                         }
                                     </div>
-                                }
-                            </div>
-
-                            @if (recipe.Photos.Count > 1)
-                            {
-                                <div class="carousel-controls">
-                                    <button class="carousel-control-prev" @onclick="@(() => Slide(recipe.RecipeId, -1))">
-                                        <span class="carousel-control-prev-icon"></span>
-                                    </button>
-                                    <button class="carousel-control-next" @onclick="@(() => Slide(recipe.RecipeId, 1))">
-                                        <span class="carousel-control-next-icon"></span>
-                                    </button>
-                                </div>
-
-                                <div class="carousel-indicators">
-                                    @for (int i = 0; i < recipe.Photos.Count; i++)
+                                    @if (recipe.Photos.Count > 1)
                                     {
-                                        <button type="button"
-                                                class="@(GetIndicatorActiveClass(i, recipe.RecipeId))"
-                                                @onclick="@(() => SetActiveIndex(recipe.RecipeId, i))"></button>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#recipeCarousel_@recipe.RecipeId" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#recipeCarousel_@recipe.RecipeId" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                        <div class="carousel-indicators">
+                                            @for (int i = 0; i < recipe.Photos.Count; i++)
+                                            {
+                                                <button type="button"
+                                                        data-bs-target="#recipeCarousel_@recipe.RecipeId"
+                                                        data-bs-slide-to="@i"
+                                                        class="@(i == GetActiveIndex(recipe.RecipeId) ? "active" : "")"
+                                                        aria-current="@(i == GetActiveIndex(recipe.RecipeId) ? "true" : "false")"
+                                                        aria-label="Slide @(i + 1)"></button>
+                                            }
+                                        </div>
                                     }
                                 </div>
                             }
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="ratio ratio-16x9">
-                            <div class="d-flex align-items-center justify-content-center bg-light text-muted rounded-top">
+                        }
+                        else
+                        {
+                            <div class="d-flex align-items-center justify-content-center bg-light text-muted h-100 rounded-top">
                                 <i class="bi bi-image fs-1"></i>
                             </div>
-                        </div>
-                    }
+                        }
+                    </div>
 
                     <div class="card-body d-flex flex-column">
                         <div class="mb-3">
@@ -243,50 +263,18 @@ else
     private string? uploadErrorMessage;
     private readonly Dictionary<int, int> activeIndices = new();
 
-    #region Carousel Logic
-    private string GetActiveClass(int index, int recipeId)
+    private int GetActiveIndex(int recipeId)
     {
-        return activeIndices.TryGetValue(recipeId, out var activeIndex) && index == activeIndex
-            ? "active"
-            : "";
-    }
-
-    private string GetIndicatorActiveClass(int index, int recipeId)
-    {
-        return GetActiveClass(index, recipeId);
+        return activeIndices.TryGetValue(recipeId, out var index) ? index : 0;
     }
 
     private void SetActiveIndex(int recipeId, int index)
     {
-        if (activeIndices.ContainsKey(recipeId))
-        {
-            activeIndices[recipeId] = index;
-        }
-        else
-        {
-            activeIndices.Add(recipeId, index);
-        }
+        activeIndices[recipeId] = index;
     }
 
-    private void Slide(int recipeId, int direction)
-    {
-        if (!activeIndices.TryGetValue(recipeId, out var currentIndex))
-        {
-            currentIndex = 0;
-            activeIndices.Add(recipeId, currentIndex);
-        }
+    // Removed the custom Slide method and rely on Bootstrap's carousel functionality
 
-        var recipe = Recipes?.FirstOrDefault(r => r.RecipeId == recipeId);
-        if (recipe?.Photos == null) return;
-
-        var newIndex = (currentIndex + direction) % recipe.Photos.Count;
-        if (newIndex < 0) newIndex = recipe.Photos.Count - 1;
-
-        activeIndices[recipeId] = newIndex;
-    }
-    #endregion
-
-    #region Image Upload Logic
     private void ShowUploadModal(int recipeId)
     {
         uploadingRecipeId = recipeId;
@@ -368,88 +356,17 @@ else
             uploadErrorMessage = $"Upload failed: {ex.Message}";
         }
     }
-    #endregion
 }
 
 <style>
-    .carousel-item {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-    }
-
-        .carousel-item.active {
-            display: block;
-            opacity: 1;
-            position: relative;
-        }
-
-    .carousel-controls {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        pointer-events: none;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-        pointer-events: auto;
-        background-color: rgba(0, 0, 0, 0.3);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: none;
-        opacity: 1;
-        transition: background-color 0.2s ease;
-    }
-
-        .carousel-control-prev:hover,
-        .carousel-control-next:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-    .carousel-indicators {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 8px;
-        z-index: 2;
-    }
-
-        .carousel-indicators button {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            border: 2px solid white;
-            background-color: transparent;
-            padding: 0;
-            transition: background-color 0.2s ease;
-        }
-
-            .carousel-indicators button.active {
-                background-color: white;
-            }
-
     .hover-shadow-lg {
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-        .hover-shadow-lg:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 1rem 3rem rgba(0,0,0,0.1) !important;
-        }
+    .hover-shadow-lg:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 3rem rgba(0,0,0,0.1) !important;
+    }
 
     .line-clamp-3 {
         display: -webkit-box;
