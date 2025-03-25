@@ -36,6 +36,8 @@ namespace MyFoodApp.Application.Mappings
             CreateMap<RecipeStep, RecipeStepDto>()
                 .ReverseMap()
                 .ForMember(dest => dest.Recipe, opt => opt.Ignore());
+
+            CreateMap<RecipePhoto, RecipePhotoDto>().ReverseMap();
         }
     }
 }

@@ -41,7 +41,9 @@ builder.Services.AddScoped<IValidator<StoreSectionDto>, StoreSectionDtoValidator
 
 // Services:
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
+builder.Services.AddScoped<IRecipePhotoRepository, RecipePhotoRepository>();
 builder.Services.AddScoped<IRecipeUseCases, RecipeUseCases>();
+builder.Services.AddScoped<IRecipePhotoUseCases, RecipePhotoUseCases>();
 builder.Services.AddScoped<INutritionCalculatorService, NutritionCalculatorService>();
 
 builder.Services.AddScoped<IFoodItemRepository, FoodItemRepository>();

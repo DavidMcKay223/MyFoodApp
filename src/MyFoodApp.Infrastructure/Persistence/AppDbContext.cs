@@ -20,6 +20,7 @@ namespace MyFoodApp.Infrastructure.Persistence
         public DbSet<MealSuggestionTag> MealSuggestionTags { get; set; }
         public DbSet<PriceHistory> PriceHistories { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<RecipePhoto> RecipePhotos { get; set; }
         public DbSet<RecipeMealSuggestion> RecipeMealSuggestions { get; set; }
         public DbSet<RecipeStep> RecipeSteps { get; set; }
         public DbSet<StoreSection> StoreSections { get; set; }
@@ -88,6 +89,11 @@ namespace MyFoodApp.Infrastructure.Persistence
                 .HasOne(rms => rms.MealSuggestion)
                 .WithMany(ms => ms.RecipeSuggestions)
                 .HasForeignKey(rms => rms.MealSuggestionId);
+
+            modelBuilder.Entity<RecipePhoto>()
+                .HasOne(rp => rp.Recipe)
+                .WithMany(r => r.Photos)
+                .HasForeignKey(rp => rp.RecipeId);
         }
     }
 }

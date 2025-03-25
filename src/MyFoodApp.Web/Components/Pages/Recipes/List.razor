@@ -23,7 +23,7 @@ else
 
     <SearchButton OnSearch="Search" OnReset="ResetSearch" OnAdd="ShowAddModal" />
 
-    <MyFoodApp.Web.Components.Pages.Recipes.Table Recipes="Recipes" OnEdit="ShowEditModal" OnDisplay="ShowDisplayModal" />
+    <MyFoodApp.Web.Components.Pages.Recipes.Table Recipes="Recipes" OnEdit="ShowEditModal" OnDisplay="ShowDisplayModal" OnUpload="ShowUpload" />
 
     <SearchPagination TItem="RecipeDto" TotalItems="@totalItems" PageSize="@pageSize" CurrentPage="@currentPage" OnPageChanged="OnPageChanged" OnPageSizeChangedCallback="OnPageSizeChanged" />
 }
@@ -58,6 +58,11 @@ else
         totalItems = response.TotalItems;
         isLoading = false;
         StateHasChanged();
+    }
+
+    private async void ShowUpload()
+    {
+        await LoadRecipes();
     }
 
     private void ShowAddModal()

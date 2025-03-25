@@ -29,5 +29,11 @@ namespace MyFoodApp.Domain.Entities
 
         [JsonIgnore]
         public ICollection<RecipeMealSuggestion> MealSuggestions { get; set; } = [];
+
+        [JsonIgnore]
+        public ICollection<RecipePhoto> Photos { get; set; } = [];
+
+        [JsonIgnore]
+        public ICollection<DailyFoodLogRecipe> DailyFoodLogs { get; set; } = [];
     }
 }
